@@ -14,6 +14,8 @@ class MyCellTableViewCell: UITableViewCell {
     @IBOutlet weak var btnChecking: UIButton!
     weak var delegate : MyCellTableViewCellDelegate?
     var indenPath : IndexPath?
+    
+    //Nên đổi tên thành isChecked hoặc isChosen
     var isChecking : Bool = false
     
     @IBAction func btnCheckBox(_ sender: Any) {
