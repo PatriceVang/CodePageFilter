@@ -9,14 +9,12 @@
 import UIKit
 
 class MyCellTableViewCell: UITableViewCell {
-    
-  
     @IBOutlet weak var btnChecking: UIButton!
     weak var delegate : MyCellTableViewCellDelegate?
     var indenPath : IndexPath?
     
     //Nên đổi tên thành isChecked hoặc isChosen
-    var isChecking : Bool = false
+    var isChecked : Bool = false
     
     @IBAction func btnCheckBox(_ sender: Any) {
         self.delegate?.onTapBtn(indexPath: indenPath!)
@@ -26,14 +24,11 @@ class MyCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        if isChecking == false {
+        if isChecked == false {
             btnChecking.setTitle("Unchecked", for: .normal)
-        } else if isChecking == true {
+        } else if isChecked == true {
             btnChecking.setTitle("Checked", for: .normal)
         }
-        
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,11 +36,12 @@ class MyCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
 
 protocol MyCellTableViewCellDelegate: class {
     func onTapBtn(indexPath: IndexPath)
 }
+
+
 
 

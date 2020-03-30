@@ -8,33 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    ///Data truyền vào ở đây nên là 1 class hay struct gì đó có thuộc tính `isChecked`, không nên chỉ là chuỗi `String`, để khi tap vào chỉ cần thay đổi giá trị `isChecked` của class đó thôi
-    ///Giả sử:
-    ///
-    ///     class RowData {
-    ///         var text: String
-    ///         var isChecked: Bool
-    ///
-    ///         init() { ... }
-    ///     }
-    ///
-    ///
-    
-    var names: [[String]] =
-        [
-            ["Tí", "Tèo", "Hùng", "Lam", "Thuỷ", "Tuấn", "Trung", "Hạnh"],
-            ["Bình", "Khánh", "Toàn", "Tâm", "An", "Hương", "Huy", "Quang", "Vân", "Đài", "Tiến"]
-    ]
-    var headerSection = ["Male", "Female"]
-    
-    ///Biến này ở đây có ý nghĩ gì khi có nhiều cell với trạng thái checkbox?
-    var onTapCheckBox : Bool = false
 
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var myNavigationBar: UINavigationBar!
+    var headerSection = ["Male", "Female"]
+    
+    var data = [
+        [
+            User(name: "A", isChecked: false),
+            User(name: "B", isChecked: false),
+            User(name: "C", isChecked: false),
+            User(name: "D", isChecked: false),
+            User(name: "E", isChecked: false),
+            User(name: "F", isChecked: false),
+            User(name: "G", isChecked: false),
+            User(name: "H", isChecked: false),
+        ],
+        [
+            User(name: "A1", isChecked: false),
+            User(name: "B1", isChecked: false),
+            User(name: "C1", isChecked: false),
+            User(name: "D1", isChecked: false),
+            User(name: "E1", isChecked: false),
+            User(name: "F1", isChecked: false),
+            User(name: "G1", isChecked: false),
+            User(name: "H1", isChecked: false),
+        ]
+    ]
    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,10 +46,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ///Trong tableview có sẵn protocol hứng sự kiện gọi là `UITableViewDelegate`, việc ta cần là set cho nó biến bắc cầu về class của mình
         myTableView.delegate = self
         myTableView.dataSource = self
-        
-        
-        
         myNavigationBar.barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        
     }
     
     //secstion
@@ -53,20 +55,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 60
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return names.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names[section].count
+        return data[section].count
     }
-    ///Đây là hàm hứng sự kiện, ko nên setup headerview ở đây
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        view.tintColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-//        let header = view as! UITableViewHeaderFooterView
-//        header.textLabel?.textColor = UIColor.black
-//    }
-    
-    
+
     ///Setup header view ở đây
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //TODO
@@ -74,17 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return label
     }
     
-    ///Nếu đã setUp custom header ở trên thì không cần tới hàm này
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        return headerSection[section]
-//    }
     //cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "Cell") as? MyCellTableViewCell
-        cell?.textLabel?.text = names[indexPath.section][indexPath.row]
-//        cell?.delegate = self
-        cell?.indenPath = indexPath
+        cell?.textLabel?.text = data[indexPath.section][indexPath.row].name
+//        cell?.indenPath = indexPath
         return cell!
     }
     
@@ -92,31 +81,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         ///TODO
         ///Mình sẽ làm gì khi người dùng tap vào 1 cell với `indexPath` cho đã cho
-        
-        
+        var isChecking = data[indexPath.section][indexPath.row].isChecked
+        guard let cell = myTableView.cellForRow(at: indexPath) as? MyCellTableViewCell else {
+            return
+        }
+        isChecking = !isChecking
+//        cell.isChecked = isChecking
+        //cap nhat du lieu lai cho data
+        data[indexPath.section][indexPath.row].update(isChecked: isChecking)
+        print(indexPath)
+        print(isChecking)
+        self.myTableView.reloadData()
     }
-    
-    
-    ///Dùng cái này ở đây ko cần thiết vì e cần là cần kiểm tra tap nguyên 1 cell chứ ko phải 1 button
-//    func onTapChecBox(indexPath : IndexPath) {
-//        (0..<self.names.count).forEach { index in
-//            guard let cell = myTableView.cellForRow(at: IndexPath(row: index, section: headerSection.count)) as? MyCellTableViewCell else {
-//            return
-//        }
-//           if indexPath.row == index {
-//                onTapCheckBox = !onTapCheckBox
-//                cell.isChecking = onTapCheckBox
-//            }
-//        }
-//        print(indexPath)
-//    }
 }
 
-//extension ViewController : MyCellTableViewCellDelegate {
-//    func onTapBtn(indexPath: IndexPath) {
-//        onTapChecBox(indexPath: indexPath)
-//    }
-//}
+
+
+
+
 
 
 

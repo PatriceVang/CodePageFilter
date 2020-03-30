@@ -14,6 +14,7 @@
 		183C66F724319C9300D309DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183C66F624319C9300D309DC /* Assets.xcassets */; };
 		183C66FA24319C9300D309DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183C66F824319C9300D309DC /* LaunchScreen.storyboard */; };
 		183C67022431A18D00D309DC /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C67012431A18D00D309DC /* MyCellTableViewCell.swift */; };
+		18E4280E2431DC0D00EA95AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4280D2431DC0D00EA95AE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		183C66F924319C9300D309DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183C66FB24319C9300D309DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183C67012431A18D00D309DC /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
+		18E4280D2431DC0D00EA95AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		183C66EC24319C9300D309DC /* Perform */ = {
 			isa = PBXGroup;
 			children = (
+				18E4280C2431DBF200EA95AE /* Model */,
 				183C66ED24319C9300D309DC /* AppDelegate.swift */,
 				183C66EF24319C9300D309DC /* SceneDelegate.swift */,
 				183C66F124319C9300D309DC /* ViewController.swift */,
@@ -68,6 +71,14 @@
 				183C67012431A18D00D309DC /* MyCellTableViewCell.swift */,
 			);
 			path = Perform;
+			sourceTree = "<group>";
+		};
+		18E4280C2431DBF200EA95AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18E4280D2431DC0D00EA95AE /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 				183C66F224319C9300D309DC /* ViewController.swift in Sources */,
 				183C67022431A18D00D309DC /* MyCellTableViewCell.swift in Sources */,
 				183C66EE24319C9300D309DC /* AppDelegate.swift in Sources */,
+				18E4280E2431DC0D00EA95AE /* User.swift in Sources */,
 				183C66F024319C9300D309DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
