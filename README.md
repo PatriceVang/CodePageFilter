@@ -5,3 +5,4 @@ Các project con bao gồm
 - TableView với nhiều Cell
 - TableView với cell tự giãn
 - CollectionViewXib, add Tapbar, NavigationBar(item buttonbar img radius) 
+- DemoUITableView: create rating, editActionCell, alert dialog trong cell
