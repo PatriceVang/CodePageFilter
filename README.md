@@ -6,3 +6,4 @@ Các project con bao gồm
 - TableView với cell tự giãn
 - CollectionViewXib, add Tapbar, NavigationBar(item buttonbar img radius) 
 - DemoUITableView: create rating, editActionCell, alert dialog trong cell
+- LoginPage: cloud firestore, login and register with email password

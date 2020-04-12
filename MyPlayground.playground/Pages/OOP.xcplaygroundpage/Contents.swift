@@ -1222,61 +1222,68 @@ import Foundation
 //
 //b.listXe.count
 
+//
+//
+//class Triangle {
+//    var canhA : Int
+//    var canhB : Int
+//    var canhC : Int
+//    init(canhA: Int, canhB: Int, canhC: Int) {
+//        self.canhA = canhA
+//        self.canhB = canhB
+//        self.canhC = canhC
+//    }
+//
+//    func checkingIsTGD() -> Bool {
+//        return (canhB == canhA && canhA == canhC)
+//    }
+//
+//    private func findMax(arr: [Int]) -> Int {
+//        var valueIsMax = arr[0]
+//        for item in arr {
+//            if item > valueIsMax {
+//                valueIsMax = item
+//            }
+//        }
+//        return valueIsMax
+//    }
+//
+//    private func sumSqrtOf(arr: [Int]) -> Int {
+//        var resulSumOfSquare = 0
+//        for item in arr {
+//            resulSumOfSquare += item*item
+//        }
+//        return resulSumOfSquare
+//    }
+//
+//    // c^2 * 2 = a^2 + b^2 + c^2
+//
+//    func isTGV() -> Bool {
+//        let arrCanh = [canhA, canhB, canhC]
+//        return findMax(arr: arrCanh) * findMax(arr: arrCanh) * 2 == sumSqrtOf(arr: arrCanh)
+//    }
+//}
+//var a = Triangle(canhA: 4, canhB: 5, canhC: 3)
+//a.checkingIsTGD()
+//a.isTGV()
 
 
-class Triangle {
-    var canhA : Int
-    var canhB : Int
-    var canhC : Int
-    init(canhA: Int, canhB: Int, canhC: Int) {
-        self.canhA = canhA
-        self.canhB = canhB
-        self.canhC = canhC
-    }
-    
-    func checkingIsTGD() -> Bool {
-        return (canhB == canhA && canhA == canhC)
-    }
-    
-    private func findMax(arr: [Int]) -> Int {
-        var valueIsMax = arr[0]
-        for item in arr {
-            if item > valueIsMax {
-                valueIsMax = item
-            }
-        }
-        return valueIsMax
-    }
-    
-    private func sumSqrtOf(arr: [Int]) -> Int {
-        var resulSumOfSquare = 0
-        for item in arr {
-            resulSumOfSquare += item*item
-        }
-        return resulSumOfSquare
-    }
-    
-    // c^2 * 2 = a^2 + b^2 + c^2
-    
-    func isTGV() -> Bool {
-        let arrCanh = [canhA, canhB, canhC]
-        return findMax(arr: arrCanh) * findMax(arr: arrCanh) * 2 == sumSqrtOf(arr: arrCanh)
+
+class User {
+    var age = 1
+    init(age: Int) {
+        self.age = age
     }
 }
-var a = Triangle(canhA: 4, canhB: 5, canhC: 3)
-a.checkingIsTGD()
-a.isTGV()
-
-
-
-
-
-
-
-
-
-
-
+var user1: User //tao ra o nho nhung chua co data
+user1 = User(age: 20) //truyen data cho o nho
+user1.age = 22 //user1 = 22
+var user2 = User(age: 25) //tao ra o nho voi data: user2 = 25
+print(user1)
+//user2 = user1
+//user1.age = 30
+//
+//print(user1)
 
 
 

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpController" customModule="LoginPage" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSignUp" destination="BbA-V8-n6z" id="Xmg-6P-MII"/>
+                <outlet property="lbErr" destination="rzA-MS-1sg" id="y2G-4v-ZZ4"/>
+                <outlet property="tfEmail" destination="EnW-aF-8vH" id="KJ7-ub-7ca"/>
+                <outlet property="tfFirstName" destination="0li-G4-5pV" id="nMM-XB-Huz"/>
+                <outlet property="tfLastName" destination="Fiy-co-6vW" id="RNe-el-2zb"/>
+                <outlet property="tfPassword" destination="meX-Mu-xdY" id="Kuh-ue-fW7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-PL-mAg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-JO-nta">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="OU7-qc-4mM"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZUU-V7-dcc">
+                            <rect key="frame" x="0.0" y="100" width="414" height="336.5"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fiy-co-6vW">
+                                    <rect key="frame" x="18" y="8" width="388" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="KoA-PL-r1l"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0li-G4-5pV">
+                                    <rect key="frame" x="18" y="68" width="388" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Cph-vv-I5X"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EnW-aF-8vH">
+                                    <rect key="frame" x="18" y="128" width="388" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="BDZ-vS-bxX"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meX-Mu-xdY">
+                                    <rect key="frame" x="18" y="188" width="388" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="oPm-fv-DQT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbA-V8-n6z">
+                                    <rect key="frame" x="18" y="248" width="388" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="zrP-mS-AQs"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="onTapBtnsignUp:" destination="-1" eventType="touchUpInside" id="LtO-F5-t7B"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-MS-1sg">
+                                    <rect key="frame" x="18" y="308" width="388" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="18" bottom="8" right="8"/>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpK-eW-AK5">
+                            <rect key="frame" x="0.0" y="436.5" width="414" height="381.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="WBc-PL-mAg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VN6-rQ-vlt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WBc-PL-mAg" secondAttribute="bottom" id="fH4-zj-vco"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WBc-PL-mAg" secondAttribute="trailing" id="sJD-Dz-aFq"/>
+                <constraint firstItem="WBc-PL-mAg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ssw-xs-0bf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="111"/>
+        </view>
+    </objects>
+</document>
