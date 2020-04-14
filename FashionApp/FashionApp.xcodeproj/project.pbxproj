@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18016E292445A516003F7EC0 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18016E272445A516003F7EC0 /* CartController.swift */; };
 		18016E2A2445A516003F7EC0 /* CartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18016E282445A516003F7EC0 /* CartController.xib */; };
+		1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831F6FF2445B0750058838F /* MyTableViewCell.swift */; };
+		1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831F7002445B0750058838F /* MyTableViewCell.xib */; };
 		1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E1552443FF5C00A99B9A /* TapBarController.swift */; };
 		1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E1562443FF5C00A99B9A /* TapBarController.xib */; };
 		1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E159244410EE00A99B9A /* MyCollectionCell.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		18016E272445A516003F7EC0 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		18016E282445A516003F7EC0 /* CartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartController.xib; sourceTree = "<group>"; };
+		1831F6FF2445B0750058838F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		1831F7002445B0750058838F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		1893E1552443FF5C00A99B9A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		1893E1562443FF5C00A99B9A /* TapBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapBarController.xib; sourceTree = "<group>"; };
 		1893E159244410EE00A99B9A /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
@@ -91,10 +95,20 @@
 		18016E262445A4FE003F7EC0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				1831F7032445B07D0058838F /* Cell */,
 				18016E272445A516003F7EC0 /* CartController.swift */,
 				18016E282445A516003F7EC0 /* CartController.xib */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		1831F7032445B07D0058838F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1831F6FF2445B0750058838F /* MyTableViewCell.swift */,
+				1831F7002445B0750058838F /* MyTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		1893E1542443FF3300A99B9A /* Tapbar */ = {
@@ -329,6 +343,7 @@
 				1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */,
 				18016E2A2445A516003F7EC0 /* CartController.xib in Resources */,
 				1893E16224442C5700A99B9A /* SportController.xib in Resources */,
+				1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */,
 				1893E17524446EB500A99B9A /* DetailController.xib in Resources */,
 				18C102BF2443142D0025A79C /* LoginController.xib in Resources */,
 				18C102B1244313D80025A79C /* Assets.xcassets in Resources */,
@@ -396,6 +411,7 @@
 				1893E16C2444308B00A99B9A /* AddController.swift in Sources */,
 				1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */,
 				18E544CB2443739E00131473 /* HomeController.swift in Sources */,
+				1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */,
 				1893E1702444527700A99B9A /* Model.swift in Sources */,
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,

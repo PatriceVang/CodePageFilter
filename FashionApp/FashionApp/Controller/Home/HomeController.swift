@@ -26,8 +26,6 @@ class HomeController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         myCollectionView.collectionViewLayout = layout
-    }
-    override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.titleView = searchBar
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
@@ -110,7 +108,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         guard let ratings = listModel[indexPath.row].actor?.known_for?.first else {return}
         guard let ratingNew = ratings.vote_average else {return}
         nib.dataRating = String(ratingNew)
-        self.navigationController?.pushViewController(nib, animated: true)
+        self.tabBarController?.navigationController?.pushViewController(nib, animated: true)
     }
 }
 

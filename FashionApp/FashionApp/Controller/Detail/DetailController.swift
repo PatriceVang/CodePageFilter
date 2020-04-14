@@ -39,6 +39,9 @@ class DetailController: UIViewController {
         getData()
         customElement()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     //MARK: Handle Tap
     @IBAction func onTapBtnColor(_ sender: Any) {
         let indexBtn = arrBtnColor.firstIndex(of: sender as! UIButton)
@@ -64,7 +67,6 @@ class DetailController: UIViewController {
             arrBtnSize[index!].backgroundColor = indexSize == index ? Resource.Color.chosenSize : .white
         }
     }
-    
     @objc func onTapAddToCart() {
         print("add to cart")
     }
@@ -89,6 +91,8 @@ class DetailController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.backBarButtonItem?.title = "back"
+        self.navigationController?.navigationBar.isHidden = false
         // Set height img
         imgPresent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true
         // Set strikethrough lable

@@ -43,13 +43,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-ul-SW3">
-                    <rect key="frame" x="0.0" y="44" width="414" height="263"/>
+                    <rect key="frame" x="0.0" y="30" width="414" height="263"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="263" id="Vjc-Qi-qo9"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-cE-xfT">
-                    <rect key="frame" x="20" y="327" width="374" height="287.66666666666674"/>
+                    <rect key="frame" x="20" y="313" width="374" height="287.66666666666674"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-aT-sO0">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="51.666666666666664"/>
@@ -453,7 +453,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="7Sd-ul-SW3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Tr-fV-j1B"/>
+                <constraint firstItem="7Sd-ul-SW3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="3hv-2T-SNg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9CW-cE-xfT" secondAttribute="trailing" constant="20" id="8G4-Zw-7RH"/>
                 <constraint firstItem="9CW-cE-xfT" firstAttribute="top" secondItem="7Sd-ul-SW3" secondAttribute="bottom" constant="20" id="FW2-3i-rj1"/>
                 <constraint firstItem="7Sd-ul-SW3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ImP-sN-Gdf"/>
