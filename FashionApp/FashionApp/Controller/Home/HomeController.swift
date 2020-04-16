@@ -19,6 +19,7 @@ class HomeController: UIViewController {
     }()
     var listModel = [ModelCell]()
     var countNew = 0
+    var listSearch = [ModelCell]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -29,7 +30,9 @@ class HomeController: UIViewController {
         myCollectionView.collectionViewLayout = layout
         self.navigationItem.titleView = searchBar
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
+        searchBar.delegate = self
     }
+
 
     //MARK: API
     func getData() {
@@ -41,10 +44,12 @@ class HomeController: UIViewController {
                     do {
                         let json = try? JSONDecoder().decode(JsonTotal.self, from: data)
                         guard let arr = json?.results else {return}
-                        for item in arr {
-                            self.listModel.append(.init(actor: item))
-                        }
                         DispatchQueue.main.async {
+                            for item in arr {
+                                self.listModel.append(.init(actor: item))
+                  
+                            }
+                            self.listSearch = self.listModel
                             self.myCollectionView.reloadData()
                         }
                     } catch {
@@ -65,7 +70,13 @@ class HomeController: UIViewController {
 //MARK: Search Bar
 extension HomeController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        if searchText.isEmpty {
+            self.listSearch = self.listModel
+            self.myCollectionView.reloadData()
+            return
+        }
+        self.listSearch = self.listModel.filter { return ($0.actor?.name?.contains(searchText))!}
+        self.myCollectionView.reloadData()
     }
 }
 //MARK: Collection
@@ -73,12 +84,12 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //Cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listModel.count
+        return listSearch.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? MyCollectionCell
-        let text = listModel[indexPath.row]
+        let text = self.listSearch[indexPath.row]
         cell?.model = text
         return cell!
     }
@@ -103,7 +114,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nib = DetailController(nibName: "DetailController", bundle: nil)
-        nib.actor = listModel[indexPath.row].actor
+        nib.actor = self.listSearch[indexPath.row].actor
         nib.delegate = self
     
         self.tabBarController?.navigationController?.pushViewController(nib, animated: true)
@@ -123,4 +134,5 @@ extension HomeController: DetailControllerDelegate {
     }
 
 }
+
 
