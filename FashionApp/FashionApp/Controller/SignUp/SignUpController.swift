@@ -19,15 +19,17 @@ class SignUpController: UIViewController {
     @IBOutlet weak var lbErrPassword: UILabel!
     @IBOutlet weak var lbErrEmail: UILabel!
     @IBOutlet weak var btnConfirmSignup: UIButton!
+    var headerSignUp = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(headerSignUp)
         customElement()
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationItem.titleView = Resource.Text.textHeaderSignup
-             navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
-             navigationItem.backBarButtonItem?.title = "Back"
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.titleView = Resource.LableText.lableText(lable: headerSignUp, font: .systemFont(ofSize: 30), title: "Sign Up", titleColor: .white)
+        self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
     //MARK: Custom Element
     private func customElement() {
@@ -38,6 +40,7 @@ class SignUpController: UIViewController {
         Resource.StyleElement.styleTextField(textfield: tfPassword, placeHolder: "Aa1234")
         //Button
         Resource.StyleElement.styleBtn(btn: btnConfirmSignup, title: "Confirm")
+        btnConfirmSignup.showsTouchWhenHighlighted = true
     }
     //MARK: Handle create user
     @IBAction func onTapBtnConfirmsignup(_ sender: Any) {

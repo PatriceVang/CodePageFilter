@@ -9,8 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartController" customModule="FashionApp" customModuleProvider="target">
             <connections>
+                <outlet property="lbMycart" destination="HA9-V0-MKT" id="Vf1-cz-dYb"/>
                 <outlet property="myTableView" destination="C90-TH-jhE" id="dYb-0X-iXV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewNavigation" destination="0gA-vO-fKR" id="XOt-da-XIY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,23 +21,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C90-TH-jhE">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="120" width="414" height="742"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="clC-HC-g0A"/>
                         <outlet property="delegate" destination="-1" id="QSo-u7-532"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-vO-fKR">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HA9-V0-MKT">
+                            <rect key="frame" x="20" y="89" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="1Vx-gY-dQB"/>
+                        <constraint firstAttribute="bottom" secondItem="HA9-V0-MKT" secondAttribute="bottom" constant="10" id="dMi-Lz-0PM"/>
+                        <constraint firstItem="HA9-V0-MKT" firstAttribute="leading" secondItem="0gA-vO-fKR" secondAttribute="leading" constant="20" id="iqj-2i-eN0"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="C90-TH-jhE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3C1-ad-g6D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C90-TH-jhE" secondAttribute="trailing" id="6qz-eO-ZGP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C90-TH-jhE" secondAttribute="bottom" id="HKy-3r-YAW"/>
+                <constraint firstItem="C90-TH-jhE" firstAttribute="top" secondItem="0gA-vO-fKR" secondAttribute="bottom" id="OJ4-t2-9eb"/>
+                <constraint firstItem="0gA-vO-fKR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VPW-SP-UeY"/>
+                <constraint firstItem="0gA-vO-fKR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dj1-D8-rGw"/>
                 <constraint firstItem="C90-TH-jhE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vck-PY-CV4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0gA-vO-fKR" secondAttribute="trailing" id="whE-es-3nq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="113"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </view>
     </objects>
 </document>

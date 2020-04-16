@@ -18,6 +18,7 @@ class HomeController: UIViewController {
         return sb
     }()
     var listModel = [ModelCell]()
+    var countNew = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -29,6 +30,7 @@ class HomeController: UIViewController {
         self.navigationItem.titleView = searchBar
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
+
     //MARK: API
     func getData() {
         guard let url = URL(string: "https://api.themoviedb.org/3/person/popular?api_key=58d10a67ba0f9232e2f1b88e7e13cb1d&language=en-US&page=1") else {return}
@@ -101,14 +103,24 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nib = DetailController(nibName: "DetailController", bundle: nil)
-        nib.dataImg = listModel[indexPath.row].actor?.picture
-        nib.dataText = listModel[indexPath.row].actor?.name
-        guard let popurity = listModel[indexPath.row].actor?.popularity else {return}
-        nib.dataReview = String(popurity)
-        guard let ratings = listModel[indexPath.row].actor?.known_for?.first else {return}
-        guard let ratingNew = ratings.vote_average else {return}
-        nib.dataRating = String(ratingNew)
+        nib.actor = listModel[indexPath.row].actor
+        nib.delegate = self
+    
         self.tabBarController?.navigationController?.pushViewController(nib, animated: true)
     }
+}
+
+extension HomeController: DetailControllerDelegate {
+    func goToCart() {
+        let vc = self.tabBarController?.viewControllers
+        self.tabBarController?.selectedViewController = vc?[2]
+    }
+    func passData(dataCart: ModelCart) {
+        let vc = self.tabBarController?.viewControllers
+        if let cartVC = vc?[2] as? CartController {
+            cartVC.listData.append(dataCart)
+        }
+    }
+
 }
 

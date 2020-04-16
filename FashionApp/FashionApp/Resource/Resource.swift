@@ -17,7 +17,7 @@ class Resource {
         static let chosenSize = #colorLiteral(red: 0.6627923963, green: 0.785212094, blue: 1, alpha: 1)
     }
     
-    class Text {
+    class LableText {
         static var textHeaderLogin : UILabel = {
             let lg = UILabel()
             lg.text = "Login"
@@ -39,6 +39,16 @@ class Resource {
             lg.textColor = .white
             return lg
         }()
+        static func lableText(lable: UILabel, font: UIFont, title: String, titleColor: UIColor) -> UILabel {
+            lable.text = title
+            lable.textColor = titleColor
+            lable.font = font
+            return lable
+        }
+    }
+    
+    class Text {
+        static let myCart = "My Cart"
     }
     
     class StyleElement {
@@ -86,6 +96,7 @@ class Resource {
         static let imgLine = UIImage(named: "ic_line")
         static let imgHome = UIImage(named: "ic_home")
         static let imgCart = UIImage(named: "ic_cart")
+        static let imgCartNV = UIImage(named: "ic_cart_navi")
     }
 
 }

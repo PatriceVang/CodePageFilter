@@ -18,10 +18,13 @@ class LoginController: UIViewController {
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var viewFacebook: UIView!
     @IBOutlet weak var viewGoogle: UIView!
+    var headerLogin = UILabel()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.titleView = Resource.Text.textHeaderLogin
+        view.addSubview(headerLogin)
+        navigationItem.titleView = Resource.LableText.lableText(lable: headerLogin, font: .systemFont(ofSize: 30), title: "Login", titleColor: .white)
+        
         navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         customElement()
     }
@@ -38,6 +41,7 @@ class LoginController: UIViewController {
         Resource.StyleElement.styleTextField(textfield: tfPassword, placeHolder: "Aa1234")
         //Button
         Resource.StyleElement.styleBtn(btn: btnConfirm, title: "Confirm")
+        btnConfirm.showsTouchWhenHighlighted = true
         //Img Logo
         Resource.StyleElement.ImgView(imgView: imgLogo)
         // Save data
@@ -45,9 +49,9 @@ class LoginController: UIViewController {
         tfPassword.text = UserDefaults.standard.string(forKey: "password")
         //Gesture
         let onTapFaceBook = UITapGestureRecognizer(target: self, action: #selector(onTapViewFaceBook))
+      
         self.viewFacebook.isUserInteractionEnabled = true
         self.viewFacebook.addGestureRecognizer(onTapFaceBook)
-
         let onTapGoogle = UITapGestureRecognizer(target: self, action: #selector(onTapViewGoogle))
         self.viewGoogle.isUserInteractionEnabled = true
         self.viewGoogle.addGestureRecognizer(onTapGoogle)

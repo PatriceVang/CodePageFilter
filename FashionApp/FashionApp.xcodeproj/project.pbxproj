@@ -24,6 +24,7 @@
 		1893E1702444527700A99B9A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E16F2444527700A99B9A /* Model.swift */; };
 		1893E17424446EB500A99B9A /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E17224446EB500A99B9A /* DetailController.swift */; };
 		1893E17524446EB500A99B9A /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E17324446EB500A99B9A /* DetailController.xib */; };
+		18A89AC02447F724005642E5 /* hightlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A89ABF2447F724005642E5 /* hightlight.swift */; };
 		18C102A8244313D50025A79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102A7244313D50025A79C /* AppDelegate.swift */; };
 		18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102A9244313D50025A79C /* SceneDelegate.swift */; };
 		18C102B1244313D80025A79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C102B0244313D80025A79C /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		18E544C72443479F00131473 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C62443479F00131473 /* Dialog.swift */; };
 		18E544CB2443739E00131473 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C92443739E00131473 /* HomeController.swift */; };
 		18E544CC2443739E00131473 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544CA2443739E00131473 /* HomeController.xib */; };
+		18E677432447084000152A1B /* ModelCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E677422447084000152A1B /* ModelCart.swift */; };
 		54A4C99CE832882501BAA17E /* Pods_FashionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,7 @@
 		1893E16F2444527700A99B9A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1893E17224446EB500A99B9A /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		1893E17324446EB500A99B9A /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
+		18A89ABF2447F724005642E5 /* hightlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hightlight.swift; sourceTree = "<group>"; };
 		18C102A4244313D50025A79C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C102A7244313D50025A79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C102A9244313D50025A79C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		18E544C62443479F00131473 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		18E544C92443739E00131473 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		18E544CA2443739E00131473 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		18E677422447084000152A1B /* ModelCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCart.swift; sourceTree = "<group>"; };
 		6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FashionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		969EC40F44DA668508E28111 /* Pods-FashionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.release.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8BA94877C9DC55FA4DBCE3C /* Pods-FashionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.debug.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				1831F7032445B07D0058838F /* Cell */,
 				18016E272445A516003F7EC0 /* CartController.swift */,
 				18016E282445A516003F7EC0 /* CartController.xib */,
+				18E677422447084000152A1B /* ModelCart.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			children = (
 				1893E17224446EB500A99B9A /* DetailController.swift */,
 				1893E17324446EB500A99B9A /* DetailController.xib */,
+				18A89ABF2447F724005642E5 /* hightlight.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				18C102A8244313D50025A79C /* AppDelegate.swift in Sources */,
 				18C102C3244315ED0025A79C /* Resource.swift in Sources */,
 				1893E16C2444308B00A99B9A /* AddController.swift in Sources */,
+				18E677432447084000152A1B /* ModelCart.swift in Sources */,
 				1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */,
 				18E544CB2443739E00131473 /* HomeController.swift in Sources */,
 				1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */,
@@ -421,6 +428,7 @@
 				18016E292445A516003F7EC0 /* CartController.swift in Sources */,
 				1893E17424446EB500A99B9A /* DetailController.swift in Sources */,
 				1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */,
+				18A89AC02447F724005642E5 /* hightlight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
