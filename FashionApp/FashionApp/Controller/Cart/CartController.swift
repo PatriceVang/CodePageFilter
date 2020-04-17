@@ -37,7 +37,7 @@ class CartController: UIViewController {
         viewNavigation.backgroundColor = Resource.Color.colorHeader
         viewNavigation.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
         //Lb my cart
-        Resource.LableText.lableText(lable: lbMycart, font: .systemFont(ofSize: 30), title: "My Cart", titleColor: .white)
+        lbMycart.text = Resource.Text.myCart
     }
 }
 extension CartController: UITableViewDelegate, UITableViewDataSource {

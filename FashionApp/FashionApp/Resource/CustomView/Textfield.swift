@@ -27,6 +27,7 @@ class Textfield: UITextField {
         let padding = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
         self.leftView = padding
         self.leftViewMode = .always
+        self.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
 }
 

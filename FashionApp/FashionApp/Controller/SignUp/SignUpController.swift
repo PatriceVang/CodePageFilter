@@ -19,16 +19,16 @@ class SignUpController: UIViewController {
     @IBOutlet weak var lbErrPassword: UILabel!
     @IBOutlet weak var lbErrEmail: UILabel!
     @IBOutlet weak var btnConfirmSignup: UIButton!
-    var headerSignUp = UILabel()
+    var titleSignUp = Lable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(headerSignUp)
-
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.titleView = Resource.LableText.lableText(lable: headerSignUp, font: .systemFont(ofSize: 30), title: "Sign Up", titleColor: .white)
+        titleSignUp.setTile(title: Resource.Text.sighUp)
+        self.navigationItem.titleView = titleSignUp
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
     //MARK: Handle create user

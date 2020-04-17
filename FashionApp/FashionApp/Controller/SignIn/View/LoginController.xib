@@ -77,7 +77,10 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYf-oe-Zkd" customClass="ButtonConfirm" customModule="FashionApp" customModuleProvider="target">
-                    <rect key="frame" x="40" y="416" width="334" height="36"/>
+                    <rect key="frame" x="40" y="446" width="334" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="85q-P7-e1n"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Confirm"/>
                     <connections>
@@ -85,7 +88,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-E9-pSn">
-                    <rect key="frame" x="50" y="482" width="314" height="50"/>
+                    <rect key="frame" x="50" y="516" width="314" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yw-wy-O2t">
                             <rect key="frame" x="0.0" y="0.0" width="124.5" height="50"/>
@@ -152,6 +155,14 @@
                         </view>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAO-KK-vHT">
+                    <rect key="frame" x="303" y="396" width="91" height="29"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                    <state key="normal" title="Create a user!"/>
+                    <connections>
+                        <action selector="onTapCreteUser:" destination="-1" eventType="touchUpInside" id="gd1-ry-aqE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -161,8 +172,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYf-oe-Zkd" secondAttribute="trailing" constant="40" id="Byz-vw-FyF"/>
                 <constraint firstItem="O79-YK-r3g" firstAttribute="top" secondItem="OGN-eP-7Cs" secondAttribute="bottom" constant="15" id="IOX-wl-cFw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O79-YK-r3g" secondAttribute="trailing" constant="20" id="OMP-PE-Fxk"/>
+                <constraint firstItem="nAO-KK-vHT" firstAttribute="top" secondItem="O79-YK-r3g" secondAttribute="bottom" id="S9h-Ac-oJM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OGN-eP-7Cs" secondAttribute="trailing" constant="20" id="XPk-f9-lKX"/>
                 <constraint firstItem="FQ9-E9-pSn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="aqq-fY-bnc"/>
+                <constraint firstItem="nAO-KK-vHT" firstAttribute="trailing" secondItem="O79-YK-r3g" secondAttribute="trailing" id="gRF-i3-Ctc"/>
                 <constraint firstItem="JYf-oe-Zkd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="iCX-go-OBb"/>
                 <constraint firstItem="FQ9-E9-pSn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jOl-R9-ApD"/>
                 <constraint firstItem="O79-YK-r3g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pVs-ON-Y7X"/>
@@ -170,7 +183,7 @@
                 <constraint firstItem="XYi-NP-2le" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="tGD-CD-dTe"/>
                 <constraint firstItem="FQ9-E9-pSn" firstAttribute="top" secondItem="JYf-oe-Zkd" secondAttribute="bottom" constant="30" id="ycH-vn-ijL"/>
                 <constraint firstItem="XYi-NP-2le" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ylM-QC-K79"/>
-                <constraint firstItem="JYf-oe-Zkd" firstAttribute="top" secondItem="O79-YK-r3g" secondAttribute="bottom" constant="20" id="zMf-yK-8Hg"/>
+                <constraint firstItem="JYf-oe-Zkd" firstAttribute="top" secondItem="O79-YK-r3g" secondAttribute="bottom" constant="50" id="zMf-yK-8Hg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="113"/>

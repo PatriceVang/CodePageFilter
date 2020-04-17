@@ -9,23 +9,23 @@
 import UIKit
 
 class Lable: UILabel {
-    var title: String = ""
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initView(title: title)
+        initView()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+//        fatalError("init(coder:) has not been implemented")
         super.init(coder: coder)
-        initView(title: title)
+        initView()
     }
-    func initView(title: String) {
-        self.title = title
+    func initView() {
         self.font = .boldSystemFont(ofSize: 30)
         self.textColor = .white
     }
     
-    
-    
+    func setTile(title: String) {
+        self.text = title
+    }
 }

@@ -26,23 +26,19 @@ class LoginController: UIViewController {
         presenter?.view = self
     }
     @IBAction func tfOnchangeEmail(_ sender: Any) {
-        guard let textfield = sender as? UITextField else {return}
-        if textfield.text != "" {
-            lbErrEmail.text = ""
-        }
+        guard let textField = sender as? UITextField else {return}
+        self.presenter?.handleTfOnchange(textfield: textField, lable: lbErrEmail)
     }
     @IBAction func tfOnchangePassword(_ sender: Any) {
-        guard let textfield = sender as? UITextField else {return}
-        if textfield.text != "" {
-            lbErrPassword.text = ""
-        }
+        guard let textField = sender as? UITextField else {return}
+        self.presenter?.handleTfOnchange(textfield: textField, lable: lbErrPassword)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerLogin.initView(title: Resource.Text.logIn)
+        headerLogin.setTile(title: Resource.Text.logIn)
         navigationItem.titleView = headerLogin
         navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         customElement()
@@ -91,8 +87,7 @@ class LoginController: UIViewController {
     }
     //MARK: Create user
     @IBAction func onTapCreteUser(_ sender: Any) {
-        let nib = SignUpController(nibName: "SignUpController", bundle: nil)
-        self.navigationController?.pushViewController(nib, animated: true)
+        self.presenter?.createUser(view: self)
     }
 }
 

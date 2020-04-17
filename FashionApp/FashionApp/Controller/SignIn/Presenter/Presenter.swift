@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 protocol PresenterDelegate: class {
     func loginFailed(msg: String)
     func emailIsEmpty(msg: String)
@@ -21,10 +20,15 @@ protocol PresenterDelegate: class {
 protocol PresenterProtocol {
     var view: PresenterDelegate? {get set}
     func validate(email: String, password: String)
+    func createUser(view: UIViewController)
+    func handleTfOnchange(textfield: UITextField, lable: UILabel)
 }
 
 class Presenter: PresenterProtocol {
+    
+    
     weak var view: PresenterDelegate?
+    
     func validate(email: String, password: String) {
         if email == ""{
             self.view?.emailIsEmpty(msg: "*Email is empty")
@@ -38,7 +42,8 @@ class Presenter: PresenterProtocol {
             }
         }
     }
-    func verity(email: String, password: String) {
+    
+    private func verity(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, err) in
             if err != nil {
                 self?.view?.loginFailed(msg: "Email or Password is invalid")
@@ -47,9 +52,16 @@ class Presenter: PresenterProtocol {
             }
         }
     }
-    func createUser(view: UIView) {
-         let nib = SignUpController(nibName: "SignUpController", bundle: nil)
-//               self.navigationController?.pushViewController(nib, animated: true)
+    func createUser(view: UIViewController) {
+        let nib = SignUpController(nibName: "SignUpController", bundle: nil)
+        view.navigationController?.pushViewController(nib, animated: true)
     }
+    
+    func handleTfOnchange(textfield: UITextField, lable: UILabel) {
+        if textfield.text != nil {
+            lable.text = ""
+        }
+    }
+ 
     
 }

@@ -17,36 +17,6 @@ class Resource {
         static let chosenSize = #colorLiteral(red: 0.6627923963, green: 0.785212094, blue: 1, alpha: 1)
     }
     
-    class LableText {
-        static var textHeaderLogin : UILabel = {
-            let lg = UILabel()
-            lg.text = "Login"
-            lg.font = .boldSystemFont(ofSize: 30)
-            lg.textColor = .white
-            return lg
-        }()
-        static var textHeaderSignup : UILabel = {
-            let lg = UILabel()
-            lg.text = "Sign up"
-            lg.font = .boldSystemFont(ofSize: 30)
-            lg.textColor = .white
-            return lg
-        }()
-        static var textHeaderHome : UILabel = {
-            let lg = UILabel()
-            lg.text = "Home"
-            lg.font = .boldSystemFont(ofSize: 30)
-            lg.textColor = .white
-            return lg
-        }()
-        static func lableText(lable: UILabel, font: UIFont, title: String, titleColor: UIColor) -> UILabel {
-            lable.text = title
-            lable.textColor = titleColor
-            lable.font = font
-            return lable
-        }
-    }
-    
     class Text {
         static let myCart = "My Cart"
         static let logIn = "Login"
