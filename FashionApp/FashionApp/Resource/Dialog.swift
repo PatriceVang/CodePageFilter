@@ -9,10 +9,12 @@
 import UIKit
 
 class Dialog {
-    static func showDialogSignUp(title: String, msg: String, titleAction: String, target: UIViewController) {
+    static func showDialog(title: String, msg: String, titleAction: String, target: UIViewController) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: titleAction, style: .default, handler: nil)
         alert.addAction(actionOk)
         target.present(alert, animated: true, completion: nil)
     }
+    
+    
 }

@@ -24,23 +24,12 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(headerSignUp)
-        customElement()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.titleView = Resource.LableText.lableText(lable: headerSignUp, font: .systemFont(ofSize: 30), title: "Sign Up", titleColor: .white)
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
-    }
-    //MARK: Custom Element
-    private func customElement() {
-        //Text field
-        Resource.StyleElement.styleTextField(textfield: tfName, placeHolder: "Patrice")
-        Resource.StyleElement.styleTextField(textfield: tfNumberPhone, placeHolder: "0396000111")
-        Resource.StyleElement.styleTextField(textfield: tfEmail, placeHolder: "email@gmail.com")
-        Resource.StyleElement.styleTextField(textfield: tfPassword, placeHolder: "Aa1234")
-        //Button
-        Resource.StyleElement.styleBtn(btn: btnConfirmSignup, title: "Confirm")
-        btnConfirmSignup.showsTouchWhenHighlighted = true
     }
     //MARK: Handle create user
     @IBAction func onTapBtnConfirmsignup(_ sender: Any) {
@@ -68,16 +57,16 @@ class SignUpController: UIViewController {
         //Create user
         Auth.auth().createUser(withEmail: email!, password: password!) { (result, error) in
             if error != nil {
-                Dialog.showDialogSignUp(title: "SignUp", msg: "Create user failed", titleAction: "OK", target: self)
+                Dialog.showDialog(title: "SignUp", msg: "Create user failed", titleAction: "OK", target: self)
             } else {
                 let db = Firestore.firestore()
                 db.collection("users").addDocument(data: ["name" : name as Any, "numberphone" : numberPhone as Any, "uid" : result?.user.uid as Any]) { (error) in
                     if error != nil {
-                        Dialog.showDialogSignUp(title: "SignUp", msg: "Error saving data", titleAction: "OK", target: self)
+                        Dialog.showDialog(title: "SignUp", msg: "Error saving data", titleAction: "OK", target: self)
                     }
                 }
                 // Dang ki thanh cong
-                Dialog.showDialogSignUp(title: "Sign Up", msg: "You created success!", titleAction: "Ok", target: self)
+                Dialog.showDialog(title: "Sign Up", msg: "You created success!", titleAction: "Ok", target: self)
                 self.lbErrPassword.text = ""
                 self.lbErrEmail.text = ""
                 self.lbErrName.text = ""

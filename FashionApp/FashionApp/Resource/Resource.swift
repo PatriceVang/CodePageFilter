@@ -49,27 +49,11 @@ class Resource {
     
     class Text {
         static let myCart = "My Cart"
+        static let logIn = "Login"
+        static let sighUp = "Sign Up"
     }
     
     class StyleElement {
-        static func styleTextField(textfield: UITextField, placeHolder: String) {
-            textfield.placeholder = placeHolder
-            textfield.layer.cornerRadius = 7
-            textfield.borderStyle = .none
-            textfield.layer.borderWidth = 2
-            textfield.layer.borderColor = #colorLiteral(red: 1, green: 0.3909804772, blue: 0.5798481978, alpha: 1)
-            let padding = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textfield.frame.height))
-            textfield.leftView = padding
-            textfield.leftViewMode = .always
-        }
-        
-        static func styleBtn(btn: UIButton, title: String) {
-            btn.setTitle(title, for: .normal)
-            btn.layer.cornerRadius = 15
-            btn.backgroundColor = #colorLiteral(red: 1, green: 0.3909804772, blue: 0.5798481978, alpha: 1)
-            btn.setTitleColor(.white, for: .normal)
-            btn.titleLabel?.font = .systemFont(ofSize: 25)
-        }
         
         static func ImgView(imgView: UIImageView) {
             imgView.image = Image.imgLogo
