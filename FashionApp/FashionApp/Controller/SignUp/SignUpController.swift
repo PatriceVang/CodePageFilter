@@ -20,10 +20,20 @@ class SignUpController: UIViewController {
     @IBOutlet weak var lbErrEmail: UILabel!
     @IBOutlet weak var btnConfirmSignup: UIButton!
     var titleSignUp = Lable()
+    var presenterSignUp: PresenterSignUpProtocol
+    init() {
+        presenterSignUp = PresenterSignUp()
+        super.init(nibName: "SignUpController", bundle: nil)
+        presenterSignUp.view = self
+        
+    }
+ 
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -31,48 +41,58 @@ class SignUpController: UIViewController {
         self.navigationItem.titleView = titleSignUp
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
+    //MARK: Handle onchange textfield
+    
+    @IBAction func tfOnchangeName(_ sender: Any) {
+        guard let textfield = sender as? UITextField else {return}
+        self.presenterSignUp.handelOnchangeTf(textfield: textfield, lable: lbErrName)
+    }
+    @IBAction func tfOnchangeNumberPhone(_ sender: Any) {
+        guard let textfield = sender as? UITextField else {return}
+        self.presenterSignUp.handelOnchangeTf(textfield: textfield, lable: lbErrNumberPhone)
+        
+    }
+    @IBAction func tfOnchangeEmail(_ sender: Any) {
+        guard let textfield = sender as? UITextField else {return}
+        self.presenterSignUp.handelOnchangeTf(textfield: textfield, lable: lbErrEmail)
+    }
+    @IBAction func tfOnchangePassword(_ sender: Any) {
+        guard let textfield = sender as? UITextField else {return}
+        self.presenterSignUp.handelOnchangeTf(textfield: textfield, lable: lbErrPassword)
+    }
     //MARK: Handle create user
     @IBAction func onTapBtnConfirmsignup(_ sender: Any) {
-        let name = tfName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let numberPhone = tfNumberPhone.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let email = tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if name == "" {
-            Validate.lbShowError(msg: "*Please fill in this field", lable: lbErrName)
-        }
-        if numberPhone == "" {
-            Validate.lbShowError(msg: "*Please fill in this field", lable: lbErrNumberPhone)
-        }
-        if email == "" {
-            Validate.lbShowError(msg: "*Please fill in this field", lable: lbErrEmail)
-        }
-        if password == "" {
-            Validate.lbShowError(msg: "*Please fill in this field", lable: lbErrPassword)
-        }
-        //Checking ensure valid password
-        let checkingPassword = tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if Validate.isValidatePassword(password: checkingPassword!) == false {
-            return Validate.lbShowError(msg: "Password is invalid", lable: lbErrPassword)
-        }
-        //Create user
-        Auth.auth().createUser(withEmail: email!, password: password!) { (result, error) in
-            if error != nil {
-                Dialog.showDialog(title: "SignUp", msg: "Create user failed", titleAction: "OK", target: self)
-            } else {
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["name" : name as Any, "numberphone" : numberPhone as Any, "uid" : result?.user.uid as Any]) { (error) in
-                    if error != nil {
-                        Dialog.showDialog(title: "SignUp", msg: "Error saving data", titleAction: "OK", target: self)
-                    }
-                }
-                // Dang ki thanh cong
-                Dialog.showDialog(title: "Sign Up", msg: "You created success!", titleAction: "Ok", target: self)
-                self.lbErrPassword.text = ""
-                self.lbErrEmail.text = ""
-                self.lbErrName.text = ""
-                self.lbErrNumberPhone.text = ""
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
+        self.presenterSignUp.signUp(email: tfEmail.text!, password: tfPassword.text!, name: tfName.text!, numberPhone: tfNumberPhone.text!)
     }
+}
+
+extension SignUpController: PresenterSignUpDelegate {
+    
+    func signUpFailure(msg: String) {
+        Dialog.showDialog(title: Resource.Text.sighUp, msg: msg, titleAction: Resource.Text.ok, target: self)
+    }
+    
+    func signUpSuccess(msg: String) {
+        Dialog.showDialog(title: Resource.Text.sighUp, msg: msg, titleAction: Resource.Text.ok, target: self)
+    }
+    func saveDataError(msg: String) {
+        Dialog.showDialog(title: Resource.Text.sighUp, msg: msg, titleAction: Resource.Text.ok, target: self)
+    }
+    
+    func nameIsEmpty(msg: String) {
+        Validate.lbShowError(msg: msg, lable: lbErrName)
+    }
+    
+    func numberPhongeIsEmpty(msg: String) {
+        Validate.lbShowError(msg: msg, lable: lbErrNumberPhone)
+    }
+    func emailIsEmpty(msg: String) {
+        Validate.lbShowError(msg: msg, lable: lbErrEmail)
+    }
+    func passwordIsEmpty(msg: String) {
+        Validate.lbShowError(msg: msg, lable: lbErrPassword)
+    }
+    func passwordInvalid(msg: String) {
+        Validate.lbShowError(msg: msg, lable: lbErrPassword)
+      }
 }

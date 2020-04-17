@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		18016E292445A516003F7EC0 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18016E272445A516003F7EC0 /* CartController.swift */; };
 		18016E2A2445A516003F7EC0 /* CartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18016E282445A516003F7EC0 /* CartController.xib */; };
-		180973AD244945AE00421A9B /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973AC244945AE00421A9B /* Presenter.swift */; };
+		180973AD244945AE00421A9B /* PresenterSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973AC244945AE00421A9B /* PresenterSignIn.swift */; };
 		180973B52449906C00421A9B /* ButtonConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973B42449906C00421A9B /* ButtonConfirm.swift */; };
 		180973B7244996FD00421A9B /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973B6244996FD00421A9B /* Textfield.swift */; };
 		180973B924499E0200421A9B /* Lable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973B824499E0200421A9B /* Lable.swift */; };
+		180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973C92449E13D00421A9B /* PresenterSignUp.swift */; };
 		1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831F6FF2445B0750058838F /* MyTableViewCell.swift */; };
 		1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831F7002445B0750058838F /* MyTableViewCell.xib */; };
 		1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E1552443FF5C00A99B9A /* TapBarController.swift */; };
@@ -50,10 +51,11 @@
 /* Begin PBXFileReference section */
 		18016E272445A516003F7EC0 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		18016E282445A516003F7EC0 /* CartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartController.xib; sourceTree = "<group>"; };
-		180973AC244945AE00421A9B /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		180973AC244945AE00421A9B /* PresenterSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignIn.swift; sourceTree = "<group>"; };
 		180973B42449906C00421A9B /* ButtonConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfirm.swift; sourceTree = "<group>"; };
 		180973B6244996FD00421A9B /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		180973B824499E0200421A9B /* Lable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lable.swift; sourceTree = "<group>"; };
+		180973C92449E13D00421A9B /* PresenterSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignUp.swift; sourceTree = "<group>"; };
 		1831F6FF2445B0750058838F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		1831F7002445B0750058838F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		1893E1552443FF5C00A99B9A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		180973AB2449459800421A9B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				180973AC244945AE00421A9B /* Presenter.swift */,
+				180973AC244945AE00421A9B /* PresenterSignIn.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -140,6 +142,21 @@
 				180973B824499E0200421A9B /* Lable.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		180973C52449E04E00421A9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		180973C62449E05900421A9B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				180973C92449E13D00421A9B /* PresenterSignUp.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1831F7032445B07D0058838F /* Cell */ = {
@@ -286,6 +303,8 @@
 		18E544BF2443375C00131473 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				180973C62449E05900421A9B /* Presenter */,
+				180973C52449E04E00421A9B /* View */,
 				18E544C02443397900131473 /* SignUpController.swift */,
 				18E544C12443397900131473 /* SignUpController.xib */,
 			);
@@ -460,10 +479,11 @@
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,
 				1893E16124442C5700A99B9A /* SportController.swift in Sources */,
+				180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */,
 				18C102BE2443142D0025A79C /* LoginController.swift in Sources */,
 				180973B924499E0200421A9B /* Lable.swift in Sources */,
 				180973B7244996FD00421A9B /* Textfield.swift in Sources */,
-				180973AD244945AE00421A9B /* Presenter.swift in Sources */,
+				180973AD244945AE00421A9B /* PresenterSignIn.swift in Sources */,
 				18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */,
 				18016E292445A516003F7EC0 /* CartController.swift in Sources */,
 				1893E17424446EB500A99B9A /* DetailController.swift in Sources */,

@@ -23,7 +23,7 @@ class ButtonConfirm: UIButton {
         self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 25)
         self.showsTouchWhenHighlighted = true
-        self.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
 

@@ -33,7 +33,7 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OGN-eP-7Cs">
-                    <rect key="frame" x="20" y="252" width="374" height="64.5"/>
+                    <rect key="frame" x="20" y="262" width="374" height="64.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m5g-X6-XnP" customClass="Textfield" customModule="FashionApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -55,7 +55,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O79-YK-r3g">
-                    <rect key="frame" x="20" y="331.5" width="374" height="64.5"/>
+                    <rect key="frame" x="20" y="341.5" width="374" height="64.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aa1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3z-Yc-HJ2" customClass="Textfield" customModule="FashionApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -77,10 +77,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYf-oe-Zkd" customClass="ButtonConfirm" customModule="FashionApp" customModuleProvider="target">
-                    <rect key="frame" x="40" y="446" width="334" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="85q-P7-e1n"/>
-                    </constraints>
+                    <rect key="frame" x="40" y="456" width="334" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Confirm"/>
                     <connections>
@@ -88,7 +85,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-E9-pSn">
-                    <rect key="frame" x="50" y="516" width="314" height="50"/>
+                    <rect key="frame" x="50" y="522" width="314" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yw-wy-O2t">
                             <rect key="frame" x="0.0" y="0.0" width="124.5" height="50"/>
@@ -156,7 +153,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAO-KK-vHT">
-                    <rect key="frame" x="303" y="396" width="91" height="29"/>
+                    <rect key="frame" x="303" y="406" width="91" height="29"/>
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                     <state key="normal" title="Create a user!"/>
                     <connections>
@@ -166,7 +163,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="OGN-eP-7Cs" firstAttribute="top" secondItem="XYi-NP-2le" secondAttribute="bottom" constant="40" id="2Hl-b2-vXn"/>
+                <constraint firstItem="OGN-eP-7Cs" firstAttribute="top" secondItem="XYi-NP-2le" secondAttribute="bottom" constant="50" id="2Hl-b2-vXn"/>
                 <constraint firstItem="JYf-oe-Zkd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2h6-7D-rwN"/>
                 <constraint firstItem="OGN-eP-7Cs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6O5-kH-0wG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYf-oe-Zkd" secondAttribute="trailing" constant="40" id="Byz-vw-FyF"/>

@@ -18,11 +18,13 @@ class LoginController: UIViewController {
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var viewFacebook: UIView!
     @IBOutlet weak var viewGoogle: UIView!
+    //MARK: Proberty
     var headerLogin = Lable()
-    var presenter: PresenterProtocol?
+    var presenter: PresenterSignInProtocol?
+    //MARK: Intit
     init() {
         super.init(nibName: "LoginController", bundle: nil)
-        presenter = Presenter()
+        presenter = PresenterSignIn()
         presenter?.view = self
     }
     @IBAction func tfOnchangeEmail(_ sender: Any) {
@@ -38,9 +40,8 @@ class LoginController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerLogin.setTile(title: Resource.Text.logIn)
-        navigationItem.titleView = headerLogin
-        navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
+        tfEmail.text =  UserDefaults.standard.string(forKey: "email")
+        tfPassword.text = UserDefaults.standard.string(forKey: "password")
         customElement()
         hideKeyBoard()
     }
@@ -61,9 +62,10 @@ class LoginController: UIViewController {
     }
     //MARK: Custom Element
     private func customElement() {
-        //Save data
-        tfEmail.text =  UserDefaults.standard.string(forKey: "email")
-        tfPassword.text = UserDefaults.standard.string(forKey: "password")
+        // Set title header
+        headerLogin.setTile(title: Resource.Text.logIn)
+        self.navigationItem.titleView = headerLogin
+        self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         UserDefaults.standard.string(forKey: tfPassword.text!)
         //Img Logo
         Resource.StyleElement.ImgView(imgView: imgLogo)
@@ -81,17 +83,17 @@ class LoginController: UIViewController {
     @objc func onTapViewGoogle() {
         print("gg")
     }
-    //MARK: Handle Login
+    //MARK:  Login
     @IBAction func onTapBtnConfirm(_ sender: Any) {
         self.presenter?.validate(email: tfEmail.text!, password: tfPassword.text!)
     }
     //MARK: Create user
     @IBAction func onTapCreteUser(_ sender: Any) {
-        self.presenter?.createUser(view: self)
+        self.presenter?.onPushScreenSignUp(view: self)
     }
 }
 
-extension LoginController: PresenterDelegate {
+extension LoginController: PresenterSignInDelegate {
     func passwordIsInvalid(msg: String) {
         Validate.lbShowError(msg: msg, lable: lbErrPassword)
     }
@@ -102,7 +104,7 @@ extension LoginController: PresenterDelegate {
         Validate.lbShowError(msg: msg, lable: lbErrPassword)
     }
     func loginFailed(msg: String) {
-        Dialog.showDialog(title: "Login", msg: msg, titleAction: "OK", target: self)
+        Dialog.showDialog(title: Resource.Text.logIn, msg: msg, titleAction: Resource.Text.ok, target: self)
     }
     func loginSuccess() {
         UserDefaults.standard.set(tfEmail.text, forKey: "email")

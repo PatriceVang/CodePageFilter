@@ -32,13 +32,16 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-lf-Xkt">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="69.5"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patrice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bb1-2n-RYI" customClass="Textfield" customModule="FashionApp" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yourname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bb1-2n-RYI" customClass="Textfield" customModule="FashionApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="EEQ-dV-Bk1"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="tfOnchangeName:" destination="-1" eventType="editingChanged" id="D8N-9u-wfq"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-1y-pNO">
                                     <rect key="frame" x="0.0" y="55" width="374" height="14.5"/>
@@ -58,6 +61,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                    <connections>
+                                        <action selector="tfOnchangeNumberPhone:" destination="-1" eventType="editingChanged" id="Jla-hh-X00"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58d-si-opt">
                                     <rect key="frame" x="0.0" y="55" width="374" height="14.5"/>
@@ -77,6 +83,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    <connections>
+                                        <action selector="tfOnchangeEmail:" destination="-1" eventType="editingChanged" id="fib-JO-aM5"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhS-DO-HJb">
                                     <rect key="frame" x="0.0" y="55" width="374" height="14.5"/>
@@ -96,8 +105,11 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    <connections>
+                                        <action selector="tfOnchangePassword:" destination="-1" eventType="editingChanged" id="lF0-LC-PXj"/>
+                                    </connections>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-eV-7ME">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-eV-7ME">
                                     <rect key="frame" x="0.0" y="55" width="374" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
@@ -108,10 +120,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4M-Kz-DRj" customClass="ButtonConfirm" customModule="FashionApp" customModuleProvider="target">
-                    <rect key="frame" x="40" y="442" width="334" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="E93-Fa-dHO"/>
-                    </constraints>
+                    <rect key="frame" x="40" y="442" width="334" height="30"/>
                     <state key="normal" title="Confirm"/>
                     <connections>
                         <action selector="onTapBtnConfirmsignup:" destination="-1" eventType="touchUpInside" id="TdI-Tr-lbC"/>

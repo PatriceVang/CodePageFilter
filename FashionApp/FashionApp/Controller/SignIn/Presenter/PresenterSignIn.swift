@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-protocol PresenterDelegate: class {
+protocol PresenterSignInDelegate: class {
     func loginFailed(msg: String)
     func emailIsEmpty(msg: String)
     func passwordIsEmpty(msg: String)
@@ -17,17 +17,15 @@ protocol PresenterDelegate: class {
     func loginSuccess()
 }
 
-protocol PresenterProtocol {
-    var view: PresenterDelegate? {get set}
+protocol PresenterSignInProtocol {
+    var view: PresenterSignInDelegate? {get set}
     func validate(email: String, password: String)
-    func createUser(view: UIViewController)
+    func onPushScreenSignUp(view: UIViewController)
     func handleTfOnchange(textfield: UITextField, lable: UILabel)
 }
 
-class Presenter: PresenterProtocol {
-    
-    
-    weak var view: PresenterDelegate?
+class PresenterSignIn: PresenterSignInProtocol {
+    weak var view: PresenterSignInDelegate?
     
     func validate(email: String, password: String) {
         if email == ""{
@@ -52,8 +50,8 @@ class Presenter: PresenterProtocol {
             }
         }
     }
-    func createUser(view: UIViewController) {
-        let nib = SignUpController(nibName: "SignUpController", bundle: nil)
+    func onPushScreenSignUp(view: UIViewController) {
+        let nib = SignUpController()
         view.navigationController?.pushViewController(nib, animated: true)
     }
     
@@ -63,5 +61,5 @@ class Presenter: PresenterProtocol {
         }
     }
  
-    
 }
+

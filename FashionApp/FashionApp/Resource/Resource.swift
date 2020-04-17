@@ -21,6 +21,7 @@ class Resource {
         static let myCart = "My Cart"
         static let logIn = "Login"
         static let sighUp = "Sign Up"
+        static let ok = "OK"
     }
     
     class StyleElement {
