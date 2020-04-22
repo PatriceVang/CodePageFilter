@@ -10,5 +10,7 @@ target 'FashionApp' do
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+	pod 'Alamofire'
+	pod 'Kingfisher'
 
 end

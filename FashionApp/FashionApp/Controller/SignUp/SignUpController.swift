@@ -25,10 +25,7 @@ class SignUpController: UIViewController {
         presenterSignUp = PresenterSignUp()
         super.init(nibName: "SignUpController", bundle: nil)
         presenterSignUp.view = self
-        
     }
- 
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,7 +39,6 @@ class SignUpController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
     //MARK: Handle onchange textfield
-    
     @IBAction func tfOnchangeName(_ sender: Any) {
         guard let textfield = sender as? UITextField else {return}
         self.presenterSignUp.handelOnchangeTf(textfield: textfield, lable: lbErrName)

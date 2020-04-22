@@ -12,6 +12,7 @@ import Firebase
 class LoginController: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var lbSaveToken: UILabel!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var lbErrEmail: UILabel!
     @IBOutlet weak var lbErrPassword: UILabel!
@@ -21,6 +22,7 @@ class LoginController: UIViewController {
     //MARK: Proberty
     var headerLogin = Lable()
     var presenter: PresenterSignInProtocol?
+    var isLoginSuccess: Bool = false
     //MARK: Intit
     init() {
         super.init(nibName: "LoginController", bundle: nil)
@@ -66,7 +68,6 @@ class LoginController: UIViewController {
         headerLogin.setTile(title: Resource.Text.logIn)
         self.navigationItem.titleView = headerLogin
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
-        UserDefaults.standard.string(forKey: tfPassword.text!)
         //Img Logo
         Resource.StyleElement.ImgView(imgView: imgLogo)
         //Gesture
@@ -77,6 +78,7 @@ class LoginController: UIViewController {
         self.viewGoogle.isUserInteractionEnabled = true
         self.viewGoogle.addGestureRecognizer(onTapGoogle)
     }
+    
     @objc func onTapViewFaceBook() {
         print("fb")
     }
@@ -86,6 +88,7 @@ class LoginController: UIViewController {
     //MARK:  Login
     @IBAction func onTapBtnConfirm(_ sender: Any) {
         self.presenter?.validate(email: tfEmail.text!, password: tfPassword.text!)
+
     }
     //MARK: Create user
     @IBAction func onTapCreteUser(_ sender: Any) {

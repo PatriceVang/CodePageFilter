@@ -20,11 +20,11 @@ struct Actor: Codable {
     var name: String?
     private var profile_path: String?
     var picture : String {
-        return "https://image.tmdb.org/t/p/original\(profile_path!)"
+        return "https://image.tmdb.org/t/p/original\(profile_path ?? "")"
     }
     var known_for: [Interaction]?
 }
-//
+
 struct Interaction: Codable {
     var vote_average: Float?
 }

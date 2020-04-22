@@ -29,7 +29,6 @@ class Resource {
         static func ImgView(imgView: UIImageView) {
             imgView.image = Image.imgLogo
             imgView.layer.cornerRadius = (UIScreen.main.bounds.width / 2)/5
-//            imgView.layer.masksToBounds = true
             imgView.clipsToBounds = true
             imgView.contentMode = .scaleAspectFill
             imgView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2).isActive = true

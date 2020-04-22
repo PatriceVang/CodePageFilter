@@ -62,8 +62,8 @@
             filePath = "FashionApp/Controller/Detail/DetailController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "customElement()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "FashionApp/Controller/Cart/Cell/MyTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "modelCart"
             landmarkType = "24">
          </BreakpointContent>
@@ -119,16 +119,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "20D57DB7-D11A-42F0-831A-9168CE442ABB"
+            uuid = "4386E142-0A10-4687-90B7-667FE5947C23"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Controller/Home/HomeController.swift"
+            filePath = "FashionApp/Controller/Home/Presenter/PresenterHome.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "PresenterHome"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4386E142-0A10-4687-90B7-667FE5947C23 - a0c78caa938be467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.PresenterHome.onChangeSearchBar(searchText: Swift.String, collectionView: __C.UICollectionView, listData: Swift.Array&lt;FashionApp.ModelCell&gt;, listSreach: Swift.Array&lt;FashionApp.ModelCell&gt;) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/Presenter/PresenterHome.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "266">
+               </Location>
+               <Location
+                  uuid = "4386E142-0A10-4687-90B7-667FE5947C23 - d145ff421c9ea975"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FashionApp.ModelCell) -&gt; Swift.Bool in FashionApp.PresenterHome.onChangeSearchBar(searchText: Swift.String, collectionView: __C.UICollectionView, listData: Swift.Array&lt;FashionApp.ModelCell&gt;, listSreach: Swift.Array&lt;FashionApp.ModelCell&gt;) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/Presenter/PresenterHome.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "135">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43E05914-1D9F-4511-BB97-8C1A986A78A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Resource/CallAPI/CallAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "otherMethod(url:method:header:param:T:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C351E653-13EA-4BF5-939E-079B81F83132"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Resource/CallAPI/CallAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "otherMethod(url:method:header:param:T:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C351E653-13EA-4BF5-939E-079B81F83132 - e4c0282bc051eb2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static FashionApp.APICaller.otherMethod&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(url: Swift.String, method: Swift.String, header: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, param: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, T: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;FashionApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Resource/CallAPI/CallAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "2025">
+               </Location>
+               <Location
+                  uuid = "C351E653-13EA-4BF5-939E-079B81F83132 - 4b7ee879d310876f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static FashionApp.APICaller.otherMethod&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(url: Swift.String, method: Swift.String, header: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, param: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, T: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;FashionApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Resource/CallAPI/CallAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "311">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75F2C974-50B3-4DDE-9CC9-A20161EC614B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Controller/SignIn/View/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewWillDisappear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95EB797A-93B9-4795-8A52-735ED6FB49AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Resource/CallAPI/CallAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "otherMethod(url:method:header:param:T:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

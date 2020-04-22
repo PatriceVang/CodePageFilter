@@ -25,6 +25,8 @@ protocol PresenterSignInProtocol {
 }
 
 class PresenterSignIn: PresenterSignInProtocol {
+  
+    
     weak var view: PresenterSignInDelegate?
     
     func validate(email: String, password: String) {
@@ -50,6 +52,7 @@ class PresenterSignIn: PresenterSignInProtocol {
             }
         }
     }
+
     func onPushScreenSignUp(view: UIViewController) {
         let nib = SignUpController()
         view.navigationController?.pushViewController(nib, animated: true)

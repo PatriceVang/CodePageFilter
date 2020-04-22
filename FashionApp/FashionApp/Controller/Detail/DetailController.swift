@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class DetailController: UIViewController {
     @IBOutlet weak var lbRating: UILabel!
@@ -139,12 +139,8 @@ class DetailController: UIViewController {
     private func getData() {
         guard let data = actor?.picture else {return}
         guard let url = URL(string: data) else {return}
-        do {
-            let dataPic = try Data(contentsOf: url)
-            DispatchQueue.main.async {
-                self.imgPresent.image = UIImage(data: dataPic)
-            }
-        } catch{}
+        self.imgPresent.kf.indicatorType = .activity
+        self.imgPresent.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.5))], progressBlock: nil, completionHandler: nil)
         lbName.text = actor?.name
         guard let popurity = actor?.popularity else {return}
         lbReview.text = String(popurity)

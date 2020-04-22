@@ -14,16 +14,8 @@ class MyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var viewBackgroud: UIView!
     var model: ModelCell? {
         didSet {
-            let q = DispatchQueue(label: "Loadhinh")
-            q.async {
-                let url = URL(string: self.model?.actor?.picture ?? "")
-                do {
-                    let data = try Data(contentsOf: url!)
-                    DispatchQueue.main.async {
-                        self.imgItem.image = UIImage(data: data)
-                    }
-                } catch{}
-            }
+            guard let url = self.model?.actor!.picture else {return}
+            imgItem.setImage(url: url)
             lbTitleItem.text = self.model?.actor?.name
         }
     }

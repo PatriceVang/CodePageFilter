@@ -16,6 +16,9 @@
 		180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973C92449E13D00421A9B /* PresenterSignUp.swift */; };
 		1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831F6FF2445B0750058838F /* MyTableViewCell.swift */; };
 		1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831F7002445B0750058838F /* MyTableViewCell.xib */; };
+		1837E556244EE48D000E6EE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837E555244EE48D000E6EE4 /* User.swift */; };
+		1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */; };
+		1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869DBC7244AE486003A3BC0 /* CallAPI.swift */; };
 		1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E1552443FF5C00A99B9A /* TapBarController.swift */; };
 		1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E1562443FF5C00A99B9A /* TapBarController.xib */; };
 		1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E159244410EE00A99B9A /* MyCollectionCell.swift */; };
@@ -45,6 +48,7 @@
 		18E544CB2443739E00131473 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C92443739E00131473 /* HomeController.swift */; };
 		18E544CC2443739E00131473 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544CA2443739E00131473 /* HomeController.xib */; };
 		18E677432447084000152A1B /* ModelCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E677422447084000152A1B /* ModelCart.swift */; };
+		18F4673A245046D400841938 /* ExtensionSetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46739245046D400841938 /* ExtensionSetImage.swift */; };
 		54A4C99CE832882501BAA17E /* Pods_FashionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,9 @@
 		180973C92449E13D00421A9B /* PresenterSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignUp.swift; sourceTree = "<group>"; };
 		1831F6FF2445B0750058838F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		1831F7002445B0750058838F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		1837E555244EE48D000E6EE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHome.swift; sourceTree = "<group>"; };
+		1869DBC7244AE486003A3BC0 /* CallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPI.swift; sourceTree = "<group>"; };
 		1893E1552443FF5C00A99B9A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		1893E1562443FF5C00A99B9A /* TapBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapBarController.xib; sourceTree = "<group>"; };
 		1893E159244410EE00A99B9A /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		18E544C92443739E00131473 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		18E544CA2443739E00131473 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
 		18E677422447084000152A1B /* ModelCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCart.swift; sourceTree = "<group>"; };
+		18F46739245046D400841938 /* ExtensionSetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetImage.swift; sourceTree = "<group>"; };
 		6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FashionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		969EC40F44DA668508E28111 /* Pods-FashionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.release.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8BA94877C9DC55FA4DBCE3C /* Pods-FashionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.debug.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,10 +117,10 @@
 		18016E262445A4FE003F7EC0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				1869DBC1244A931C003A3BC0 /* Model */,
 				1831F7032445B07D0058838F /* Cell */,
 				18016E272445A516003F7EC0 /* CartController.swift */,
 				18016E282445A516003F7EC0 /* CartController.xib */,
-				18E677422447084000152A1B /* ModelCart.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -166,6 +174,46 @@
 				1831F7002445B0750058838F /* MyTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		1837E554244EDC11000E6EE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1837E555244EE48D000E6EE4 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1869DBC1244A931C003A3BC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18E677422447084000152A1B /* ModelCart.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1869DBC2244A9879003A3BC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1893E16F2444527700A99B9A /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1869DBC3244A9889003A3BC0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1869DBC6244AE466003A3BC0 /* CallAPI */ = {
+			isa = PBXGroup;
+			children = (
+				1869DBC7244AE486003A3BC0 /* CallAPI.swift */,
+			);
+			path = CallAPI;
 			sourceTree = "<group>";
 		};
 		1893E1542443FF3300A99B9A /* Tapbar */ = {
@@ -272,10 +320,12 @@
 		18C102C0244314970025A79C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1869DBC6244AE466003A3BC0 /* CallAPI */,
 				180973B32449905200421A9B /* CustomView */,
 				18C102C2244315ED0025A79C /* Resource.swift */,
 				18E544C424433F3400131473 /* Validate.swift */,
 				18E544C62443479F00131473 /* Dialog.swift */,
+				18F46739245046D400841938 /* ExtensionSetImage.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -294,6 +344,7 @@
 		18E544BE2443374400131473 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				1837E554244EDC11000E6EE4 /* Model */,
 				180973B224496C6000421A9B /* View */,
 				180973AB2449459800421A9B /* Presenter */,
 			);
@@ -314,10 +365,11 @@
 		18E544C82443727B00131473 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1869DBC3244A9889003A3BC0 /* Presenter */,
+				1869DBC2244A9879003A3BC0 /* Model */,
 				1893E15D244410F600A99B9A /* Cell */,
 				18E544C92443739E00131473 /* HomeController.swift */,
 				18E544CA2443739E00131473 /* HomeController.xib */,
-				1893E16F2444527700A99B9A /* Model.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -470,6 +522,8 @@
 				18C102A8244313D50025A79C /* AppDelegate.swift in Sources */,
 				18C102C3244315ED0025A79C /* Resource.swift in Sources */,
 				1893E16C2444308B00A99B9A /* AddController.swift in Sources */,
+				1837E556244EE48D000E6EE4 /* User.swift in Sources */,
+				18F4673A245046D400841938 /* ExtensionSetImage.swift in Sources */,
 				18E677432447084000152A1B /* ModelCart.swift in Sources */,
 				1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */,
 				18E544CB2443739E00131473 /* HomeController.swift in Sources */,
@@ -477,8 +531,10 @@
 				1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */,
 				1893E1702444527700A99B9A /* Model.swift in Sources */,
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
+				1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,
 				1893E16124442C5700A99B9A /* SportController.swift in Sources */,
+				1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */,
 				180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */,
 				18C102BE2443142D0025A79C /* LoginController.swift in Sources */,
 				180973B924499E0200421A9B /* Lable.swift in Sources */,

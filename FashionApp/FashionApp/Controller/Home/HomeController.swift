@@ -17,66 +17,56 @@ class HomeController: UIViewController {
         sb.searchTextField.backgroundColor = .white
         return sb
     }()
+    var presenter: PresenterHomeProtocol
     var listModel = [ModelCell]()
     var countNew = 0
     var listSearch = [ModelCell]()
+    init() {
+        presenter = PresenterHome()
+        super.init(nibName: "HomeController", bundle: nil)
+        presenter.view = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
-        register()
         //Colletion View
+        self.myCollectionView.register(UINib(nibName: "MyCollectionCell", bundle: nil), forCellWithReuseIdentifier: cellID)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         myCollectionView.collectionViewLayout = layout
         self.navigationItem.titleView = searchBar
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         searchBar.delegate = self
+        getData()
+        
     }
-
-
     //MARK: API
     func getData() {
-        guard let url = URL(string: "https://api.themoviedb.org/3/person/popular?api_key=58d10a67ba0f9232e2f1b88e7e13cb1d&language=en-US&page=1") else {return}
-        let task = URLSession.shared.dataTask(with: url) { (data, _, err) in
-            let q = DispatchQueue(label: "request url")
-            q.async {
-                guard let data = data else {return}
-                    do {
-                        let json = try? JSONDecoder().decode(JsonTotal.self, from: data)
-                        guard let arr = json?.results else {return}
-                        DispatchQueue.main.async {
-                            for item in arr {
-                                self.listModel.append(.init(actor: item))
-                  
-                            }
-                            self.listSearch = self.listModel
-                            self.myCollectionView.reloadData()
-                        }
-                    } catch {
-                        if let error = err {
-                            print(error)
-                        }
-                    }
-                }
-            }
-        task.resume()
-    }
-    //Regiser
-    private func register() {
-        let nibCell = UINib(nibName: "MyCollectionCell", bundle: nil)
-        myCollectionView.register(nibCell, forCellWithReuseIdentifier: cellID)
+//        guard let url = URL(string: "https://api.themoviedb.org/3/person/popular?api_key=58d10a67ba0f9232e2f1b88e7e13cb1d&language=en-US&page=1") else {return}
+//        self.presenter.fetchData(url: url)
+        let url = "https://api.themoviedb.org/3/person/popular"
+        
+        self.presenter.fetchData(url: url, param: ["api_key": "58d10a67ba0f9232e2f1b88e7e13cb1d", "language": "en-US", "page": "1"], header: nil)
     }
 }
-//MARK: Search Bar
+    //MARK: Search Bar
 extension HomeController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        self.presenter.onChangeSearchBar(searchText: searchText, collectionView: self.myCollectionView, listData: self.listModel, listSreach: self.listSearch)
+        
         if searchText.isEmpty {
-            self.listSearch = self.listModel
+            self.listSearch = listModel
             self.myCollectionView.reloadData()
             return
+        } else {
+            self.listSearch = self.listModel.filter({ (modelCell) -> Bool in
+                return (modelCell.actor?.name?.contains(searchText))!
+            })
+            self.myCollectionView.reloadData()
         }
-        self.listSearch = self.listModel.filter { return ($0.actor?.name?.contains(searchText))!}
-        self.myCollectionView.reloadData()
     }
 }
 //MARK: Collection
@@ -96,7 +86,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let x = 3
         let y = x - 1
         let width = (collectionView.bounds.width - (CGFloat(y) * 10))/CGFloat(x)
-        return CGSize(width: width , height: collectionView.bounds.width / 2)
+        return CGSize(width: width , height: (collectionView.bounds.height - 40)/3)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 10, left: 10, bottom: 10, right: 10)
@@ -105,14 +95,13 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nib = DetailController(nibName: "DetailController", bundle: nil)
         nib.actor = self.listSearch[indexPath.row].actor
         nib.delegate = self
-    
         self.tabBarController?.navigationController?.pushViewController(nib, animated: true)
     }
 }
@@ -128,7 +117,16 @@ extension HomeController: DetailControllerDelegate {
             cartVC.listData.append(dataCart)
         }
     }
+}
 
+extension HomeController: PresenterHomeDelegate {
+    func passData(data: [Actor]) {
+        for item in data {
+            self.listModel.append(.init(actor: item))
+        }
+        self.listSearch = self.listModel
+        self.myCollectionView.reloadData()
+    }
 }
 
 
