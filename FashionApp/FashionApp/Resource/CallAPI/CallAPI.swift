@@ -27,20 +27,22 @@ enum NetworkError: Error {
 
 class APICaller {
     
-    static func getAPI<T: Codable>(url: URL, _: T.Type ,handler: @escaping (T?, Error?) -> Void) {
-        Alamofire.request(url).responseJSON { (response) in
-            do {
-                let json = try JSONDecoder().decode(T.self, from: response.data!)
-                handler(json, nil)
-            } catch {
-                if let err = response.error {
-                    handler(nil, err)
-                }
-            }
-        }
-    }
+    //MARK: Alamofire
+//    static func getAPI<T: Codable>(url: URL, _: T.Type ,handler: @escaping (T?, Error?) -> Void) {
+//        Alamofire.request(url).responseJSON { (response) in
+//            do {
+//                let json = try JSONDecoder().decode(T.self, from: response.data!)
+//                handler(json, nil)
+//            } catch {
+//                if let err = response.error {
+//                    handler(nil, err)
+//                }
+//            }
+//        }
+//    }
     
-    static func getMethod<T: Codable>(url: String, param: [String: Any]?, header: [String: String]?, _: T.Type, completion: @escaping (T?, NetworkError?) -> Void) {
+    //MARK: Manual
+    static func getMethod<T: Codable>(url: String, param: [String: Any]?, header: [String: String]?, T: T.Type, completion: @escaping (T?, NetworkError?) -> Void) {
         // Config url for get constain param
         guard let url = URL(string: url) else {completion(nil, .urlError); return}
         var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true)
@@ -54,18 +56,7 @@ class APICaller {
         request.allHTTPHeaderFields = header
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { (data, _, err) in
-            guard let data = data else {return}
-            do {
-                let json = try JSONDecoder().decode(T.self, from: data)
-                completion(json, nil)
-            }catch {
-                if err != nil {
-                    completion(nil, .otherError(msg: err!.localizedDescription))
-                }
-            }
-        }
-        task.resume()
+        callAPI(request: request, T: T, completion: completion)
     }
     
     static func otherMethod<T: Codable>(url: String, method: String, header: [String: String]?, param: [String: Any]?, T: T.Type, completion: @escaping (T?, NetworkError?) -> Void ) {
@@ -75,19 +66,7 @@ class APICaller {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = method
         request.httpBody = try? JSONSerialization.data(withJSONObject: param as Any, options: .prettyPrinted)
-        print(try? JSONSerialization.data(withJSONObject: param as Any, options: .prettyPrinted))
-        let taks = URLSession.shared.dataTask(with: request) { (data, _, err) in
-            guard let data = data else {return}
-            do {
-                let json = try JSONDecoder().decode(T.self, from: data)
-                completion(json, nil)
-            }catch {
-                if err != nil {
-                    completion(nil, .otherError(msg: err!.localizedDescription))
-                }
-            }
-        }
-        taks.resume()
+        callAPI(request: request, T: T, completion: completion)
     }
     
     static func callAPI<T: Codable>(request: URLRequest, T: T.Type , completion: @escaping (T?, NetworkError?) -> Void) {

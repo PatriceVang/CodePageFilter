@@ -17,14 +17,17 @@ protocol PresenterHomeProtocol {
     var view: PresenterHomeDelegate? { get set }
 //    func fetchData(url: URL)
 //    func onChangeSearchBar(searchText: String,collectionView: UICollectionView, listData: [ModelCell], listSreach: [ModelCell])
-    func fetchData(url: String, param: [String: Any]?, header:[String: String]?)
+    func fetchData()
 }
 
 class PresenterHome: PresenterHomeProtocol {
     weak var view: PresenterHomeDelegate?
     
-    func fetchData(url: String, param: [String : Any]?, header: [String : String]?) {
-        APICaller.getMethod(url: url, param: param, header: header, JsonTotal.self) { (json, err) in
+    func fetchData() {
+
+        let url = "https://api.themoviedb.org/3/person/popular"
+        let param = ["api_key": "58d10a67ba0f9232e2f1b88e7e13cb1d", "language": "en-US", "page": "1"]
+        APICaller.getMethod(url: url, param: param, header: nil, T: JsonTotal.self) { (json, err) in
             DispatchQueue.main.async {
                 self.view?.passData(data: (json?.results)!)
             }

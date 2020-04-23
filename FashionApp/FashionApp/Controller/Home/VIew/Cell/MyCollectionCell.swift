@@ -12,11 +12,11 @@ class MyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imgItem: UIImageView!
     @IBOutlet weak var lbTitleItem: UILabel!
     @IBOutlet weak var viewBackgroud: UIView!
-    var model: ModelCell? {
+    var model: Actor? {
         didSet {
-            guard let url = self.model?.actor!.picture else {return}
+            guard let url = self.model?.picture else {return}
             imgItem.setImage(url: url)
-            lbTitleItem.text = self.model?.actor?.name
+            lbTitleItem.text = self.model?.name
         }
     }
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class MyCollectionCell: UICollectionViewCell {
         self.layer.shadowOffset = .init(width: 20, height: 20)
     }
 }
+//struct ModelCell {
+//    var actor: Actor?
+//}
 
-struct ModelCell {
-    var actor: Actor?
-}

@@ -13,7 +13,6 @@
                 <outlet property="imgLogo" destination="XYi-NP-2le" id="egO-Ix-zeB"/>
                 <outlet property="lbErrEmail" destination="PeK-t4-hmO" id="Vn3-fu-gt2"/>
                 <outlet property="lbErrPassword" destination="dXF-a9-ZG1" id="INH-Wk-Amk"/>
-                <outlet property="lbSaveToken" destination="uMi-Qd-M07" id="Sxf-f3-dHQ"/>
                 <outlet property="tfEmail" destination="m5g-X6-XnP" id="IqE-Ej-z2h"/>
                 <outlet property="tfPassword" destination="y3z-Yc-HJ2" id="qcm-Jf-5vW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -161,12 +160,6 @@
                         <action selector="onTapCreteUser:" destination="-1" eventType="touchUpInside" id="gd1-ry-aqE"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMi-Qd-M07">
-                    <rect key="frame" x="186" y="600" width="42" height="39"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -175,11 +168,9 @@
                 <constraint firstItem="OGN-eP-7Cs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6O5-kH-0wG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYf-oe-Zkd" secondAttribute="trailing" constant="40" id="Byz-vw-FyF"/>
                 <constraint firstItem="O79-YK-r3g" firstAttribute="top" secondItem="OGN-eP-7Cs" secondAttribute="bottom" constant="15" id="IOX-wl-cFw"/>
-                <constraint firstItem="uMi-Qd-M07" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IhR-5O-0hX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O79-YK-r3g" secondAttribute="trailing" constant="20" id="OMP-PE-Fxk"/>
                 <constraint firstItem="nAO-KK-vHT" firstAttribute="top" secondItem="O79-YK-r3g" secondAttribute="bottom" id="S9h-Ac-oJM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OGN-eP-7Cs" secondAttribute="trailing" constant="20" id="XPk-f9-lKX"/>
-                <constraint firstItem="uMi-Qd-M07" firstAttribute="top" secondItem="FQ9-E9-pSn" secondAttribute="bottom" constant="28" id="aUk-FB-W5A"/>
                 <constraint firstItem="FQ9-E9-pSn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.786232" id="dp4-fi-EOk"/>
                 <constraint firstItem="nAO-KK-vHT" firstAttribute="trailing" secondItem="O79-YK-r3g" secondAttribute="trailing" id="gRF-i3-Ctc"/>
                 <constraint firstItem="JYf-oe-Zkd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="iCX-go-OBb"/>

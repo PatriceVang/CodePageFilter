@@ -138,9 +138,7 @@ class DetailController: UIViewController {
     //MARK: Get data
     private func getData() {
         guard let data = actor?.picture else {return}
-        guard let url = URL(string: data) else {return}
-        self.imgPresent.kf.indicatorType = .activity
-        self.imgPresent.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.5))], progressBlock: nil, completionHandler: nil)
+        self.imgPresent.setImage(url: data)
         lbName.text = actor?.name
         guard let popurity = actor?.popularity else {return}
         lbReview.text = String(popurity)

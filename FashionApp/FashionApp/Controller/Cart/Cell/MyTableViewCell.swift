@@ -23,15 +23,7 @@ class MyTableViewCell: UITableViewCell {
             guard let rating = self.modelCart?.rating else {return}
             lbRating.text = "Rating: \(rating) ⭐️"
             guard let data = self.modelCart?.pic else {return}
-            guard let url = URL(string: data) else {return}
-            self.imgPresent.kf.indicatorType = .activity
-            self.imgPresent.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil, completionHandler: nil)
-//            do {
-//                let data = try Data(contentsOf: url)
-//                DispatchQueue.main.async {
-//                    self.imgPresent.image = UIImage(data: data)
-//                }
-//            }catch{}
+            self.imgPresent.setImage(url: data)
             guard let quantitys = self.modelCart?.quantity else {return}
             lbQuantity.text = "x\(quantitys)"
             guard let size = self.modelCart?.size else {return}

@@ -12,7 +12,6 @@ import Firebase
 class LoginController: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var lbSaveToken: UILabel!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var lbErrEmail: UILabel!
     @IBOutlet weak var lbErrPassword: UILabel!

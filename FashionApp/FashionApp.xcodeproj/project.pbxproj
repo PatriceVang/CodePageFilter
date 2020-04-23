@@ -32,7 +32,6 @@
 		1893E1702444527700A99B9A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E16F2444527700A99B9A /* Model.swift */; };
 		1893E17424446EB500A99B9A /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E17224446EB500A99B9A /* DetailController.swift */; };
 		1893E17524446EB500A99B9A /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E17324446EB500A99B9A /* DetailController.xib */; };
-		18A89AC02447F724005642E5 /* hightlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A89ABF2447F724005642E5 /* hightlight.swift */; };
 		18C102A8244313D50025A79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102A7244313D50025A79C /* AppDelegate.swift */; };
 		18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102A9244313D50025A79C /* SceneDelegate.swift */; };
 		18C102B1244313D80025A79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C102B0244313D80025A79C /* Assets.xcassets */; };
@@ -49,6 +48,7 @@
 		18E544CC2443739E00131473 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544CA2443739E00131473 /* HomeController.xib */; };
 		18E677432447084000152A1B /* ModelCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E677422447084000152A1B /* ModelCart.swift */; };
 		18F4673A245046D400841938 /* ExtensionSetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46739245046D400841938 /* ExtensionSetImage.swift */; };
+		18F467402450911900841938 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4673F2450911900841938 /* Presenter.swift */; };
 		54A4C99CE832882501BAA17E /* Pods_FashionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +78,6 @@
 		1893E16F2444527700A99B9A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1893E17224446EB500A99B9A /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		1893E17324446EB500A99B9A /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
-		18A89ABF2447F724005642E5 /* hightlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hightlight.swift; sourceTree = "<group>"; };
 		18C102A4244313D50025A79C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C102A7244313D50025A79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C102A9244313D50025A79C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		18E544CA2443739E00131473 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
 		18E677422447084000152A1B /* ModelCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCart.swift; sourceTree = "<group>"; };
 		18F46739245046D400841938 /* ExtensionSetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetImage.swift; sourceTree = "<group>"; };
+		18F4673F2450911900841938 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FashionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		969EC40F44DA668508E28111 /* Pods-FashionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.release.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8BA94877C9DC55FA4DBCE3C /* Pods-FashionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.debug.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +155,8 @@
 		180973C52449E04E00421A9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18E544C02443397900131473 /* SignUpController.swift */,
+				18E544C12443397900131473 /* SignUpController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,9 +266,9 @@
 		1893E17124446E9200A99B9A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				1893E17224446EB500A99B9A /* DetailController.swift */,
-				1893E17324446EB500A99B9A /* DetailController.xib */,
-				18A89ABF2447F724005642E5 /* hightlight.swift */,
+				18F4673E245090F500841938 /* Presenter */,
+				18F4673D245090EE00841938 /* Model */,
+				18F4673C245090D500841938 /* VIew */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -356,8 +358,6 @@
 			children = (
 				180973C62449E05900421A9B /* Presenter */,
 				180973C52449E04E00421A9B /* View */,
-				18E544C02443397900131473 /* SignUpController.swift */,
-				18E544C12443397900131473 /* SignUpController.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -365,13 +365,45 @@
 		18E544C82443727B00131473 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				18F4673B245090B700841938 /* VIew */,
 				1869DBC3244A9889003A3BC0 /* Presenter */,
 				1869DBC2244A9879003A3BC0 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18F4673B245090B700841938 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
 				1893E15D244410F600A99B9A /* Cell */,
 				18E544C92443739E00131473 /* HomeController.swift */,
 				18E544CA2443739E00131473 /* HomeController.xib */,
 			);
-			path = Home;
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		18F4673C245090D500841938 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				1893E17224446EB500A99B9A /* DetailController.swift */,
+				1893E17324446EB500A99B9A /* DetailController.xib */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		18F4673D245090EE00841938 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18F4673E245090F500841938 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				18F4673F2450911900841938 /* Presenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		2E7485393E2545302F322153 /* Frameworks */ = {
@@ -539,12 +571,12 @@
 				18C102BE2443142D0025A79C /* LoginController.swift in Sources */,
 				180973B924499E0200421A9B /* Lable.swift in Sources */,
 				180973B7244996FD00421A9B /* Textfield.swift in Sources */,
+				18F467402450911900841938 /* Presenter.swift in Sources */,
 				180973AD244945AE00421A9B /* PresenterSignIn.swift in Sources */,
 				18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */,
 				18016E292445A516003F7EC0 /* CartController.swift in Sources */,
 				1893E17424446EB500A99B9A /* DetailController.swift in Sources */,
 				1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */,
-				18A89AC02447F724005642E5 /* hightlight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
