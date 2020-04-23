@@ -12,6 +12,7 @@ import ObjectMapper
 
 typealias JSON = [String: Any]
 class HomeVC: UIViewController {
+   
     var listUser = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,11 @@ class HomeVC: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    @IBAction func onMoveDetailVC(_ sender: Any) {
+        let nib = DetailVC(nibName: "DetailVC", bundle: nil)
+        self.navigationController?.pushViewController(nib, animated: true)
     }
         
 

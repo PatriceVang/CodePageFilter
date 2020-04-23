@@ -51,6 +51,14 @@
                                         <constraint firstAttribute="height" constant="128" id="XH2-Rv-gWA"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drg-tE-MM5">
+                                    <rect key="frame" x="184" y="217" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="onMoveDetailVC:" destination="-1" eventType="touchUpInside" id="3Gh-nQ-TqD"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>

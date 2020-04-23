@@ -16,6 +16,8 @@
 		18D2990624513D9A00531505 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2990524513D9A00531505 /* Animals.swift */; };
 		18D9D80D24514BB00081FD95 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D80C24514BB00081FD95 /* Presenter.swift */; };
 		18D9D80F24514CAD0081FD95 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D80E24514CAD0081FD95 /* ApiCaller.swift */; };
+		18D9D8172451F1500081FD95 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D8152451F1500081FD95 /* DetailVC.swift */; };
+		18D9D8182451F1500081FD95 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D9D8162451F1500081FD95 /* DetailVC.xib */; };
 		5BFA3E4CB1E7BCFAD72E081D /* Pods_CallApiUsageObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C707C5BF57BF6C46ABE318EA /* Pods_CallApiUsageObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		18D2990524513D9A00531505 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		18D9D80C24514BB00081FD95 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		18D9D80E24514CAD0081FD95 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		18D9D8152451F1500081FD95 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		18D9D8162451F1500081FD95 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
 		C707C5BF57BF6C46ABE318EA /* Pods_CallApiUsageObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallApiUsageObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A95621C5E30660E9C978F1 /* Pods-CallApiUsageObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallApiUsageObjectMapper.release.xcconfig"; path = "Target Support Files/Pods-CallApiUsageObjectMapper/Pods-CallApiUsageObjectMapper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 			children = (
 				18D298FF24513D1000531505 /* HomeVC.swift */,
 				18D2990024513D1000531505 /* HomeVC.xib */,
+				18D9D8152451F1500081FD95 /* DetailVC.swift */,
+				18D9D8162451F1500081FD95 /* DetailVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D298F624513CB200531505 /* LaunchScreen.storyboard in Resources */,
+				18D9D8182451F1500081FD95 /* DetailVC.xib in Resources */,
 				18D2990224513D1000531505 /* HomeVC.xib in Resources */,
 				18D298F324513CB200531505 /* Assets.xcassets in Resources */,
 			);
@@ -253,6 +260,7 @@
 				18D298EA24513CB000531505 /* AppDelegate.swift in Sources */,
 				18D298EC24513CB000531505 /* SceneDelegate.swift in Sources */,
 				18D9D80D24514BB00081FD95 /* Presenter.swift in Sources */,
+				18D9D8172451F1500081FD95 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
