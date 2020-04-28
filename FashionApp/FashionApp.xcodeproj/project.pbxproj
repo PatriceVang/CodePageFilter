@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,7 @@
 		18C102BF2443142D0025A79C /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C102BD2443142D0025A79C /* LoginController.xib */; };
 		18C102C3244315ED0025A79C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102C2244315ED0025A79C /* Resource.swift */; };
 		18C102C5244334500025A79C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C102C4244334500025A79C /* GoogleService-Info.plist */; };
+		18D6FA49245719A3005724FE /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 18D6FA48245719A3005724FE /* Extensions */; };
 		18E544C22443397900131473 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C02443397900131473 /* SignUpController.swift */; };
 		18E544C32443397900131473 /* SignUpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544C12443397900131473 /* SignUpController.xib */; };
 		18E544C524433F3400131473 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C424433F3400131473 /* Validate.swift */; };
@@ -107,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D6FA49245719A3005724FE /* Extensions in Frameworks */,
 				54A4C99CE832882501BAA17E /* Pods_FashionApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +443,9 @@
 			dependencies = (
 			);
 			name = FashionApp;
+			packageProductDependencies = (
+				18D6FA48245719A3005724FE /* Extensions */,
+			);
 			productName = FashionApp;
 			productReference = 18C102A4244313D50025A79C /* FashionApp.app */;
 			productType = "com.apple.product-type.application";
@@ -469,6 +474,9 @@
 				Base,
 			);
 			mainGroup = 18C1029B244313D50025A79C;
+			packageReferences = (
+				18D6FA47245719A3005724FE /* XCRemoteSwiftPackageReference "swift-extensions" */,
+			);
 			productRefGroup = 18C102A5244313D50025A79C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -766,6 +774,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18D6FA47245719A3005724FE /* XCRemoteSwiftPackageReference "swift-extensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/phthphat-share/swift-extensions.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18D6FA48245719A3005724FE /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D6FA47245719A3005724FE /* XCRemoteSwiftPackageReference "swift-extensions" */;
+			productName = Extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18C1029C244313D50025A79C /* Project object */;
 }

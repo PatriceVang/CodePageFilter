@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class LoginController: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
@@ -45,6 +46,12 @@ class LoginController: UIViewController {
         tfPassword.text = UserDefaults.standard.string(forKey: "password")
         customElement()
         hideKeyBoard()
+//        let loginButton = FBLoginButton()
+//        loginButton.center = view.center
+//        view.addSubview(loginButton)
+//        if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller.
+//        }
+//        loginButton.permissions = ["public_profile", "email"]
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +86,30 @@ class LoginController: UIViewController {
     }
     
     @objc func onTapViewFaceBook() {
-        print("fb")
+        let fbLoginMan = LoginManager()
+        fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }
+            let fbLoginResult: LoginManagerLoginResult = result!
+            //user cancle login
+            if result!.isCancelled {
+                return
+            }
+            if fbLoginResult.grantedPermissions.contains("email") {
+                if AccessToken.current != nil {
+                    GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start { (conection, result, error) in
+                        if error == nil {
+                            print(result)
+                            let tabbarVC = TapBarController()
+                            self.navigationController?.pushViewController(tabbarVC, animated: true)
+                        }
+                    }
+                }
+            }
+            
+            
+        }
     }
     @objc func onTapViewGoogle() {
         print("gg")

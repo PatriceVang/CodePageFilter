@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DeclarativeUIKit",
+        "repositoryURL": "https://gitlab.com/phthphat-share/declarativeuikit",
+        "state": {
+          "branch": "master",
+          "revision": "3652d286c97bfe15069bf72c711230abb4d42d3d",
+          "version": null
+        }
+      },
+      {
+        "package": "Extensions",
+        "repositoryURL": "https://gitlab.com/phthphat-share/swift-extensions",
+        "state": {
+          "branch": "master",
+          "revision": "fbd5f740f5ba363fd73d0b86187e1ed1e07820e4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

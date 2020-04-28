@@ -27,7 +27,5 @@ class MyCollectionCell: UICollectionViewCell {
         self.layer.shadowOffset = .init(width: 20, height: 20)
     }
 }
-//struct ModelCell {
-//    var actor: Actor?
-//}
+
 

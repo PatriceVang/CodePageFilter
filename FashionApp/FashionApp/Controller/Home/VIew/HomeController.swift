@@ -45,7 +45,9 @@ class HomeController: UIViewController {
     }
     //MARK: API
     func getData() {
-        self.presenter.fetchData()
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.fetchData()
+        }
     }
 }
     //MARK: Search Bar

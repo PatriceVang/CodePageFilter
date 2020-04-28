@@ -17,6 +17,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSize: UILabel!
     @IBOutlet weak var lbColor: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
+    
     var modelCart: ModelCart? {
         didSet {
             lbName.text = self.modelCart?.name

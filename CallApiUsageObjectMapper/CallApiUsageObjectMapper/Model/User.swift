@@ -9,6 +9,9 @@
 import Foundation
 import ObjectMapper
 
+
+
+
 class User: Mappable {
     var name: String?
     var address: String?

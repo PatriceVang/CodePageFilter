@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Extensions",
+        "repositoryURL": "https://gitlab.com/phthphat-share/swift-extensions.git",
+        "state": {
+          "branch": "master",
+          "revision": "fbd5f740f5ba363fd73d0b86187e1ed1e07820e4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -74,6 +74,7 @@
                                 <constraint firstAttribute="trailing" secondItem="gc0-Xt-li4" secondAttribute="trailing" id="kw4-4i-JM8"/>
                                 <constraint firstItem="FBI-oO-Mjv" firstAttribute="top" secondItem="gc0-Xt-li4" secondAttribute="bottom" id="lUE-7g-TqE"/>
                                 <constraint firstAttribute="trailing" secondItem="24J-e0-X0N" secondAttribute="trailing" id="oH5-C1-EmZ"/>
+                                <constraint firstAttribute="bottom" secondItem="24J-e0-X0N" secondAttribute="bottom" constant="130" id="rS9-sX-dhF"/>
                             </constraints>
                         </view>
                     </subviews>

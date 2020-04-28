@@ -13,7 +13,7 @@
 		18D298F624513CB200531505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D298F424513CB200531505 /* LaunchScreen.storyboard */; };
 		18D2990124513D1000531505 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D298FF24513D1000531505 /* HomeVC.swift */; };
 		18D2990224513D1000531505 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D2990024513D1000531505 /* HomeVC.xib */; };
-		18D2990624513D9A00531505 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2990524513D9A00531505 /* Animals.swift */; };
+		18D2990624513D9A00531505 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2990524513D9A00531505 /* User.swift */; };
 		18D9D80D24514BB00081FD95 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D80C24514BB00081FD95 /* Presenter.swift */; };
 		18D9D80F24514CAD0081FD95 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D80E24514CAD0081FD95 /* ApiCaller.swift */; };
 		18D9D8172451F1500081FD95 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9D8152451F1500081FD95 /* DetailVC.swift */; };
@@ -31,7 +31,7 @@
 		18D298F724513CB200531505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D298FF24513D1000531505 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		18D2990024513D1000531505 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		18D2990524513D9A00531505 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
+		18D2990524513D9A00531505 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18D9D80C24514BB00081FD95 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		18D9D80E24514CAD0081FD95 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		18D9D8152451F1500081FD95 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		18D298FE24513CDF00531505 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18D2990524513D9A00531505 /* Animals.swift */,
+				18D2990524513D9A00531505 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 			files = (
 				18D2990124513D1000531505 /* HomeVC.swift in Sources */,
 				18D9D80F24514CAD0081FD95 /* ApiCaller.swift in Sources */,
-				18D2990624513D9A00531505 /* Animals.swift in Sources */,
+				18D2990624513D9A00531505 /* User.swift in Sources */,
 				18D298EA24513CB000531505 /* AppDelegate.swift in Sources */,
 				18D298EC24513CB000531505 /* SceneDelegate.swift in Sources */,
 				18D9D80D24514BB00081FD95 /* Presenter.swift in Sources */,

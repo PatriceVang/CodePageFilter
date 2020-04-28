@@ -12,5 +12,5 @@ target 'FashionApp' do
 	pod 'Firebase/Firestore'
 	pod 'Alamofire'
 	pod 'Kingfisher'
-
+    	pod 'FBSDKLoginKit'
 end

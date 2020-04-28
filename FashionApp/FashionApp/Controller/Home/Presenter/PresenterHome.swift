@@ -24,7 +24,6 @@ class PresenterHome: PresenterHomeProtocol {
     weak var view: PresenterHomeDelegate?
     
     func fetchData() {
-
         let url = "https://api.themoviedb.org/3/person/popular"
         let param = ["api_key": "58d10a67ba0f9232e2f1b88e7e13cb1d", "language": "en-US", "page": "1"]
         APICaller.getMethod(url: url, param: param, header: nil, T: JsonTotal.self) { (json, err) in
