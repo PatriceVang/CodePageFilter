@@ -66,8 +66,6 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
                 arrViewAnimation[i].backgroundColor = .white
             }
         }
-        
-       
     }
     
     
