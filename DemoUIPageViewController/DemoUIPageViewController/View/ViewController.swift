@@ -10,24 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var viewBackgroud: UIView!
- 
     @IBOutlet var arrViewAnimation: [UIView]!
-    
-   
     @IBOutlet var arrLb: [UILabel]!
     @IBOutlet weak var viewUnderFinalLb: UIView!
     @IBOutlet weak var viewUnderHomeLb: UIView!
     let rootPageVC =  UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     let controllers = [
-           UIViewController(nibName: "HelloVC", bundle: nil),
-           UIViewController(nibName: "HomeVC", bundle: nil),
-           UIViewController(nibName: "FinalVC", bundle: nil)
-       ]
+           HelloVC(),
+           HomeVC(),
+           FinalVC()
+    ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         rootPageVC.dataSource = self
         rootPageVC.delegate = self
         view.addSubview(rootPageVC.view)
@@ -39,8 +39,7 @@ class ViewController: UIViewController {
         pageView?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         pageView?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         pageView?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
-        viewBackgroud.backgroundColor = .gray
+        self.addChild(rootPageVC)
         
     }
 }
@@ -76,7 +75,6 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
         } else {
             return nil
         }
-        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -87,6 +85,4 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
             return nil
         }
     }
-    
-    
 }

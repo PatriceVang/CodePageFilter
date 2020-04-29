@@ -10,4 +10,4 @@ Các project con bao gồm
 - FashionApp: coud firetore, UICollectionVeiew, UISearchBar, Kingfisher, Presenter
 - CustomView: customView with xib , POST method
 - CallApiUsageObjectMapper: UIScrollview, object mapper
-- DemoUIPageViewController: UIPageviewControler, handle amination
+- DemoUIPageViewController: UIPageviewControler, handle amination, addChildView, push Navigation

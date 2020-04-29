@@ -20,20 +20,9 @@ class HelloVC: UIViewController {
     }
     
     @IBAction func onTapPushBtn(_ sender: Any) {
-        print("12")
-//        let nib = WorldVC(nibName: "WorldVC", bundle: nil)
-//        self.navigationController?.pushViewController(nib, animated: true)
+        print("push")
+        let worldVC = WorldVC()
+        self.navigationController?.pushViewController(worldVC, animated: true)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
