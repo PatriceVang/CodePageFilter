@@ -78,8 +78,8 @@
             filePath = "FashionApp/Controller/Cart/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "FashionApp/Controller/Cart/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4386E142-0A10-4687-90B7-667FE5947C23"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Controller/Home/Presenter/PresenterHome.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "PresenterHome"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4386E142-0A10-4687-90B7-667FE5947C23 - a0c78caa938be467"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.PresenterHome.onChangeSearchBar(searchText: Swift.String, collectionView: __C.UICollectionView, listData: Swift.Array&lt;FashionApp.ModelCell&gt;, listSreach: Swift.Array&lt;FashionApp.ModelCell&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/Presenter/PresenterHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "266">
-               </Location>
-               <Location
-                  uuid = "4386E142-0A10-4687-90B7-667FE5947C23 - d145ff421c9ea975"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FashionApp.ModelCell) -&gt; Swift.Bool in FashionApp.PresenterHome.onChangeSearchBar(searchText: Swift.String, collectionView: __C.UICollectionView, listData: Swift.Array&lt;FashionApp.ModelCell&gt;, listSreach: Swift.Array&lt;FashionApp.ModelCell&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/Presenter/PresenterHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "135">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C351E653-13EA-4BF5-939E-079B81F83132"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -174,8 +126,8 @@
             filePath = "FashionApp/Resource/CallAPI/CallAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "otherMethod(url:method:header:param:T:completion:)"
             landmarkType = "7">
             <Locations>
@@ -215,16 +167,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "75F2C974-50B3-4DDE-9CC9-A20161EC614B"
+            uuid = "14704ED9-95A0-4C01-8749-3490102B1F8B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Controller/SignIn/View/LoginController.swift"
+            filePath = "FashionApp/Controller/User/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewWillDisappear(_:)"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "passData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60EC3F38-2691-4554-91B1-084AA29A5A4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Controller/User/Presenter/PresenterUser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

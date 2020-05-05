@@ -14,11 +14,16 @@
 		180973B7244996FD00421A9B /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973B6244996FD00421A9B /* Textfield.swift */; };
 		180973B924499E0200421A9B /* Lable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973B824499E0200421A9B /* Lable.swift */; };
 		180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180973C92449E13D00421A9B /* PresenterSignUp.swift */; };
+		18247CE1245A775A00E31ED5 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18247CE0245A775A00E31ED5 /* credentials.plist */; };
 		1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831F6FF2445B0750058838F /* MyTableViewCell.swift */; };
 		1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831F7002445B0750058838F /* MyTableViewCell.xib */; };
 		1837E556244EE48D000E6EE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837E555244EE48D000E6EE4 /* User.swift */; };
+		184CC56C2460662C009A5CFE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CC56A2460662C009A5CFE /* LoadingView.swift */; };
+		184CC56D2460662C009A5CFE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184CC56B2460662C009A5CFE /* LoadingView.xib */; };
 		1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */; };
 		1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869DBC7244AE486003A3BC0 /* CallAPI.swift */; };
+		187220E5245E76C60012ED1A /* PresenterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187220E4245E76C60012ED1A /* PresenterUser.swift */; };
+		187C8C9B245FC0FB006EF198 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C8C9A245FC0FB006EF198 /* Settings.swift */; };
 		1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E1552443FF5C00A99B9A /* TapBarController.swift */; };
 		1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E1562443FF5C00A99B9A /* TapBarController.xib */; };
 		1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E159244410EE00A99B9A /* MyCollectionCell.swift */; };
@@ -27,8 +32,7 @@
 		1893E16224442C5700A99B9A /* SportController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E16024442C5700A99B9A /* SportController.xib */; };
 		1893E16624442FB400A99B9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E16424442FB400A99B9A /* UserController.swift */; };
 		1893E16724442FB400A99B9A /* UserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E16524442FB400A99B9A /* UserController.xib */; };
-		1893E16C2444308B00A99B9A /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E16A2444308B00A99B9A /* AddController.swift */; };
-		1893E16D2444308B00A99B9A /* AddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E16B2444308B00A99B9A /* AddController.xib */; };
+		1893E16D2444308B00A99B9A /* UtilityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E16B2444308B00A99B9A /* UtilityController.xib */; };
 		1893E1702444527700A99B9A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E16F2444527700A99B9A /* Model.swift */; };
 		1893E17424446EB500A99B9A /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893E17224446EB500A99B9A /* DetailController.swift */; };
 		1893E17524446EB500A99B9A /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1893E17324446EB500A99B9A /* DetailController.xib */; };
@@ -40,7 +44,13 @@
 		18C102BF2443142D0025A79C /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C102BD2443142D0025A79C /* LoginController.xib */; };
 		18C102C3244315ED0025A79C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102C2244315ED0025A79C /* Resource.swift */; };
 		18C102C5244334500025A79C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C102C4244334500025A79C /* GoogleService-Info.plist */; };
+		18CC46782459900300C4D085 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC46772459900300C4D085 /* BaseView.swift */; };
+		18D38ADF246016310052A574 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D38ADD246016300052A574 /* MyCell.swift */; };
+		18D38AE0246016310052A574 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D38ADE246016300052A574 /* MyCell.xib */; };
 		18D6FA49245719A3005724FE /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 18D6FA48245719A3005724FE /* Extensions */; };
+		18E1B4FD24596BE40012D373 /* UtilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1B4FC24596BE40012D373 /* UtilityController.swift */; };
+		18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E43A7C245FC66E0023ED8F /* MyCellUser.swift */; };
+		18E43A7F245FC66F0023ED8F /* MyCellUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E43A7D245FC66E0023ED8F /* MyCellUser.xib */; };
 		18E544C22443397900131473 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C02443397900131473 /* SignUpController.swift */; };
 		18E544C32443397900131473 /* SignUpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544C12443397900131473 /* SignUpController.xib */; };
 		18E544C524433F3400131473 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C424433F3400131473 /* Validate.swift */; };
@@ -49,7 +59,7 @@
 		18E544CC2443739E00131473 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544CA2443739E00131473 /* HomeController.xib */; };
 		18E677432447084000152A1B /* ModelCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E677422447084000152A1B /* ModelCart.swift */; };
 		18F4673A245046D400841938 /* ExtensionSetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46739245046D400841938 /* ExtensionSetImage.swift */; };
-		18F467402450911900841938 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4673F2450911900841938 /* Presenter.swift */; };
+		18F467402450911900841938 /* PresenterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4673F2450911900841938 /* PresenterDetail.swift */; };
 		54A4C99CE832882501BAA17E /* Pods_FashionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,11 +71,16 @@
 		180973B6244996FD00421A9B /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		180973B824499E0200421A9B /* Lable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lable.swift; sourceTree = "<group>"; };
 		180973C92449E13D00421A9B /* PresenterSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterSignUp.swift; sourceTree = "<group>"; };
+		18247CE0245A775A00E31ED5 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		1831F6FF2445B0750058838F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		1831F7002445B0750058838F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		1837E555244EE48D000E6EE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		184CC56A2460662C009A5CFE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		184CC56B2460662C009A5CFE /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHome.swift; sourceTree = "<group>"; };
 		1869DBC7244AE486003A3BC0 /* CallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPI.swift; sourceTree = "<group>"; };
+		187220E4245E76C60012ED1A /* PresenterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterUser.swift; sourceTree = "<group>"; };
+		187C8C9A245FC0FB006EF198 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1893E1552443FF5C00A99B9A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		1893E1562443FF5C00A99B9A /* TapBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapBarController.xib; sourceTree = "<group>"; };
 		1893E159244410EE00A99B9A /* MyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
@@ -74,8 +89,7 @@
 		1893E16024442C5700A99B9A /* SportController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportController.xib; sourceTree = "<group>"; };
 		1893E16424442FB400A99B9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		1893E16524442FB400A99B9A /* UserController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserController.xib; sourceTree = "<group>"; };
-		1893E16A2444308B00A99B9A /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
-		1893E16B2444308B00A99B9A /* AddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddController.xib; sourceTree = "<group>"; };
+		1893E16B2444308B00A99B9A /* UtilityController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtilityController.xib; sourceTree = "<group>"; };
 		1893E16F2444527700A99B9A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1893E17224446EB500A99B9A /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		1893E17324446EB500A99B9A /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
@@ -89,6 +103,12 @@
 		18C102BD2443142D0025A79C /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		18C102C2244315ED0025A79C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		18C102C4244334500025A79C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18CC46772459900300C4D085 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		18D38ADD246016300052A574 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		18D38ADE246016300052A574 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		18E1B4FC24596BE40012D373 /* UtilityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityController.swift; sourceTree = "<group>"; };
+		18E43A7C245FC66E0023ED8F /* MyCellUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellUser.swift; sourceTree = "<group>"; };
+		18E43A7D245FC66E0023ED8F /* MyCellUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCellUser.xib; sourceTree = "<group>"; };
 		18E544C02443397900131473 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		18E544C12443397900131473 /* SignUpController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpController.xib; sourceTree = "<group>"; };
 		18E544C424433F3400131473 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
@@ -97,7 +117,7 @@
 		18E544CA2443739E00131473 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
 		18E677422447084000152A1B /* ModelCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCart.swift; sourceTree = "<group>"; };
 		18F46739245046D400841938 /* ExtensionSetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetImage.swift; sourceTree = "<group>"; };
-		18F4673F2450911900841938 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		18F4673F2450911900841938 /* PresenterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterDetail.swift; sourceTree = "<group>"; };
 		6BB9F0BBB59136BF25CE5AC9 /* Pods_FashionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FashionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		969EC40F44DA668508E28111 /* Pods-FashionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.release.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8BA94877C9DC55FA4DBCE3C /* Pods-FashionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FashionApp.debug.xcconfig"; path = "Target Support Files/Pods-FashionApp/Pods-FashionApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +208,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		184CC569246065F8009A5CFE /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				184CC56A2460662C009A5CFE /* LoadingView.swift */,
+				184CC56B2460662C009A5CFE /* LoadingView.xib */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		1869DBC1244A931C003A3BC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +249,22 @@
 			path = CallAPI;
 			sourceTree = "<group>";
 		};
+		187220E0245E75BD0012ED1A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				187220E4245E76C60012ED1A /* PresenterUser.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		187220E1245E75CB0012ED1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				187C8C9A245FC0FB006EF198 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1893E1542443FF3300A99B9A /* Tapbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,19 +295,23 @@
 		1893E16324442F9F00A99B9A /* User */ = {
 			isa = PBXGroup;
 			children = (
+				18E43A80245FC6750023ED8F /* Cell */,
+				187220E1245E75CB0012ED1A /* Model */,
+				187220E0245E75BD0012ED1A /* Presenter */,
 				1893E16424442FB400A99B9A /* UserController.swift */,
 				1893E16524442FB400A99B9A /* UserController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
 		};
-		1893E16824442FC300A99B9A /* Add */ = {
+		1893E16824442FC300A99B9A /* Utitilys */ = {
 			isa = PBXGroup;
 			children = (
-				1893E16A2444308B00A99B9A /* AddController.swift */,
-				1893E16B2444308B00A99B9A /* AddController.xib */,
+				18D38AD824600DA00052A574 /* DropDownCell */,
+				18E1B4FC24596BE40012D373 /* UtilityController.swift */,
+				1893E16B2444308B00A99B9A /* UtilityController.xib */,
 			);
-			path = Add;
+			path = Utitilys;
 			sourceTree = "<group>";
 		};
 		1893E17124446E9200A99B9A /* Detail */ = {
@@ -301,6 +350,7 @@
 				18C102BB2443140E0025A79C /* Controller */,
 				18C102B5244313D80025A79C /* Info.plist */,
 				18C102C4244334500025A79C /* GoogleService-Info.plist */,
+				18247CE0245A775A00E31ED5 /* credentials.plist */,
 			);
 			path = FashionApp;
 			sourceTree = "<group>";
@@ -310,7 +360,7 @@
 			children = (
 				18016E262445A4FE003F7EC0 /* Cart */,
 				1893E17124446E9200A99B9A /* Detail */,
-				1893E16824442FC300A99B9A /* Add */,
+				1893E16824442FC300A99B9A /* Utitilys */,
 				1893E16324442F9F00A99B9A /* User */,
 				1893E15E24442C3800A99B9A /* Sports */,
 				1893E1542443FF3300A99B9A /* Tapbar */,
@@ -330,6 +380,7 @@
 				18E544C424433F3400131473 /* Validate.swift */,
 				18E544C62443479F00131473 /* Dialog.swift */,
 				18F46739245046D400841938 /* ExtensionSetImage.swift */,
+				18CC46772459900300C4D085 /* BaseView.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -343,6 +394,24 @@
 				18C102B2244313D80025A79C /* LaunchScreen.storyboard */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		18D38AD824600DA00052A574 /* DropDownCell */ = {
+			isa = PBXGroup;
+			children = (
+				18D38ADD246016300052A574 /* MyCell.swift */,
+				18D38ADE246016300052A574 /* MyCell.xib */,
+			);
+			path = DropDownCell;
+			sourceTree = "<group>";
+		};
+		18E43A80245FC6750023ED8F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18E43A7C245FC66E0023ED8F /* MyCellUser.swift */,
+				18E43A7D245FC66E0023ED8F /* MyCellUser.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		18E544BE2443374400131473 /* SignIn */ = {
@@ -377,6 +446,7 @@
 		18F4673B245090B700841938 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				184CC569246065F8009A5CFE /* Footer */,
 				1893E15D244410F600A99B9A /* Cell */,
 				18E544C92443739E00131473 /* HomeController.swift */,
 				18E544CA2443739E00131473 /* HomeController.xib */,
@@ -403,7 +473,7 @@
 		18F4673E245090F500841938 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				18F4673F2450911900841938 /* Presenter.swift */,
+				18F4673F2450911900841938 /* PresenterDetail.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -437,6 +507,7 @@
 				18C102A1244313D50025A79C /* Frameworks */,
 				18C102A2244313D50025A79C /* Resources */,
 				EDD413AA0308611889E06DDF /* [CP] Embed Pods Frameworks */,
+				314C3A73739C36B35605A9BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -495,14 +566,18 @@
 				18C102C5244334500025A79C /* GoogleService-Info.plist in Resources */,
 				1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */,
 				18016E2A2445A516003F7EC0 /* CartController.xib in Resources */,
+				18E43A7F245FC66F0023ED8F /* MyCellUser.xib in Resources */,
 				1893E16224442C5700A99B9A /* SportController.xib in Resources */,
+				18D38AE0246016310052A574 /* MyCell.xib in Resources */,
 				1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */,
 				1893E17524446EB500A99B9A /* DetailController.xib in Resources */,
+				18247CE1245A775A00E31ED5 /* credentials.plist in Resources */,
 				18C102BF2443142D0025A79C /* LoginController.xib in Resources */,
 				18C102B1244313D80025A79C /* Assets.xcassets in Resources */,
 				1893E16724442FB400A99B9A /* UserController.xib in Resources */,
 				18E544CC2443739E00131473 /* HomeController.xib in Resources */,
-				1893E16D2444308B00A99B9A /* AddController.xib in Resources */,
+				1893E16D2444308B00A99B9A /* UtilityController.xib in Resources */,
+				184CC56D2460662C009A5CFE /* LoadingView.xib in Resources */,
 				18E544C32443397900131473 /* SignUpController.xib in Resources */,
 				1893E15C244410EE00A99B9A /* MyCollectionCell.xib in Resources */,
 			);
@@ -511,6 +586,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		314C3A73739C36B35605A9BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FashionApp/Pods-FashionApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FashionApp/Pods-FashionApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FashionApp/Pods-FashionApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B23636462D43BD7AAAC8095A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,29 +649,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CC46782459900300C4D085 /* BaseView.swift in Sources */,
 				18E544C72443479F00131473 /* Dialog.swift in Sources */,
 				18E544C22443397900131473 /* SignUpController.swift in Sources */,
 				18C102A8244313D50025A79C /* AppDelegate.swift in Sources */,
 				18C102C3244315ED0025A79C /* Resource.swift in Sources */,
-				1893E16C2444308B00A99B9A /* AddController.swift in Sources */,
 				1837E556244EE48D000E6EE4 /* User.swift in Sources */,
 				18F4673A245046D400841938 /* ExtensionSetImage.swift in Sources */,
 				18E677432447084000152A1B /* ModelCart.swift in Sources */,
 				1893E1572443FF5C00A99B9A /* TapBarController.swift in Sources */,
 				18E544CB2443739E00131473 /* HomeController.swift in Sources */,
+				18E1B4FD24596BE40012D373 /* UtilityController.swift in Sources */,
 				180973B52449906C00421A9B /* ButtonConfirm.swift in Sources */,
 				1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */,
 				1893E1702444527700A99B9A /* Model.swift in Sources */,
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
 				1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */,
+				18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,
 				1893E16124442C5700A99B9A /* SportController.swift in Sources */,
 				1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */,
 				180973CA2449E13D00421A9B /* PresenterSignUp.swift in Sources */,
+				184CC56C2460662C009A5CFE /* LoadingView.swift in Sources */,
 				18C102BE2443142D0025A79C /* LoginController.swift in Sources */,
+				187C8C9B245FC0FB006EF198 /* Settings.swift in Sources */,
 				180973B924499E0200421A9B /* Lable.swift in Sources */,
 				180973B7244996FD00421A9B /* Textfield.swift in Sources */,
-				18F467402450911900841938 /* Presenter.swift in Sources */,
+				187220E5245E76C60012ED1A /* PresenterUser.swift in Sources */,
+				18F467402450911900841938 /* PresenterDetail.swift in Sources */,
+				18D38ADF246016310052A574 /* MyCell.swift in Sources */,
 				180973AD244945AE00421A9B /* PresenterSignIn.swift in Sources */,
 				18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */,
 				18016E292445A516003F7EC0 /* CartController.swift in Sources */,
@@ -722,6 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,6 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

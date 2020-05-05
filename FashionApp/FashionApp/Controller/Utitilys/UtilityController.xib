@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UtilityController" customModule="FashionApp" customModuleProvider="target">
+            <connections>
+                <outlet property="countingLB" destination="z5m-8n-u25" id="JS2-Id-u3i"/>
+                <outlet property="resetBtn" destination="chz-Il-fyY" id="jU8-h4-hnd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBackgroud" destination="LiN-l8-RTz" id="hPT-RZ-cfZ"/>
+                <outlet property="viewCounting" destination="hy0-Nr-A1j" id="6IH-kj-t0m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiN-l8-RTz">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy0-Nr-A1j">
+                            <rect key="frame" x="117" y="100" width="180" height="180"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5m-8n-u25">
+                                    <rect key="frame" x="66.5" y="44" width="47" height="92"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="77"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="z5m-8n-u25" firstAttribute="centerX" secondItem="hy0-Nr-A1j" secondAttribute="centerX" id="7Y8-5C-uWb"/>
+                                <constraint firstAttribute="width" constant="180" id="FQM-BJ-Z05"/>
+                                <constraint firstAttribute="height" constant="180" id="OnQ-wf-Nf2"/>
+                                <constraint firstItem="z5m-8n-u25" firstAttribute="centerY" secondItem="hy0-Nr-A1j" secondAttribute="centerY" id="xij-s5-upI"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WOW! You are stronger, one more times..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBO-7k-gIw">
+                            <rect key="frame" x="47" y="502" width="320.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chz-Il-fyY">
+                            <rect key="frame" x="169.5" y="380" width="75" height="42"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="AKN-si-Xho"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <state key="normal" title="Reset">
+                                <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onTapResetBtn:" destination="-1" eventType="touchUpInside" id="zsD-dZ-CeE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="kBO-7k-gIw" firstAttribute="top" secondItem="chz-Il-fyY" secondAttribute="bottom" constant="80" id="7vP-nd-E4r"/>
+                        <constraint firstItem="hy0-Nr-A1j" firstAttribute="centerX" secondItem="LiN-l8-RTz" secondAttribute="centerX" id="81f-Xk-zdc"/>
+                        <constraint firstItem="chz-Il-fyY" firstAttribute="top" secondItem="hy0-Nr-A1j" secondAttribute="bottom" constant="100" id="9pz-ic-glN"/>
+                        <constraint firstItem="chz-Il-fyY" firstAttribute="centerX" secondItem="LiN-l8-RTz" secondAttribute="centerX" id="NZj-Wn-rbu"/>
+                        <constraint firstItem="hy0-Nr-A1j" firstAttribute="top" secondItem="LiN-l8-RTz" secondAttribute="top" constant="100" id="u5v-hD-ivQ"/>
+                        <constraint firstItem="kBO-7k-gIw" firstAttribute="centerX" secondItem="LiN-l8-RTz" secondAttribute="centerX" id="xyV-BT-B45"/>
+                        <constraint firstItem="chz-Il-fyY" firstAttribute="centerX" secondItem="hy0-Nr-A1j" secondAttribute="centerX" id="zwm-qJ-Xgr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LiN-l8-RTz" secondAttribute="bottom" id="7bu-rP-7FX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LiN-l8-RTz" secondAttribute="trailing" id="KXw-28-0Iz"/>
+                <constraint firstItem="LiN-l8-RTz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kUz-8c-DCu"/>
+                <constraint firstItem="LiN-l8-RTz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nBu-aq-7R8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="99"/>
+        </view>
+    </objects>
+</document>

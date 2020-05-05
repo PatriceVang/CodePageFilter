@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginController: UIViewController {
+class LoginController: BaseView, GIDSignInDelegate  {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -19,11 +20,20 @@ class LoginController: UIViewController {
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var viewFacebook: UIView!
     @IBOutlet weak var viewGoogle: UIView!
+    lazy var displayPassWordBtn: UIButton = {
+       let dis = UIButton()
+        dis.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        dis.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        dis.translatesAutoresizingMaskIntoConstraints = false
+        dis.setImage(Resource.Image.imgEye, for: .normal)
+        dis.addTarget(self, action: #selector(displayPassWord), for: .touchUpInside)
+        return dis
+    }()
     //MARK: Proberty
     var headerLogin = Lable()
     var presenter: PresenterSignInProtocol?
     var isLoginSuccess: Bool = false
-    //MARK: Intit
+    //MARK: Init
     init() {
         super.init(nibName: "LoginController", bundle: nil)
         presenter = PresenterSignIn()
@@ -40,25 +50,38 @@ class LoginController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tfEmail.text =  UserDefaults.standard.string(forKey: "email")
         tfPassword.text = UserDefaults.standard.string(forKey: "password")
         customElement()
         hideKeyBoard()
-//        let loginButton = FBLoginButton()
-//        loginButton.center = view.center
-//        view.addSubview(loginButton)
-//        if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller.
-//        }
-//        loginButton.permissions = ["public_profile", "email"]
+        //Google
+        GIDSignIn.sharedInstance().delegate = self
     }
-  
     override func viewWillAppear(_ animated: Bool) {
-         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationItem.hidesBackButton = true
+        self.navigationItem.titleView = headerLogin
+        self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+    //MARK: Handle tap
+    // display
+    @objc func displayPassWord() {
+        tfPassword.isSecureTextEntry = !tfPassword.isSecureTextEntry
+    }
+    //login
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+         if let error = error {
+            print(error.localizedDescription)
+           return
+         } else {
+            guard let authentication = user.authentication else { return }
+            _ = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            let tabbarVC = TapBarController()
+            self.navigationController?.pushViewController(tabbarVC, animated: true)
+        }
     }
     //Hiden keyboard
     func  hideKeyBoard() {
@@ -72,10 +95,11 @@ class LoginController: UIViewController {
     private func customElement() {
         // Set title header
         headerLogin.setTile(title: Resource.Text.logIn)
-        self.navigationItem.titleView = headerLogin
-        self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         //Img Logo
         Resource.StyleElement.ImgView(imgView: imgLogo)
+        //View
+        Resource.StyleElement.radiusElement(element: viewFacebook, radius: 25)
+        Resource.StyleElement.radiusElement(element: viewGoogle, radius: 25)
         //Gesture
         let onTapFaceBook = UITapGestureRecognizer(target: self, action: #selector(onTapViewFaceBook))
         self.viewFacebook.isUserInteractionEnabled = true
@@ -83,9 +107,14 @@ class LoginController: UIViewController {
         let onTapGoogle = UITapGestureRecognizer(target: self, action: #selector(onTapViewGoogle))
         self.viewGoogle.isUserInteractionEnabled = true
         self.viewGoogle.addGestureRecognizer(onTapGoogle)
+        tfPassword.isSecureTextEntry = true
+        tfPassword.addSubview(displayPassWordBtn)
+        displayPassWordBtn.trailingAnchor.constraint(equalTo: tfPassword.trailingAnchor, constant: -10).isActive = true
+        displayPassWordBtn.centerYAnchor.constraint(equalTo: tfPassword.centerYAnchor).isActive = true
     }
     
     @objc func onTapViewFaceBook() {
+        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
         let fbLoginMan = LoginManager()
         fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
             if error != nil {
@@ -100,31 +129,28 @@ class LoginController: UIViewController {
                 if AccessToken.current != nil {
                     GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start { (conection, result, error) in
                         if error == nil {
-                            print(result)
                             let tabbarVC = TapBarController()
                             self.navigationController?.pushViewController(tabbarVC, animated: true)
                         }
                     }
                 }
             }
-            
-            
         }
     }
     @objc func onTapViewGoogle() {
-        print("gg")
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+        self.setupAnimationColor(view: viewGoogle, delay: 0, target: self)
     }
     //MARK:  Login
     @IBAction func onTapBtnConfirm(_ sender: Any) {
         self.presenter?.validate(email: tfEmail.text!, password: tfPassword.text!)
-
     }
     //MARK: Create user
     @IBAction func onTapCreteUser(_ sender: Any) {
         self.presenter?.onPushScreenSignUp(view: self)
     }
 }
-
 extension LoginController: PresenterSignInDelegate {
     func passwordIsInvalid(msg: String) {
         Validate.lbShowError(msg: msg, lable: lbErrPassword)
@@ -140,7 +166,7 @@ extension LoginController: PresenterSignInDelegate {
     }
     func loginSuccess() {
         UserDefaults.standard.set(tfEmail.text, forKey: "email")
-        UserDefaults.standard.set(tfPassword.text, forKey: "password")
+//        UserDefaults.standard.set(tfPassword.text, forKey: "password")
         let tabbarVC = TapBarController()
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }

@@ -14,8 +14,7 @@ class Validate {
         let passWordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6,}")
         return passWordTest.evaluate(with: password)
     }
-    
-     static func lbShowError(msg: String, lable: UILabel) {
+    static func lbShowError(msg: String, lable: UILabel) {
            lable.text = msg
            lable.textColor = .red
            lable.alpha = 0.5

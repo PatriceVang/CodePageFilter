@@ -28,7 +28,6 @@ protocol PresenterSignUpProtocol {
 
 class PresenterSignUp: PresenterSignUpProtocol {
     weak var view: PresenterSignUpDelegate?
-    
     func signUp(email: String, password: String, name: String, numberPhone: String) {
         if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.view?.nameIsEmpty(msg: "*Name is empty")
@@ -52,7 +51,6 @@ class PresenterSignUp: PresenterSignUpProtocol {
     }
     
     private func veritySignUp(name: String, numberPhone: String, email: String, password: String) {
-        
         Auth.auth().createUser(withEmail: email.trimmingCharacters(in: .whitespacesAndNewlines), password: password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result, err) in
             if err != nil {
                 self.view?.signUpFailure(msg: "Sign up is failed")

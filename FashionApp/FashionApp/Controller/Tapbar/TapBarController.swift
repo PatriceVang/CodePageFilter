@@ -19,15 +19,15 @@ class TapBarController: UITabBarController {
         cart.tabBarItem = .init(title: "Cart", image: Resource.Image.imgCart, tag: 2)
         return cart
     }()
-    let addVC : AddController = {
-         let sport = AddController()
-        sport.tabBarItem = .init(title: "Add", image: Resource.Image.imgLine, tag: 3)
-         return sport
+    let utitilyVC : UtilityController = {
+         let utitily = UtilityController()
+        utitily.tabBarItem = .init(title: "Utility", image: Resource.Image.imgLine, tag: 3)
+         return utitily
      }()
     override func viewDidLoad() {
         super.viewDidLoad()
         let homeVC = HomeController()
         homeVC.tabBarItem = UITabBarItem(title: "Home", image: Resource.Image.imgHome, tag: 0)
-        self.viewControllers = [UINavigationController(rootViewController: homeVC), userVC,  cartVC, addVC]
+        self.viewControllers = [UINavigationController(rootViewController: homeVC), userVC,  cartVC, utitilyVC]
     }
 }

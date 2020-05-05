@@ -15,6 +15,4 @@ class Dialog {
         alert.addAction(actionOk)
         target.present(alert, animated: true, completion: nil)
     }
-    
-    
 }

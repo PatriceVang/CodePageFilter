@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class MyTableViewCell: UITableViewCell {
-    @IBOutlet weak var viewBorder: UIView!
+
     @IBOutlet weak var imgPresent: UIImageView!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbRating: UILabel!
@@ -35,10 +35,7 @@ class MyTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewBorder.layer.cornerRadius = 15
-        viewBorder.clipsToBounds = true
-        viewBorder.layer.borderWidth = 2
-        viewBorder.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+      
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

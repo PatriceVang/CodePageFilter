@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
             do {
                 let object = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [JSON]
                 let users = Mapper<User>().mapArray(JSONArray: object!)
-//                print(users.map {$0.address})
+                print(users.map {$0.address})
             }catch {
                 print(err?.message)
             }

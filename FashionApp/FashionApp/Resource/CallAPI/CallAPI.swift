@@ -9,9 +9,6 @@
 import UIKit
 import Alamofire
 
-
-
-
 enum NetworkError: Error {
     case urlError
     case otherError(msg: String)

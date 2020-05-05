@@ -11,29 +11,6 @@ import Extensions
 
 private let cellId = "cell"
 
-
-
-//header mau do
-//header ten
-
-class BaseVC: UIViewController { }
-
-
-////
-class BaseChatVC: BaseVC {
-    
-}
-
-///
-class CharCOntoller : BaseChatVC {
-    //
-}
-
-class Another: BaseVC {
-    
-}
-
-
 class CartController: UIViewController {
     @IBOutlet weak var lbMycart: UILabel!
     @IBOutlet weak var viewNavigation: UIView!
@@ -52,11 +29,8 @@ class CartController: UIViewController {
     
     //MARK: Register
     private func register() {
-//        let nibCell = UINib(nibName: "MyTableViewCell", bundle: nil)
-//        myTableView.register(nibCell, forCellReuseIdentifier: cellId)
-        
-        myTableView.registerXibFile(MyTableViewCell.self)
-        
+        let nibCell = UINib(nibName: "MyTableViewCell", bundle: nil)
+        myTableView.register(nibCell, forCellReuseIdentifier: cellId)
     }
     
     //MARK: Custom Element
@@ -73,14 +47,28 @@ extension CartController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as? MyTableViewCell
-        let cell = myTableView.dequeue(MyTableViewCell.self, for: indexPath)
+        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as? MyTableViewCell
         let text = listData[indexPath.row]
-        cell.modelCart = text
-        return cell
+        cell?.modelCart = text
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completion) in
+            print(indexPath)
+            guard let strongSelf = self else {return}
+            strongSelf.listData.remove(at: indexPath.row)
+            strongSelf.myTableView.reloadData()
+            completion(true)
+        }
+        delete.image = UIImage(systemName: "trash")
+        delete.backgroundColor = .red
+
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
     }
 }

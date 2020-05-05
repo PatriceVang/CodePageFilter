@@ -13,4 +13,7 @@ target 'FashionApp' do
 	pod 'Alamofire'
 	pod 'Kingfisher'
     	pod 'FBSDKLoginKit'
+	pod 'GoogleSignIn'
+	pod 'ObjectMapper'
+	pod 'DropDown'
 end

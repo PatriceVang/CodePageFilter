@@ -12,7 +12,7 @@ class Resource {
     
     class Color {
         static let colorHeader  = #colorLiteral(red: 1, green: 0.3909804772, blue: 0.5798481978, alpha: 1)
-        static let colorTapbar = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        static let colorTapbar = #colorLiteral(red: 0.9270647168, green: 0.6391674876, blue: 0.8065266013, alpha: 1)
         static let chosenColor : UIColor = .brown
         static let chosenSize = #colorLiteral(red: 0.6627923963, green: 0.785212094, blue: 1, alpha: 1)
     }
@@ -51,6 +51,8 @@ class Resource {
         static let imgHome = UIImage(named: "ic_home")
         static let imgCart = UIImage(named: "ic_cart")
         static let imgCartNV = UIImage(named: "ic_cart_navi")
+        static let imgBgUtitily = UIImage(named: "img_bg_utitily")
+        static let imgEye = UIImage(named: "ic_eye")
     }
 
 }
