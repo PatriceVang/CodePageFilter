@@ -48,6 +48,7 @@
 		18D38ADF246016310052A574 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D38ADD246016300052A574 /* MyCell.swift */; };
 		18D38AE0246016310052A574 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D38ADE246016300052A574 /* MyCell.xib */; };
 		18D6FA49245719A3005724FE /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 18D6FA48245719A3005724FE /* Extensions */; };
+		18DDFB2A2461639A0009637B /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DDFB292461639A0009637B /* UserDefaultHelper.swift */; };
 		18E1B4FD24596BE40012D373 /* UtilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1B4FC24596BE40012D373 /* UtilityController.swift */; };
 		18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E43A7C245FC66E0023ED8F /* MyCellUser.swift */; };
 		18E43A7F245FC66F0023ED8F /* MyCellUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E43A7D245FC66E0023ED8F /* MyCellUser.xib */; };
@@ -106,6 +107,7 @@
 		18CC46772459900300C4D085 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		18D38ADD246016300052A574 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		18D38ADE246016300052A574 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		18DDFB292461639A0009637B /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		18E1B4FC24596BE40012D373 /* UtilityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityController.swift; sourceTree = "<group>"; };
 		18E43A7C245FC66E0023ED8F /* MyCellUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellUser.swift; sourceTree = "<group>"; };
 		18E43A7D245FC66E0023ED8F /* MyCellUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCellUser.xib; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				18E544C62443479F00131473 /* Dialog.swift */,
 				18F46739245046D400841938 /* ExtensionSetImage.swift */,
 				18CC46772459900300C4D085 /* BaseView.swift */,
+				18DDFB292461639A0009637B /* UserDefaultHelper.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				1893E1702444527700A99B9A /* Model.swift in Sources */,
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
 				1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */,
+				18DDFB2A2461639A0009637B /* UserDefaultHelper.swift in Sources */,
 				18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,
 				1893E16124442C5700A99B9A /* SportController.swift in Sources */,

@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import TTGTagCollectionView
+
 private let cellID = "cell"
 private let footerID = "footer"
 
-
-class HomeController: UIViewController {
+class HomeController: BaseView {
     @IBOutlet weak var myCollectionView: UICollectionView!
-    var isLoading = false
+    let tag = TTGTextTagCollectionView()
     var loadingView: LoadingView?
     let searchBar : UISearchBar = {
         let sb = UISearchBar()
@@ -23,13 +24,10 @@ class HomeController: UIViewController {
     }()
     var presenter: PresenterHomeProtocol
     var listActor = [Actor]()
-    var countNew = 0
     var listSearch = [Actor]()
     var isHidenFooter: Bool = false
     var currentPage = 1
-    var maxPage: Int = 6
-    
-    
+    var maxPage: Int = 3
     init() {
         presenter = PresenterHome()
         super.init(nibName: "HomeController", bundle: nil)
@@ -42,27 +40,55 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Colletion View
-//        self.navigationController?.navigationBar.isHidden = true
         self.myCollectionView.register(UINib(nibName: "MyCollectionCell", bundle: nil), forCellWithReuseIdentifier: cellID)
-        
         self.myCollectionView.register(UINib(nibName: "LoadingView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerID)
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         myCollectionView.collectionViewLayout = layout
         self.navigationItem.titleView = searchBar
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
         searchBar.delegate = self
-        getData()
+        // fetch data
+        self.presenter.fetchData(page: currentPage)
+        //Tag
+        view.addSubview(tag)
+        tag.alignment = .left
+        tag.delegate = self
+        tag.translatesAutoresizingMaskIntoConstraints = false
+        tag.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        tag.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        tag.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        tag.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        tag.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        tag.scrollDirection = .horizontal
+        tag.horizontalSpacing = 10
+        // Hide scrollbar
+        tag.showsHorizontalScrollIndicator = false
+        //Config tag
+        let configRefresh = TTGTextTagConfig()
+        configRefresh.shadowOpacity = 0.5
+        configRefresh.selectedCornerRadius = 5
+        configRefresh.selectedBackgroundColor = #colorLiteral(red: 0.09407735616, green: 0.5303904414, blue: 0.157042712, alpha: 1)
+        configRefresh.backgroundColor = #colorLiteral(red: 0.09407735616, green: 0.5303904414, blue: 0.157042712, alpha: 1)
+        configRefresh.textColor = .white
+        configRefresh.borderColor = .white
+        configRefresh.borderWidth = 2
+        configRefresh.cornerRadius = 5
+        tag.addTags(["Refresh"], with: configRefresh)
+        
+        let config = TTGTextTagConfig()
+        config.shadowOpacity = 0.5
+        config.selectedCornerRadius = 15
+        config.selectedBackgroundColor = .systemBlue
+        config.backgroundColor = .systemBlue
+        config.textColor = .white
+        config.borderColor = .white
+        config.borderWidth = 1
+        config.cornerRadius = 15
+        tag.addTags(["en", "zh", "ko","Favourite"], with: config)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
-    }
-    //MARK: API
-    func getData() {
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.fetchData()
-        }
     }
 }
     //MARK: Search Bar
@@ -77,7 +103,6 @@ extension HomeController: UISearchBarDelegate {
                 return (modelCell.name?.contains(searchText))!
             })
             self.myCollectionView.reloadData()
-            searchBar.showsCancelButton = true
         }
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -89,6 +114,8 @@ extension HomeController: UISearchBarDelegate {
         searchBar.text = ""
         searchBar.showsCancelButton = false
         searchBar.endEditing(true)
+        self.listSearch = listActor
+        self.myCollectionView.reloadData()
     }
 }
 //MARK: Collection
@@ -104,19 +131,26 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell!
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let x = 3
-        let y = x - 1
-        let width = (collectionView.bounds.width - (CGFloat(y) * 10))/CGFloat(x)
-        return CGSize(width: width , height: (collectionView.bounds.height - 40)/3)
+        switch indexPath.row % 3 {
+        case 0:
+            return CGSize(width: myCollectionView.frame.width / 2 , height: (myCollectionView.frame.height - 20) / 2)
+        case 1:
+            return CGSize(width: myCollectionView.frame.width / 1.8, height: (myCollectionView.frame.height - 60) / 2)
+        case 2:
+            return CGSize(width: myCollectionView.frame.width / 2 , height: myCollectionView.frame.width  / 1.2 )
+        default:
+            return .zero
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 10, left: 10, bottom: 10, right: 10)
+        return .init(top: 10, left: 10, bottom: 20, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 5
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -127,39 +161,13 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     //loadmore
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let indexFinal = listActor.count - 10
-        if indexPath.row == indexFinal && !self.isLoading, currentPage + 1 <= maxPage {
-            //allow load more
+        let indexFinal = listActor.count - 1
+        if indexPath.row == indexFinal, currentPage + 1 <= maxPage {
+            currentPage += 1
             self.isHidenFooter = false
             self.loadingView?.indicator.isHidden = false
             self.loadingView?.indicator.startAnimating()
-            currentPage += 1
-            let url = "https://api.themoviedb.org/3/person/popular"
-            let param: [String : Any] = ["api_key": "58d10a67ba0f9232e2f1b88e7e13cb1d", "language": "en-US", "page": currentPage ]
-            if !self.isLoading {
-                self.isLoading = true
-                DispatchQueue.global(qos: .utility).async {
-                    sleep(2)
-                    APICaller.getMethod(url: url, param: param, header: nil, T: JsonTotal.self) { (json, err) in
-                        guard let actor = json?.results else {return}
-//                        guard let totalPage = json?.total_pages else {return}
-                        DispatchQueue.main.async {
-//                            self.maxPage = totalPage
-                            for item in actor {
-                                self.listActor.append(item)
-                            }
-                            self.listSearch = self.listActor
-                            self.myCollectionView.reloadData()
-                            self.isLoading = false
-                            self.loadingView?.indicator.isHidden = true
-                            if self.currentPage == self.maxPage {
-                                self.loadingView?.indicator.isHidden = true
-                                self.isHidenFooter = true
-                            }
-                        }
-                    }
-                }
-            }
+            self.presenter.fetchData(page: currentPage)
         }
     }
     //footer
@@ -167,10 +175,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if self.isHidenFooter {
             return .zero
         } else {
-            let x = 3
-            let y = x - 1
-            let width = (collectionView.bounds.width - (CGFloat(y) * 10))/CGFloat(x)
-            return CGSize(width: width, height: 0)
+            return CGSize(width: myCollectionView.frame.width / 3, height: 100)
         }
     }
     
@@ -191,25 +196,95 @@ extension HomeController: DetailControllerDelegate {
         let vc = self.tabBarController?.viewControllers
         if let cartVC = vc?[2] as? CartController {
             cartVC.listData.append(dataCart)
+            //convert  to Data
+            var data = cartVC.listData
+            UserDefaultHelper.shared.cart = data
         }
     }
 }
 
 extension HomeController: PresenterHomeDelegate {
-    func passDataActorLoadMore(data: [Actor]) {
+//    func passDataActorLoadMore(data: [Actor]) {
 //        for item in data {
 //            listActor.append(item)
 //        }
 //        self.listSearch = self.listActor
 //        self.myCollectionView.reloadData()
 //        self.isLoading = false
-    }
-    func passDataActor(data: [Actor]) {
+//        if currentPage == maxPage {
+//            self.loadingView?.indicator.isHidden = true
+//            self.isHidenFooter = true
+//        }
+//    }
+    func passDataActor(data: [Actor], totalPage: Int) {
         for item in data {
             self.listActor.append(item)
         }
         self.listSearch = self.listActor
         self.myCollectionView.reloadData()
+//        self.maxPage = 3
+        if currentPage == maxPage {
+            self.loadingView?.indicator.isHidden = true
+            self.isHidenFooter = true
+        }
+    }
+}
+
+//MARK: Tag
+extension HomeController: TTGTextTagCollectionViewDelegate  {
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+
+//        enum Languge: String {
+//            case en = "en"
+//            case zh = "zh"
+//            case ko = "ko"
+//        }
+    
+        if tagText == "zh" {
+            self.listSearch = self.listActor.filter {
+                ($0.known_for?.contains { $0.original_language == "zh" })!
+            }
+            self.isHidenFooter = true
+            self.myCollectionView.reloadData()
+        }
+        if tagText == "en" {
+            self.listSearch = self.listActor.filter {
+                ($0.known_for?.contains { $0.original_language == "en" })!
+            }
+            self.isHidenFooter = true
+            self.myCollectionView.reloadData()
+        }
+        if tagText == "ko" {
+            self.listSearch = self.listActor.filter {
+                ($0.known_for?.contains { $0.original_language == "ko" })!
+            }
+            self.isHidenFooter = true
+            self.myCollectionView.reloadData()
+        }
+//        switch tagText {
+//        case Languge.en.rawValue:
+//            return self.listSearch = self.listActor.filter {
+//                ($0.known_for?.contains { $0.original_language == Languge.en.rawValue })!
+//            }
+//            self.myCollectionView.reloadData()
+//        case Languge.en.rawValue:
+//            return self.listSearch = self.listActor.filter {
+//                ($0.known_for?.contains { $0.original_language == Languge.zh.rawValue })!
+//            }
+//            self.myCollectionView.reloadData()
+//        case Languge.ko.rawValue:
+//            return self.listSearch = self.listActor.filter {
+//                ($0.known_for?.contains {$0.original_language == Languge.ko.rawValue})!
+//            }
+//            self.myCollectionView.reloadData()
+//        default:
+//            return
+//        }
+        
+        if tagText == "Refresh" {
+            self.listSearch = self.listActor
+            self.myCollectionView.reloadData()
+        }
     }
 }
 

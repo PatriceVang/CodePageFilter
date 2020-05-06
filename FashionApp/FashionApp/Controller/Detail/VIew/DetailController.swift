@@ -74,6 +74,9 @@ class DetailController: BaseView {
     }
     override func viewWillAppear(_ animated: Bool) {
         customNavigationBar()
+        guard let count = UserDefaultHelper.shared.cart?.count else {return}
+        countingCart = count
+        redDotLb.text = String(countingCart)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,7 +100,7 @@ class DetailController: BaseView {
     @objc func onTapCartNV()  {
           delegate?.goToCart()
           self.navigationController?.popViewController(animated: true)
-      }
+    }
     @objc func onTapAddToCart() {
         let data = ModelCart()
         data.name = lbName.text
@@ -120,6 +123,7 @@ class DetailController: BaseView {
         guard let rating = actor?.known_for?.first else {return}
         guard let ratingNew = rating.vote_average else {return}
         lbRating.text = String(ratingNew)
+        
     }
     //MARK: Custom Element
     private func customBtnCartBar() {
@@ -146,6 +150,7 @@ class DetailController: BaseView {
     private func customElement() {
         // Set height img
         imgPresent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true
+        imgPresent.contentMode = .scaleAspectFill
         // Set strikethrough lable
         let attributeString =  NSMutableAttributedString(string: "$500")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,

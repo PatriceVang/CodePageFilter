@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FBSDKCoreKit
+//import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: scene)
         
-        let email = UserDefaults.standard.string(forKey: "email")
+        let email = UserDefaultHelper.shared.email
         if email != nil {
             window.rootViewController = UINavigationController(rootViewController: TapBarController())
         } else {
@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let context = URLContexts.first else { return }
-        ApplicationDelegate.shared.application( UIApplication.shared, open: context.url, sourceApplication: context.options.sourceApplication, annotation: context.options.annotation )
+//        ApplicationDelegate.shared.application( UIApplication.shared, open: context.url, sourceApplication: context.options.sourceApplication, annotation: context.options.annotation )
     }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -26,7 +26,10 @@ struct Actor: Codable {
 }
 
 struct Interaction: Codable {
+    // first
     var vote_average: Float?
+    var original_language: String?
+    var adult: Bool?
 }
 
 

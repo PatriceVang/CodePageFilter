@@ -171,16 +171,6 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
   - DropDown (2.3.13)
-  - FBSDKCoreKit (6.5.1):
-    - FBSDKCoreKit/Basics (= 6.5.1)
-    - FBSDKCoreKit/Core (= 6.5.1)
-  - FBSDKCoreKit/Basics (6.5.1)
-  - FBSDKCoreKit/Core (6.5.1):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (6.5.1):
-    - FBSDKLoginKit/Login (= 6.5.1)
-  - FBSDKLoginKit/Login (6.5.1):
-    - FBSDKCoreKit (~> 6.5.1)
   - Firebase/Analytics (6.17.0):
     - Firebase/Core
   - Firebase/Auth (6.17.0):
@@ -309,11 +299,11 @@ PODS:
   - nanopb/encode (0.3.9011)
   - ObjectMapper (3.5.2)
   - PromisesObjC (1.2.8)
+  - TTGTagCollectionView (1.11.1)
 
 DEPENDENCIES:
   - Alamofire
   - DropDown
-  - FBSDKLoginKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -321,6 +311,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - Kingfisher
   - ObjectMapper
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
@@ -329,8 +320,6 @@ SPEC REPOS:
     - AppAuth
     - BoringSSL-GRPC
     - DropDown
-    - FBSDKCoreKit
-    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -355,6 +344,7 @@ SPEC REPOS:
     - nanopb
     - ObjectMapper
     - PromisesObjC
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -362,8 +352,6 @@ SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  FBSDKCoreKit: 3ecb604427e115bd90ff7fc62ee1e30ebd12285b
-  FBSDKLoginKit: 8b2bc5fa30ea269e9d7208a1165c0a668c0ae826
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
   FirebaseAnalytics: cf95d3aab897612783020fbd98401d5366f135ee
   FirebaseAuth: 5ce2b03a3d7fe56b7a6e4c5ec7ff1522890b1d6f
@@ -388,7 +376,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: cef021aab8afb30afcd7c99e98ab3ccc08510769
+PODFILE CHECKSUM: d3516c8e0f3fead8f65223a5acd87b9ee85b290a
 
 COCOAPODS: 1.9.1

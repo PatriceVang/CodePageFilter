@@ -60,7 +60,7 @@ class PresenterSignIn: PresenterSignInProtocol {
     
     func handleTfOnchange(textfield: UITextField, lable: UILabel) {
         if textfield.text != nil {
-            lable.text = ""
+            lable.text = " "
         }
     }
  

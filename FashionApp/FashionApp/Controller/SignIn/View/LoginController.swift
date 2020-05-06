@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
+//import FBSDKLoginKit
 import GoogleSignIn
 
 class LoginController: BaseView, GIDSignInDelegate  {
@@ -53,8 +53,6 @@ class LoginController: BaseView, GIDSignInDelegate  {
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfEmail.text =  UserDefaults.standard.string(forKey: "email")
-        tfPassword.text = UserDefaults.standard.string(forKey: "password")
         customElement()
         hideKeyBoard()
         //Google
@@ -65,6 +63,10 @@ class LoginController: BaseView, GIDSignInDelegate  {
         self.navigationController?.navigationItem.hidesBackButton = true
         self.navigationItem.titleView = headerLogin
         self.navigationController?.navigationBar.barTintColor = Resource.Color.colorHeader
+        guard let email = UserDefaultHelper.shared.email else {return}
+        self.tfEmail.text = email
+        guard let password = UserDefaultHelper.shared.password else {return}
+        tfPassword.text = password
     }
     //MARK: Handle tap
     // display
@@ -114,28 +116,28 @@ class LoginController: BaseView, GIDSignInDelegate  {
     }
     
     @objc func onTapViewFaceBook() {
-        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
-        let fbLoginMan = LoginManager()
-        fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }
-            let fbLoginResult: LoginManagerLoginResult = result!
-            //user cancle login
-            if result!.isCancelled {
-                return
-            }
-            if fbLoginResult.grantedPermissions.contains("email") {
-                if AccessToken.current != nil {
-                    GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start { (conection, result, error) in
-                        if error == nil {
-                            let tabbarVC = TapBarController()
-                            self.navigationController?.pushViewController(tabbarVC, animated: true)
-                        }
-                    }
-                }
-            }
-        }
+//        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
+//        let fbLoginMan = LoginManager()
+//        fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//            }
+//            let fbLoginResult: LoginManagerLoginResult = result!
+//            //user cancle login
+//            if result!.isCancelled {
+//                return
+//            }
+//            if fbLoginResult.grantedPermissions.contains("email") {
+//                if AccessToken.current != nil {
+//                    GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start { (conection, result, error) in
+//                        if error == nil {
+//                            let tabbarVC = TapBarController()
+//                            self.navigationController?.pushViewController(tabbarVC, animated: true)
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     @objc func onTapViewGoogle() {
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -165,8 +167,10 @@ extension LoginController: PresenterSignInDelegate {
         Dialog.showDialog(title: Resource.Text.logIn, msg: msg, titleAction: Resource.Text.ok, target: self)
     }
     func loginSuccess() {
-        UserDefaults.standard.set(tfEmail.text, forKey: "email")
-//        UserDefaults.standard.set(tfPassword.text, forKey: "password")
+//        guard let email = tfEmail.text else {return}
+        UserDefaultHelper.shared.email = tfEmail.text
+//        guard let pass = tfPassword.text else {return}
+        UserDefaultHelper.shared.password = tfPassword.text
         let tabbarVC = TapBarController()
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }

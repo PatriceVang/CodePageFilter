@@ -8,11 +8,12 @@
 
 import Foundation
 
-class ModelCart {
+class ModelCart: Codable {
     var name: String?
     var rating: String?
     var color: String?
     var size: Int?
     var pic: String?
     var quantity: Int?
+
 }

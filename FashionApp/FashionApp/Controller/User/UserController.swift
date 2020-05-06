@@ -60,6 +60,12 @@ class UserController: UIViewController {
         super.viewDidLoad()
         customElement()
         myTableView.register(UINib(nibName: "MyCellUser", bundle: nil), forCellReuseIdentifier: cellId)
+        // User's Name
+        guard let text = UserDefaultHelper.shared.name else {return}
+        self.nameOfUserLb.text = text
+        // User's Img
+        guard let img = UserDefaultHelper.shared.presentImg else {return}
+        self.presentOfUserImg.image = UIImage(data: img)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,6 +101,7 @@ class UserController: UIViewController {
                 guard let text = alert.textFields?.first?.text else {return}
                 if text != "" {
                     self.nameOfUserLb.text = text
+                    UserDefaultHelper.shared.name = text
                 }
             }
             alert.addTextField { (tf) in
@@ -191,7 +198,7 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             self.navigationController?.setViewControllers([LoginController()], animated: true)
-            UserDefaults.standard.set(nil, forKey: "email")
+            UserDefaultHelper.shared.email = nil
         }
     }
 }
@@ -201,6 +208,21 @@ extension UserController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let chosenPhoto = info[.editedImage] as! UIImage
         self.presentOfUserImg.image = chosenPhoto
+        //convert to Data
+        guard let data = chosenPhoto.pngData() else { return }
+        //create Url
+//        let doc = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        let url = doc.appendingPathComponent("img_user.png")
+//        do {
+//            //write to disk
+//            try data.write(to: url)
+//            UserDefaults.standard.set(url, forKey: "present")
+//            print(data)
+//        UserDefaults.standard.set(data, forKey: "data")
+        UserDefaultHelper.shared.presentImg = data
+//        }catch {
+//            print(error.localizedDescription)
+//        }
         //chon anh xong r thi dismiss man hinh chon anh (*)
         picker.dismiss(animated: true, completion: nil)
     }
@@ -215,7 +237,5 @@ extension UserController: PresenterUserDelegate {
         self.listSettings = data
         self.myTableView.reloadData()
     }
-    
-    
 }
 
