@@ -23,6 +23,16 @@ struct Actor: Codable {
         return "https://image.tmdb.org/t/p/original\(profile_path ?? "")"
     }
     var known_for: [Interaction]?
+    
+    func isContain(language: HomeController.Language) -> Bool {
+        guard let knownFor = self.known_for else { return false }
+//        return knownFor.reduce(false) { ($1.original_language == language.rawValue) || $0 }
+        
+        
+        return knownFor.reduce(false) { preResult, item in
+            return preResult || item.original_language == language.rawValue
+        }
+    }
 }
 
 struct Interaction: Codable {
@@ -32,7 +42,11 @@ struct Interaction: Codable {
     var adult: Bool?
 }
 
-
-
-
-
+//true || true = true
+//true || false = true
+//false || false = false
+//
+//
+//true && true = true
+//true && false = false
+//false && false = false

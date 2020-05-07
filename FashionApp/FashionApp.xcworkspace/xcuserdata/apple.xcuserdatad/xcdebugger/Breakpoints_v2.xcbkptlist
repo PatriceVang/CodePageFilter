@@ -206,8 +206,8 @@
             filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "passDataActor(data:totalPage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +350,8 @@
             filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "passDataActor(data:totalPage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,58 +366,10 @@
             filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "passDataActor(data:totalPage:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C83DD0F2-387F-482D-BEC8-98A0D3D3306F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Controller/Home/VIew/HomeController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "textTagCollectionView(_:didTapTag:at:selected:tagConfig:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C83DD0F2-387F-482D-BEC8-98A0D3D3306F - 39067472fb199c9b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.HomeController.textTagCollectionView(_: Swift.Optional&lt;__C.TTGTextTagCollectionView&gt;, didTapTag: Swift.Optional&lt;Swift.String&gt;, at: Swift.UInt, selected: Swift.Bool, tagConfig: Swift.Optional&lt;__C.TTGTextTagConfig&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/VIew/HomeController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "769">
-               </Location>
-               <Location
-                  uuid = "C83DD0F2-387F-482D-BEC8-98A0D3D3306F - ff6430cfbbffd9c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (FashionApp.Actor) -&gt; Swift.Bool in FashionApp.HomeController.textTagCollectionView(_: Swift.Optional&lt;__C.TTGTextTagCollectionView&gt;, didTapTag: Swift.Optional&lt;Swift.String&gt;, at: Swift.UInt, selected: Swift.Bool, tagConfig: Swift.Optional&lt;__C.TTGTextTagConfig&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Home/VIew/HomeController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "255"
-                  endingLineNumber = "255"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -450,6 +402,54 @@
             endingLineNumber = "68"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Controller/Detail/VIew/DetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "onPanGesCart(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A - ee14f6f392b2ee84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.DetailController.onPanGesCart(__C.UIPanGestureRecognizer) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Detail/VIew/DetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "3423">
+               </Location>
+               <Location
+                  uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A - 86a64b2f3d5535c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in FashionApp.DetailController.onPanGesCart(__C.UIPanGestureRecognizer) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Detail/VIew/DetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

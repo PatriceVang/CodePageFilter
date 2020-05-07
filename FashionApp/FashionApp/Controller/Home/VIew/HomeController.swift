@@ -57,8 +57,6 @@ class HomeController: BaseView {
         tag.translatesAutoresizingMaskIntoConstraints = false
         tag.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tag.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        tag.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        tag.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         tag.heightAnchor.constraint(equalToConstant: 40).isActive = true
         tag.scrollDirection = .horizontal
         tag.horizontalSpacing = 10
@@ -233,58 +231,44 @@ extension HomeController: PresenterHomeDelegate {
 //MARK: Tag
 extension HomeController: TTGTextTagCollectionViewDelegate  {
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
-
-//        enum Languge: String {
-//            case en = "en"
-//            case zh = "zh"
-//            case ko = "ko"
-//        }
-    
-        if tagText == "zh" {
-            self.listSearch = self.listActor.filter {
-                ($0.known_for?.contains { $0.original_language == "zh" })!
-            }
-            self.isHidenFooter = true
-            self.myCollectionView.reloadData()
-        }
-        if tagText == "en" {
-            self.listSearch = self.listActor.filter {
-                ($0.known_for?.contains { $0.original_language == "en" })!
-            }
-            self.isHidenFooter = true
-            self.myCollectionView.reloadData()
-        }
-        if tagText == "ko" {
-            self.listSearch = self.listActor.filter {
-                ($0.known_for?.contains { $0.original_language == "ko" })!
-            }
-            self.isHidenFooter = true
-            self.myCollectionView.reloadData()
-        }
 //        switch tagText {
 //        case Languge.en.rawValue:
-//            return self.listSearch = self.listActor.filter {
+//            self.listSearch = self.listActor.filter {
 //                ($0.known_for?.contains { $0.original_language == Languge.en.rawValue })!
 //            }
 //            self.myCollectionView.reloadData()
-//        case Languge.en.rawValue:
-//            return self.listSearch = self.listActor.filter {
+//        case Languge.zh.rawValue:
+//            self.listSearch = self.listActor.filter {
 //                ($0.known_for?.contains { $0.original_language == Languge.zh.rawValue })!
 //            }
 //            self.myCollectionView.reloadData()
 //        case Languge.ko.rawValue:
-//            return self.listSearch = self.listActor.filter {
+//            self.listSearch = self.listActor.filter {
 //                ($0.known_for?.contains {$0.original_language == Languge.ko.rawValue})!
 //            }
 //            self.myCollectionView.reloadData()
+//        case Languge.refresh.rawValue:
+//            self.listSearch = self.listActor
+//            self.myCollectionView.reloadData()
 //        default:
-//            return
+//            break
 //        }
-        
-        if tagText == "Refresh" {
-            self.listSearch = self.listActor
-            self.myCollectionView.reloadData()
+        guard let languageCode =  HomeController.Language(rawValue: tagText) else {
+            //refresh
+            if tagText == "Refresh" {
+                self.listSearch = self.listActor
+                self.myCollectionView.reloadData()
+            }
+            return
         }
+        self.listSearch = self.listActor.filter { $0.isContain(language: languageCode) }
+        self.isHidenFooter = true
+        self.myCollectionView.reloadData()
+    }
+    enum Language: String {
+        case en = "en"
+        case zh = "zh"
+        case ko = "ko"
     }
 }
 

@@ -10,6 +10,11 @@ import UIKit
 import Kingfisher
 
 class DetailController: BaseView {
+    @IBOutlet weak var bottomSheetView: UIView!
+    @IBOutlet weak var iconCart: UIImageView!
+    @IBOutlet weak var contentStV: UIStackView!
+    @IBOutlet weak var widthBottomSheetView: NSLayoutConstraint!
+    @IBOutlet weak var heightOfpresentImg: NSLayoutConstraint!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var lbName: UILabel!
@@ -27,6 +32,7 @@ class DetailController: BaseView {
     @IBOutlet weak var viewCounting: UIView!
     @IBOutlet weak var lbCounting: UILabel!
     @IBOutlet weak var imgCartAdd: UIImageView!
+    var tempImg: UIImageView?
     let redDotLb: UILabel = {
         let red = UILabel(frame: CGRect(x: 21, y: 1, width: 16, height: 16))
             red.layer.cornerRadius = red.bounds.size.height / 2
@@ -71,6 +77,7 @@ class DetailController: BaseView {
         getDataFromHome()
         customElement()
         customBtnCartBar()
+     
     }
     override func viewWillAppear(_ animated: Bool) {
         customNavigationBar()
@@ -112,6 +119,67 @@ class DetailController: BaseView {
         self.delegate?.passData(dataCart: data)
         countingCart += 1
         self.setupAnimationMove(view: viewCartAdd, delay: 0, target: self)
+        //Animation when tap btn
+        tempImg = UIImageView()
+        tempImg?.frame = self.imgPresent.frame
+        guard let imgData = self.actor?.picture else {return}
+        tempImg?.setImage(url: imgData)
+        let minXIconCart = self.iconCart.convert(self.iconCart.frame, to: self.view).minX
+        let minYIconCart = self.iconCart.convert(self.iconCart.frame, to: self.view).minY
+        view.addSubview(tempImg!)
+
+        UIView.animate(withDuration: 1, delay: 0.1, options: .curveEaseIn, animations: {
+            self.tempImg?.transform = CGAffineTransform(translationX: minXIconCart, y: minYIconCart)
+            self.tempImg?.frame.size.height -= self.imgPresent.frame.size.height - 10
+            self.tempImg?.frame.size.width -= self.imgPresent.frame.size.width - 10
+            self.tempImg?.alpha = 0
+        }, completion: { _ in
+            if self.widthBottomSheetView.constant < self.view.frame.width - 15 {
+                self.widthBottomSheetView.constant += 50
+            }
+            let item = UIImageView()
+            guard let imgData = self.actor?.picture else {return}
+            item.setImage(url: imgData)
+            item.layer.cornerRadius = 25
+            item.layer.masksToBounds = true
+            item.translatesAutoresizingMaskIntoConstraints = false
+            item.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            self.contentStV.addArrangedSubview(item)
+        })
+    }
+    
+    @objc func onPanGesCart(_ ges: UIPanGestureRecognizer) {
+
+        let translation = ges.translation(in: ges.view)
+//        let velocity = ges.velocity(in: ges.view)
+//        let target = translation.target(initialVelocity: velocity)
+        switch ges.state {
+        case .began, .changed:
+            if self.bottomSheetView.frame.maxX >= self.view.frame.maxX {
+                self.bottomSheetView.center.x += translation.x
+                if self.bottomSheetView.frame.maxX < self.view.frame.maxX {
+
+                    UIView.animate(withDuration: 0.2) {
+                        self.bottomSheetView.center.x = self.view.frame.maxX - ( self.bottomSheetView.frame.width / 2)
+                    }
+                    
+                }
+                var frameOfIconInView = iconCart.convert(iconCart.frame, to: self.view)
+                if frameOfIconInView.maxX > self.view.frame.maxX {
+                    UIView.animate(withDuration: 0.2) {
+                        let x = self.view.frame.maxX - self.iconCart.frame.width
+                        let y = self.bottomSheetView.frame.minY
+                        let width = self.bottomSheetView.frame.width
+                        let heigh = self.bottomSheetView.frame.height
+                        self.bottomSheetView.frame = .init(x: x, y: y, width: width, height: heigh)
+                    }
+                }
+            }
+        case .ended:
+            self.bottomSheetView.center.x += 5
+        default: break
+        }
+        ges.setTranslation(.zero, in: ges.view)
     }
     // get data
     private func getDataFromHome() {
@@ -123,7 +191,6 @@ class DetailController: BaseView {
         guard let rating = actor?.known_for?.first else {return}
         guard let ratingNew = rating.vote_average else {return}
         lbRating.text = String(ratingNew)
-        
     }
     //MARK: Custom Element
     private func customBtnCartBar() {
@@ -149,7 +216,7 @@ class DetailController: BaseView {
     }
     private func customElement() {
         // Set height img
-        imgPresent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true
+        heightOfpresentImg.constant = view.frame.height * 0.4
         imgPresent.contentMode = .scaleAspectFill
         // Set strikethrough lable
         let attributeString =  NSMutableAttributedString(string: "$500")
@@ -186,6 +253,14 @@ class DetailController: BaseView {
         viewRadiusCartAdd.backgroundColor = .white
         btnAdd.showsTouchWhenHighlighted = true
         btnMinus.showsTouchWhenHighlighted = true
+        
+        self.bottomSheetView.layer.cornerRadius = 20
+        self.bottomSheetView.layer.maskedCorners = [.layerMinXMinYCorner]
+        
+        //Pan gesture for icon cart
+        let panGes = UIPanGestureRecognizer(target: self, action: #selector(onPanGesCart(_:)))
+        iconCart.isUserInteractionEnabled = true
+        iconCart.addGestureRecognizer(panGes)
     }
 }
 //MARK: Delegate
@@ -211,5 +286,21 @@ extension DetailController: PresenterDetailDelegate {
             let indexView = arrView.firstIndex(of: item)
             arrView[indexView!].backgroundColor = index == indexView ? Resource.Color.chosenColor : .white
         }
+    }
+}
+
+
+
+public extension CGPoint {
+    // The target points after decelerating to 0 velocity at a constant rate
+    func target(initialVelocity: CGPoint, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGPoint {
+        let x = self.x + self.x.target(initialVelocity: initialVelocity.x, decelerationRate: decelerationRate)
+        let y = self.y + self.y.target(initialVelocity: initialVelocity.y, decelerationRate: decelerationRate)
+        return CGPoint(x: x, y: y)
+    }
+}
+extension CGFloat {
+    func target(initialVelocity: CGFloat, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGFloat {
+        return (initialVelocity / 1000.0) * decelerationRate / (1.0 - decelerationRate)
     }
 }
