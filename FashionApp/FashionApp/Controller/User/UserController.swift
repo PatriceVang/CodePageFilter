@@ -10,10 +10,7 @@ import UIKit
 private let cellId = "cell"
 
 class UserController: UIViewController {
-    
-    
     @IBOutlet weak var headerHeightAnchor: NSLayoutConstraint!
-    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var myTableView: UITableView!
     //MARK: Proberty
@@ -50,11 +47,9 @@ class UserController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         presenterUser.view = self
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

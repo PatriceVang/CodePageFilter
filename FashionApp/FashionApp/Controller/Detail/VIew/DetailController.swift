@@ -34,7 +34,7 @@ class DetailController: BaseView {
     @IBOutlet weak var imgCartAdd: UIImageView!
     var tempImg: UIImageView?
     let redDotLb: UILabel = {
-        let red = UILabel(frame: CGRect(x: 30, y: 0, width: 16, height: 16))
+        let red = UILabel(frame: CGRect(x: 22, y: 0, width: 16, height: 16))
             red.layer.cornerRadius = red.bounds.size.height / 2
             red.textAlignment = .center
             red.layer.masksToBounds = true
@@ -76,8 +76,6 @@ class DetailController: BaseView {
         super.viewDidLoad()
         getDataFromHome()
         customElement()
-//        customBtnCartBar()
-     
     }
     override func viewWillAppear(_ animated: Bool) {
         customNavigationBar()
@@ -150,7 +148,6 @@ class DetailController: BaseView {
     }
     
     @objc func onPanGesCart(_ ges: UIPanGestureRecognizer) {
-
         let translation = ges.translation(in: ges.view)
 //        let velocity = ges.velocity(in: ges.view)
 //        let target = translation.target(initialVelocity: velocity)
@@ -160,15 +157,14 @@ class DetailController: BaseView {
             if self.cartV.frame.maxX >= self.view.frame.maxX {
                 self.cartV.center.x += translation.x
                 if self.cartV.frame.maxX < self.view.frame.maxX {
-
-                    UIView.animate(withDuration: 0.2) {
+                    UIView.animate(withDuration: 1, delay: 0.3, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
                         self.cartV.center.x = self.view.frame.maxX - ( self.cartV.frame.width / 2)
-                    }
+                    }, completion: nil)
                 }
-                var frameOfIconInView = iconCart.convert(iconCart.frame, to: self.view)
+                let frameOfIconInView = iconCart.convert(iconCart.frame, to: self.view)
                 if frameOfIconInView.maxX > self.view.frame.maxX {
                     UIView.animate(withDuration: 0.2) {
-                        let x = self.view.frame.maxX - self.widthBottomSheetView.constant
+                        let x = self.view.frame.maxX - 50
                         let y = self.cartV.frame.minY
                         let with = self.cartV.frame.width
                         let height = self.cartV.frame.height
@@ -194,20 +190,20 @@ class DetailController: BaseView {
         lbRating.text = String(ratingNew)
     }
     //MARK: Custom Element
-    private func customBtnCartBar() {
-        let rightBtnNV: UIBarButtonItem = {
-            let btn = UIBarButtonItem()
-            let rightBtnCart = UIButton()
-            rightBtnCart.setBackgroundImage(Resource.Image.imgCartNV, for: .normal)
-            rightBtnCart.addTarget(self, action: #selector(self.onTapCartNV), for: .touchUpInside)
-            rightBtnCart.addSubview(redDotLb)
-            rightBtnCart.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            rightBtnCart.widthAnchor.constraint(equalToConstant: 30).isActive = true
-            btn.customView = rightBtnCart
-            return btn
-        }()
-        self.navigationItem.rightBarButtonItem = rightBtnNV
-    }
+//    private func customBtnCartBar() {
+//        let rightBtnNV: UIBarButtonItem = {
+//            let btn = UIBarButtonItem()
+//            let rightBtnCart = UIButton()
+//            rightBtnCart.setBackgroundImage(Resource.Image.imgCartNV, for: .normal)
+//            rightBtnCart.addTarget(self, action: #selector(self.onTapCartNV), for: .touchUpInside)
+//            rightBtnCart.addSubview(redDotLb)
+//            rightBtnCart.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//            rightBtnCart.widthAnchor.constraint(equalToConstant: 30).isActive = true
+//            btn.customView = rightBtnCart
+//            return btn
+//        }()
+//        self.navigationItem.rightBarButtonItem = rightBtnNV
+//    }
     private func customNavigationBar() {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isTranslucent = true
@@ -221,9 +217,7 @@ class DetailController: BaseView {
         imgPresent.contentMode = .scaleAspectFill
         // Set strikethrough lable
         let attributeString =  NSMutableAttributedString(string: "$500")
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
-                                             value: 2,
-                                                 range: NSMakeRange(0, attributeString.length))
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
         self.lbPriceOld.attributedText = attributeString
         // Set radius btn and view color
         for i in 0..<arrBtnColor.count {
@@ -254,7 +248,6 @@ class DetailController: BaseView {
         viewRadiusCartAdd.backgroundColor = .white
         btnAdd.showsTouchWhenHighlighted = true
         btnMinus.showsTouchWhenHighlighted = true
-        
         self.cartV.backgroundColor = Resource.Color.colorHeader
         self.cartV.layer.cornerRadius = 20
         self.cartV.layer.maskedCorners = [.layerMinXMinYCorner]

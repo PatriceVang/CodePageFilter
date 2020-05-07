@@ -486,34 +486,34 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="idA-aC-Oq4"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIp-Tw-0zZ">
-                    <rect key="frame" x="369" y="812" width="45" height="50"/>
+                    <rect key="frame" x="364" y="812" width="50" height="50"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27H-Mi-ge9">
-                            <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-Kb-HiE">
-                                    <rect key="frame" x="0.0" y="0.0" width="38" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-Bj-qcV">
-                                            <rect key="frame" x="0.0" y="0.0" width="38" height="10"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="48" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="FQl-22-GNQ"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-c0-L0M">
-                                            <rect key="frame" x="0.0" y="10" width="38" height="30"/>
+                                            <rect key="frame" x="0.0" y="10" width="48" height="30"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cart_navi" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-Bd-jKB">
-                                                    <rect key="frame" x="8" y="0.0" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="0.0" width="40" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Kto-rU-psn"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Kto-rU-psn"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="0.0"/>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVv-fv-EkU">
-                                            <rect key="frame" x="0.0" y="40" width="38" height="10"/>
+                                            <rect key="frame" x="0.0" y="40" width="48" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="lhR-WZ-M2V"/>
                                             </constraints>
@@ -539,7 +539,7 @@
                         <constraint firstAttribute="trailing" secondItem="27H-Mi-ge9" secondAttribute="trailing" id="J2G-bE-UVX"/>
                         <constraint firstAttribute="height" constant="50" id="Lth-PT-gDC"/>
                         <constraint firstItem="27H-Mi-ge9" firstAttribute="top" secondItem="sIp-Tw-0zZ" secondAttribute="top" id="LwF-D2-FU2"/>
-                        <constraint firstAttribute="width" constant="45" id="ur5-yF-ldr"/>
+                        <constraint firstAttribute="width" constant="50" id="ur5-yF-ldr"/>
                         <constraint firstItem="27H-Mi-ge9" firstAttribute="leading" secondItem="sIp-Tw-0zZ" secondAttribute="leading" id="vmW-ul-EFc"/>
                     </constraints>
                 </view>
