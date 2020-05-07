@@ -404,53 +404,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Controller/Detail/VIew/DetailController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "onPanGesCart(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A - ee14f6f392b2ee84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.DetailController.onPanGesCart(__C.UIPanGestureRecognizer) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Detail/VIew/DetailController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "3423">
-               </Location>
-               <Location
-                  uuid = "B8C9DDDA-7B91-42FE-853E-7A6363D66D3A - 86a64b2f3d5535c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in FashionApp.DetailController.onPanGesCart(__C.UIPanGestureRecognizer) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/FashionApp/FashionApp/Controller/Detail/VIew/DetailController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

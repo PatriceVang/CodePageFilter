@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class DetailController: BaseView {
-    @IBOutlet weak var bottomSheetView: UIView!
+    @IBOutlet weak var cartV: UIView!
     @IBOutlet weak var iconCart: UIImageView!
     @IBOutlet weak var contentStV: UIStackView!
     @IBOutlet weak var widthBottomSheetView: NSLayoutConstraint!
@@ -34,7 +34,7 @@ class DetailController: BaseView {
     @IBOutlet weak var imgCartAdd: UIImageView!
     var tempImg: UIImageView?
     let redDotLb: UILabel = {
-        let red = UILabel(frame: CGRect(x: 21, y: 1, width: 16, height: 16))
+        let red = UILabel(frame: CGRect(x: 30, y: 0, width: 16, height: 16))
             red.layer.cornerRadius = red.bounds.size.height / 2
             red.textAlignment = .center
             red.layer.masksToBounds = true
@@ -76,7 +76,7 @@ class DetailController: BaseView {
         super.viewDidLoad()
         getDataFromHome()
         customElement()
-        customBtnCartBar()
+//        customBtnCartBar()
      
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -91,8 +91,8 @@ class DetailController: BaseView {
     }
     //MARK: Handle Tap
     @IBAction func onTapBtnColor(_ sender: Any) {
-        let indexBtn = arrBtnColor.firstIndex(of: sender as! UIButton)
-        self.presenterDetail.chosenColor(index: indexBtn!)
+        let indexBtn = arrBtnColor.firstIndex(of: sender as! UIButton)!
+        self.presenterDetail.chosenColor(index: indexBtn)
     }
     @IBAction func onTapBtnMinus(_ sender: Any) {
         self.presenterDetail.decrementCount(count: counting)
@@ -134,16 +134,17 @@ class DetailController: BaseView {
             self.tempImg?.frame.size.width -= self.imgPresent.frame.size.width - 10
             self.tempImg?.alpha = 0
         }, completion: { _ in
-            if self.widthBottomSheetView.constant < self.view.frame.width - 15 {
-                self.widthBottomSheetView.constant += 50
+            //Handle width of cart
+            if self.widthBottomSheetView.constant < self.view.frame.width - 30 {
+                self.widthBottomSheetView.constant += 35
             }
             let item = UIImageView()
             guard let imgData = self.actor?.picture else {return}
             item.setImage(url: imgData)
-            item.layer.cornerRadius = 25
+            item.layer.cornerRadius = 15
             item.layer.masksToBounds = true
             item.translatesAutoresizingMaskIntoConstraints = false
-            item.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            item.widthAnchor.constraint(equalToConstant: 30).isActive = true
             self.contentStV.addArrangedSubview(item)
         })
     }
@@ -155,28 +156,28 @@ class DetailController: BaseView {
 //        let target = translation.target(initialVelocity: velocity)
         switch ges.state {
         case .began, .changed:
-            if self.bottomSheetView.frame.maxX >= self.view.frame.maxX {
-                self.bottomSheetView.center.x += translation.x
-                if self.bottomSheetView.frame.maxX < self.view.frame.maxX {
+            
+            if self.cartV.frame.maxX >= self.view.frame.maxX {
+                self.cartV.center.x += translation.x
+                if self.cartV.frame.maxX < self.view.frame.maxX {
 
                     UIView.animate(withDuration: 0.2) {
-                        self.bottomSheetView.center.x = self.view.frame.maxX - ( self.bottomSheetView.frame.width / 2)
+                        self.cartV.center.x = self.view.frame.maxX - ( self.cartV.frame.width / 2)
                     }
-                    
                 }
                 var frameOfIconInView = iconCart.convert(iconCart.frame, to: self.view)
                 if frameOfIconInView.maxX > self.view.frame.maxX {
                     UIView.animate(withDuration: 0.2) {
-                        let x = self.view.frame.maxX - self.iconCart.frame.width
-                        let y = self.bottomSheetView.frame.minY
-                        let width = self.bottomSheetView.frame.width
-                        let heigh = self.bottomSheetView.frame.height
-                        self.bottomSheetView.frame = .init(x: x, y: y, width: width, height: heigh)
+                        let x = self.view.frame.maxX - self.widthBottomSheetView.constant
+                        let y = self.cartV.frame.minY
+                        let with = self.cartV.frame.width
+                        let height = self.cartV.frame.height
+                        self.cartV.frame = .init(x: x, y: y, width: with, height: height)
                     }
                 }
             }
         case .ended:
-            self.bottomSheetView.center.x += 5
+            self.cartV.center.x += 5
         default: break
         }
         ges.setTranslation(.zero, in: ges.view)
@@ -254,8 +255,13 @@ class DetailController: BaseView {
         btnAdd.showsTouchWhenHighlighted = true
         btnMinus.showsTouchWhenHighlighted = true
         
-        self.bottomSheetView.layer.cornerRadius = 20
-        self.bottomSheetView.layer.maskedCorners = [.layerMinXMinYCorner]
+        self.cartV.backgroundColor = Resource.Color.colorHeader
+        self.cartV.layer.cornerRadius = 20
+        self.cartV.layer.maskedCorners = [.layerMinXMinYCorner]
+        let tapIconCart = UITapGestureRecognizer(target: self, action: #selector(onTapCartNV))
+        iconCart.isUserInteractionEnabled = true
+        iconCart.addGestureRecognizer(tapIconCart)
+        iconCart.addSubview(redDotLb)
         
         //Pan gesture for icon cart
         let panGes = UIPanGestureRecognizer(target: self, action: #selector(onPanGesCart(_:)))

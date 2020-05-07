@@ -9,9 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailController" customModule="FashionApp" customModuleProvider="target">
             <connections>
-                <outlet property="bottomSheetView" destination="sIp-Tw-0zZ" id="Hay-35-pdo"/>
                 <outlet property="btnAdd" destination="IGM-lq-9s6" id="3t1-lS-TyF"/>
                 <outlet property="btnMinus" destination="XrQ-cG-rmY" id="1mI-PK-ym2"/>
+                <outlet property="cartV" destination="sIp-Tw-0zZ" id="Hay-35-pdo"/>
                 <outlet property="contentStV" destination="XHe-c0-L0M" id="Vex-zE-4nP"/>
                 <outlet property="heightOfpresentImg" destination="tCZ-5e-3vb" id="ZLI-An-OJU"/>
                 <outlet property="iconCart" destination="WaM-Bd-jKB" id="LO9-9Y-GaD"/>
@@ -29,19 +29,19 @@
                 <outlet property="viewCounting" destination="qIz-Ze-7kV" id="gRf-QH-l2l"/>
                 <outlet property="viewRadiusCartAdd" destination="Muq-UY-dyK" id="3wJ-vN-kVE"/>
                 <outlet property="widthBottomSheetView" destination="ur5-yF-ldr" id="OeE-aA-PO4"/>
-                <outletCollection property="arrBtnColor" destination="voK-bX-A01" collectionClass="NSMutableArray" id="eC7-SS-gBt"/>
-                <outletCollection property="arrBtnColor" destination="J86-8A-eXp" collectionClass="NSMutableArray" id="Eob-R7-YfT"/>
-                <outletCollection property="arrBtnSize" destination="JBX-tU-U5s" collectionClass="NSMutableArray" id="yuT-BN-nx8"/>
-                <outletCollection property="arrView" destination="vib-db-7ou" collectionClass="NSMutableArray" id="98f-EX-Hsr"/>
-                <outletCollection property="arrBtnColor" destination="04f-Ig-yMe" collectionClass="NSMutableArray" id="gFP-YJ-SMm"/>
-                <outletCollection property="arrBtnSize" destination="277-gt-c40" collectionClass="NSMutableArray" id="LTM-yF-FAk"/>
-                <outletCollection property="arrBtnSize" destination="Nng-TB-Dvz" collectionClass="NSMutableArray" id="Gtu-yl-7dW"/>
-                <outletCollection property="arrBtnColor" destination="Zu7-4x-UEa" collectionClass="NSMutableArray" id="J0b-oF-Zet"/>
-                <outletCollection property="arrBtnSize" destination="sce-6S-08I" collectionClass="NSMutableArray" id="MWC-WK-4ga"/>
-                <outletCollection property="arrView" destination="R43-Gc-v5o" collectionClass="NSMutableArray" id="7Hq-fl-qyF"/>
-                <outletCollection property="arrView" destination="2tl-GQ-P0V" collectionClass="NSMutableArray" id="8PW-kc-5uC"/>
-                <outletCollection property="arrView" destination="UTr-Ba-Ddc" collectionClass="NSMutableArray" id="d4a-3V-xqw"/>
-                <outletCollection property="arrBtnSize" destination="ufi-ph-8JL" collectionClass="NSMutableArray" id="uAd-aA-OVQ"/>
+                <outletCollection property="arrView" destination="UTr-Ba-Ddc" collectionClass="NSMutableArray" id="8rG-1S-u6y"/>
+                <outletCollection property="arrView" destination="R43-Gc-v5o" collectionClass="NSMutableArray" id="lP9-N7-CP5"/>
+                <outletCollection property="arrView" destination="vib-db-7ou" collectionClass="NSMutableArray" id="TPP-D6-wMe"/>
+                <outletCollection property="arrView" destination="2tl-GQ-P0V" collectionClass="NSMutableArray" id="vHg-cY-jf4"/>
+                <outletCollection property="arrBtnSize" destination="ufi-ph-8JL" collectionClass="NSMutableArray" id="Y4u-S5-YEu"/>
+                <outletCollection property="arrBtnSize" destination="JBX-tU-U5s" collectionClass="NSMutableArray" id="k2Q-sg-Qgq"/>
+                <outletCollection property="arrBtnSize" destination="277-gt-c40" collectionClass="NSMutableArray" id="mkP-UI-JSh"/>
+                <outletCollection property="arrBtnSize" destination="sce-6S-08I" collectionClass="NSMutableArray" id="tKM-28-8Dc"/>
+                <outletCollection property="arrBtnSize" destination="Nng-TB-Dvz" collectionClass="NSMutableArray" id="isa-3r-mCx"/>
+                <outletCollection property="arrBtnColor" destination="04f-Ig-yMe" collectionClass="NSMutableArray" id="aIf-XT-kH9"/>
+                <outletCollection property="arrBtnColor" destination="J86-8A-eXp" collectionClass="NSMutableArray" id="i3r-yU-3c8"/>
+                <outletCollection property="arrBtnColor" destination="voK-bX-A01" collectionClass="NSMutableArray" id="yC3-wk-UgF"/>
+                <outletCollection property="arrBtnColor" destination="Zu7-4x-UEa" collectionClass="NSMutableArray" id="75d-AN-3uo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -49,11 +49,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-uN-16a">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-uN-16a">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i97-H8-9U3">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="828.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="647.66666666666663"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-ul-SW3">
                                     <rect key="frame" x="0.0" y="1" width="414" height="258.66666666666669"/>
@@ -171,7 +171,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="Uyw-D8-Fae"/>
+                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="DVT-kK-4h4"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-tU-U5s">
@@ -184,7 +184,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="ZIg-86-CA2"/>
+                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="ySX-1h-Usj"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="277-gt-c40">
@@ -197,7 +197,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="zBL-h2-boY"/>
+                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="l1V-p7-2PW"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sce-6S-08I">
@@ -210,7 +210,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="F5R-2A-NjE"/>
+                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="FdS-ZT-AH1"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nng-TB-Dvz">
@@ -223,7 +223,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="D9R-nG-4N8"/>
+                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="4ls-iS-55O"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -252,7 +252,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="t5d-Qp-lrB"/>
+                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="4Fc-I5-fEJ"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -272,7 +272,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="Wa2-np-ePI"/>
+                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="cpq-M9-8RE"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -291,7 +291,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="nnN-Mp-1zd"/>
+                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="0VP-9Q-pWd"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -310,7 +310,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="Wdb-9f-LIu"/>
+                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="spZ-Rk-gug"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -334,7 +334,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Oj-ss-7aE">
-                                            <rect key="frame" x="0.0" y="237.66666666666663" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="237.66666666666669" width="414" height="50"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIz-Ze-7kV">
                                                     <rect key="frame" x="0.0" y="0.0" width="229" height="50"/>
@@ -434,7 +434,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-UA-xsv">
-                                                                            <rect key="frame" x="0.0" y="47" width="44" height="3"/>
+                                                                            <rect key="frame" x="0.0" y="46.999999999999943" width="44" height="3"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="3" id="Aq8-x5-sPp"/>
                                                                             </constraints>
@@ -467,9 +467,9 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-hn-HCO">
-                                    <rect key="frame" x="0.0" y="547.66666666666663" width="414" height="281"/>
+                                    <rect key="frame" x="0.0" y="547.66666666666663" width="414" height="100"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="281" id="cmw-zm-6H6"/>
+                                        <constraint firstAttribute="height" constant="100" id="cmw-zm-6H6"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -486,35 +486,36 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="idA-aC-Oq4"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIp-Tw-0zZ">
-                    <rect key="frame" x="314" y="782" width="100" height="80"/>
+                    <rect key="frame" x="369" y="812" width="45" height="50"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27H-Mi-ge9">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-Kb-HiE">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="38" height="50"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-Bj-qcV">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="38" height="10"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="FQl-22-GNQ"/>
+                                                <constraint firstAttribute="height" constant="10" id="FQl-22-GNQ"/>
                                             </constraints>
                                         </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-c0-L0M">
-                                            <rect key="frame" x="0.0" y="15" width="50" height="50"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-c0-L0M">
+                                            <rect key="frame" x="0.0" y="10" width="38" height="30"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-Bd-jKB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cart_navi" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-Bd-jKB">
+                                                    <rect key="frame" x="8" y="0.0" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Kto-rU-psn"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Kto-rU-psn"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="0.0"/>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVv-fv-EkU">
-                                            <rect key="frame" x="0.0" y="65" width="50" height="15"/>
+                                            <rect key="frame" x="0.0" y="40" width="38" height="10"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="lhR-WZ-M2V"/>
+                                                <constraint firstAttribute="height" constant="10" id="lhR-WZ-M2V"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -536,9 +537,9 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="27H-Mi-ge9" secondAttribute="bottom" id="Fyr-Sf-QBP"/>
                         <constraint firstAttribute="trailing" secondItem="27H-Mi-ge9" secondAttribute="trailing" id="J2G-bE-UVX"/>
-                        <constraint firstAttribute="height" constant="80" id="Lth-PT-gDC"/>
+                        <constraint firstAttribute="height" constant="50" id="Lth-PT-gDC"/>
                         <constraint firstItem="27H-Mi-ge9" firstAttribute="top" secondItem="sIp-Tw-0zZ" secondAttribute="top" id="LwF-D2-FU2"/>
-                        <constraint firstAttribute="width" constant="100" id="ur5-yF-ldr"/>
+                        <constraint firstAttribute="width" constant="45" id="ur5-yF-ldr"/>
                         <constraint firstItem="27H-Mi-ge9" firstAttribute="leading" secondItem="sIp-Tw-0zZ" secondAttribute="leading" id="vmW-ul-EFc"/>
                     </constraints>
                 </view>
@@ -547,7 +548,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m2c-uN-16a" secondAttribute="trailing" id="793-f0-UkQ"/>
                 <constraint firstItem="m2c-uN-16a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9xi-rR-35h"/>
-                <constraint firstItem="m2c-uN-16a" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OJV-lC-JDb"/>
+                <constraint firstItem="m2c-uN-16a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OJV-lC-JDb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m2c-uN-16a" secondAttribute="bottom" id="bKr-uD-iWw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sIp-Tw-0zZ" secondAttribute="trailing" id="bR3-f0-cMO"/>
                 <constraint firstItem="sIp-Tw-0zZ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="vmT-gs-JNT"/>
@@ -557,8 +558,8 @@
         </view>
     </objects>
     <resources>
-        <image name="cart" width="60" height="60"/>
         <image name="ic_cart_add" width="50" height="50"/>
+        <image name="ic_cart_navi" width="40" height="40"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
