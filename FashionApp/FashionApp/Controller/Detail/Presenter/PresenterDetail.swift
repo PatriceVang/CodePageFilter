@@ -9,9 +9,9 @@
 import UIKit
 
 protocol PresenterDetailDelegate: class {
-    func passDataColor(color: String, index: Int)
-    func passDataSize(title: String, index: Int)
-    func passCount(count: Int)
+    func passColorData(color: String, index: Int)
+    func passSizeData(title: String, index: Int)
+    func passCountingData(count: Int)
 }
 
 protocol PresenterDetailProtocol {
@@ -34,18 +34,18 @@ class PresenterDetail: PresenterDetailProtocol {
         }else {
             countNew -= 1
         }
-        self.view?.passCount(count: countNew)
+        self.view?.passCountingData(count: countNew)
     }
 
     func incrementCount(count: Int) {
         var countNew = count
         countNew += 1
-        self.view?.passCount(count: countNew)
+        self.view?.passCountingData(count: countNew)
     }
     // Chosen size and color
     func chosenSize(index: Int, arrBtn: [UIButton]) {
         let title = arrBtn[index].currentTitle
-        self.view?.passDataSize(title: title!, index: index)
+        self.view?.passSizeData(title: title!, index: index)
     }
     func chosenColor(index: Int) {
         var color: String {
@@ -62,7 +62,7 @@ class PresenterDetail: PresenterDetailProtocol {
                 return ""
             }
         }
-        self.view?.passDataColor(color: color, index: index)
+        self.view?.passColorData(color: color, index: index)
     }
 }
 

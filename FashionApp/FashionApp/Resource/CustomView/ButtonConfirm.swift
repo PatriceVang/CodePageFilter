@@ -19,7 +19,7 @@ class ButtonConfirm: UIButton {
     }
     func initView() {
         self.layer.cornerRadius = 15
-        self.backgroundColor = #colorLiteral(red: 1, green: 0.3909804772, blue: 0.5798481978, alpha: 1)
+        self.backgroundColor = Resource.Color.colorHeader
         self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 25)
         self.showsTouchWhenHighlighted = true

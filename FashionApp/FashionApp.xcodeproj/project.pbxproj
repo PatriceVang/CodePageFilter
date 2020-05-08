@@ -18,6 +18,10 @@
 		1831F7012445B0750058838F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831F6FF2445B0750058838F /* MyTableViewCell.swift */; };
 		1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831F7002445B0750058838F /* MyTableViewCell.xib */; };
 		1837E556244EE48D000E6EE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837E555244EE48D000E6EE4 /* User.swift */; };
+		183A8F762464F83700C90929 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A8F742464F83700C90929 /* SettingsVC.swift */; };
+		183A8F772464F83700C90929 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183A8F752464F83700C90929 /* SettingsVC.xib */; };
+		183A8F7C2464F87800C90929 /* MySettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A8F7A2464F87800C90929 /* MySettingsCell.swift */; };
+		183A8F7D2464F87800C90929 /* MySettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183A8F7B2464F87800C90929 /* MySettingsCell.xib */; };
 		184CC56C2460662C009A5CFE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CC56A2460662C009A5CFE /* LoadingView.swift */; };
 		184CC56D2460662C009A5CFE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184CC56B2460662C009A5CFE /* LoadingView.xib */; };
 		1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */; };
@@ -45,13 +49,13 @@
 		18C102C3244315ED0025A79C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C102C2244315ED0025A79C /* Resource.swift */; };
 		18C102C5244334500025A79C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C102C4244334500025A79C /* GoogleService-Info.plist */; };
 		18CC46782459900300C4D085 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC46772459900300C4D085 /* BaseView.swift */; };
-		18D38ADF246016310052A574 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D38ADD246016300052A574 /* MyCell.swift */; };
-		18D38AE0246016310052A574 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D38ADE246016300052A574 /* MyCell.xib */; };
+		18D38ADF246016310052A574 /* OptionDropdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D38ADD246016300052A574 /* OptionDropdownCell.swift */; };
+		18D38AE0246016310052A574 /* OptionDropdownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D38ADE246016300052A574 /* OptionDropdownCell.xib */; };
 		18D6FA49245719A3005724FE /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 18D6FA48245719A3005724FE /* Extensions */; };
 		18DDFB2A2461639A0009637B /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DDFB292461639A0009637B /* UserDefaultHelper.swift */; };
 		18E1B4FD24596BE40012D373 /* UtilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1B4FC24596BE40012D373 /* UtilityController.swift */; };
-		18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E43A7C245FC66E0023ED8F /* MyCellUser.swift */; };
-		18E43A7F245FC66F0023ED8F /* MyCellUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E43A7D245FC66E0023ED8F /* MyCellUser.xib */; };
+		18E43A7E245FC66F0023ED8F /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E43A7C245FC66E0023ED8F /* OptionCell.swift */; };
+		18E43A7F245FC66F0023ED8F /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E43A7D245FC66E0023ED8F /* OptionCell.xib */; };
 		18E544C22443397900131473 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C02443397900131473 /* SignUpController.swift */; };
 		18E544C32443397900131473 /* SignUpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E544C12443397900131473 /* SignUpController.xib */; };
 		18E544C524433F3400131473 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E544C424433F3400131473 /* Validate.swift */; };
@@ -76,6 +80,10 @@
 		1831F6FF2445B0750058838F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		1831F7002445B0750058838F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		1837E555244EE48D000E6EE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		183A8F742464F83700C90929 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		183A8F752464F83700C90929 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		183A8F7A2464F87800C90929 /* MySettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingsCell.swift; sourceTree = "<group>"; };
+		183A8F7B2464F87800C90929 /* MySettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySettingsCell.xib; sourceTree = "<group>"; };
 		184CC56A2460662C009A5CFE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		184CC56B2460662C009A5CFE /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1869DBC4244A99DC003A3BC0 /* PresenterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHome.swift; sourceTree = "<group>"; };
@@ -105,12 +113,12 @@
 		18C102C2244315ED0025A79C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		18C102C4244334500025A79C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18CC46772459900300C4D085 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		18D38ADD246016300052A574 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
-		18D38ADE246016300052A574 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		18D38ADD246016300052A574 /* OptionDropdownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDropdownCell.swift; sourceTree = "<group>"; };
+		18D38ADE246016300052A574 /* OptionDropdownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionDropdownCell.xib; sourceTree = "<group>"; };
 		18DDFB292461639A0009637B /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		18E1B4FC24596BE40012D373 /* UtilityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityController.swift; sourceTree = "<group>"; };
-		18E43A7C245FC66E0023ED8F /* MyCellUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellUser.swift; sourceTree = "<group>"; };
-		18E43A7D245FC66E0023ED8F /* MyCellUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCellUser.xib; sourceTree = "<group>"; };
+		18E43A7C245FC66E0023ED8F /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		18E43A7D245FC66E0023ED8F /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		18E544C02443397900131473 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		18E544C12443397900131473 /* SignUpController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpController.xib; sourceTree = "<group>"; };
 		18E544C424433F3400131473 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
@@ -208,6 +216,33 @@
 				1837E555244EE48D000E6EE4 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		183A8F722464F7FC00C90929 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				183A8F792464F84700C90929 /* Cell */,
+				183A8F782464F83C00C90929 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		183A8F782464F83C00C90929 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				183A8F742464F83700C90929 /* SettingsVC.swift */,
+				183A8F752464F83700C90929 /* SettingsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		183A8F792464F84700C90929 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				183A8F7A2464F87800C90929 /* MySettingsCell.swift */,
+				183A8F7B2464F87800C90929 /* MySettingsCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		184CC569246065F8009A5CFE /* Footer */ = {
@@ -309,7 +344,7 @@
 		1893E16824442FC300A99B9A /* Utitilys */ = {
 			isa = PBXGroup;
 			children = (
-				18D38AD824600DA00052A574 /* DropDownCell */,
+				18D38AD824600DA00052A574 /* Cell */,
 				18E1B4FC24596BE40012D373 /* UtilityController.swift */,
 				1893E16B2444308B00A99B9A /* UtilityController.xib */,
 			);
@@ -360,6 +395,7 @@
 		18C102BB2443140E0025A79C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				183A8F722464F7FC00C90929 /* Settings */,
 				18016E262445A4FE003F7EC0 /* Cart */,
 				1893E17124446E9200A99B9A /* Detail */,
 				1893E16824442FC300A99B9A /* Utitilys */,
@@ -399,20 +435,20 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
-		18D38AD824600DA00052A574 /* DropDownCell */ = {
+		18D38AD824600DA00052A574 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				18D38ADD246016300052A574 /* MyCell.swift */,
-				18D38ADE246016300052A574 /* MyCell.xib */,
+				18D38ADD246016300052A574 /* OptionDropdownCell.swift */,
+				18D38ADE246016300052A574 /* OptionDropdownCell.xib */,
 			);
-			path = DropDownCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		18E43A80245FC6750023ED8F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				18E43A7C245FC66E0023ED8F /* MyCellUser.swift */,
-				18E43A7D245FC66E0023ED8F /* MyCellUser.xib */,
+				18E43A7C245FC66E0023ED8F /* OptionCell.swift */,
+				18E43A7D245FC66E0023ED8F /* OptionCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -569,15 +605,17 @@
 				18C102C5244334500025A79C /* GoogleService-Info.plist in Resources */,
 				1893E1582443FF5C00A99B9A /* TapBarController.xib in Resources */,
 				18016E2A2445A516003F7EC0 /* CartController.xib in Resources */,
-				18E43A7F245FC66F0023ED8F /* MyCellUser.xib in Resources */,
+				18E43A7F245FC66F0023ED8F /* OptionCell.xib in Resources */,
 				1893E16224442C5700A99B9A /* SportController.xib in Resources */,
-				18D38AE0246016310052A574 /* MyCell.xib in Resources */,
+				18D38AE0246016310052A574 /* OptionDropdownCell.xib in Resources */,
+				183A8F772464F83700C90929 /* SettingsVC.xib in Resources */,
 				1831F7022445B0750058838F /* MyTableViewCell.xib in Resources */,
 				1893E17524446EB500A99B9A /* DetailController.xib in Resources */,
 				18247CE1245A775A00E31ED5 /* credentials.plist in Resources */,
 				18C102BF2443142D0025A79C /* LoginController.xib in Resources */,
 				18C102B1244313D80025A79C /* Assets.xcassets in Resources */,
 				1893E16724442FB400A99B9A /* UserController.xib in Resources */,
+				183A8F7D2464F87800C90929 /* MySettingsCell.xib in Resources */,
 				18E544CC2443739E00131473 /* HomeController.xib in Resources */,
 				1893E16D2444308B00A99B9A /* UtilityController.xib in Resources */,
 				184CC56D2460662C009A5CFE /* LoadingView.xib in Resources */,
@@ -669,7 +707,8 @@
 				1893E16624442FB400A99B9A /* UserController.swift in Sources */,
 				1869DBC8244AE486003A3BC0 /* CallAPI.swift in Sources */,
 				18DDFB2A2461639A0009637B /* UserDefaultHelper.swift in Sources */,
-				18E43A7E245FC66F0023ED8F /* MyCellUser.swift in Sources */,
+				183A8F762464F83700C90929 /* SettingsVC.swift in Sources */,
+				18E43A7E245FC66F0023ED8F /* OptionCell.swift in Sources */,
 				18E544C524433F3400131473 /* Validate.swift in Sources */,
 				1893E16124442C5700A99B9A /* SportController.swift in Sources */,
 				1869DBC5244A99DC003A3BC0 /* PresenterHome.swift in Sources */,
@@ -681,9 +720,10 @@
 				180973B7244996FD00421A9B /* Textfield.swift in Sources */,
 				187220E5245E76C60012ED1A /* PresenterUser.swift in Sources */,
 				18F467402450911900841938 /* PresenterDetail.swift in Sources */,
-				18D38ADF246016310052A574 /* MyCell.swift in Sources */,
+				18D38ADF246016310052A574 /* OptionDropdownCell.swift in Sources */,
 				180973AD244945AE00421A9B /* PresenterSignIn.swift in Sources */,
 				18C102AA244313D50025A79C /* SceneDelegate.swift in Sources */,
+				183A8F7C2464F87800C90929 /* MySettingsCell.swift in Sources */,
 				18016E292445A516003F7EC0 /* CartController.swift in Sources */,
 				1893E17424446EB500A99B9A /* DetailController.swift in Sources */,
 				1893E15B244410EE00A99B9A /* MyCollectionCell.swift in Sources */,
@@ -824,13 +864,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K5493SYWL5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = patriceVang.FashionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.FashionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -843,13 +883,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K5493SYWL5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = patriceVang.FashionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.FashionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

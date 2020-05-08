@@ -9,9 +9,12 @@
 import UIKit
 import Firebase
 //import FBSDKLoginKit
+import FirebaseAuth
 import GoogleSignIn
+import LocalAuthentication
 
 class LoginController: BaseView, GIDSignInDelegate  {
+    @IBOutlet weak var touchIdV: UIView!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -93,6 +96,38 @@ class LoginController: BaseView, GIDSignInDelegate  {
     @objc func onTapOutSide() {
         view.endEditing(true)
     }
+    private func touchId() {
+        let context = LAContext()
+        var error: NSError?
+        let reason = "Authenticate with Device's Touch ID"
+        // check if Touch ID is available
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { [weak self] (success, error) in guard let self = self else {return}
+                   DispatchQueue.main.async {
+                       if success {
+                           let tabbarVC = TapBarController()
+                           self.navigationController?.pushViewController(tabbarVC, animated: true)
+                       }
+                       else {
+                           Dialog.showAlertDialog(message: "Touch ID Authentication Failed", target: self)
+                       }
+                   }
+                })
+        } else {
+            Dialog.showAlertDialog(message: "Device's Touch ID not availible", target: self)
+        }
+    }
+    @objc func onTapTouchIdV() {
+        print("tap")
+        self.setupAnimationColor(view: touchIdV, delay: 0, target: self)
+        guard let isActiveTouchId = UserDefaultHelper.shared.setting?.isActiveTouchId else {return}
+        if isActiveTouchId {
+            touchId()
+        } else {
+            Dialog.showAlertDialog(message: "Plese, login with Passcode then set up Device's Touch ID", target: self)
+        }
+       
+    }
     //MARK: Custom Element
     private func customElement() {
         // Set title header
@@ -102,6 +137,7 @@ class LoginController: BaseView, GIDSignInDelegate  {
         //View
         Resource.StyleElement.radiusElement(element: viewFacebook, radius: 25)
         Resource.StyleElement.radiusElement(element: viewGoogle, radius: 25)
+        Resource.StyleElement.radiusElement(element: touchIdV, radius: 25)
         //Gesture
         let onTapFaceBook = UITapGestureRecognizer(target: self, action: #selector(onTapViewFaceBook))
         self.viewFacebook.isUserInteractionEnabled = true
@@ -113,10 +149,14 @@ class LoginController: BaseView, GIDSignInDelegate  {
         tfPassword.addSubview(displayPassWordBtn)
         displayPassWordBtn.trailingAnchor.constraint(equalTo: tfPassword.trailingAnchor, constant: -10).isActive = true
         displayPassWordBtn.centerYAnchor.constraint(equalTo: tfPassword.centerYAnchor).isActive = true
+        
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(onTapTouchIdV))
+        touchIdV.isUserInteractionEnabled = true
+        touchIdV.addGestureRecognizer(tapGes)
     }
     
     @objc func onTapViewFaceBook() {
-//        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
+        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
 //        let fbLoginMan = LoginManager()
 //        fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
 //            if error != nil {

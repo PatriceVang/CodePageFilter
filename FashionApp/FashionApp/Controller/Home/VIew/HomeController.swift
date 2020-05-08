@@ -77,8 +77,8 @@ class HomeController: BaseView {
         let config = TTGTextTagConfig()
         config.shadowOpacity = 0.5
         config.selectedCornerRadius = 15
-        config.selectedBackgroundColor = .systemBlue
-        config.backgroundColor = .systemBlue
+        config.selectedBackgroundColor = Resource.Color.colorTapbar
+        config.backgroundColor = Resource.Color.colorTapbar
         config.textColor = .white
         config.borderColor = .white
         config.borderWidth = 1

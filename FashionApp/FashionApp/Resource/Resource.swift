@@ -11,8 +11,8 @@ import UIKit
 class Resource {
     
     class Color {
-        static let colorHeader  = #colorLiteral(red: 1, green: 0.3909804772, blue: 0.5798481978, alpha: 1)
-        static let colorTapbar = #colorLiteral(red: 0.9270647168, green: 0.6391674876, blue: 0.8065266013, alpha: 1)
+        static let colorHeader  = #colorLiteral(red: 0.5554221272, green: 0.01665787026, blue: 0.2192105353, alpha: 1)
+        static let colorTapbar = #colorLiteral(red: 0.7254585028, green: 0.1545865834, blue: 0.3700329363, alpha: 1)
         static let chosenColor : UIColor = .brown
         static let chosenSize = #colorLiteral(red: 0.6627923963, green: 0.785212094, blue: 1, alpha: 1)
     }
@@ -53,6 +53,9 @@ class Resource {
         static let imgCartNV = UIImage(named: "ic_cart_navi")
         static let imgBgUtitily = UIImage(named: "img_bg_utitily")
         static let imgEye = UIImage(named: "ic_eye")
+        static let imgChevronLeft = UIImage(named: "ic_chevron_left")
+        static let imgUser = UIImage(named: "icUser")
+        static let imgPencil = UIImage(named: "ic_pencil")
     }
 
 }

@@ -27,6 +27,7 @@ class TapBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let homeVC = HomeController()
+        self.tabBar.tintColor = Resource.Color.colorHeader
         homeVC.tabBarItem = UITabBarItem(title: "Home", image: Resource.Image.imgHome, tag: 0)
         self.viewControllers = [UINavigationController(rootViewController: homeVC), userVC,  cartVC, utitilyVC]
     }

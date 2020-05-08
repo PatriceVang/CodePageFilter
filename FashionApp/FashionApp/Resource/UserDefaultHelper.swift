@@ -9,12 +9,17 @@
 import Foundation
 import UIKit
 
+struct SettingInApp: Codable {
+    var isActiveTouchId: Bool = false
+}
+
 enum UserDefaultKey: String {
     case cart = "mycart"
     case email = "email"
     case userName = "name"
     case password = "password"
     case imageUser = "image"
+    case setting = "setting"
 }
 
 class UserDefaultHelper {
@@ -69,7 +74,26 @@ class UserDefaultHelper {
             return newData
         }
     }
-    
+    var setting: SettingInApp? {
+        set {
+            guard let data = newValue?.toData else { return }
+            saveObject(data, key: .setting)
+        }
+        get {
+            let data = loadObject(type: Data.self, key: .setting)
+            return data?.toObject(type: SettingInApp.self)
+        }
+    }
+    /*
+     set {
+         guard let data = newValue.toData else { return }
+         saveObject(data, key: .cart)
+     }
+     get {
+         let data = loadObject(type: Data.self, key: .cart)
+         return data?.toObject(type: [ModelCart].self)
+     }
+     */
     private func saveObject(_ object: Any, key: UserDefaultKey) {
         UserDefaults.standard.set(object, forKey: key.rawValue)
     }

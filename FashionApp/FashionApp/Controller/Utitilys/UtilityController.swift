@@ -26,9 +26,9 @@ class UtilityController: BaseView {
             "ic_ml",
             "ic_pushup"
         ]
-        mn.cellNib = UINib(nibName: "MyCell", bundle: nil)
+        mn.cellNib = UINib(nibName: "OptionDropdownCell", bundle: nil)
         mn.customCellConfiguration = { index, title, cell in
-            guard let cell = cell as? MyCell else {return}
+            guard let cell = cell as? OptionDropdownCell else {return}
             cell.presentImg.image = UIImage(named: img[index])
             if index == img.count - 1 {
                 cell.lineView.backgroundColor = .clear
@@ -58,24 +58,23 @@ class UtilityController: BaseView {
         resetBtn.layer.shadowOpacity = 1
         resetBtn.layer.shadowRadius = 0
         resetBtn.layer.masksToBounds = false
-        self.setupUIView(color: Resource.Color.colorHeader, radius: viewCounting.frame.height / 2, view: viewCounting)
+        self.setupUIView(color: Resource.Color.colorTapbar, radius: viewCounting.frame.height / 2, view: viewCounting)
         
         // register for proximity state changes
         NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: nil)
         // enable proximity monitoring
         UIDevice.current.isProximityMonitoringEnabled = true
         
-        
+        // view to define position of dropdown
         self.view.addSubview(viewBottomNV)
         viewBottomNV.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         viewBottomNV.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        viewBottomNV.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
+        viewBottomNV.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         viewBottomNV.heightAnchor.constraint(equalToConstant: 1).isActive = true
             
        
     }
     override func viewWillAppear(_ animated: Bool) {
-    
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -91,14 +90,12 @@ class UtilityController: BaseView {
         DropDown.appearance().textColor = UIColor.black
         DropDown.appearance().textFont = UIFont.systemFont(ofSize: 20)
         DropDown.appearance().cornerRadius = 10
-        
-        
     }
-    
     @objc func onTapLineBtn() {
         menu.show()
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
     

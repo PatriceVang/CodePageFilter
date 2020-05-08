@@ -20,7 +20,7 @@ class UserController: UIViewController {
     let gradient = CAGradientLayer()
     let presentOfUserImg: UIImageView = {
        let img = UIImageView()
-        img.image = UIImage(systemName: "person.circle.fill")
+        img.image = Resource.Image.imgUser
         img.contentMode = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -28,7 +28,7 @@ class UserController: UIViewController {
     let nameOfUserLb: UILabel = {
        let name = UILabel()
         name.text = "Melody Marks"
-        name.textColor = .systemBlue
+        name.textColor = .white
         name.font = UIFont.boldSystemFont(ofSize: 20)
         name.textAlignment = .center
         name.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class UserController: UIViewController {
     let editUserNameBtn: UIButton = {
        let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "pencil.circle.fill"), for: .normal)
+        btn.setImage(Resource.Image.imgPencil, for: .normal)
         btn.addTarget(self, action: #selector(editNameOfUser), for: .touchUpInside)
         return btn
     }()
@@ -54,7 +54,7 @@ class UserController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customElement()
-        myTableView.register(UINib(nibName: "MyCellUser", bundle: nil), forCellReuseIdentifier: cellId)
+        myTableView.register(UINib(nibName: "OptionCell", bundle: nil), forCellReuseIdentifier: cellId)
         // User's Name
         guard let text = UserDefaultHelper.shared.name else {return}
         self.nameOfUserLb.text = text
@@ -62,12 +62,10 @@ class UserController: UIViewController {
         guard let img = UserDefaultHelper.shared.presentImg else {return}
         self.presentOfUserImg.image = UIImage(data: img)
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.presenterUser.fetchData()
     }
-    
     override func viewDidLayoutSubviews() {
         gradient.frame = headerView.bounds
         presentOfUserImg.layer.cornerRadius = presentOfUserImg.frame.height / 2
@@ -92,20 +90,20 @@ class UserController: UIViewController {
     // edit name user
     @objc func editNameOfUser() {
         let alert = UIAlertController(title: "Update Myname", message: nil, preferredStyle: .alert)
-            let actionOk = UIAlertAction(title: "OK", style: .default) { (ok) in
-                guard let text = alert.textFields?.first?.text else {return}
-                if text != "" {
-                    self.nameOfUserLb.text = text
-                    UserDefaultHelper.shared.name = text
-                }
+        let actionOk = UIAlertAction(title: "OK", style: .default) { (ok) in
+            guard let text = alert.textFields?.first?.text else {return}
+            if text != "" {
+                self.nameOfUserLb.text = text
+                UserDefaultHelper.shared.name = text
             }
-            alert.addTextField { (tf) in
-                tf.placeholder = "Melody Mark"
-            }
-            let actionCancle = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alert.addAction(actionOk)
-            alert.addAction(actionCancle)
-            self.present(alert, animated: true, completion: nil)
+        }
+        alert.addTextField { (tf) in
+            tf.placeholder = "Melody Mark"
+        }
+        let actionCancle = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(actionOk)
+        alert.addAction(actionCancle)
+        self.present(alert, animated: true, completion: nil)
     }
     private func openCamera() {
         pickerController = UIImagePickerController()
@@ -150,6 +148,8 @@ class UserController: UIViewController {
         headerView.addSubview(editUserNameBtn)
         editUserNameBtn.leadingAnchor.constraint(equalTo: nameOfUserLb.trailingAnchor, constant: 10).isActive = true
         editUserNameBtn.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10).isActive = true
+        editUserNameBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        editUserNameBtn.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }
     private func setupGradientForHeader() {
         gradient.colors = [Resource.Color.colorHeader.cgColor, Resource.Color.colorTapbar.cgColor]
@@ -164,14 +164,12 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listSettings.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as? MyCellUser
+        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as? OptionCell
         let settings = listSettings[indexPath.row]
         cell?.model = settings
         return cell!
     }
-    
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let lineV = UIView(backgroundColor: .black)
 //        let headerV = UIView(backgroundColor: .clear)
@@ -189,12 +187,12 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 10
 //    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             self.navigationController?.setViewControllers([LoginController()], animated: true)
             UserDefaultHelper.shared.email = nil
         }
+        self.navigationController?.pushViewController(SettingsVC(), animated: true)
     }
 }
 

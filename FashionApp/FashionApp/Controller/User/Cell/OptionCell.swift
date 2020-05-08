@@ -1,5 +1,5 @@
 //
-//  MyCell.swift
+//  MyCellUser.swift
 //  FashionApp
 //
 //  Created by Apple on 5/4/20.
@@ -7,11 +7,16 @@
 //
 
 import UIKit
-import DropDown
 
-class MyCell: DropDownCell {
+class OptionCell: UITableViewCell {
     @IBOutlet weak var presentImg: UIImageView!
-    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var titleLb: UILabel!
+    var model: Settings? {
+        didSet {
+            presentImg.image = UIImage(named: (self.model?.image)!)
+            titleLb.text = self.model?.title
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

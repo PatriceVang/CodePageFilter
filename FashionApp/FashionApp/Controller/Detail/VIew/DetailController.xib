@@ -9,39 +9,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailController" customModule="FashionApp" customModuleProvider="target">
             <connections>
-                <outlet property="btnAdd" destination="IGM-lq-9s6" id="3t1-lS-TyF"/>
-                <outlet property="btnMinus" destination="XrQ-cG-rmY" id="1mI-PK-ym2"/>
+                <outlet property="addBtn" destination="IGM-lq-9s6" id="3t1-lS-TyF"/>
+                <outlet property="addToCartV" destination="4Tn-1b-pAy" id="NYO-8R-wFv"/>
                 <outlet property="cartV" destination="sIp-Tw-0zZ" id="Hay-35-pdo"/>
                 <outlet property="contentStV" destination="XHe-c0-L0M" id="Vex-zE-4nP"/>
-                <outlet property="heightOfpresentImg" destination="tCZ-5e-3vb" id="ZLI-An-OJU"/>
+                <outlet property="heightPresentImg" destination="tCZ-5e-3vb" id="ZLI-An-OJU"/>
                 <outlet property="iconCart" destination="WaM-Bd-jKB" id="LO9-9Y-GaD"/>
-                <outlet property="imgAddCart" destination="fhZ-9a-dJx" id="Ykd-U6-d74"/>
-                <outlet property="imgCartAdd" destination="fhZ-9a-dJx" id="8eX-I1-6Kb"/>
-                <outlet property="imgPresent" destination="7Sd-ul-SW3" id="zq7-fn-xs7"/>
-                <outlet property="lbCounting" destination="vju-xj-ep1" id="2ns-EQ-UxO"/>
-                <outlet property="lbName" destination="tZh-Xt-SGt" id="XQU-AG-Fhf"/>
-                <outlet property="lbPriceNew" destination="kHg-aD-2Dd" id="spW-mX-rnD"/>
-                <outlet property="lbPriceOld" destination="UE7-w3-JwN" id="Gdg-ci-9qq"/>
-                <outlet property="lbRating" destination="I3v-56-Qhn" id="q6j-Pg-8hZ"/>
-                <outlet property="lbReview" destination="msc-zC-vhT" id="eML-jx-qGJ"/>
+                <outlet property="minusBtn" destination="XrQ-cG-rmY" id="1mI-PK-ym2"/>
+                <outlet property="nameLb" destination="tZh-Xt-SGt" id="XQU-AG-Fhf"/>
+                <outlet property="newPriceLb" destination="kHg-aD-2Dd" id="spW-mX-rnD"/>
+                <outlet property="oldPriceLb" destination="UE7-w3-JwN" id="Gdg-ci-9qq"/>
+                <outlet property="presentImg" destination="7Sd-ul-SW3" id="zq7-fn-xs7"/>
+                <outlet property="quantityLb" destination="vju-xj-ep1" id="2ns-EQ-UxO"/>
+                <outlet property="quantityV" destination="qIz-Ze-7kV" id="gRf-QH-l2l"/>
+                <outlet property="ratingLb" destination="I3v-56-Qhn" id="q6j-Pg-8hZ"/>
+                <outlet property="reviewLb" destination="msc-zC-vhT" id="eML-jx-qGJ"/>
+                <outlet property="setupRadiusAddToCartV" destination="Muq-UY-dyK" id="3wJ-vN-kVE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewCartAdd" destination="4Tn-1b-pAy" id="NYO-8R-wFv"/>
-                <outlet property="viewCounting" destination="qIz-Ze-7kV" id="gRf-QH-l2l"/>
-                <outlet property="viewRadiusCartAdd" destination="Muq-UY-dyK" id="3wJ-vN-kVE"/>
-                <outlet property="widthBottomSheetView" destination="ur5-yF-ldr" id="OeE-aA-PO4"/>
-                <outletCollection property="arrView" destination="UTr-Ba-Ddc" collectionClass="NSMutableArray" id="8rG-1S-u6y"/>
-                <outletCollection property="arrView" destination="R43-Gc-v5o" collectionClass="NSMutableArray" id="lP9-N7-CP5"/>
-                <outletCollection property="arrView" destination="vib-db-7ou" collectionClass="NSMutableArray" id="TPP-D6-wMe"/>
-                <outletCollection property="arrView" destination="2tl-GQ-P0V" collectionClass="NSMutableArray" id="vHg-cY-jf4"/>
-                <outletCollection property="arrBtnSize" destination="ufi-ph-8JL" collectionClass="NSMutableArray" id="Y4u-S5-YEu"/>
-                <outletCollection property="arrBtnSize" destination="JBX-tU-U5s" collectionClass="NSMutableArray" id="k2Q-sg-Qgq"/>
-                <outletCollection property="arrBtnSize" destination="277-gt-c40" collectionClass="NSMutableArray" id="mkP-UI-JSh"/>
-                <outletCollection property="arrBtnSize" destination="sce-6S-08I" collectionClass="NSMutableArray" id="tKM-28-8Dc"/>
-                <outletCollection property="arrBtnSize" destination="Nng-TB-Dvz" collectionClass="NSMutableArray" id="isa-3r-mCx"/>
-                <outletCollection property="arrBtnColor" destination="04f-Ig-yMe" collectionClass="NSMutableArray" id="aIf-XT-kH9"/>
-                <outletCollection property="arrBtnColor" destination="J86-8A-eXp" collectionClass="NSMutableArray" id="i3r-yU-3c8"/>
-                <outletCollection property="arrBtnColor" destination="voK-bX-A01" collectionClass="NSMutableArray" id="yC3-wk-UgF"/>
-                <outletCollection property="arrBtnColor" destination="Zu7-4x-UEa" collectionClass="NSMutableArray" id="75d-AN-3uo"/>
+                <outlet property="widthCartV" destination="ur5-yF-ldr" id="OeE-aA-PO4"/>
+                <outletCollection property="arrChosenColorView" destination="UTr-Ba-Ddc" collectionClass="NSMutableArray" id="8rG-1S-u6y"/>
+                <outletCollection property="arrChosenColorView" destination="R43-Gc-v5o" collectionClass="NSMutableArray" id="lP9-N7-CP5"/>
+                <outletCollection property="arrChosenColorView" destination="vib-db-7ou" collectionClass="NSMutableArray" id="TPP-D6-wMe"/>
+                <outletCollection property="arrChosenColorView" destination="2tl-GQ-P0V" collectionClass="NSMutableArray" id="vHg-cY-jf4"/>
+                <outletCollection property="arrSizeBtn" destination="ufi-ph-8JL" collectionClass="NSMutableArray" id="Y4u-S5-YEu"/>
+                <outletCollection property="arrSizeBtn" destination="JBX-tU-U5s" collectionClass="NSMutableArray" id="k2Q-sg-Qgq"/>
+                <outletCollection property="arrSizeBtn" destination="277-gt-c40" collectionClass="NSMutableArray" id="mkP-UI-JSh"/>
+                <outletCollection property="arrSizeBtn" destination="sce-6S-08I" collectionClass="NSMutableArray" id="tKM-28-8Dc"/>
+                <outletCollection property="arrSizeBtn" destination="Nng-TB-Dvz" collectionClass="NSMutableArray" id="isa-3r-mCx"/>
+                <outletCollection property="arrColorBtn" destination="04f-Ig-yMe" collectionClass="NSMutableArray" id="aIf-XT-kH9"/>
+                <outletCollection property="arrColorBtn" destination="J86-8A-eXp" collectionClass="NSMutableArray" id="i3r-yU-3c8"/>
+                <outletCollection property="arrColorBtn" destination="voK-bX-A01" collectionClass="NSMutableArray" id="yC3-wk-UgF"/>
+                <outletCollection property="arrColorBtn" destination="Zu7-4x-UEa" collectionClass="NSMutableArray" id="75d-AN-3uo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -171,7 +169,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="DVT-kK-4h4"/>
+                                                                <action selector="onTapSizeBtn:" destination="-1" eventType="touchUpInside" id="DVT-kK-4h4"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-tU-U5s">
@@ -184,7 +182,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="ySX-1h-Usj"/>
+                                                                <action selector="onTapSizeBtn:" destination="-1" eventType="touchUpInside" id="ySX-1h-Usj"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="277-gt-c40">
@@ -197,7 +195,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="l1V-p7-2PW"/>
+                                                                <action selector="onTapSizeBtn:" destination="-1" eventType="touchUpInside" id="l1V-p7-2PW"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sce-6S-08I">
@@ -210,7 +208,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="FdS-ZT-AH1"/>
+                                                                <action selector="onTapSizeBtn:" destination="-1" eventType="touchUpInside" id="FdS-ZT-AH1"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nng-TB-Dvz">
@@ -223,7 +221,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onTapBtnSize:" destination="-1" eventType="touchUpInside" id="4ls-iS-55O"/>
+                                                                <action selector="onTapSizeBtn:" destination="-1" eventType="touchUpInside" id="4ls-iS-55O"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -252,7 +250,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="4Fc-I5-fEJ"/>
+                                                                        <action selector="onTapColorBtn:" destination="-1" eventType="touchUpInside" id="4Fc-I5-fEJ"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -272,7 +270,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="cpq-M9-8RE"/>
+                                                                        <action selector="onTapColorBtn:" destination="-1" eventType="touchUpInside" id="cpq-M9-8RE"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -291,7 +289,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="0VP-9Q-pWd"/>
+                                                                        <action selector="onTapColorBtn:" destination="-1" eventType="touchUpInside" id="0VP-9Q-pWd"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -310,7 +308,7 @@
                                                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                                                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnColor:" destination="-1" eventType="touchUpInside" id="spZ-Rk-gug"/>
+                                                                        <action selector="onTapColorBtn:" destination="-1" eventType="touchUpInside" id="spZ-Rk-gug"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -354,7 +352,7 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                     <state key="normal" title="-"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnMinus:" destination="-1" eventType="touchUpInside" id="vO5-e4-Fef"/>
+                                                                        <action selector="onTapMinusBtn:" destination="-1" eventType="touchUpInside" id="vO5-e4-Fef"/>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vju-xj-ep1">
@@ -368,7 +366,7 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                     <state key="normal" title="+"/>
                                                                     <connections>
-                                                                        <action selector="onTapBtnAdd:" destination="-1" eventType="touchUpInside" id="c6R-1k-K0M"/>
+                                                                        <action selector="onTapAddBtn:" destination="-1" eventType="touchUpInside" id="c6R-1k-K0M"/>
                                                                     </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAL-w3-PAz">
@@ -501,10 +499,10 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-c0-L0M">
-                                            <rect key="frame" x="0.0" y="10" width="48" height="30"/>
+                                            <rect key="frame" x="0.0" y="10" width="48" height="40"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cart_navi" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-Bd-jKB">
-                                                    <rect key="frame" x="8" y="0.0" width="40" height="30"/>
+                                                    <rect key="frame" x="8" y="0.0" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Kto-rU-psn"/>
                                                     </constraints>
@@ -513,7 +511,7 @@
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="0.0"/>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVv-fv-EkU">
-                                            <rect key="frame" x="0.0" y="40" width="48" height="10"/>
+                                            <rect key="frame" x="0.0" y="50" width="48" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="lhR-WZ-M2V"/>
                                             </constraints>

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartController" customModule="FashionApp" customModuleProvider="target">
             <connections>
+                <outlet property="heightNaviView" destination="1Vx-gY-dQB" id="9H8-SJ-FFU"/>
                 <outlet property="lbMycart" destination="HA9-V0-MKT" id="Vf1-cz-dYb"/>
                 <outlet property="myTableView" destination="C90-TH-jhE" id="dYb-0X-iXV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
