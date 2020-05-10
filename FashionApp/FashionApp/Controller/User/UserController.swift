@@ -50,7 +50,7 @@ class UserController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK: ViewDidLoad
+    //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customElement()
@@ -61,16 +61,18 @@ class UserController: UIViewController {
         // User's Img
         guard let img = UserDefaultHelper.shared.presentImg else {return}
         self.presentOfUserImg.image = UIImage(data: img)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.presenterUser.fetchData()
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
     override func viewDidLayoutSubviews() {
         gradient.frame = headerView.bounds
         presentOfUserImg.layer.cornerRadius = presentOfUserImg.frame.height / 2
         presentOfUserImg.layer.masksToBounds = true
     }
+    
+    
     //MARK:Handle tap
     // chosen photo
     @objc func chonsenPresentImg() {

@@ -117,3 +117,4 @@ extension SettingsVC: MySettingCellDelegate {
         UserDefaultHelper.shared.setting = curSetting
     }
 }
+
