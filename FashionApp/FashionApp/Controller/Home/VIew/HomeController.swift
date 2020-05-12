@@ -59,6 +59,7 @@ class HomeController: BaseView {
         tag.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tag.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         tag.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        tag.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         tag.scrollDirection = .horizontal
         tag.horizontalSpacing = 10
         // Hide scrollbar
@@ -84,7 +85,7 @@ class HomeController: BaseView {
         config.borderColor = .white
         config.borderWidth = 1
         config.cornerRadius = 15
-        tag.addTags(["en", "zh", "ko","Favourite"], with: config)
+        tag.addTags(["en", "zh", "ko","Favourite", "en", "zh", "ko","Favourite", "en", "zh", "ko","Favourite"], with: config)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.navigationController?.navigationBar.isHidden = true

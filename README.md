@@ -13,3 +13,4 @@ Các project con bao gồm
 - DemoUIPageViewController: UIPageviewControler, handle amination, addChildView, push Navigation
 - SegmentWithTableview: UISegment
 - Twitter: UICollectionView Dynamic cell height, loadmore
+- MessageApp: Make screen message
