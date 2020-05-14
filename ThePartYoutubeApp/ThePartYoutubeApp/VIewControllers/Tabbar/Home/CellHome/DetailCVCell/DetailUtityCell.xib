@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DetailUtityCell" customModule="ThePartYoutubeApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="206"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="244" height="206"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-bi-EwN">
+                        <rect key="frame" x="0.0" y="0.0" width="244" height="206"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CqF-zj-xXq">
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="206"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images-5" translatesAutoresizingMaskIntoConstraints="NO" id="oIM-tW-Euz">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="100.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJZ-qF-YbG">
+                                        <rect key="frame" x="0.0" y="105.5" width="244" height="100.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-x3-BD3">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="100.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VietNam still implicit dancer covid 19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIy-MG-qew">
+                                                        <rect key="frame" x="0.0" y="0.0" width="224" height="50.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VTC NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib2-K1-He9">
+                                                        <rect key="frame" x="0.0" y="50.5" width="224" height="16.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38K views - 6 day ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uL-Ow-oj9">
+                                                        <rect key="frame" x="0.0" y="67" width="224" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ExC-V3-ema">
+                                                <rect key="frame" x="224" y="0.0" width="20" height="100.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMenuVertical" translatesAutoresizingMaskIntoConstraints="NO" id="IZg-fU-yzr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="HOO-RQ-PgP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCj-KF-RCh">
+                                                        <rect key="frame" x="0.0" y="16" width="20" height="84.5"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CqF-zj-xXq" secondAttribute="trailing" id="AHD-v9-8gS"/>
+                            <constraint firstItem="CqF-zj-xXq" firstAttribute="leading" secondItem="ihx-bi-EwN" secondAttribute="leading" id="Ftq-dp-gra"/>
+                            <constraint firstItem="CqF-zj-xXq" firstAttribute="top" secondItem="ihx-bi-EwN" secondAttribute="top" id="cEm-zD-bC4"/>
+                            <constraint firstAttribute="bottom" secondItem="CqF-zj-xXq" secondAttribute="bottom" id="ipP-uf-DBB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ihx-bi-EwN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5Ku-g3-NkV"/>
+                <constraint firstAttribute="trailing" secondItem="ihx-bi-EwN" secondAttribute="trailing" id="DZl-ox-7Or"/>
+                <constraint firstItem="ihx-bi-EwN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NJa-9W-qkV"/>
+                <constraint firstAttribute="bottom" secondItem="ihx-bi-EwN" secondAttribute="bottom" id="xLL-89-L2q"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="244" height="206"/>
+            <point key="canvasLocation" x="73.913043478260875" y="72.321428571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="images-5" width="201" height="251"/>
+        <image name="imgMenuVertical" width="16" height="16"/>
+    </resources>
+</document>

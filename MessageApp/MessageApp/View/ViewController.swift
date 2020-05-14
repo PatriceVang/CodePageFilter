@@ -89,8 +89,6 @@ class ViewController: UIViewController {
 //        }
         chatMsg = groupMsg.sorted { $0.key < $1.key }
             .map{ $0.value }
-        
-        
     }
     //MARK: Life cycle
     override func viewDidLoad() {

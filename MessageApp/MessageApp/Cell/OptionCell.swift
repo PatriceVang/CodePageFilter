@@ -11,9 +11,9 @@ import UIKit
 class OptionCell: UITableViewCell {
     @IBOutlet weak var msgLb: UILabel!
     @IBOutlet weak var bubbleV: UIView!
+    @IBOutlet weak var widthMsgLb: NSLayoutConstraint!
     var leadingConstraint: NSLayoutConstraint!
     var trailingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var widthMsgLb: NSLayoutConstraint!
     var msg: Message? {
         didSet {
             msgLb.text = self.msg?.msg
@@ -28,14 +28,12 @@ class OptionCell: UITableViewCell {
                 leadingConstraint.isActive = false
             }
         }
-            
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
         addShadow()
         customElement()
-        
     }
     
     private func customElement() {
@@ -50,13 +48,9 @@ class OptionCell: UITableViewCell {
         leadingConstraint = msgLb.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         trailingConstraint = msgLb.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
     private func addShadow() {
         bubbleV.layer.shadowColor = UIColor.black.cgColor
         bubbleV.layer.shadowOpacity = 0.2
@@ -64,5 +58,4 @@ class OptionCell: UITableViewCell {
         bubbleV.layer.shadowRadius = 16
         bubbleV.layer.masksToBounds = false
     }
-    
 }

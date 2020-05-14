@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 private let cellId = "cell"
 private let headerId = "header"
 private let footerId = "footer"
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         myCV.register(LoadmoreFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerId)
         return myCV
     }()
-    
     var countUser = 0
     var listUser = [
         User(name: "David", country: "England", descrition: "Nam Cao tên thật là Trần Hữu Tri (có nguồn ghi là Trần Hữu Trí), sinh năm 1915, nhưng theo giấy khai sinh ghi thì là ngày 29 tháng 10 năm 1917"),

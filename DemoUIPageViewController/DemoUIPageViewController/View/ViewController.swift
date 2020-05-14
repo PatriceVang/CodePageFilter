@@ -38,10 +38,17 @@ class ViewController: UIViewController {
         pageView?.topAnchor.constraint(equalTo: viewBackgroud.bottomAnchor, constant: 0).isActive = true
         pageView?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         pageView?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        pageView?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        pageView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
         self.addChild(rootPageVC)
         
+        
     }
+    
+
+    
+
+    
+    
 }
 
 extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource{
@@ -85,4 +92,9 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
             return nil
         }
     }
+    
+
 }
+
+
+
