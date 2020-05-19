@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class PlaylistsAuthorVC: UIViewController {
+class PlaylistsAuthorVC: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "PLAYLISTS")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

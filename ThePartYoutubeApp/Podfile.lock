@@ -1,0 +1,26 @@
+PODS:
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
+  - ObjectMapper (3.5.2)
+  - XLPagerTabStrip (9.0.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - ObjectMapper
+  - XLPagerTabStrip
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - ObjectMapper
+    - XLPagerTabStrip
+
+SPEC CHECKSUMS:
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
+
+PODFILE CHECKSUM: 7e537fdf19837df829c4e50c67d5fb29be3e9fcd
+
+COCOAPODS: 1.9.1

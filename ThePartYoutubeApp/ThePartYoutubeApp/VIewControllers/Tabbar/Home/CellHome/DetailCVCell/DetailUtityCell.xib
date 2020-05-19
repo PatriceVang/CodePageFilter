@@ -88,6 +88,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="244" height="206"/>
+            <connections>
+                <outlet property="authorLb" destination="Ib2-K1-He9" id="PSh-sj-Sl1"/>
+                <outlet property="presentImg" destination="oIM-tW-Euz" id="nkB-mt-OEA"/>
+                <outlet property="subTitleLb" destination="1uL-Ow-oj9" id="Oll-Yl-Jkk"/>
+                <outlet property="titleLb" destination="VIy-MG-qew" id="dMV-i8-LSL"/>
+            </connections>
             <point key="canvasLocation" x="73.913043478260875" y="72.321428571428569"/>
         </collectionViewCell>
     </objects>

@@ -26,6 +26,15 @@ class Resource {
         static var linkImg = UIImage(named: "imgTv")
         static var cancelImg = UIImage(named: "imgCancle")
         static var deleteImg = UIImage(named: "imgDelete")
+        static var pauseImg = UIImage(named: "imgPause")
+        static var playImg = UIImage(named: "imgPlay")
+        static var backImg = UIImage(named: "imgBack")
+        static var nextImg = UIImage(named: "imgNext")
+        static var saveToWatchImg = UIImage(named: "imgSaveWatch")
+        static var savePlaylistImg = UIImage(named: "imgSavePlaylist")
+        static var downloadImg = UIImage(named: "imgDownload")
+        static var shareImg = UIImage(named: "imgShare")
+        static var menuVerticalImg = UIImage(named: "imgMenuVertical")
     }
     
     class Text {
@@ -41,6 +50,10 @@ class Resource {
         static var linkWithTv = "Link with TV code"
         static var cancel = "Cancel"
         static var account = "Account"
+        static var saveToPlaylist = "Save to Playlist"
+        static var saveToWatch = "Save to Watch"
+        static var download = "Download"
+        static var share = "Share"
     }
     
     class Color {

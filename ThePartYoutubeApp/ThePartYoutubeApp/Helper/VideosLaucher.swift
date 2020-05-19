@@ -1,172 +1,164 @@
 //
-//  VideosLaucher.swift
+//  TestVideosLaucher.swift
 //  ThePartYoutubeApp
 //
-//  Created by Apple on 5/13/20.
+//  Created by Apple on 5/19/20.
 //  Copyright © 2020 vinova. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import AVFoundation
 
-
-class VideoPlayer: UIView {
+class VideosLaucher: UIViewController {
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var heightVideoPlayer: NSLayoutConstraint!
+    @IBOutlet weak var currentTimeLb: UILabel!
+    @IBOutlet weak var sliderTime: UISlider!
+    @IBOutlet weak var totalTimeLb: UILabel!
+    @IBOutlet weak var backBtn: UIImageView!
+    @IBOutlet weak var pausePlayBtn: UIImageView!
+    @IBOutlet weak var nextBtn: UIImageView!
+    @IBOutlet weak var containerV: UIView!
+    @IBOutlet weak var videoPlayerV: UIView!
+    //MARK: Probertis
     var player: AVPlayer?
-    var isPlaying:Bool = false
-    let indicator: UIActivityIndicatorView = {
-        let ind = UIActivityIndicatorView(style: .large)
-        ind.translatesAutoresizingMaskIntoConstraints = false
-        ind.startAnimating()
-        return ind
-    }()
-    let pausePlayBtn: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "pause"), for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.tintColor = .white
-        btn.addTarget(self, action: #selector(onTapPauseBtn(_sender:)), for: .touchUpInside)
-        btn.isHidden = true
-        return btn
-    }()
-    let contrainerV: UIView = {
-       let v = UIView()
-        v.backgroundColor = UIColor(white: 0, alpha: 1)
-        return v
-    }()
-    let videoLenghtLb: UILabel = {
-       let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        return lb
-    }()
-    let slider: UISlider = {
-       let slider = UISlider()
-        slider.tintColor = .red
-        slider.thumbTintColor = .red
-        slider.minimumTrackTintColor = .red
-        slider.maximumTrackTintColor = .white
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.addTarget(self, action: #selector(onChangeValueSlider), for: .valueChanged)
-        return slider
-    }()
-    
- 
-
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .black
-        contrainerV.frame = self.frame
-        self.addSubview(contrainerV)
-        //add indicator
-        contrainerV.addSubview(indicator)
-        indicator.centerXAnchor.constraint(equalTo: contrainerV.centerXAnchor).isActive = true
-        indicator.centerYAnchor.constraint(equalTo: contrainerV.centerYAnchor).isActive = true
-        
-        contrainerV.addSubview(pausePlayBtn)
-        pausePlayBtn.centerXAnchor.constraint(equalTo: contrainerV.centerXAnchor).isActive = true
-        pausePlayBtn.centerYAnchor.constraint(equalTo: contrainerV.centerYAnchor).isActive = true
-        pausePlayBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        pausePlayBtn.widthAnchor.constraint(equalToConstant: 50).isActive = true
-       
-        contrainerV.addSubview(videoLenghtLb)
-        self.setupLabelFor(lable: videoLenghtLb, text: "00:00", textColor: .white, font: .systemFont(ofSize: 17))
-        videoLenghtLb.trailingAnchor.constraint(equalTo: contrainerV.trailingAnchor, constant: -5).isActive = true
-        videoLenghtLb.bottomAnchor.constraint(equalTo: contrainerV.bottomAnchor, constant: -5).isActive = true
-        
-        contrainerV.addSubview(slider)
-        slider.trailingAnchor.constraint(equalTo: videoLenghtLb.leadingAnchor, constant: -5).isActive = true
-        slider.bottomAnchor.constraint(equalTo: contrainerV.bottomAnchor).isActive = true
-        slider.leadingAnchor.constraint(equalTo: contrainerV.leadingAnchor, constant: 0).isActive = true
-        slider.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        
+    var isPlaying: Bool = false
+    var isTapedBackgroud: Bool = false {
+        didSet {
+            if isTapedBackgroud {
+                currentTimeLb.isHidden = false
+                totalTimeLb.isHidden = false
+                sliderTime.isHidden = false
+                pausePlayBtn.isHidden = false
+                backBtn.isHidden = false
+                nextBtn.isHidden = false
+                Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { (Timer) in
+                    self.isTapedBackgroud = false
+                }
+            } else {
+                currentTimeLb.isHidden = true
+                totalTimeLb.isHidden = true
+                sliderTime.isHidden = true
+                pausePlayBtn.isHidden = true
+                backBtn.isHidden = true
+                nextBtn.isHidden = true
+            }
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        heightVideoPlayer.constant = self.view.frame.width * 9/16
         setupPlayVideo()
+        customItemsVieosPlyer()
+    }
+
+    private func customItemsVieosPlyer() {
+        isTapedBackgroud = true
+        indicator.startAnimating()
+        containerV.backgroundColor = UIColor(white: 0, alpha: 1)
+        containerV.setupTapGesture(view: containerV, selector: #selector(onTapBackgroudVideos), target: self)
+        
+        backBtn.setupTapGesture(view: backBtn, selector: #selector(onTapBackBtn), target: self)
+        pausePlayBtn.setupTapGesture(view: pausePlayBtn, selector: #selector(onTapPausePlayBtn), target: self)
+        nextBtn.setupTapGesture(view: nextBtn, selector: #selector(onTapNextBtn), target: self)
+        sliderTime.addTarget(self, action: #selector(onChangeValueSlider), for: .valueChanged)
+        containerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
+        containerV.isUserInteractionEnabled = true
     }
     
-    func setupPlayVideo() {
-
-        guard let url = URL(string: "https://devstreaming-cdn.apple.com/videos/wwdc/2016/102w0bsn0ge83qfv7za/102/hls_vod_mvp.m3u8") else {return}
-        player = AVPlayer(url: url)
+    
+    private func setupPlayVideo() {
+        guard let mainUrl = URL(string: "https://devstreaming-cdn.apple.com/videos/wwdc/2016/102w0bsn0ge83qfv7za/102/hls_vod_mvp.m3u8") else {return}
+        player = AVPlayer(url: mainUrl)
         let playerPlayer = AVPlayerLayer(player: player)
-        self.layer.addSublayer(playerPlayer)
-        playerPlayer.frame = self.frame
+        videoPlayerV.layer.addSublayer(playerPlayer)
+        playerPlayer.frame = self.videoPlayerV.bounds
         player?.play()
         player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
-        
 
+        let interval = CMTime(value: 1, timescale: 2)
+        //lay time hien tai cho lable curent
+        player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
+        let seconds = CMTimeGetSeconds(progressTime)
+        let secondsString = String(format: "%02d", Int(seconds) % 60)
+        let minuteString = String(format: "%02d", Int(seconds) / 60)
+        self.currentTimeLb.text = "\(minuteString):\(secondsString)"
+        //keo thanh slider
+        if let duration = self.player?.currentItem?.duration {
+        let duraTionSeconds = CMTimeGetSeconds(duration)
+            self.sliderTime.value = Float(seconds / duraTionSeconds)
+            }
+        })
     }
     
-    //MARK: OnTap button playvideo
-    @objc func onTapPauseBtn(_sender: UIButton) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        // khi video chay thi no se setup ui duoi nay
+        if keyPath == "currentItem.loadedTimeRanges" {
+            indicator.stopAnimating()
+            indicator.isHidden = true
+            containerV.backgroundColor = .clear
+            isPlaying = true
+            isTapedBackgroud = false
+            if let duration = player?.currentItem?.duration {
+                let durationBySeconds = CMTimeGetSeconds(duration)
+                let minute = Int(durationBySeconds) / 60
+                let secondsText = Int(durationBySeconds) % 60
+                totalTimeLb.text = "\(minute):\(secondsText)"
+            }
+        }
+    }
+    
+    //MARK: Handle tap
+    @objc func onTapBackgroudVideos() {
+        print("tap")
+        isTapedBackgroud = !isTapedBackgroud
+    }
+    
+    @objc func onTapBackBtn() {
+        print("back")
+       
+    }
+    @objc func onTapPausePlayBtn() {
         if isPlaying {
             player?.pause()
-            pausePlayBtn.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            pausePlayBtn.image = Resource.Image.playImg
         } else {
             player?.play()
-            pausePlayBtn.setImage(UIImage(systemName: "pause"), for: .normal)
+            pausePlayBtn.image = Resource.Image.pauseImg
         }
         isPlaying = !isPlaying
-        print(isPlaying)
     }
+    
+    @objc func onTapNextBtn() {
+        print("next")
+        
+    }
+    
     @objc func onChangeValueSlider() {
+        // slider tu dong chay
         if let duration = player?.currentItem?.duration {
             let totalSecond = CMTimeGetSeconds(duration)
-            let value = Double(slider.value) * totalSecond
+            let value = Double(sliderTime.value) * totalSecond
             let seekTime = CMTime(value: Int64(value), timescale: 1)
             player?.seek(to: seekTime, completionHandler: { (handle) in
-                
             })
         }
     }
     
-    // when the videos is start so indicator hiden
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
-        // khi video chay thi no se setup ui duoi nay
-        if keyPath == "currentItem.loadedTimeRanges" {
-            indicator.stopAnimating()
-            contrainerV.backgroundColor = .clear
-            isPlaying = true
-            pausePlayBtn.isHidden = false
-            
-            //set up slider
-            if let duration = player?.currentItem?.duration {
-                let durationBySeconds = CMTimeGetSeconds(duration)
-                let min = Int(durationBySeconds) / 60
-                let secondsText = Int(durationBySeconds) % 60
-                videoLenghtLb.text = "\(min):\(secondsText)"
-            }
-            
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-class VideosLaucher: NSObject {
-    func showVideo() {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            let view = UIView(frame: keyWindow.frame)
-            view.backgroundColor = .white
-            keyWindow.addSubview(view)
-//            let homeAuthor = HomeAuthorVC()
-//            keyWindow.addSubview(homeAuthor.view)
-//            homeAuthor.view.backgroundColor = .white
-            let videoPlayerV = VideoPlayer(frame: .init(x: 0, y: 0, width: keyWindow.frame.width, height: keyWindow.frame.width * 9/16))
-            keyWindow.addSubview(videoPlayerV)
-            view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
-//            homeAuthor.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
-            
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                view.frame = keyWindow.frame
-//                homeAuthor.view.frame = keyWindow.frame
-            }) { (completed) in
-                UIApplication.shared.setStatusBarHidden(true, with: .fade)
-            }
+    @objc func onPanGetureVideos(_ pan: UIPanGestureRecognizer) {
+        let translation = pan.translation(in: pan.view)
+        switch pan.state {
+        case .began, .changed:
+            print("began")
+//            if videoPlayerV.frame.minY >= self.view.frame.minY {
+//                self.videoPlayerV.center.y += translation.y
+//
+//
+//            }
+        case .ended:
+           print("end")
+        default:
+           break
         }
     }
 }

@@ -9,7 +9,10 @@
 import UIKit
 
 class DetailUtityCell: UICollectionViewCell {
-
+    @IBOutlet weak var presentImg: UIImageView!
+    @IBOutlet weak var titleLb: UILabel!
+    @IBOutlet weak var authorLb: UILabel!
+    @IBOutlet weak var subTitleLb: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -49,17 +49,17 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0wG-tg-hg1">
-                                        <rect key="frame" x="66" y="5" width="238" height="74"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0wG-tg-hg1">
+                                        <rect key="frame" x="66" y="5" width="244" height="74"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-Be-1tl">
-                                                <rect key="frame" x="0.0" y="0.0" width="238" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Title ,This is a Title ,This is a Title ,This is a Title ,This is a Title , This is a Title 123123" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-Be-1tl">
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="49.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a subtile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-UI-r23">
-                                                <rect key="frame" x="0.0" y="37" width="238" height="37"/>
+                                                <rect key="frame" x="0.0" y="49.5" width="244" height="24.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QfJ-CH-yPb">
-                                        <rect key="frame" x="314" y="5" width="20" height="74"/>
+                                        <rect key="frame" x="320" y="5" width="20" height="74"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMenuVertical" translatesAutoresizingMaskIntoConstraints="NO" id="EDV-Yg-TQU">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -82,7 +82,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="5" leading="16" bottom="5" trailing="16"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="5" leading="16" bottom="5" trailing="10"/>
                             </stackView>
                         </subviews>
                         <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -99,7 +99,10 @@
             <connections>
                 <outlet property="authorImg" destination="AZM-vi-8bf" id="6Jm-E9-8KL"/>
                 <outlet property="heightPresentImg" destination="ERe-yV-PZk" id="kkK-4d-eqg"/>
+                <outlet property="infoImg" destination="EDV-Yg-TQU" id="Xt3-Ly-RMU"/>
                 <outlet property="presentImg" destination="MW1-Fx-j8n" id="r8O-oY-zFq"/>
+                <outlet property="subTitleLb" destination="Wi4-UI-r23" id="3Go-wd-FP2"/>
+                <outlet property="titleLb" destination="EEz-Be-1tl" id="1x7-UH-Gv5"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="175.11160714285714"/>
         </tableViewCell>

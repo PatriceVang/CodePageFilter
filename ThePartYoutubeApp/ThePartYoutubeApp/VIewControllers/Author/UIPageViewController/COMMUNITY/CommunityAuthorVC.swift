@@ -7,8 +7,12 @@
 //
 
 import UIKit
-
-class CommunityAuthorVC: UIViewController {
+import XLPagerTabStrip
+class CommunityAuthorVC: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "COMMUNITY")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

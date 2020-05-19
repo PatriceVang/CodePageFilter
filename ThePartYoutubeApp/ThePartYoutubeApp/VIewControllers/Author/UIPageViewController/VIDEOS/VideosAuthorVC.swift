@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class VideosAuthorVC: UIViewController {
+class VideosAuthorVC: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "VIDEOS")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

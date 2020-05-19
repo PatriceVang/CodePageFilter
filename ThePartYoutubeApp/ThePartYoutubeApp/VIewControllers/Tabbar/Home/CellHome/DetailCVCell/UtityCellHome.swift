@@ -13,13 +13,12 @@ private let cellId = "cell"
 class UtityCellHome: UITableViewCell {
     @IBOutlet weak var myCollectionUtity: UICollectionView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         myCollectionUtity.register(UINib(nibName: "DetailUtityCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         myCollectionUtity.delegate = self
         myCollectionUtity.dataSource = self
-        
-        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -37,6 +36,10 @@ extension UtityCellHome: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: (self.frame.width - 20) / 2 , height: myCollectionUtity.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     

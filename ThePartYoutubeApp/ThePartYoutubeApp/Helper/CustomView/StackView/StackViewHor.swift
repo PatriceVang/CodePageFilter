@@ -13,6 +13,10 @@ enum OptionType {
     case learnmore
     case linkTV
     case cancel
+    case saveToWatch
+    case saveToList
+    case downLoad
+    case share
 }
 
 
@@ -45,6 +49,18 @@ class StackViewHor: BaseViewXib {
         case .cancel:
             presentImg.image = Resource.Image.cancelImg
             contentLb.text = Resource.Text.cancel
+        case .saveToWatch:
+            presentImg.image = Resource.Image.saveToWatchImg
+            contentLb.text = Resource.Text.saveToWatch
+        case .saveToList:
+            presentImg.image = Resource.Image.savePlaylistImg
+            contentLb.text = Resource.Text.saveToPlaylist
+        case .downLoad:
+            presentImg.image = Resource.Image.downloadImg
+            contentLb.text = Resource.Text.download
+        case .share:
+            presentImg.image = Resource.Image.shareImg
+            contentLb.text = Resource.Text.share
         default:
             break
         }

@@ -12,8 +12,6 @@ import UIKit
 
 
 class ListOptionView: BaseViewXib {
-    
-//    @IBOutlet weak var stV: UIView!
     @IBOutlet weak var stackV: UIStackView!
     var delegate: ListOptionViewDelegate?
     
@@ -30,7 +28,6 @@ class ListOptionView: BaseViewXib {
             stV.isUserInteractionEnabled = true
             stV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapOptineType(_:))))
         }
-        backgroundColor = .green
     }
     
     @objc func onTapOptineType(_ sender: UITapGestureRecognizer) {

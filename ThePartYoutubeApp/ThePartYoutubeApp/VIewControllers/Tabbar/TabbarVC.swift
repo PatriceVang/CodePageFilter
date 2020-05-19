@@ -117,7 +117,7 @@ class TabbarVC: UITabBarController {
         alphaV.backgroundColor = .black
         alphaV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - self.view.frame.height / 3)
         alphaV.alpha = 0.4
-        alphaV.setupTapGestureForVC(view: alphaV, selector: #selector(onTapDismissConnectView(sender:)), target: self)
+        alphaV.setupTapGesture(view: alphaV, selector: #selector(onTapDismissConnectView(sender:)), target: self)
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             self.view.addSubview(self.connectDeviceV)

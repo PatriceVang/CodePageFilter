@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class ChannelsAuthorVC: UIViewController {
+class ChannelsAuthorVC: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "CHANNELS")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
