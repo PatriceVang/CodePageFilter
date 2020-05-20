@@ -39,16 +39,15 @@ class APICaller {
         
     }
     static func callApi(request: URLRequest, completion: @escaping(Data?, NetworkEror?) -> Void) {
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, _, error) in
-            DispatchQueue.global(qos: .utility).async {
-                if error != nil {
-                   completion(nil, .otherError(msg: error!.localizedDescription))
-                }
-                completion(data, nil)
-            }
-        })
-        
+        DispatchQueue.global(qos: .utility).async {
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, _, error) in
+                    if error != nil {
+                       completion(nil, .otherError(msg: error!.localizedDescription))
+                    }
+                    completion(data, nil)
+            })
         task.resume()
+        }
         
     }
     

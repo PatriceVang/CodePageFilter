@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVC" customModule="ThePartYoutubeApp" customModuleProvider="target">
             <connections>
                 <outlet property="backItemNv" destination="ehX-L4-klA" id="yvq-iZ-kt8"/>
+                <outlet property="micBtn" destination="5DR-ar-bQY" id="YCr-BX-ai0"/>
                 <outlet property="naviBar" destination="mnb-bU-8vp" id="5pv-ZL-pxk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,6 +37,9 @@
                                     <rect key="frame" x="61" y="10" width="292" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="searchTf:" destination="-1" eventType="editingChanged" id="V6s-pi-PdB"/>
+                                    </connections>
                                 </textField>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-ar-bQY">
                                     <rect key="frame" x="373" y="9.5" width="25" height="30"/>

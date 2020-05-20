@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="ThePartYoutubeApp" customModuleProvider="target">
             <connections>
                 <outlet property="myTableItemsVideo" destination="R41-WU-RAI" id="2oH-pG-yya"/>
+                <outlet property="testLb" destination="TRQ-7f-YkL" id="N6E-68-CjA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="1va-mo-igs"/>
             </connections>
         </placeholder>
@@ -26,13 +27,21 @@
                         <outlet property="delegate" destination="-1" id="cdw-Cn-HaO"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRQ-7f-YkL">
+                    <rect key="frame" x="169.5" y="429" width="75.5" height="38.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="R41-WU-RAI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b7d-lM-CAa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R41-WU-RAI" secondAttribute="trailing" id="dUW-Z1-SDA"/>
+                <constraint firstItem="TRQ-7f-YkL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lyU-zh-fyi"/>
                 <constraint firstItem="R41-WU-RAI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n2v-a1-xGh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R41-WU-RAI" secondAttribute="bottom" id="qw4-CR-7We"/>
+                <constraint firstItem="TRQ-7f-YkL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sR7-Mz-8DA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>

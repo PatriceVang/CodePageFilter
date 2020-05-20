@@ -11,19 +11,19 @@ private let cellItemID = "cell"
 private let cellUtityID = "cellTable"
 
 class HomeVC: UIViewController {
+    @IBOutlet weak var testLb: UILabel!
     @IBOutlet weak var myTableItemsVideo: UITableView!
     let settingsView = ListOptionView(types: [.saveToWatch, .saveToList, .downLoad, .share, .cancel])
     let supportView = UIView()
     var presenter: PresenterHomeProtocol!
     var listVideos = [Videos]()
-    
-    
+    var listArtiles = [Articles]()
+  
     init() {
         presenter = Presenter()
         super.init(nibName: "HomeVC", bundle: nil)
         presenter.view = self
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,10 +38,21 @@ class HomeVC: UIViewController {
         supportView.frame = .init(x: 0 , y: 0, width: self.view.frame.width, height: 0)
     }
     
-    private func fetchData() {
-        let url = "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json"
-        self.presenter.fetchDataVideos(url: url, header: nil, params: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let searchVC = segue.destination as? SearchVC {
+            searchVC.delegate = self
+        }
     }
+    
+    private func fetchData() {
+        let urlVideos = "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json"
+        self.presenter.fetchDataVideos(url: urlVideos, header: nil, params: nil)
+        
+        let urlArticles = "http://newsapi.org/v2/everything"
+        let param = ["q":"bitcoin", "from": "2020-04-20", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
+        self.presenter.fetchDataUtity(url: urlArticles, header: nil, params: param)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationController?.navigationBar.isHidden = false
@@ -92,6 +103,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             return cell!
         } else if indexPath.row == 1 {
             let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellUtityID) as? UtityCellHome
+            cell?.listArticle = listArtiles
             return cell!
         } else {
             let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellItemID) as? ItemsVideoCellHome
@@ -138,10 +150,15 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let videoPlayer = VideosLaucher()
-        videoPlayer.modalPresentationStyle = .fullScreen
-        present(videoPlayer, animated: false) {
-            UIApplication.shared.setStatusBarHidden(true, with: .none)
+        if let keyWindow = UIApplication.shared.keyWindow {
+            let videoPlayerView = VideosLaucher()
+            keyWindow.addSubview(videoPlayerView.view)
+            videoPlayerView.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                videoPlayerView.view.frame = keyWindow.frame
+            }) { (completed) in
+                UIApplication.shared.setStatusBarHidden(true, with: .fade)
+            }
         }
     }
 }
@@ -184,10 +201,25 @@ extension HomeVC: ItemsVideoCellHomeDelegate {
 }
 
 extension HomeVC: PresenterHomeDelegate {
+    func passDataUtity(articles: [Articles]) {
+        self.listArtiles = articles
+        self.myTableItemsVideo.reloadData()
+        print(articles.map{ $0.published})
+    }
+    
     func passDataVideos(data: [Videos]) {
         self.listVideos = data
         self.myTableItemsVideo.reloadData()
     }
 }
+
+extension HomeVC: SearchVCDelegate {
+    func passText(str: String) {
+        let searchResultVC = SearchResultVC()
+        testLb.text = str
+        self.navigationController?.pushViewController(searchResultVC, animated: true)
+    }
+}
+
 
 

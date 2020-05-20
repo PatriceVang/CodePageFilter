@@ -73,6 +73,7 @@ class VideosLaucher: UIViewController {
         let playerPlayer = AVPlayerLayer(player: player)
         videoPlayerV.layer.addSublayer(playerPlayer)
         playerPlayer.frame = self.videoPlayerV.bounds
+        playerPlayer.contentsGravity = .resizeAspectFill
         player?.play()
         player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
 
@@ -149,14 +150,26 @@ class VideosLaucher: UIViewController {
         let translation = pan.translation(in: pan.view)
         switch pan.state {
         case .began, .changed:
-            print("began")
-//            if videoPlayerV.frame.minY >= self.view.frame.minY {
-//                self.videoPlayerV.center.y += translation.y
-//
-//
-//            }
+            if videoPlayerV.frame.minY >= self.view.frame.minY {
+                self.videoPlayerV.center.y += translation.y
+                
+                if videoPlayerV.frame.minY < self.view.frame.minY {
+                    videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width / 9*16)
+                }
+                if videoPlayerV.center.y > self.view.center.y {
+                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                        
+                        self.view.frame = .init(x: 10, y: self.view.frame.height - 200, width: self.view.frame.width - 20, height: 200)
+                        self.videoPlayerV.frame = self.view.frame
+                        self.containerV.isHidden = true
+                        self.view.layoutIfNeeded()
+                        
+                    }) { (Bool) in
+                    }
+                }
+            }
         case .ended:
-           print("end")
+            print("end")
         default:
            break
         }

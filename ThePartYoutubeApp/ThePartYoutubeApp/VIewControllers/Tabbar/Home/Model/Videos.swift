@@ -9,6 +9,28 @@
 import Foundation
 import ObjectMapper
 
+
+open class ISODateTransform: TransformType {
+    public typealias Object = Date
+    public typealias JSON = String
+
+    public init() {}
+
+    public func transformFromJSON(_ value: Any?) -> Date? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    guard let strValue = value as? String else { return nil }
+    return formatter.date(from: strValue)
+    }
+
+    public func transformToJSON(_ value: Date?) -> String? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    guard value != nil else { return nil }
+    return formatter.string(from: value!)
+    }
+}
+
 class Videos: Mappable {
     var title: String?
     var views: Int?
@@ -17,8 +39,7 @@ class Videos: Mappable {
     var profileImg: String?
     var duration: Int?
     
-    required init?(map: Map) {
-        
+    required init?(map: Map) {        
     }
     
     func mapping(map: Map) {
@@ -45,7 +66,7 @@ class NewsVideos: Mappable {
     }
 }
 
-class Articles: Mappable {
+class Articles:  Mappable {
     var image: String?
     var author: String?
     var title: String?
@@ -54,25 +75,20 @@ class Articles: Mappable {
     }
     
     func mapping(map: Map) {
-        image <- map["articles.urlToImage"]
-        author <- map["articles.author"]
-        title <- map["articles.author"]
-        
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-//
-//        if let dateString = map["articles.publishedAt"].currentValue as? String, let _date = dateFormatter.date(from: dateString) {
-//            published = _date
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+//        let transform = TransformOf<Date, String>(fromJSON: { (value) -> Date? in
+//            return dateFormatter.date(from: value!)
+//        }) { (value) -> String? in
+//            return dateFormatter.string(from: value!)
 //        }
         
-        let transform = TransformOf<String, Date>(fromJSON: { (value) -> String? in
-            return dateFormatter.string(from: value!)
-        }) { (value) -> Date? in
-            return dateFormatter.date(from: value!)
-        }
+//        published <- (map["publishedAt"], ISODateTransform())
+        published <- map["publishedAt"]
+        image <- map["urlToImage"]
+        author <- map["author"]
+        title <- map["title"]
         
-         published <- (map["articles.publishedAt"], transform)
     }
 }
 

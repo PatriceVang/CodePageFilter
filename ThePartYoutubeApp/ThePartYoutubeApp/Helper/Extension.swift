@@ -35,3 +35,15 @@ extension UIImageView {
         self.kf.setImage(with: newUrl, placeholder: image, options: [.transition(.fade(1))])
     }
 }
+
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: self)
+    }
+    
+  
+}
+
+

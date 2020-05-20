@@ -11,9 +11,15 @@ import UIKit
 private let cellId = "cell"
 
 class UtityCellHome: UITableViewCell {
-    @IBOutlet weak var myCollectionUtity: UICollectionView!
-    
-    
+    @IBOutlet weak var myCollectionUtity: UICollectionView!    
+    var listArticle = [Articles]() {
+        didSet {
+            if listArticle.count > 0 {
+                self.myCollectionUtity.reloadData()
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         myCollectionUtity.register(UINib(nibName: "DetailUtityCell", bundle: nil), forCellWithReuseIdentifier: cellId)
@@ -26,11 +32,13 @@ class UtityCellHome: UITableViewCell {
 }
 extension UtityCellHome: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return listArticle.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionUtity.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? DetailUtityCell
+        let articles = listArticle[indexPath.row]
+        cell?.articles = articles
         return cell!
     }
     
@@ -39,8 +47,21 @@ extension UtityCellHome: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let keyWindow = UIApplication.shared.keyWindow {
+            let videoPlayerView = VideosLaucher()
+            keyWindow.addSubview(videoPlayerView.view)
+            videoPlayerView.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                videoPlayerView.view.frame = keyWindow.frame
+            }) { (completed) in
+                UIApplication.shared.setStatusBarHidden(true, with: .fade)
+            }
+        }
+    
     }
-    
-    
 }
+
+
+
+
+
