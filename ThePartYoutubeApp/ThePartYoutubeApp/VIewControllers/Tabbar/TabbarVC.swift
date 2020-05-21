@@ -142,6 +142,7 @@ class TabbarVC: UITabBarController {
     @objc private func onTapSearch() {
         let searchVC = SearchVC()
         searchVC.modalPresentationStyle = .fullScreen
+        searchVC.delegate = self
         self.present(searchVC, animated: false, completion: nil)
         
     }
@@ -159,8 +160,14 @@ class TabbarVC: UITabBarController {
 
 extension TabbarVC: ListOptionViewDelegate {
     func onTapOptionType(type: OptionType) {
-        
     }
-    
-    
+}
+
+extension TabbarVC: SearchVCDelegate {
+    func passText(str: String) {
+        //Tabbar get text
+        let searchResult = SearchResultVC()
+        searchResult.textFromSeachVC = str
+        self.selectedViewController?.navigationController?.pushViewController( searchResult, animated: true)
+    }
 }

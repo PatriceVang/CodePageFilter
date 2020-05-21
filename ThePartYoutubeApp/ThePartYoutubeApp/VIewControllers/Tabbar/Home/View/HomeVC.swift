@@ -18,11 +18,11 @@ class HomeVC: UIViewController {
     var presenter: PresenterHomeProtocol!
     var listVideos = [Videos]()
     var listArtiles = [Articles]()
-  
     init() {
         presenter = Presenter()
         super.init(nibName: "HomeVC", bundle: nil)
         presenter.view = self
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -36,21 +36,11 @@ class HomeVC: UIViewController {
         fetchData()
         settingsView.translatesAutoresizingMaskIntoConstraints = false
         supportView.frame = .init(x: 0 , y: 0, width: self.view.frame.width, height: 0)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let searchVC = segue.destination as? SearchVC {
-            searchVC.delegate = self
-        }
-    }
-    
-    private func fetchData() {
-        let urlVideos = "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json"
-        self.presenter.fetchDataVideos(url: urlVideos, header: nil, params: nil)
         
-        let urlArticles = "http://newsapi.org/v2/everything"
-        let param = ["q":"bitcoin", "from": "2020-04-20", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
-        self.presenter.fetchDataUtity(url: urlArticles, header: nil, params: param)
+    }
+    private func fetchData() {
+        self.presenter.fetchDataVideos()
+        self.presenter.fetchDataUtity()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,6 +157,7 @@ extension HomeVC: ItemsVideoCellHomeDelegate {
     func onTapAuthor(name: String) {
         let authorDetailVC = AuthorDetailVC()
         authorDetailVC.backTitleNv = name
+        self.tabBarController?.navigationController?.navigationBar.isHidden = true
         self.navigationController?.pushViewController(authorDetailVC, animated: true)
     }
     
@@ -204,7 +195,6 @@ extension HomeVC: PresenterHomeDelegate {
     func passDataUtity(articles: [Articles]) {
         self.listArtiles = articles
         self.myTableItemsVideo.reloadData()
-        print(articles.map{ $0.published})
     }
     
     func passDataVideos(data: [Videos]) {

@@ -20,7 +20,7 @@ class DetailUtityCell: UICollectionViewCell {
             presentImg.setImage(url: url)
             titleLb.text = self.articles?.title
             authorLb.text = self.articles?.author ?? "Anonymous"
-            subTitleLb.text = self.articles?.published
+            subTitleLb.text = self.articles?.published?.toDate(.MMddyyyyHHmmss)!.toString(.MMddyyyyHHmm)
         }
     }
     

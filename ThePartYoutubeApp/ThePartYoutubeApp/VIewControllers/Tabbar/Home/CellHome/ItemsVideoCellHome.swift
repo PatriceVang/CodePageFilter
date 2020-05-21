@@ -23,7 +23,7 @@ class ItemsVideoCellHome: UITableViewCell {
             presentImg.setImage(url:imageString)
             titleLb.text = self.videos?.title
             guard let name = self.videos?.name else {return}
-            guard let views = self.videos?.views else {return}
+            guard let views = self.videos?.views?.toThoudsandDecima() else {return}
             subTitleLb.text = "\(name) • \(views)"
             authorImg.setImage(url:authorImgString )
         }

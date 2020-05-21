@@ -10,7 +10,6 @@ import UIKit
 
 
 class BaseViewXib: UIView {
-    
     override var backgroundColor: UIColor? {
         didSet {
             view?.backgroundColor = backgroundColor

@@ -32,18 +32,44 @@ extension UIImageView {
     func setImage(url: String) {
         guard let newUrl = URL(string: url) else {return}
         self.kf.indicatorType = .activity
-        self.kf.setImage(with: newUrl, placeholder: image, options: [.transition(.fade(1))])
+        
+        self.kf.setImage(with: newUrl, placeholder: nil, options: [.transition(.fade(2))])
     }
 }
 
 extension Date {
-    func toString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+    func toString(_ format: DateFormat) -> String {
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
     }
-    
-  
 }
 
 
+extension String {
+    func toDate(_ format: DateFormat) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
+        return dateFormatter.date(from: self)
+//        dateFormatter.date
+    }
+}
+
+extension Int {
+    func toThoudsandDecima() -> String? {
+        var formater = NumberFormatter()
+        formater.numberStyle = .decimal
+        formater.maximumFractionDigits = 0
+        return formater.string(from: NSNumber(value: self))
+    }
+
+}
+
+
+
+enum DateFormat: String {
+    case MMddyyyyHHmmss = "yyyy-MM-dd'T'HH:mm:ssZ"
+    case MMddyyyyHHmm = "yyyy-MM-dd HH:mm"
+}
+
+//2020-05-20T23:00:37Z

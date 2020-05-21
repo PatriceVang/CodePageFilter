@@ -35,6 +35,7 @@ class Resource {
         static var downloadImg = UIImage(named: "imgDownload")
         static var shareImg = UIImage(named: "imgShare")
         static var menuVerticalImg = UIImage(named: "imgMenuVertical")
+        static var playlistImg = UIImage(named: "imgPlaylist")
     }
     
     class Text {

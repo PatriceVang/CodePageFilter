@@ -57,7 +57,6 @@ extension UtityCellHome: UICollectionViewDelegate, UICollectionViewDataSource, U
                 UIApplication.shared.setStatusBarHidden(true, with: .fade)
             }
         }
-    
     }
 }
 

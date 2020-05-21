@@ -17,16 +17,17 @@ protocol PresenterHomeDelegate: class {
 
 protocol PresenterHomeProtocol {
     var view: PresenterHomeDelegate? { get set }
-    func fetchDataVideos(url: String, header: [String: String]?, params: [String: Any]?)
-    func fetchDataUtity(url: String, header: [String: String]?, params: [String: Any]?)
+    func fetchDataVideos()
+    func fetchDataUtity()
 }
 
 
 extension HomeVC {
     class Presenter: PresenterHomeProtocol {
         weak var view: PresenterHomeDelegate?
-        func fetchDataVideos(url: String, header: [String : String]?, params: [String : Any]?) {
-            APICaller.getMethod(url: url, header: header, params: params) { (data, err) in
+        func fetchDataVideos() {
+             let urlVideos = "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json"
+            APICaller.getMethod(url: urlVideos, header: nil, params: nil) { (data, err) in
                 guard let data = data else {return}
                 if err != nil {
                     print(err?.message as Any)
@@ -39,8 +40,10 @@ extension HomeVC {
                 }
             }
         }
-        func fetchDataUtity(url: String, header: [String : String]?, params: [String : Any]?) {
-            APICaller.getMethod(url: url, header: header, params: params) { (data, error) in
+        func fetchDataUtity() {
+            let urlArticles = "http://newsapi.org/v2/everything"
+            let param = ["q":"bitcoin", "from": "2020-04-21", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
+            APICaller.getMethod(url: urlArticles, header: nil, params: param) { (data, error) in
                 guard let data = data else {return}
                 if error != nil {
                     print(error?.message as Any)
@@ -50,7 +53,6 @@ extension HomeVC {
                     DispatchQueue.main.async {
                         self.view?.passDataUtity(articles: newsVideos.articles!)
                     }
-                    
                 }
             }
         }

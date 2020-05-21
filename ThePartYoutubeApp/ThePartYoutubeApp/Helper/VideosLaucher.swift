@@ -73,7 +73,6 @@ class VideosLaucher: UIViewController {
         let playerPlayer = AVPlayerLayer(player: player)
         videoPlayerV.layer.addSublayer(playerPlayer)
         playerPlayer.frame = self.videoPlayerV.bounds
-        playerPlayer.contentsGravity = .resizeAspectFill
         player?.play()
         player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
 
@@ -116,7 +115,19 @@ class VideosLaucher: UIViewController {
     }
     
     @objc func onTapBackBtn() {
-        print("back")
+        let currentTime = CMTimeGetSeconds((player?.currentTime())!)
+        var backwardTime = 0
+        if currentTime < 10 {
+            backwardTime = 0
+        } else {
+            backwardTime = Int(currentTime - 10)
+        }
+        if player != nil {
+            player?.seek(to: CMTime(seconds: Double(backwardTime), preferredTimescale: 1), completionHandler: { (Bool) in
+                
+            })
+        }
+
        
     }
     @objc func onTapPausePlayBtn() {
@@ -131,8 +142,20 @@ class VideosLaucher: UIViewController {
     }
     
     @objc func onTapNextBtn() {
-        print("next")
-        
+        let duration = player?.currentItem?.duration
+        let totalSecond = CMTimeGetSeconds(duration!)
+        var currentTime = CMTimeGetSeconds((player?.currentTime())!)
+        var nextTime = 0
+        if currentTime + 10 >= totalSecond  {
+            nextTime = Int(totalSecond)
+        } else {
+            nextTime = Int(currentTime + 10)
+        }
+        if player != nil {
+            player?.seek(to: CMTime(seconds: Double(nextTime), preferredTimescale: 1), completionHandler: { (Bool) in
+                
+            })
+        }
     }
     
     @objc func onChangeValueSlider() {
@@ -152,22 +175,21 @@ class VideosLaucher: UIViewController {
         case .began, .changed:
             if videoPlayerV.frame.minY >= self.view.frame.minY {
                 self.videoPlayerV.center.y += translation.y
-                
                 if videoPlayerV.frame.minY < self.view.frame.minY {
                     videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width / 9*16)
                 }
                 if videoPlayerV.center.y > self.view.center.y {
                     UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                        
                         self.view.frame = .init(x: 10, y: self.view.frame.height - 200, width: self.view.frame.width - 20, height: 200)
                         self.videoPlayerV.frame = self.view.frame
                         self.containerV.isHidden = true
                         self.view.layoutIfNeeded()
-                        
                     }) { (Bool) in
                     }
                 }
             }
+            
+            
         case .ended:
             print("end")
         default:

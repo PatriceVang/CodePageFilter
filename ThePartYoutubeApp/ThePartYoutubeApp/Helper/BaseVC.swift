@@ -17,7 +17,11 @@ extension UIImageView {
 
 
 
-class BaseView: UIViewController {
+class BaseVC: UIViewController {
+    
+    deinit {
+        print(String(describing: Self.self) + "is deinited")
+    }
     
     func setupLabelFor(lable: UILabel, text: String, textColor: UIColor, font: UIFont) {
         lable.text = text

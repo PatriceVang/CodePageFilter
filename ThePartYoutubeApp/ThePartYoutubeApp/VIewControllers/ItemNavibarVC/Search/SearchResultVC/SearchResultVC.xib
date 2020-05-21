@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="ThePartYoutubeApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultVC" customModule="ThePartYoutubeApp" customModuleProvider="target">
             <connections>
-                <outlet property="myTableItemsVideo" destination="R41-WU-RAI" id="2oH-pG-yya"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="1va-mo-igs"/>
+                <outlet property="myResultTableV" destination="0Ag-Oc-XgD" id="Qn6-IH-g4w"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,24 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R41-WU-RAI">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ag-Oc-XgD">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Tk9-Xz-VHH"/>
-                        <outlet property="delegate" destination="-1" id="cdw-Cn-HaO"/>
+                        <outlet property="dataSource" destination="-1" id="7CN-DM-IuP"/>
+                        <outlet property="delegate" destination="-1" id="hhr-Ue-NdW"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="R41-WU-RAI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b7d-lM-CAa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R41-WU-RAI" secondAttribute="trailing" id="dUW-Z1-SDA"/>
-                <constraint firstItem="R41-WU-RAI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n2v-a1-xGh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R41-WU-RAI" secondAttribute="bottom" id="qw4-CR-7We"/>
+                <constraint firstItem="0Ag-Oc-XgD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8M4-Ip-PyY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Ag-Oc-XgD" secondAttribute="trailing" id="ain-ga-1vX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0Ag-Oc-XgD" secondAttribute="bottom" id="iWx-es-4Yu"/>
+                <constraint firstItem="0Ag-Oc-XgD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ixD-Go-eZ7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+            <point key="canvasLocation" x="139" y="86"/>
         </view>
     </objects>
 </document>

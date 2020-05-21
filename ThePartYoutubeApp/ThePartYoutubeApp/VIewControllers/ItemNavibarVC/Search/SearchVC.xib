@@ -12,6 +12,7 @@
                 <outlet property="backItemNv" destination="ehX-L4-klA" id="yvq-iZ-kt8"/>
                 <outlet property="micBtn" destination="5DR-ar-bQY" id="YCr-BX-ai0"/>
                 <outlet property="naviBar" destination="mnb-bU-8vp" id="5pv-ZL-pxk"/>
+                <outlet property="searchTf" destination="dAJ-1X-9Yf" id="vko-4X-0q0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -12,7 +12,6 @@ import XLPagerTabStrip
 class AuthorDetailVC: ButtonBarPagerTabStripViewController {
     var backTitleNv = ""
     
-    
     //MARK: Life cycle
     override func viewDidLoad() {
         customMenuBar()
@@ -77,7 +76,4 @@ class AuthorDetailVC: ButtonBarPagerTabStripViewController {
     @objc func onTapBackButtonNv() {
        navigationController?.popViewController(animated: true)
     }
-    
-    
-
 }
