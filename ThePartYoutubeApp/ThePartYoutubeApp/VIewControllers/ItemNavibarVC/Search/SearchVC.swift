@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchVC: BaseVC, UITextFieldDelegate {
+class SearchVC: BaseVC {
     @IBOutlet weak var searchTf: UITextField!
     @IBOutlet weak var naviBar: UIView!
     @IBOutlet weak var backItemNv: UIImageView!
@@ -19,7 +19,6 @@ class SearchVC: BaseVC, UITextFieldDelegate {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-   
         customElement()
         
     }
@@ -30,24 +29,22 @@ class SearchVC: BaseVC, UITextFieldDelegate {
         searchTf.delegate = self
         searchTf.becomeFirstResponder()
         searchTf.returnKeyType = .done
-    }
-
-    @IBAction func searchTf(_ sender: Any) {
-        guard let textfield = sender as? UITextField else {return}
-        textOfTf = textfield.text
+        searchTf.enablesReturnKeyAutomatically = true
     }
  
     //MARK: Handle tap
     @objc func onTapBackItemNv(_ ges: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textOfTf = textField.text
         self.dismiss(animated: true, completion: nil)
-        self.delegate?.passText(str: self.textOfTf ?? "")
+        self.delegate?.passText(str: self.textOfTf!)
         return true
     }
-    
-    
 }
 
 protocol SearchVCDelegate: class {

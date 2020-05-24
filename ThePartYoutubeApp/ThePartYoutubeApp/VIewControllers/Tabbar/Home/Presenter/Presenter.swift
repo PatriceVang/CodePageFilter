@@ -42,7 +42,7 @@ extension HomeVC {
         }
         func fetchDataUtity() {
             let urlArticles = "http://newsapi.org/v2/everything"
-            let param = ["q":"bitcoin", "from": "2020-04-21", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
+            let param = ["q":"bitcoin", "from": "2020-04-25", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
             APICaller.getMethod(url: urlArticles, header: nil, params: param) { (data, error) in
                 guard let data = data else {return}
                 if error != nil {

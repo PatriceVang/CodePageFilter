@@ -12,9 +12,14 @@ private let cellId = "cell"
 
 class SearchResultVC: UIViewController {
     @IBOutlet weak var myResultTableV: UITableView!
-    let searchBar: UISearchBar = {
-       let sb = UISearchBar()
-        return sb
+    let searchTf: UITextField = {
+       let tf = UITextField()
+        tf.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width - 50, height: 30)
+        tf.layer.cornerRadius = 5
+        tf.layer.masksToBounds = true
+        tf.backgroundColor = #colorLiteral(red: 0.9306792422, green: 0.9306792422, blue: 0.9306792422, alpha: 1)
+        tf.enablesReturnKeyAutomatically = true
+        return tf
     }()
     var listArticles = [Articles]()
     var listNewArticle = [Articles]()
@@ -31,32 +36,37 @@ class SearchResultVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         myResultTableV.register(UINib(nibName: "ResultCell", bundle: nil), forCellReuseIdentifier: cellId)
-        //call api
-        if textFromSeachVC == "" {
-            return
-        }
-       
-        self.presenter.fetchDataSearchResult(text: textFromSeachVC)
-        
-        //searchbar
-        searchBar.delegate = self
-        searchBar.text = textFromSeachVC
-        searchBar.returnKeyType = .done
         customNaviBar()
+        callApi()
+        customElement()
+    }
+    //call api from textFromSeachVC
+    private func callApi() {
+        self.presenter.fetchDataSearchResult(text: textFromSeachVC)
+    }
+    //MARK:Custom Element
+    private func customElement() {
+        //textfield
+        searchTf.enablesReturnKeyAutomatically = true
+         searchTf.delegate = self
+         searchTf.returnKeyType = .done
     }
     private func customNaviBar() {
         self.navigationItem.leftBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(onTapBackBtnNV)),
         ]
-        self.navigationItem.titleView = searchBar
+        self.navigationItem.titleView = searchTf
         self.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: Resource.Image.connectImg, style: .plain, target: self, action: #selector(onTapConnectBtnNv))
+            UIBarButtonItem(image: Resource.Image.connectImg, style: .plain, target: self, action: #selector(onTapConnectBtnNv)),
+            UIBarButtonItem(image: Resource.Image.adjustmentImg, style: .plain, target: self, action: #selector(onTapADjustmentBtnNv))
         ]
     }
+    
+    //MARK: Handle tap
     @objc func onTapBackBtnNV() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -64,22 +74,19 @@ class SearchResultVC: UIViewController {
     @objc func onTapConnectBtnNv() {
         print("connect")
     }
+    @objc func onTapADjustmentBtnNv() {
+        print("adjustment")
+    }
 }
 
-extension SearchResultVC: UISearchBarDelegate {
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        self.textSearchBar = searchText
-//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(callApi), object: nil)
-//        self.perform(#selector(callApi), with: nil, afterDelay: 1)
-//    }
-//    @objc func callApi() {
-//        self.presenter.fetchDataSearchResult(text: textSearchBar == "" ? textFromSeachVC : textSearchBar)
-//    }
-    
-//    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-//        self.presenter.fetchDataSearchResult(text: textSearchBar == "" ? textFromSeachVC : textSearchBar)
-//        return true
-//    }
+extension SearchResultVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text {
+            self.textSearchBar = text
+            self.presenter.fetchDataSearchResult(text: textSearchBar)
+        }
+        return true
+    }
 }
 
 extension SearchResultVC: UITableViewDataSource, UITableViewDelegate {
@@ -99,7 +106,6 @@ extension SearchResultVC: UITableViewDataSource, UITableViewDelegate {
         return myResultTableV.frame.width / 3.5
     }
 }
-
 
 extension SearchResultVC: PresenterSearchResultDelegate {
     func passDataSearchResult(data: [Articles]) {

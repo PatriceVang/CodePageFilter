@@ -156,6 +156,19 @@ class TabbarVC: UITabBarController {
         alphaV.removeFromSuperview()
         connectDeviceV.removeFromSuperview()
     }
+    
+    //select tabar
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        guard let currentIndex = tabBar.items?.firstIndex(of: item) else {return}
+        guard let subView = tabBar.subviews[currentIndex + 1].subviews.first  else {return}
+    
+        let pulse = PulsingAnimation(numberOfPuls: 1, radius: subView.frame.height / 1.5, position: subView.center )
+        pulse.animationDuration = 0.3
+        pulse.backgroundColor = Resource.Color.itemTabbarColor.cgColor
+
+        subView.layer.insertSublayer(pulse, below: subView.layer)
+        
+    }
 }
 
 extension TabbarVC: ListOptionViewDelegate {
@@ -171,3 +184,4 @@ extension TabbarVC: SearchVCDelegate {
         self.selectedViewController?.navigationController?.pushViewController( searchResult, animated: true)
     }
 }
+

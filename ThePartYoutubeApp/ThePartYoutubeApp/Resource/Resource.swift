@@ -36,6 +36,11 @@ class Resource {
         static var shareImg = UIImage(named: "imgShare")
         static var menuVerticalImg = UIImage(named: "imgMenuVertical")
         static var playlistImg = UIImage(named: "imgPlaylist")
+        static var adjustmentImg = UIImage(named: "imgAdjustment")
+        static var trendingImg = UIImage(named: "imgTrending")
+        static var newsImg = UIImage(named: "imgNews")
+        static var musicImg = UIImage(named: "imgMusic")
+        static var gamingImg = UIImage(named: "imgGaming")
     }
     
     class Text {

@@ -24,7 +24,7 @@ extension SearchResultVC {
         weak var view: PresenterSearchResultDelegate?
         func fetchDataSearchResult(text: String) {
             let url = "http://newsapi.org/v2/everything"
-            let params = ["q":"\(text)", "from": "2020-04-21", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
+            let params = ["q":"\(text)", "from": "2020-04-23", "sortBy": "publishedAt","apiKey": "01d16831688b4fb491ec6cec06fc8821"]
             APICaller.getMethod(url: url, header: nil, params: params) { (data, error) in
                 guard let data = data else {return}
                 if error != nil {

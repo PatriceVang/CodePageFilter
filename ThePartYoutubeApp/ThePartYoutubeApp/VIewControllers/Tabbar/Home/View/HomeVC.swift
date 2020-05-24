@@ -142,6 +142,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let keyWindow = UIApplication.shared.keyWindow {
             let videoPlayerView = VideosLaucher()
+            keyWindow.backgroundColor = .clear
             keyWindow.addSubview(videoPlayerView.view)
             videoPlayerView.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -150,6 +151,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 UIApplication.shared.setStatusBarHidden(true, with: .fade)
             }
         }
+        
+//        let videoPlayer = VideosLaucher()
+//        videoPlayer.modalPresentationStyle = .fullScreen
+//        present(videoPlayer, animated: true, completion: nil)
     }
 }
 
