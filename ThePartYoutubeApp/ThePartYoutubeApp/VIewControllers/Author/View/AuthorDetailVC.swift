@@ -10,8 +10,7 @@ import UIKit
 import XLPagerTabStrip
 
 class AuthorDetailVC: ButtonBarPagerTabStripViewController {
-    var backTitleNv = ""
-    
+    var titleBackNv = ""
     //MARK: Life cycle
     override func viewDidLoad() {
         customMenuBar()
@@ -22,8 +21,8 @@ class AuthorDetailVC: ButtonBarPagerTabStripViewController {
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.leftBarButtonItems = [
-           UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(onTapBackButtonNv)),
-           UIBarButtonItem(title: backTitleNv, style: .plain, target: self, action: #selector(onTapBackButtonNv))
+           UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(onTapTitleBackButtonNv)),
+           UIBarButtonItem(title: titleBackNv, style: .plain, target: self, action: #selector(onTapTitleBackButtonNv))
             
         ]
         self.navigationItem.rightBarButtonItems = [
@@ -69,11 +68,8 @@ class AuthorDetailVC: ButtonBarPagerTabStripViewController {
     }
     
     //MARK: Handle Tap
-    @objc private func onTapBackItemNaviBar() {
-       self.navigationController?.popViewController(animated: true)
-    }
    
-    @objc func onTapBackButtonNv() {
+    @objc func onTapTitleBackButtonNv() {
        navigationController?.popViewController(animated: true)
     }
 }

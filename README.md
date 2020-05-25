@@ -14,4 +14,4 @@ Các project con bao gồm
 - SegmentWithTableview: UISegment
 - Twitter: UICollectionView Dynamic cell height, loadmore
 - MessageApp: Make screen message, UITableView cell height dynamic
-- Final Project: UIPageVC, AVFoundation, integrate CollectionView inside TableVIew, XLPageTaptrip, extension format date, string, thoundsand, PulsingAnimation tabbarItem
+- Final Project: UIPageVC, AVFoundation, integrate CollectionView inside TableVIew, XLPageTaptrip, extension format date, string, thoundsand, PulsingAnimation tabbarItem, UIPangesture

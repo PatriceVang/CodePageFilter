@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 
 class VideosLaucher: UIViewController {
+    @IBOutlet weak var heightVideoPlayerV: NSLayoutConstraint!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTimeLb: UILabel!
-    
     @IBOutlet weak var sliderTime: UISlider!
     @IBOutlet weak var totalTimeLb: UILabel!
     @IBOutlet weak var backBtn: UIImageView!
@@ -24,26 +24,9 @@ class VideosLaucher: UIViewController {
     var player: AVPlayer?
     var playerPlayer: AVPlayerLayer!
     var isPlaying: Bool = false
-    var isTapedBackgroud: Bool = false {
+    var isTapedBackgroud: Bool = true {
         didSet {
-            if isTapedBackgroud {
-                currentTimeLb.isHidden = false
-                totalTimeLb.isHidden = false
-                sliderTime.isHidden = false
-                pausePlayBtn.isHidden = false
-                backBtn.isHidden = false
-                nextBtn.isHidden = false
-                Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { (Timer) in
-                    self.isTapedBackgroud = false
-                }
-            } else {
-                currentTimeLb.isHidden = true
-                totalTimeLb.isHidden = true
-                sliderTime.isHidden = true
-                pausePlayBtn.isHidden = true
-                backBtn.isHidden = true
-                nextBtn.isHidden = true
-            }
+            controllerV.isHidden = !isTapedBackgroud
         }
     }
     
@@ -53,33 +36,32 @@ class VideosLaucher: UIViewController {
         setupPlayVideo()
         customItemsVieosPlyer()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * 9/16)
+        videoPlayerV.frame = .init(x: 0, y: self.view.safeAreaInsets.top, width: self.view.frame.width, height: self.view.frame.width * 9/16)
         controllerV.frame = videoPlayerV.frame
-        playerPlayer.frame = self.videoPlayerV.frame
+        playerPlayer.frame = self.videoPlayerV.bounds
     }
     
     private func customItemsVieosPlyer() {
-        
         isTapedBackgroud = true
         indicator.startAnimating()
         controllerV.backgroundColor = UIColor(white: 0, alpha: 1)
-        controllerV.setupTapGesture(view: controllerV, selector: #selector(onTapBackgroudVideos), target: self)
-        
+    
         backBtn.setupTapGesture(view: backBtn, selector: #selector(onTapBackBtn), target: self)
         pausePlayBtn.setupTapGesture(view: pausePlayBtn, selector: #selector(onTapPausePlayBtn), target: self)
         nextBtn.setupTapGesture(view: nextBtn, selector: #selector(onTapNextBtn), target: self)
         sliderTime.addTarget(self, action: #selector(onChangeValueSlider), for: .valueChanged)
-        controllerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
-        controllerV.isUserInteractionEnabled = true
-        videoPlayerV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapContainerV(_:))))
+        
+
+        videoPlayerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
+        videoPlayerV.setupTapGesture(view: videoPlayerV, selector: #selector(onTapVideoPlayer), target: self)
         videoPlayerV.isUserInteractionEnabled = true
     }
     
     private func setupPlayVideo() {
-        guard let mainUrl = URL(string: "https://devstreaming-cdn.apple.com/videos/wwdc/2016/102w0bsn0ge83qfv7za/102/hls_vod_mvp.m3u8") else {return}
+        guard let mainUrl = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else {return}
         player = AVPlayer(url: mainUrl)
         playerPlayer = AVPlayerLayer(player: player)
         videoPlayerV.layer.addSublayer(playerPlayer)
@@ -108,10 +90,6 @@ class VideosLaucher: UIViewController {
             indicator.isHidden = true
             controllerV.backgroundColor = .clear
             isPlaying = true
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (Timer) in
-                self.isTapedBackgroud = false
-            }
-            
             isTapedBackgroud = false
             if let duration = player?.currentItem?.duration {
                 let durationBySeconds = CMTimeGetSeconds(duration)
@@ -123,11 +101,6 @@ class VideosLaucher: UIViewController {
     }
     
     //MARK: Handle tap
-    @objc func onTapBackgroudVideos() {
-        print("tap")
-        isTapedBackgroud = !isTapedBackgroud
-    }
-    
     @objc func onTapBackBtn() {
         let currentTime = CMTimeGetSeconds((player?.currentTime())!)
         var backwardTime = 0
@@ -136,12 +109,11 @@ class VideosLaucher: UIViewController {
         } else {
             backwardTime = Int(currentTime - 10)
         }
-        if player != nil {
-            player?.seek(to: CMTime(seconds: Double(backwardTime), preferredTimescale: 1), completionHandler: { (Bool) in
-                
-            })
-        }
+        player?.seek(to: CMTime(seconds: Double(backwardTime), preferredTimescale: 1), completionHandler: { (Bool) in
+            
+        })
     }
+    
     @objc func onTapPausePlayBtn() {
         if isPlaying {
             player?.pause()
@@ -163,15 +135,13 @@ class VideosLaucher: UIViewController {
         } else {
             nextTime = Int(currentTime + 10)
         }
-        if player != nil {
-            player?.seek(to: CMTime(seconds: Double(nextTime), preferredTimescale: 1), completionHandler: { (Bool) in
-                
-            })
-        }
+        player?.seek(to: CMTime(seconds: Double(nextTime), preferredTimescale: 1), completionHandler: { (Bool) in
+        })
+        
     }
     
     @objc func onChangeValueSlider() {
-        // slider tu dong chay
+        // slider auto run
         if let duration = player?.currentItem?.duration {
             let totalSecond = CMTimeGetSeconds(duration)
             let value = Double(sliderTime.value) * totalSecond
@@ -181,41 +151,63 @@ class VideosLaucher: UIViewController {
         }
     }
     
-    @objc func onPanGetureVideos(_ pan: UIPanGestureRecognizer) {
-        let translation = pan.translation(in: pan.view)
-        switch pan.state {
+    @objc func onPanGetureVideos(_ ges: UIPanGestureRecognizer) {
+        let translation = ges.translation(in: ges.view)
+        
+        switch ges.state {
         case .began, .changed:
             self.videoPlayerV.center.y += translation.y
-            if videoPlayerV.frame.minY < self.view.frame.minY {
-                self.videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * 9/16)
-            }
-            if videoPlayerV.frame.minY >= 5 {
-                UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-                    self.view.frame = .init(x: self.view.frame.origin.x + 0.2, y: self.view.frame.origin.y + 10, width: self.view.frame.width - 0.4, height: self.view.frame.height)
-                }) { (Bool) in
+            //prevent pull up
+            if self.videoPlayerV.frame.minY <= self.view.safeAreaInsets.top {
+                if self.view.frame.minY <= self.view.safeAreaInsets.top {
+                    self.videoPlayerV.frame = .init(x: 0, y: self.view.safeAreaInsets.top, width: self.view.frame.width, height: self.view.frame.width * 9/16)
+                 
+                } else {
+//                    heightVideoPlayerV.constant = self.videoPlayerV.frame.height - 10
+                    self.videoPlayerV.frame = .init(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: self.videoPlayerV.frame.height - 10)
+                    self.videoPlayerV.layoutIfNeeded()
+                }
+            } else {
+                
+                self.view.frame = .init(x: self.view.frame.origin.x + 0.1, y: self.view.frame.origin.y + translation.y, width: self.view.frame.width - 0.2, height: self.view.frame.height - translation.y)
+                
+               
+                if self.view.frame.minY >= UIScreen.main.bounds.height / 3 {
+                    
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+                        self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.4, width: UIScreen.main.bounds.width - 20, height: self.view.frame.width / 2)
+                        self.videoPlayerV.frame = self.view.frame
+                        self.view.layoutIfNeeded()
+                        return
+                    }, completion: nil)
+                       
                 }
             }
+
         case .ended:
-            if self.view.frame.minY >= self.view.frame.width / 3  {
+            if self.view.frame.minY >= self.view.frame.width / 4 {
+                //update frame for self.view
                 self.controllerV.isHidden = true
-                self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.4, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.width / 2.5)
-                
-                self.videoPlayerV.frame = .init(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: self.view.frame.height)
-                self.videoPlayerV.transform = CGAffineTransform(scaleX: 0.5, y: 1)
-                self.view.transform = CGAffineTransform(scaleX: 1, y: 0.5)
-                
+                UIView.animate(withDuration: 0.3) {
+                    self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.45, width: UIScreen.main.bounds.width - 20, height: self.view.frame.width / 2)
+                    self.view.transform = CGAffineTransform(scaleX: 1, y: 0.55)
+                    self.videoPlayerV.frame = self.view.frame
+                    return
+                }
             } else {
                 self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
+            break
         default:
            break
         }
+        ges.setTranslation(.zero, in: ges.self.view)
     }
-    
-    @objc func onTapContainerV(_ tap: UITapGestureRecognizer) {
+
+    @objc func onTapVideoPlayer() {
+        isTapedBackgroud.toggle()
         if self.view.frame.minY > UIScreen.main.bounds.height / 2 {
             self.view.transform = .identity
-            self.videoPlayerV.transform = .identity
             self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             self.controllerV.isHidden = false
         }

@@ -8,15 +8,6 @@
 
 import UIKit
 
-extension UIImageView {
-    
-}
-
-
-
-
-
-
 class BaseVC: UIViewController {
     
     deinit {
@@ -28,10 +19,4 @@ class BaseVC: UIViewController {
         lable.textColor = textColor
         lable.font = font   
     }
-    
-    
-    
-    
-    
-    
 }

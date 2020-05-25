@@ -10,7 +10,7 @@ import UIKit
 
 private let cellId = "cell"
 
-class SearchResultVC: UIViewController {
+class ResultVC: UIViewController {
     @IBOutlet weak var myResultTableV: UITableView!
     let searchTf: UITextField = {
        let tf = UITextField()
@@ -22,14 +22,13 @@ class SearchResultVC: UIViewController {
         return tf
     }()
     var listArticles = [Articles]()
-    var listNewArticle = [Articles]()
     var presenter: PresenterSearchResultProtocol!
     var textFromSeachVC = ""
-    var textSearchBar = ""
+    var textTextfield = ""
     //MARK: Life cycle
     init() {
         presenter = Presenter()
-        super.init(nibName: "SearchResultVC", bundle: nil)
+        super.init(nibName: "ResultVC", bundle: nil)
         presenter.view = self
     }
     
@@ -79,17 +78,17 @@ class SearchResultVC: UIViewController {
     }
 }
 
-extension SearchResultVC: UITextFieldDelegate {
+extension ResultVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            self.textSearchBar = text
-            self.presenter.fetchDataSearchResult(text: textSearchBar)
+            self.textTextfield = text
+            self.presenter.fetchDataSearchResult(text: textTextfield)
         }
         return true
     }
 }
 
-extension SearchResultVC: UITableViewDataSource, UITableViewDelegate {
+extension ResultVC: UITableViewDataSource, UITableViewDelegate {
     //cell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listArticles.count
@@ -107,7 +106,7 @@ extension SearchResultVC: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension SearchResultVC: PresenterSearchResultDelegate {
+extension ResultVC: PresenterResultDelegate {
     func passDataSearchResult(data: [Articles]) {
         self.listArticles = data
         self.myResultTableV.reloadData()

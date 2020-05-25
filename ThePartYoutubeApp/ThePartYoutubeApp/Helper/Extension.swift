@@ -38,7 +38,7 @@ extension UIImageView {
 }
 
 extension Date {
-    func toString(_ format: DateFormat) -> String {
+    func toString(_ format: ISODateFormater) -> String {
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
@@ -47,11 +47,10 @@ extension Date {
 
 
 extension String {
-    func toDate(_ format: DateFormat) -> Date? {
+    func toDate(_ format: ISODateFormater) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.date(from: self)
-//        dateFormatter.date
     }
 }
 
@@ -67,7 +66,7 @@ extension Int {
 
 
 
-enum DateFormat: String {
+enum ISODateFormater: String {
     case MMddyyyyHHmmss = "yyyy-MM-dd'T'HH:mm:ssZ"
     case MMddyyyyHHmm = "yyyy-MM-dd HH:mm"
 }

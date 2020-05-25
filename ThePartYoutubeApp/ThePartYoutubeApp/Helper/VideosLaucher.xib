@@ -12,6 +12,7 @@
                 <outlet property="backBtn" destination="oBm-fF-x2O" id="H2a-IE-Aas"/>
                 <outlet property="controllerV" destination="czV-Uc-Wcs" id="Z4B-ll-ukc"/>
                 <outlet property="currentTimeLb" destination="DxB-BH-Dug" id="Acy-P7-HfG"/>
+                <outlet property="heightVideoPlayerV" destination="6hD-0u-FZx" id="W4v-gg-a7N"/>
                 <outlet property="indicator" destination="i6d-Ql-NoD" id="CLL-4r-MDf"/>
                 <outlet property="nextBtn" destination="t8d-K0-F49" id="CWv-LR-ZbP"/>
                 <outlet property="pausePlayBtn" destination="BHk-O8-jyG" id="ubB-qY-Bqc"/>
@@ -27,17 +28,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGu-tE-xzy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="220"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="6hD-0u-FZx"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czV-Uc-Wcs">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="220"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i6d-Ql-NoD">
-                            <rect key="frame" x="188.66666666666666" y="91.666666666666671" width="37" height="37.000000000000014"/>
+                            <rect key="frame" x="188.66666666666666" y="91.666666666666657" width="37" height="37"/>
                         </activityIndicatorView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O9g-1T-NMr">
                             <rect key="frame" x="0.0" y="95" width="414" height="30"/>
@@ -97,7 +98,7 @@
                 <constraint firstItem="czV-Uc-Wcs" firstAttribute="top" secondItem="AGu-tE-xzy" secondAttribute="top" id="8m1-q2-b1B"/>
                 <constraint firstItem="AGu-tE-xzy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R2d-Et-m2g"/>
                 <constraint firstItem="czV-Uc-Wcs" firstAttribute="trailing" secondItem="AGu-tE-xzy" secondAttribute="trailing" id="bPN-WM-Tew"/>
-                <constraint firstItem="AGu-tE-xzy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dGC-8I-8MQ"/>
+                <constraint firstItem="AGu-tE-xzy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dGC-8I-8MQ"/>
                 <constraint firstItem="czV-Uc-Wcs" firstAttribute="leading" secondItem="AGu-tE-xzy" secondAttribute="leading" id="fRH-uK-5gR"/>
                 <constraint firstItem="AGu-tE-xzy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wCk-xp-bpW"/>
             </constraints>

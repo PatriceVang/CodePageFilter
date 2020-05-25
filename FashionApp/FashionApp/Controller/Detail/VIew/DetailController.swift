@@ -147,9 +147,11 @@ class DetailController: BaseView {
         let translation = ges.translation(in: ges.view)
 //        let velocity = ges.velocity(in: ges.view)
 //        let target = translation.target(initialVelocity: velocity)
+        print(translation.y)
         switch ges.state {
         case .began, .changed:
             if self.cartV.frame.maxX >= self.view.frame.maxX {
+                self.cartV.center.y += translation.y
                 self.cartV.center.x += translation.x
               
                 if self.cartV.frame.maxX < self.view.frame.maxX {
@@ -292,16 +294,16 @@ extension DetailController: PresenterDetailDelegate {
 
 }
 // Not use yet
-public extension CGPoint {
-    // The target points after decelerating to 0 velocity at a constant rate
-    func target(initialVelocity: CGPoint, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGPoint {
-        let x = self.x + self.x.target(initialVelocity: initialVelocity.x, decelerationRate: decelerationRate)
-        let y = self.y + self.y.target(initialVelocity: initialVelocity.y, decelerationRate: decelerationRate)
-        return CGPoint(x: x, y: y)
-    }
-}
-extension CGFloat {
-    func target(initialVelocity: CGFloat, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGFloat {
-        return (initialVelocity / 1000.0) * decelerationRate / (1.0 - decelerationRate)
-    }
-}
+//public extension CGPoint {
+//    // The target points after decelerating to 0 velocity at a constant rate
+//    func target(initialVelocity: CGPoint, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGPoint {
+//        let x = self.x + self.x.target(initialVelocity: initialVelocity.x, decelerationRate: decelerationRate)
+//        let y = self.y + self.y.target(initialVelocity: initialVelocity.y, decelerationRate: decelerationRate)
+//        return CGPoint(x: x, y: y)
+//    }
+//}
+//extension CGFloat {
+//    func target(initialVelocity: CGFloat, decelerationRate: CGFloat = UIScrollView.DecelerationRate.normal.rawValue) -> CGFloat {
+//        return (initialVelocity / 1000.0) * decelerationRate / (1.0 - decelerationRate)
+//    }
+//}

@@ -62,7 +62,7 @@ class TabbarVC: UITabBarController {
         super.viewDidLoad()
         self.tabBar.tintColor = Resource.Color.itemTabbarColor
         self.viewControllers = ([UINavigationController(rootViewController: homeVC), exploreVC, subscriptionVC, inboxVC, libVC])
-        
+        optionView.delegate = self
         addItemsNavibar()
         addItemConnectV()
     }
@@ -89,10 +89,10 @@ class TabbarVC: UITabBarController {
         titleYoutubeNV.customView = youtubeLb
     
         self.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: Resource.Image.userImg, style: .plain, target: self, action: #selector(onTapUser)),
-            UIBarButtonItem(image: Resource.Image.searchImg, style: .plain, target: self, action: #selector(onTapSearch)),
-            UIBarButtonItem(image: Resource.Image.cameraImg, style: .plain, target: self, action: #selector(onTapCamera)),
-            UIBarButtonItem(image: Resource.Image.connectImg, style: .plain, target: self, action: #selector(onTapConnect(sender:))),
+            UIBarButtonItem(image: Resource.Image.userImg, style: .plain, target: self, action: #selector(onTapIconUserNvBar)),
+            UIBarButtonItem(image: Resource.Image.searchImg, style: .plain, target: self, action: #selector(onTapIconSearchNvBar)),
+            UIBarButtonItem(image: Resource.Image.cameraImg, style: .plain, target: self, action: #selector(onTapIconCameraNvBar)),
+            UIBarButtonItem(image: Resource.Image.connectImg, style: .plain, target: self, action: #selector(onTapIconConnectNvBar(sender:))),
         ]
         self.navigationItem.leftBarButtonItems = [iconYoutubeNV, titleYoutubeNV]
     }
@@ -112,7 +112,7 @@ class TabbarVC: UITabBarController {
     }
  
     //MARK: Interaction Items Navibar
-    @objc func onTapConnect(sender: UIButton) {
+    @objc func onTapIconConnectNvBar(sender: UIButton) {
         self.view.addSubview(alphaV)
         alphaV.backgroundColor = .black
         alphaV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - self.view.frame.height / 3)
@@ -131,22 +131,20 @@ class TabbarVC: UITabBarController {
                 self.connectDeviceV.heightAnchor.constraint(equalToConstant: self.view.frame.height / 3),
                 self.connectDeviceV.widthAnchor.constraint(equalToConstant: self.view.frame.width)
             ])
-            
         }) { (Bool) in
-            
         }
     }
-    @objc private func onTapCamera() {
+    @objc private func onTapIconCameraNvBar() {
         print("camera")
     }
-    @objc private func onTapSearch() {
+    @objc private func onTapIconSearchNvBar() {
         let searchVC = SearchVC()
         searchVC.modalPresentationStyle = .fullScreen
         searchVC.delegate = self
         self.present(searchVC, animated: false, completion: nil)
         
     }
-    @objc private func onTapUser() {
+    @objc private func onTapIconUserNvBar() {
         self.navigationController?.pushViewController(AccountVC(), animated: true)
     }
     
@@ -161,13 +159,10 @@ class TabbarVC: UITabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let currentIndex = tabBar.items?.firstIndex(of: item) else {return}
         guard let subView = tabBar.subviews[currentIndex + 1].subviews.first  else {return}
-    
         let pulse = PulsingAnimation(numberOfPuls: 1, radius: subView.frame.height / 1.5, position: subView.center )
         pulse.animationDuration = 0.3
         pulse.backgroundColor = Resource.Color.itemTabbarColor.cgColor
-
         subView.layer.insertSublayer(pulse, below: subView.layer)
-        
     }
 }
 
@@ -179,7 +174,7 @@ extension TabbarVC: ListOptionViewDelegate {
 extension TabbarVC: SearchVCDelegate {
     func passText(str: String) {
         //Tabbar get text
-        let searchResult = SearchResultVC()
+        let searchResult = ResultVC()
         searchResult.textFromSeachVC = str
         self.selectedViewController?.navigationController?.pushViewController( searchResult, animated: true)
     }

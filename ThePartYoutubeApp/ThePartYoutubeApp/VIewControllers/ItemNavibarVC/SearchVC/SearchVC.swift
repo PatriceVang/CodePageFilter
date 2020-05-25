@@ -13,15 +13,14 @@ class SearchVC: BaseVC {
     @IBOutlet weak var naviBar: UIView!
     @IBOutlet weak var backItemNv: UIImageView!
     @IBOutlet weak var micBtn: UIImageView!
-    var textOfTf: String?
     weak var delegate: SearchVCDelegate?
     
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customElement()
-        
     }
+    
     private func customElement() {
         //navibar
         backItemNv.setupTapGesture(view: backItemNv, selector: #selector(onTapBackItemNv(_:)), target: self)
@@ -40,9 +39,8 @@ class SearchVC: BaseVC {
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textOfTf = textField.text
         self.dismiss(animated: true, completion: nil)
-        self.delegate?.passText(str: self.textOfTf!)
+        self.delegate?.passText(str: textField.text!)
         return true
     }
 }

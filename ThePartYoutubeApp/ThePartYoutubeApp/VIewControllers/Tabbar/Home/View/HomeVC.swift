@@ -11,7 +11,6 @@ private let cellItemID = "cell"
 private let cellUtityID = "cellTable"
 
 class HomeVC: UIViewController {
-    @IBOutlet weak var testLb: UILabel!
     @IBOutlet weak var myTableItemsVideo: UITableView!
     let settingsView = ListOptionView(types: [.saveToWatch, .saveToList, .downLoad, .share, .cancel])
     let supportView = UIView()
@@ -22,7 +21,6 @@ class HomeVC: UIViewController {
         presenter = Presenter()
         super.init(nibName: "HomeVC", bundle: nil)
         presenter.view = self
-        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -36,8 +34,8 @@ class HomeVC: UIViewController {
         fetchData()
         settingsView.translatesAutoresizingMaskIntoConstraints = false
         supportView.frame = .init(x: 0 , y: 0, width: self.view.frame.width, height: 0)
-        
     }
+    
     private func fetchData() {
         self.presenter.fetchDataVideos()
         self.presenter.fetchDataUtity()
@@ -60,6 +58,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listVideos.count + 1
     }
+    
     /* 3x + 1 = row => x = (row - 1) / 3 phai la so nguyen
      -
      x
@@ -84,6 +83,36 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
      -
      -
      */
+            
+            //list videoInfo
+    //        if listVideos.count == 0 { return UITableViewCell() }
+    //        //note: limit 3 cell
+    ////        if (0..<3).map({ 3 * $0 + 1 }).contains(indexPath.row) {
+    //        if (indexPath.row - 1) % 3 == 0 {
+    //            //Colectionview cell
+    //            let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellUtityID) as? UtityCellHome
+    //            return cell!
+    //        } else {
+    //            //Normal cell
+    //            let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellItemID) as? ItemsVideoCellHome
+    //            cell?.delegate = self
+    //            let videos = listVideos[generateVideoIndex(via: indexPath.row)!]
+    //            cell?.videos = videos
+    //            return cell!
+    //        }
+    //    private func generateVideoIndex(via index: Int) -> Int? {
+    //         if (index - 1) % 3 == 0 { return nil}
+    //            var result = 0
+    //            var a = 3*result + 1
+    //            for i in 0...index {
+    //                if i == a {
+    //                    result += 1
+    //                    a = 3*result + 1
+    //                }
+    //            }
+    //            return index - result
+    //    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellItemID) as? ItemsVideoCellHome
@@ -102,39 +131,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             cell?.videos = videos
             return cell!
         }
-        
-        
-        //list videoInfo
-//        if listVideos.count == 0 { return UITableViewCell() }
-//        //note: limit 3 cell
-////        if (0..<3).map({ 3 * $0 + 1 }).contains(indexPath.row) {
-//        if (indexPath.row - 1) % 3 == 0 {
-//            //Colectionview cell
-//            let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellUtityID) as? UtityCellHome
-//            return cell!
-//        } else {
-//            //Normal cell
-//            let cell = myTableItemsVideo.dequeueReusableCell(withIdentifier: cellItemID) as? ItemsVideoCellHome
-//            cell?.delegate = self
-//            let videos = listVideos[generateVideoIndex(via: indexPath.row)!]
-//            cell?.videos = videos
-//            return cell!
-//        }
+
     }
-    
-//    private func generateVideoIndex(via index: Int) -> Int? {
-//         if (index - 1) % 3 == 0 { return nil}
-//            var result = 0
-//            var a = 3*result + 1
-//            for i in 0...index {
-//                if i == a {
-//                    result += 1
-//                    a = 3*result + 1
-//                }
-//            }
-//            return index - result
-//    }
-    
+        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.width / 1.5
     }
@@ -142,26 +141,23 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let keyWindow = UIApplication.shared.keyWindow {
             let videoPlayerView = VideosLaucher()
+        
             keyWindow.backgroundColor = .clear
             keyWindow.addSubview(videoPlayerView.view)
             videoPlayerView.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 videoPlayerView.view.frame = keyWindow.frame
             }) { (completed) in
-                UIApplication.shared.setStatusBarHidden(true, with: .fade)
+//                UIApplication.shared.setStatusBarHidden(true, with: .fade)
             }
         }
-        
-//        let videoPlayer = VideosLaucher()
-//        videoPlayer.modalPresentationStyle = .fullScreen
-//        present(videoPlayer, animated: true, completion: nil)
     }
 }
 
 extension HomeVC: ItemsVideoCellHomeDelegate {
     func onTapAuthor(name: String) {
         let authorDetailVC = AuthorDetailVC()
-        authorDetailVC.backTitleNv = name
+        authorDetailVC.titleBackNv = name
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
         self.navigationController?.pushViewController(authorDetailVC, animated: true)
     }
@@ -210,10 +206,8 @@ extension HomeVC: PresenterHomeDelegate {
 
 extension HomeVC: SearchVCDelegate {
     func passText(str: String) {
-        let searchResultVC = SearchResultVC()
-        testLb.text = str
-        
-        self.navigationController?.pushViewController(searchResultVC, animated: true)
+        let resultVC = ResultVC()
+        self.navigationController?.pushViewController(resultVC, animated: true)
     }
 }
 
