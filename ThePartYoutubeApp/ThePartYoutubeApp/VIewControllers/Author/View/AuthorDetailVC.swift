@@ -60,7 +60,7 @@ class AuthorDetailVC: ButtonBarPagerTabStripViewController {
     }
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let childHome = HomeAuthorVC()
-        let childVideos = VideosAuthorVC(nibName: "VideosAuthorVC", bundle: nil)
+        let childVideos = VideosAuthorVC()
         let childPlaylist = PlaylistsAuthorVC()
         let childCom = CommunityAuthorVC()
         let childChannels = ChannelsAuthorVC()

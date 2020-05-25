@@ -12,12 +12,13 @@ import AVFoundation
 class VideosLaucher: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTimeLb: UILabel!
+    
     @IBOutlet weak var sliderTime: UISlider!
     @IBOutlet weak var totalTimeLb: UILabel!
     @IBOutlet weak var backBtn: UIImageView!
     @IBOutlet weak var pausePlayBtn: UIImageView!
     @IBOutlet weak var nextBtn: UIImageView!
-    @IBOutlet weak var containerV: UIView!
+    @IBOutlet weak var controllerV: UIView!
     @IBOutlet weak var videoPlayerV: UIView!
     //MARK: Probertis
     var player: AVPlayer?
@@ -56,22 +57,23 @@ class VideosLaucher: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * 9/16)
-        containerV.frame = videoPlayerV.frame
+        controllerV.frame = videoPlayerV.frame
         playerPlayer.frame = self.videoPlayerV.frame
     }
     
     private func customItemsVieosPlyer() {
+        
         isTapedBackgroud = true
         indicator.startAnimating()
-        containerV.backgroundColor = UIColor(white: 0, alpha: 1)
-        containerV.setupTapGesture(view: containerV, selector: #selector(onTapBackgroudVideos), target: self)
+        controllerV.backgroundColor = UIColor(white: 0, alpha: 1)
+        controllerV.setupTapGesture(view: controllerV, selector: #selector(onTapBackgroudVideos), target: self)
         
         backBtn.setupTapGesture(view: backBtn, selector: #selector(onTapBackBtn), target: self)
         pausePlayBtn.setupTapGesture(view: pausePlayBtn, selector: #selector(onTapPausePlayBtn), target: self)
         nextBtn.setupTapGesture(view: nextBtn, selector: #selector(onTapNextBtn), target: self)
         sliderTime.addTarget(self, action: #selector(onChangeValueSlider), for: .valueChanged)
-        containerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
-        containerV.isUserInteractionEnabled = true
+        controllerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
+        controllerV.isUserInteractionEnabled = true
         videoPlayerV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapContainerV(_:))))
         videoPlayerV.isUserInteractionEnabled = true
     }
@@ -104,8 +106,12 @@ class VideosLaucher: UIViewController {
         if keyPath == "currentItem.loadedTimeRanges" {
             indicator.stopAnimating()
             indicator.isHidden = true
-            containerV.backgroundColor = .clear
+            controllerV.backgroundColor = .clear
             isPlaying = true
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (Timer) in
+                self.isTapedBackgroud = false
+            }
+            
             isTapedBackgroud = false
             if let duration = player?.currentItem?.duration {
                 let durationBySeconds = CMTimeGetSeconds(duration)
@@ -150,7 +156,7 @@ class VideosLaucher: UIViewController {
     @objc func onTapNextBtn() {
         let duration = player?.currentItem?.duration
         let totalSecond = CMTimeGetSeconds(duration!)
-        var currentTime = CMTimeGetSeconds((player?.currentTime())!)
+        let currentTime = CMTimeGetSeconds((player?.currentTime())!)
         var nextTime = 0
         if currentTime + 10 >= totalSecond  {
             nextTime = Int(totalSecond)
@@ -179,7 +185,6 @@ class VideosLaucher: UIViewController {
         let translation = pan.translation(in: pan.view)
         switch pan.state {
         case .began, .changed:
-            print("began")
             self.videoPlayerV.center.y += translation.y
             if videoPlayerV.frame.minY < self.view.frame.minY {
                 self.videoPlayerV.frame = .init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * 9/16)
@@ -190,15 +195,15 @@ class VideosLaucher: UIViewController {
                 }) { (Bool) in
                 }
             }
-    
         case .ended:
-            print("end")
             if self.view.frame.minY >= self.view.frame.width / 3  {
-                self.containerV.isHidden = true
-                self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.42, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.width / 2)
-                self.videoPlayerV.frame = self.view.frame
+                self.controllerV.isHidden = true
+                self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.4, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.width / 2.5)
+                
+                self.videoPlayerV.frame = .init(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: self.view.frame.height)
                 self.videoPlayerV.transform = CGAffineTransform(scaleX: 0.5, y: 1)
                 self.view.transform = CGAffineTransform(scaleX: 1, y: 0.5)
+                
             } else {
                 self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
@@ -212,7 +217,7 @@ class VideosLaucher: UIViewController {
             self.view.transform = .identity
             self.videoPlayerV.transform = .identity
             self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            self.containerV.isHidden = false
+            self.controllerV.isHidden = false
         }
     }
 }

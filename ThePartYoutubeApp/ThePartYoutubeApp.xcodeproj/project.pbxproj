@@ -259,7 +259,6 @@
 		1837B779246AE69700E73787 /* CellHome */ = {
 			isa = PBXGroup;
 			children = (
-				18C9F899246D684400A38580 /* DetailCVCell */,
 				1851DFBB246D4C150045A3B8 /* ItemsVideoCellHome.swift */,
 				1851DFBC246D4C150045A3B8 /* ItemsVideoCellHome.xib */,
 			);
@@ -388,6 +387,7 @@
 		184F3B11246AAC8500A1EF33 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
+				18C9F899246D684400A38580 /* DetailCVCell */,
 				184F3B20246AAD9B00A1EF33 /* InboxVC.swift */,
 				184F3B21246AAD9B00A1EF33 /* InboxVC.xib */,
 			);

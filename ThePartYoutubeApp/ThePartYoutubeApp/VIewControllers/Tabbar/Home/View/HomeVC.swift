@@ -212,6 +212,7 @@ extension HomeVC: SearchVCDelegate {
     func passText(str: String) {
         let searchResultVC = SearchResultVC()
         testLb.text = str
+        
         self.navigationController?.pushViewController(searchResultVC, animated: true)
     }
 }
