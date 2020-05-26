@@ -10,7 +10,6 @@ import UIKit
 
 class ResultCell: UITableViewCell {
     @IBOutlet weak var heightOfPresentImg: NSLayoutConstraint!
-    
     @IBOutlet weak var subtitleLb: UILabel!
     @IBOutlet weak var authorLb: UILabel!
     @IBOutlet weak var titleLb: UILabel!

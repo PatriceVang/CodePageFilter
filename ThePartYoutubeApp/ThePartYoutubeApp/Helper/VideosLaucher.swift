@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 
 class VideosLaucher: UIViewController {
+    @IBOutlet weak var detailV: UIView!
+    @IBOutlet weak var viewsLb: UILabel!
+    @IBOutlet weak var titleVideoLb: UILabel!
     @IBOutlet weak var heightVideoPlayerV: NSLayoutConstraint!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTimeLb: UILabel!
@@ -30,10 +33,31 @@ class VideosLaucher: UIViewController {
         }
     }
     
+    var isHideDetailV: Bool = false {
+        didSet {
+            if isHideDetailV {
+                detailV.isHidden = true
+            } else {
+                detailV.isHidden = false
+                detailV.alpha = 1
+            }
+        }
+    }
+    
+    var video: Videos?
+    
+    private func setData() {
+        guard let title = self.video?.title else {return}
+        titleVideoLb.text = title
+        guard let views = self.video?.views else {return}
+        viewsLb.text = "\(views.toThoudsandDecima() ?? "")" + " views"
+    }
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayVideo()
+        setData()
         customItemsVieosPlyer()
     }
 
@@ -54,10 +78,11 @@ class VideosLaucher: UIViewController {
         nextBtn.setupTapGesture(view: nextBtn, selector: #selector(onTapNextBtn), target: self)
         sliderTime.addTarget(self, action: #selector(onChangeValueSlider), for: .valueChanged)
         
-
+        controllerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
         videoPlayerV.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGetureVideos(_:))))
         videoPlayerV.setupTapGesture(view: videoPlayerV, selector: #selector(onTapVideoPlayer), target: self)
         videoPlayerV.isUserInteractionEnabled = true
+        controllerV.isUserInteractionEnabled = true
     }
     
     private func setupPlayVideo() {
@@ -69,13 +94,13 @@ class VideosLaucher: UIViewController {
         player?.play()
         player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
         let interval = CMTime(value: 1, timescale: 2)
-        //lay time hien tai cho lable curent
+        //Get time currentLb
         player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
         let seconds = CMTimeGetSeconds(progressTime)
         let secondsString = String(format: "%02d", Int(seconds) % 60)
         let minuteString = String(format: "%02d", Int(seconds) / 60)
         self.currentTimeLb.text = "\(minuteString):\(secondsString)"
-        //keo thanh slider
+        //pull sliderTime
         if let duration = self.player?.currentItem?.duration {
         let duraTionSeconds = CMTimeGetSeconds(duration)
             self.sliderTime.value = Float(seconds / duraTionSeconds)
@@ -84,7 +109,7 @@ class VideosLaucher: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        // khi video chay thi no se setup ui duoi nay
+        //Observable video
         if keyPath == "currentItem.loadedTimeRanges" {
             indicator.stopAnimating()
             indicator.isHidden = true
@@ -110,7 +135,6 @@ class VideosLaucher: UIViewController {
             backwardTime = Int(currentTime - 10)
         }
         player?.seek(to: CMTime(seconds: Double(backwardTime), preferredTimescale: 1), completionHandler: { (Bool) in
-            
         })
     }
     
@@ -137,7 +161,6 @@ class VideosLaucher: UIViewController {
         }
         player?.seek(to: CMTime(seconds: Double(nextTime), preferredTimescale: 1), completionHandler: { (Bool) in
         })
-        
     }
     
     @objc func onChangeValueSlider() {
@@ -156,37 +179,36 @@ class VideosLaucher: UIViewController {
         
         switch ges.state {
         case .began, .changed:
+            controllerV.isHidden = true
             self.videoPlayerV.center.y += translation.y
             //prevent pull up
             if self.videoPlayerV.frame.minY <= self.view.safeAreaInsets.top {
                 if self.view.frame.minY <= self.view.safeAreaInsets.top {
                     self.videoPlayerV.frame = .init(x: 0, y: self.view.safeAreaInsets.top, width: self.view.frame.width, height: self.view.frame.width * 9/16)
-                 
                 } else {
-//                    heightVideoPlayerV.constant = self.videoPlayerV.frame.height - 10
                     self.videoPlayerV.frame = .init(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: self.videoPlayerV.frame.height - 10)
                     self.videoPlayerV.layoutIfNeeded()
                 }
+                
             } else {
-                
                 self.view.frame = .init(x: self.view.frame.origin.x + 0.1, y: self.view.frame.origin.y + translation.y, width: self.view.frame.width - 0.2, height: self.view.frame.height - translation.y)
+                detailV.alpha -= 0.01
                 
-               
                 if self.view.frame.minY >= UIScreen.main.bounds.height / 3 {
-                    
                     UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
                         self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.4, width: UIScreen.main.bounds.width - 20, height: self.view.frame.width / 2)
                         self.videoPlayerV.frame = self.view.frame
+                        self.isHideDetailV = true
                         self.view.layoutIfNeeded()
                         return
                     }, completion: nil)
-                       
                 }
             }
 
         case .ended:
             if self.view.frame.minY >= self.view.frame.width / 4 {
                 //update frame for self.view
+                isHideDetailV = true
                 self.controllerV.isHidden = true
                 UIView.animate(withDuration: 0.3) {
                     self.view.frame = .init(x: 10, y: UIScreen.main.bounds.height / 1.45, width: UIScreen.main.bounds.width - 20, height: self.view.frame.width / 2)
@@ -196,6 +218,7 @@ class VideosLaucher: UIViewController {
                 }
             } else {
                 self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                isHideDetailV = false
             }
             break
         default:
@@ -210,6 +233,7 @@ class VideosLaucher: UIViewController {
             self.view.transform = .identity
             self.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             self.controllerV.isHidden = false
+            isHideDetailV = false
         }
     }
 }

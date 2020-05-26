@@ -43,7 +43,7 @@ class ResultVC: UIViewController {
         callApi()
         customElement()
     }
-    //call api from textFromSeachVC
+    //When start call this api
     private func callApi() {
         self.presenter.fetchDataSearchResult(text: textFromSeachVC)
     }
@@ -51,8 +51,8 @@ class ResultVC: UIViewController {
     private func customElement() {
         //textfield
         searchTf.enablesReturnKeyAutomatically = true
-         searchTf.delegate = self
-         searchTf.returnKeyType = .done
+        searchTf.delegate = self
+        searchTf.returnKeyType = .done
     }
     private func customNaviBar() {
         self.navigationItem.leftBarButtonItems = [
@@ -87,6 +87,7 @@ extension ResultVC: UITextFieldDelegate {
         return true
     }
 }
+
 
 extension ResultVC: UITableViewDataSource, UITableViewDelegate {
     //cell

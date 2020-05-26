@@ -67,7 +67,7 @@
 		18EC1DE52475263700F3B073 /* ResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1DE32475263700F3B073 /* ResultVC.xib */; };
 		18EE7A55246FC40C001FEA27 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE7A54246FC40C001FEA27 /* Videos.swift */; };
 		18EE7A57246FC991001FEA27 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE7A56246FC991001FEA27 /* APICaller.swift */; };
-		18EE7A59246FCF42001FEA27 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE7A58246FCF42001FEA27 /* Presenter.swift */; };
+		18EE7A59246FCF42001FEA27 /* PresenterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE7A58246FCF42001FEA27 /* PresenterHome.swift */; };
 		18EE7A5B246FDAEF001FEA27 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE7A5A246FDAEF001FEA27 /* Extension.swift */; };
 		32C13C7E59C7F5E8D4197105 /* Pods_ThePartYoutubeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394B8E4329107A1772828612 /* Pods_ThePartYoutubeApp.framework */; };
 /* End PBXBuildFile section */
@@ -135,7 +135,7 @@
 		18EC1DE32475263700F3B073 /* ResultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultVC.xib; sourceTree = "<group>"; };
 		18EE7A54246FC40C001FEA27 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 		18EE7A56246FC991001FEA27 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		18EE7A58246FCF42001FEA27 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		18EE7A58246FCF42001FEA27 /* PresenterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHome.swift; sourceTree = "<group>"; };
 		18EE7A5A246FDAEF001FEA27 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		394B8E4329107A1772828612 /* Pods_ThePartYoutubeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThePartYoutubeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F58D6A96AE60AAA1442BCF2 /* Pods-ThePartYoutubeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThePartYoutubeApp.debug.xcconfig"; path = "Target Support Files/Pods-ThePartYoutubeApp/Pods-ThePartYoutubeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		1811DA3B246C3675005176B4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				18EE7A58246FCF42001FEA27 /* Presenter.swift */,
+				18EE7A58246FCF42001FEA27 /* PresenterHome.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -679,7 +679,7 @@
 			files = (
 				184F3B07246AAA8400A1EF33 /* BaseVC.swift in Sources */,
 				184F3B22246AAD9B00A1EF33 /* InboxVC.swift in Sources */,
-				18EE7A59246FCF42001FEA27 /* Presenter.swift in Sources */,
+				18EE7A59246FCF42001FEA27 /* PresenterHome.swift in Sources */,
 				189406422479868000F6B23D /* PulsingAnimation.swift in Sources */,
 				1851DFA7246CFE5C0045A3B8 /* PlaylistsAuthorVC.swift in Sources */,
 				18B157EB24765E1A009ADFC5 /* PresenterResult.swift in Sources */,

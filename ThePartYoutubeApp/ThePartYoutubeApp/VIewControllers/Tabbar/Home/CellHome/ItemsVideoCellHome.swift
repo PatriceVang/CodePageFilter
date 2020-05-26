@@ -9,6 +9,7 @@
 import UIKit
 
 class ItemsVideoCellHome: UITableViewCell {
+    @IBOutlet weak var timeLb: UILabel!
     @IBOutlet weak var titleLb: UILabel!
     @IBOutlet weak var presentImg: UIImageView!
     @IBOutlet weak var heightPresentImg: NSLayoutConstraint!
@@ -26,6 +27,11 @@ class ItemsVideoCellHome: UITableViewCell {
             guard let views = self.videos?.views?.toThoudsandDecima() else {return}
             subTitleLb.text = "\(name) • \(views)"
             authorImg.setImage(url:authorImgString )
+            
+            guard let totalTime = self.videos?.duration else {return}
+            let secondsString = String(format: "%02d", Int(totalTime) % 60)
+            let minuteString = String(format: "%02d", Int(totalTime) / 60)
+            timeLb.text = "\(minuteString):\(secondsString)"
         }
     }
     

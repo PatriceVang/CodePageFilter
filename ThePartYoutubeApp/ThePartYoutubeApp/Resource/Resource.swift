@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class Resource {
     class Image {
         static var homeImg = UIImage(named: "imgHome")
@@ -41,6 +40,9 @@ class Resource {
         static var newsImg = UIImage(named: "imgNews")
         static var musicImg = UIImage(named: "imgMusic")
         static var gamingImg = UIImage(named: "imgGaming")
+        static var likeImg = UIImage(named: "imgLike")
+        static var dislikeImg = UIImage(named: "imgDislike")
+        static var showdownImg = UIImage(named: "imgShowdown")
     }
     
     class Text {
@@ -60,6 +62,8 @@ class Resource {
         static var saveToWatch = "Save to Watch"
         static var download = "Download"
         static var share = "Share"
+        static var save = "Save"
+        static var like = "Like"
     }
     
     class Color {

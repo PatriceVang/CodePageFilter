@@ -17,6 +17,7 @@ class HomeVC: UIViewController {
     var presenter: PresenterHomeProtocol!
     var listVideos = [Videos]()
     var listArtiles = [Articles]()
+    
     init() {
         presenter = Presenter()
         super.init(nibName: "HomeVC", bundle: nil)
@@ -131,7 +132,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             cell?.videos = videos
             return cell!
         }
-
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -141,7 +141,15 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let keyWindow = UIApplication.shared.keyWindow {
             let videoPlayerView = VideosLaucher()
-        
+            
+            if indexPath.row == 0 {
+                let video = listVideos[indexPath.row]
+                videoPlayerView.video = video
+            } else {
+                let video = listVideos[indexPath.row - 1]
+                videoPlayerView.video = video
+            }
+            
             keyWindow.backgroundColor = .clear
             keyWindow.addSubview(videoPlayerView.view)
             videoPlayerView.view.frame = .init(x: keyWindow.frame.minX, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 0 )
@@ -204,12 +212,6 @@ extension HomeVC: PresenterHomeDelegate {
     }
 }
 
-extension HomeVC: SearchVCDelegate {
-    func passText(str: String) {
-        let resultVC = ResultVC()
-        self.navigationController?.pushViewController(resultVC, animated: true)
-    }
-}
 
 
 
