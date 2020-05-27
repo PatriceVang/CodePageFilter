@@ -161,6 +161,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     //loadmore
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         let indexFinal = listActor.count - 1
         if indexPath.row == indexFinal, currentPage + 1 <= maxPage {
             currentPage += 1

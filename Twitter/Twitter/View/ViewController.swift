@@ -98,34 +98,29 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 2
     }
     
-   
-    
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let finalIndex = listUser.count - 1
-//        // Start countUser = 0
-//        if indexPath.row == finalIndex && countUser <= 10 {
-//            print(countUser)
-//            //Allow loadmore
-//            let newUser = User(name: "Smelling\(self.countUser)", country: "East Sea", descrition: "Hồ Xuân Hương (chữ Hán: 胡春香, 1772 – 1822) là một thi sĩ sống ở giai đoạn cuối thế kỷ XVIII và đầu thế kỷ XIX, mà hiện tại vẫn khiến nhiều học giả tranh cãi[1]. Di tác của bà hoàn toàn là thơ, trong đó mảng Nôm có nhiều phẩm chất tốt cần sự khảo cứu lâu, nhưng hậu thế có thi sĩ Xuân Diệu đã mạo muội tôn Hồ Xuân Hương làm Bà chúa thơ Nôm")
-//            countUser += 1
-//            self.loaddingV?.indicator.startAnimating()
-//            self.loaddingV?.indicator.isHidden = false
-//            DispatchQueue.global(qos: .utility).async {
-//                sleep(3)
-//               DispatchQueue.main.async {
-//                    self.listUser.append(newUser)
-//                    self.myColletionV.reloadData()
-//               }
-//            }
-//            if countUser > 10 {
-//                print("stoped")
-//                self.loaddingV?.indicator.stopAnimating()
-//                self.loaddingV?.indicator.isHidden = true
-//
-//            }
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let finalIndex = listUser.count - 1
+        // Start countUser = 0
+        if indexPath.row == finalIndex && countUser <= 10 {
+            print(countUser)
+            //Allow loadmore
+            let newUser = User(name: "Smelling\(self.countUser)", country: "East Sea", descrition: "Hồ Xuân Hương (chữ Hán: 胡春香, 1772 – 1822) là một thi sĩ sống ở giai đoạn cuối thế kỷ XVIII và đầu thế kỷ XIX, mà hiện tại vẫn khiến nhiều học giả tranh cãi[1]. Di tác của bà hoàn toàn là thơ, trong đó mảng Nôm có nhiều phẩm chất tốt cần sự khảo cứu lâu, nhưng hậu thế có thi sĩ Xuân Diệu đã mạo muội tôn Hồ Xuân Hương làm Bà chúa thơ Nôm")
+            countUser += 1
+            self.loaddingV?.indicator.startAnimating()
+            self.loaddingV?.indicator.isHidden = false
+            DispatchQueue.global(qos: .utility).async {
+                sleep(3)
+               DispatchQueue.main.async {
+                    self.listUser.append(newUser)
+                    self.myColletionV.reloadData()
+               }
+            }
+            if countUser > 10 {
+                print("stoped")
+                self.loaddingV?.indicator.stopAnimating()
+                self.loaddingV?.indicator.isHidden = true
+            }
+        }
+    }
 }
 

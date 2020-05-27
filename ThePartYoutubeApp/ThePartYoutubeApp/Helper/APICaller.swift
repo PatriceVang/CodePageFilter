@@ -36,7 +36,6 @@ class APICaller {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
         callApi(request: request, completion: completion)
-        
     }
     static func callApi(request: URLRequest, completion: @escaping(Data?, NetworkEror?) -> Void) {
         DispatchQueue.global(qos: .utility).async {
@@ -48,7 +47,6 @@ class APICaller {
             })
         task.resume()
         }
-        
     }
     
     

@@ -38,6 +38,8 @@ class ItemsVideoCellHome: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         customElement()
+        let view = UIView()
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

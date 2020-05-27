@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myTableView: UITableView!
     var data = Data()
 
+
     @IBOutlet weak var lbText: UILabel!
     
     override func viewDidLoad() {
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         myTableView.delegate = self
         myTableView.dataSource = self
+        myTableView.rowHeight = UITableView.automaticDimension
+        myTableView.estimatedRowHeight = 100
     }
 
 
@@ -34,5 +37,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         cell?.lbText.text = data.data()[indexPath.row]
         return cell!
     }
+    
 }
 

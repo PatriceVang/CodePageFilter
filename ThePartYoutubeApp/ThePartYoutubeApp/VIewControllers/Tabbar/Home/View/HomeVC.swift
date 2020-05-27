@@ -141,7 +141,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let keyWindow = UIApplication.shared.keyWindow {
             let videoPlayerView = VideosLaucher()
-            
             if indexPath.row == 0 {
                 let video = listVideos[indexPath.row]
                 videoPlayerView.video = video

@@ -9,6 +9,8 @@
 import UIKit
 
 class PulsingAnimation: CALayer {
+    
+    
     var animationGroup = CAAnimationGroup()
     var animationDuration: TimeInterval = 1.5
     var radius: CGFloat = 200

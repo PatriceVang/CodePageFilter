@@ -56,11 +56,13 @@ class UserController: UIViewController {
         customElement()
         myTableView.register(UINib(nibName: "OptionCell", bundle: nil), forCellReuseIdentifier: cellId)
         // User's Name
-        guard let text = UserDefaultHelper.shared.name else {return}
-        self.nameOfUserLb.text = text
+        if let text = UserDefaultHelper.shared.name {
+            self.nameOfUserLb.text = text
+        }
         // User's Img
-        guard let img = UserDefaultHelper.shared.presentImg else {return}
-        self.presentOfUserImg.image = UIImage(data: img)
+        if let img = UserDefaultHelper.shared.presentImg {
+            self.presentOfUserImg.image = UIImage(data: img)
+        }
         self.presenterUser.fetchData()
     }
 //    override func viewWillAppear(_ animated: Bool) {

@@ -11,6 +11,7 @@ import AVFoundation
 
 class VideosLaucher: UIViewController {
     @IBOutlet weak var detailV: UIView!
+    @IBOutlet weak var tagLb: UILabel!
     @IBOutlet weak var viewsLb: UILabel!
     @IBOutlet weak var titleVideoLb: UILabel!
     @IBOutlet weak var heightVideoPlayerV: NSLayoutConstraint!
@@ -30,6 +31,9 @@ class VideosLaucher: UIViewController {
     var isTapedBackgroud: Bool = true {
         didSet {
             controllerV.isHidden = !isTapedBackgroud
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (Timer) in
+                self.controllerV.isHidden = true
+            }
         }
     }
     
@@ -51,6 +55,7 @@ class VideosLaucher: UIViewController {
         titleVideoLb.text = title
         guard let views = self.video?.views else {return}
         viewsLb.text = "\(views.toThoudsandDecima() ?? "")" + " views"
+        tagLb.text = "#" + (self.video?.name)!
     }
     
     //MARK: Life cycle
@@ -69,7 +74,7 @@ class VideosLaucher: UIViewController {
     }
     
     private func customItemsVieosPlyer() {
-        isTapedBackgroud = true
+        isTapedBackgroud = false
         indicator.startAnimating()
         controllerV.backgroundColor = UIColor(white: 0, alpha: 1)
     
@@ -115,7 +120,7 @@ class VideosLaucher: UIViewController {
             indicator.isHidden = true
             controllerV.backgroundColor = .clear
             isPlaying = true
-            isTapedBackgroud = false
+//            isTapedBackgroud = false
             if let duration = player?.currentItem?.duration {
                 let durationBySeconds = CMTimeGetSeconds(duration)
                 let minute = Int(durationBySeconds) / 60
