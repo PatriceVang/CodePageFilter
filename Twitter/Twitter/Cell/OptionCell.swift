@@ -9,11 +9,11 @@
 import UIKit
 
 class OptionCell: UICollectionViewCell {
-    lazy var width: NSLayoutConstraint = {
-        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
-        width.isActive = true
-        return width
-    }()
+//    lazy var width: NSLayoutConstraint = {
+//        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+//        width.isActive = true
+//        return width
+//    }()
     let presentImg: UIImageView = {
        let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -127,8 +127,8 @@ class OptionCell: UICollectionViewCell {
         print("learn more...")
     }
     
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        width.constant = bounds.size.width
-        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
-    }
+//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+//        width.constant = bounds.size.width
+//        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+//    }
 }

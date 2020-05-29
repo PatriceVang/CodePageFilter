@@ -50,6 +50,11 @@ class ViewController: UIViewController {
         myColletionV.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         myColletionV.dataSource = self
         myColletionV.delegate = self
+        myColletionV.alwaysBounceVertical = true
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        myColletionV.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -88,6 +93,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: myColletionV.frame.width - 20, height: 100)
     }
+    
+    
     
     //MARK: Footer
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

@@ -17,7 +17,12 @@ class HomeVC: UIViewController {
     var presenter: PresenterHomeProtocol!
     var listVideos = [Videos]()
     var listArtiles = [Articles]()
-    
+    lazy var refreshControl: UIRefreshControl = {
+       let rf = UIRefreshControl()
+        rf.addTarget(self, action: #selector(onPullToRefresh(_:)), for: .valueChanged)
+        rf.tintColor = Resource.Color.itemTabbarColor
+        return rf
+    }()
     init() {
         presenter = Presenter()
         super.init(nibName: "HomeVC", bundle: nil)
@@ -30,6 +35,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // REGISTER
+        myTableItemsVideo.addSubview(refreshControl)
         myTableItemsVideo.register(UINib(nibName: "ItemsVideoCellHome", bundle: nil), forCellReuseIdentifier: cellItemID)
         myTableItemsVideo.register(UINib(nibName: "UtityCellHome", bundle: nil), forCellReuseIdentifier: cellUtityID)
         fetchData()
@@ -48,9 +54,16 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    //MARK: Handle Tap
     @objc func onTapSupportView() {
         supportView.removeFromSuperview()
         self.tabBarController?.tabBar.isHidden = false
+    }
+    @objc func onPullToRefresh(_ control: UIRefreshControl) {
+        self.presenter.fetchDataVideos()
+        self.presenter.fetchDataUtity()
+        self.myTableItemsVideo.reloadData()
+        control.endRefreshing()
     }
 }
 
@@ -64,7 +77,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
      -
      x
      -
-     -
+     -/class car {
+     
+     
+     }
+     
+     
      x 
      -
      -
@@ -210,6 +228,8 @@ extension HomeVC: PresenterHomeDelegate {
         self.myTableItemsVideo.reloadData()
     }
 }
+
+
 
 
 
