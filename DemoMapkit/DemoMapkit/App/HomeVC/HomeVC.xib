@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="DemoMapkit" customModuleProvider="target">
+            <connections>
+                <outlet property="currentLocationuser" destination="hn6-RM-7LZ" id="NX1-1B-EA5"/>
+                <outlet property="mapView" destination="lpV-mw-dZb" id="pl2-E0-nze"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-mw-dZb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-RM-7LZ">
+                    <rect key="frame" x="348" y="94" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="onTapCurrentLocationUser:" destination="-1" eventType="touchUpInside" id="AYz-pq-SK3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="hn6-RM-7LZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="84I-JW-4lg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lpV-mw-dZb" secondAttribute="trailing" id="Ay1-sD-rnF"/>
+                <constraint firstItem="lpV-mw-dZb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rel-fN-qW4"/>
+                <constraint firstItem="lpV-mw-dZb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Rh7-bu-psm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hn6-RM-7LZ" secondAttribute="trailing" constant="20" id="fdS-SK-Mtn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lpV-mw-dZb" secondAttribute="bottom" id="hOx-0r-FRF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="118"/>
+        </view>
+    </objects>
+</document>

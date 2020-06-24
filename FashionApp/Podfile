@@ -12,7 +12,7 @@ target 'FashionApp' do
 	pod 'Firebase/Firestore'
 	pod 'Alamofire'
 	pod 'Kingfisher'
-#    	pod 'FBSDKLoginKit'
+    	pod 'FBSDKLoginKit'
 	pod 'GoogleSignIn'
 	pod 'ObjectMapper'
 	pod 'DropDown'

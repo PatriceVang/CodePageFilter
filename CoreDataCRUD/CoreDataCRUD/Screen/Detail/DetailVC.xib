@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailVC" customModule="CoreDataCRUD" customModuleProvider="target">
+            <connections>
+                <outlet property="address_Tf" destination="aWM-EF-6jh" id="IHR-A5-pWK"/>
+                <outlet property="name_Tf" destination="EfF-UR-qV3" id="y2v-kx-oKL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfF-UR-qV3">
+                    <rect key="frame" x="30" y="94" width="354" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWM-EF-6jh">
+                    <rect key="frame" x="30" y="148" width="354" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekk-Z5-emZ">
+                    <rect key="frame" x="100" y="232" width="214" height="30"/>
+                    <state key="normal" title="Update"/>
+                    <connections>
+                        <action selector="onTapUpdateBtn:" destination="-1" eventType="touchUpInside" id="Tcz-tP-lTE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="aWM-EF-6jh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="1DP-0u-NJT"/>
+                <constraint firstItem="ekk-Z5-emZ" firstAttribute="top" secondItem="aWM-EF-6jh" secondAttribute="bottom" constant="50" id="5vH-30-MIc"/>
+                <constraint firstItem="EfF-UR-qV3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="IOJ-Mp-9cX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ekk-Z5-emZ" secondAttribute="trailing" constant="100" id="a7h-PA-7J0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EfF-UR-qV3" secondAttribute="trailing" constant="30" id="eQ3-34-91U"/>
+                <constraint firstItem="ekk-Z5-emZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="gUQ-ZW-u3R"/>
+                <constraint firstItem="EfF-UR-qV3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="iiG-2Y-kv1"/>
+                <constraint firstItem="aWM-EF-6jh" firstAttribute="top" secondItem="EfF-UR-qV3" secondAttribute="bottom" constant="20" id="lvU-2A-BLM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWM-EF-6jh" secondAttribute="trailing" constant="30" id="rxE-La-Y8l"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="117"/>
+        </view>
+    </objects>
+</document>

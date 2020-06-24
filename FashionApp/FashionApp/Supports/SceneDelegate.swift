@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -31,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let context = URLContexts.first else { return }
+        //Facebook
 //        ApplicationDelegate.shared.application( UIApplication.shared, open: context.url, sourceApplication: context.options.sourceApplication, annotation: context.options.annotation )
     }
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -156,7 +156,8 @@ class LoginController: BaseView, GIDSignInDelegate  {
     }
     
     @objc func onTapViewFaceBook() {
-        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
+//        self.setupAnimationColor(view: viewFacebook, delay: 0, target: self)
+//
 //        let fbLoginMan = LoginManager()
 //        fbLoginMan.logIn(permissions: ["email"], from: self) { (result, error) in
 //            if error != nil {
@@ -167,6 +168,7 @@ class LoginController: BaseView, GIDSignInDelegate  {
 //            if result!.isCancelled {
 //                return
 //            }
+//
 //            if fbLoginResult.grantedPermissions.contains("email") {
 //                if AccessToken.current != nil {
 //                    GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start { (conection, result, error) in

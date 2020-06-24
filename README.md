@@ -16,3 +16,6 @@ Các project con bao gồm
 - MessageApp: Make screen message, UITableView cell height dynamic
 - Final Project: UIPageVC, AVFoundation, integrate CollectionView inside TableVIew, XLPageTaptrip, extension format date, string, thoundsand, PulsingAnimation tabbarItem, UIPangesture, pull to refresh,...
 - MCVExpandTableView: expand TableView
+- CoreDataCRUD: use func add, update, delete into class entity
+- DemoRealm: add, update, delete basic
+- DemoCoreData: use CoreData basic
