@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="DemoRedux" customModuleProvider="target">
+            <connections>
+                <outlet property="displayName_Lb" destination="ihh-r5-Gs8" id="sZB-Rz-8RN"/>
+                <outlet property="moveToDetail_Btn" destination="xuP-qO-prb" id="qhi-1P-UUv"/>
+                <outlet property="number_Lb" destination="4Wx-Q2-Jqw" id="AWx-yj-0d0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9xc-mL-2jg">
+                    <rect key="frame" x="0.0" y="367.5" width="414" height="161"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wx-Q2-Jqw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-r5-Gs8">
+                            <rect key="frame" x="0.0" y="20.5" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QY1-YY-rgc">
+                            <rect key="frame" x="0.0" y="41" width="414" height="30"/>
+                            <state key="normal" title="giam"/>
+                            <connections>
+                                <action selector="onTapGiamBtn:" destination="-1" eventType="touchUpInside" id="g7X-Ns-c1u"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAX-TZ-WvC">
+                            <rect key="frame" x="0.0" y="71" width="414" height="30"/>
+                            <state key="normal" title="tang"/>
+                            <connections>
+                                <action selector="onTapTangBtn:" destination="-1" eventType="touchUpInside" id="9eB-Dd-Elc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zr6-ry-6Bz">
+                            <rect key="frame" x="0.0" y="101" width="414" height="30"/>
+                            <state key="normal" title="Get number"/>
+                            <connections>
+                                <action selector="onTapDisplayName:" destination="-1" eventType="touchUpInside" id="kqg-vL-job"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuP-qO-prb">
+                            <rect key="frame" x="0.0" y="131" width="414" height="30"/>
+                            <state key="normal" title="Move"/>
+                            <connections>
+                                <action selector="onTapMoveDetailVC_Btn:" destination="-1" eventType="touchUpInside" id="Y8s-AL-fVR"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9xc-mL-2jg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="N0a-S7-TmT"/>
+                <constraint firstItem="9xc-mL-2jg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mwU-aH-6ay"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9xc-mL-2jg" secondAttribute="trailing" id="uhD-TB-g5C"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </view>
+    </objects>
+</document>

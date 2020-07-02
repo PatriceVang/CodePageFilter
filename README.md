@@ -19,3 +19,5 @@ Các project con bao gồm
 - CoreDataCRUD: use func add, update, delete into class entity
 - DemoRealm: add, update, delete basic
 - DemoCoreData: use CoreData basic
+- DemoReSwift: write pattern Redux in swwift
+- DemoTableViewWithEnum: use enum into UITableViewCell

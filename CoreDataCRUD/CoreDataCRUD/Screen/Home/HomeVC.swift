@@ -16,7 +16,9 @@ class HomeVC: UIViewController {
         myTableV.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(onTapTitleAdd))
     }
-
+    
+    let userCoreData = RepositoryLocal<User>()
+    
     @objc func onTapTitleAdd() {
         
         
@@ -35,8 +37,17 @@ class HomeVC: UIViewController {
             let name_Tf = popUp.textFields?.first
             let address_Tf = popUp.textFields![1]
             
-            //--- insert Data
-            User.insertNewUser(name: (name_Tf?.text!)!, address: address_Tf.text!)
+//            --- insert Data
+//            User.insertNewUser(name: (name_Tf?.text!)!, address: address_Tf.text!)
+//            User.saveObject(entity: User()) { (user) in
+//                user.setValue(name_Tf?.text, forKey: "name")
+//                user.setValue(address_Tf.text, forKey: "address")
+//            }
+            // Test generic coredata
+            self.userCoreData.saveObject { (user) in
+                user.setValue(name_Tf?.text, forKey: "name")
+                user.setValue(address_Tf.text, forKey: "address")
+            }
             self.myTableV.reloadData()
         }
         popUp.addAction(cancleAction)
@@ -47,13 +58,16 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return User.getUser().count
+        return userCoreData.get().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableV.dequeueReusableCell(withIdentifier: "cell") as! MyCell
-        cell.name_Lb.text = User.getUser()[indexPath.row].name
-        cell.address_Lb.text = User.getUser()[indexPath.row].address
+//        cell.name_Lb.text = User.getUser()[indexPath.row].name
+//        cell.address_Lb.text = User.getUser()[indexPath.row].address
+//        cell.name_Lb.text = userCoreData.get()[indexPath.row].name
+//        cell.address_Lb.text = userCoreData.get()[indexPath.row].address
+        
         return cell
     }
     

@@ -24,10 +24,9 @@ extension User {
     
     //--- save Data
     static func insertNewUser(name: String, address: String) {
-    
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
-        let userUtity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
+        let userUtity = NSEntityDescription.entity(forEntityName: "\(self)", in: managedContext)!
         let user = NSManagedObject(entity: userUtity, insertInto: managedContext)
         user.setValue(name, forKey: "name")
         user.setValue(address, forKey: "address")
@@ -46,7 +45,7 @@ extension User {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         do {
-            result = try managedContext.fetch(User.fetchRequest())
+            result = try managedContext.fetch(fetchRequest())
         } catch let err as NSError {
             print("could not retive data \(err)")
         }

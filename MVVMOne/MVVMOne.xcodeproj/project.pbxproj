@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1826134924A85EF700036758 /* PageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826134824A85EF700036758 /* PageOne.swift */; };
+		1826134B24A85F0600036758 /* PageOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826134A24A85F0600036758 /* PageOneViewModel.swift */; };
+		1826134D24A85FBA00036758 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826134C24A85FBA00036758 /* BaseView.swift */; };
 		184EBDA52484DF0800087B13 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EBDA42484DF0800087B13 /* SwitchVC.swift */; };
 		184EBDA72484E3E200087B13 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EBDA62484E3E200087B13 /* SwitchViewModel.swift */; };
 		1855369F2489EA9C000D5FC2 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855369E2489EA9C000D5FC2 /* Factory.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1826134824A85EF700036758 /* PageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOne.swift; sourceTree = "<group>"; };
+		1826134A24A85F0600036758 /* PageOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewModel.swift; sourceTree = "<group>"; };
+		1826134C24A85FBA00036758 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		184EBDA42484DF0800087B13 /* SwitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
 		184EBDA62484E3E200087B13 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
 		1855369E2489EA9C000D5FC2 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -75,6 +81,15 @@
 				82F5D8AB3C4709929DA26450 /* Pods-MVVMOne.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1826134724A85DF300036758 /* TestRxSwfit */ = {
+			isa = PBXGroup;
+			children = (
+				1826134824A85EF700036758 /* PageOne.swift */,
+				1826134A24A85F0600036758 /* PageOneViewModel.swift */,
+			);
+			path = TestRxSwfit;
 			sourceTree = "<group>";
 		};
 		184EBD9F2484DE1000087B13 /* Home */ = {
@@ -164,6 +179,7 @@
 		18CF30382469A0FD005E1250 /* MVVMOne */ = {
 			isa = PBXGroup;
 			children = (
+				1826134724A85DF300036758 /* TestRxSwfit */,
 				1855369D2489EA83000D5FC2 /* Container */,
 				18EA87AE248782EA00022DEA /* MVVMSearchBarAndTableView */,
 				184EBDA02484DE3800087B13 /* ToggleSwitch */,
@@ -229,6 +245,7 @@
 			children = (
 				18C96A8B248149B300E6872A /* APICaller.swift */,
 				18B4B63D248556C900786A48 /* Observable.swift */,
+				1826134C24A85FBA00036758 /* BaseView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -368,17 +385,20 @@
 			files = (
 				18EA87B62487839D00022DEA /* SearchVC.swift in Sources */,
 				18C96A89248148C200E6872A /* User.swift in Sources */,
+				1826134B24A85F0600036758 /* PageOneViewModel.swift in Sources */,
 				18C96A862481467300E6872A /* AppCell.swift in Sources */,
 				184EBDA72484E3E200087B13 /* SwitchViewModel.swift in Sources */,
 				18B4B63E248556C900786A48 /* Observable.swift in Sources */,
 				18EA87B9248783D800022DEA /* SearchViewModel.swift in Sources */,
 				18CF303A2469A0FD005E1250 /* AppDelegate.swift in Sources */,
+				1826134924A85EF700036758 /* PageOne.swift in Sources */,
 				18C96A8C248149B300E6872A /* APICaller.swift in Sources */,
 				184EBDA52484DF0800087B13 /* SwitchVC.swift in Sources */,
 				18C96A842481464200E6872A /* HomeVC.swift in Sources */,
 				18CF30552469A3AE005E1250 /* HomeViewModel.swift in Sources */,
 				18CF303C2469A0FD005E1250 /* SceneDelegate.swift in Sources */,
 				18EA87BD2487847F00022DEA /* ResultCell.swift in Sources */,
+				1826134D24A85FBA00036758 /* BaseView.swift in Sources */,
 				18DB51422485FCB0002847B4 /* HeaderView.swift in Sources */,
 				1855369F2489EA9C000D5FC2 /* Factory.swift in Sources */,
 			);

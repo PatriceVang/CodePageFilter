@@ -9,15 +9,13 @@
 import UIKit
 import RealmSwift
 
-
-
+public let realm = try! Realm()
 
 class HomeVC: UIViewController {
     @IBOutlet weak var myTableV: UITableView!
     
     //MARK: RealmDb
-    let realm = try! Realm()
-    
+   
     lazy var user: Results<User> = {
             return realm.objects(User.self)
     }()
@@ -26,6 +24,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableV.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "cell")
+        print(realm.configuration.fileURL)
     }
     
     @IBAction func onTapAddNew_Btn(_ sender: UIButton) {
@@ -40,19 +39,16 @@ class HomeVC: UIViewController {
         let action_Add = UIAlertAction(title: "Add", style: .default) { (UIAlertAction) in
             guard let textField = alert.textFields?.first else {return}
             do {
-                try self.realm.write({
+                try realm.write({
                     let user = User()
                     user.name = textField.text!
-                    self.realm.add(user)
+                    realm.add(user)
                     self.myTableV.reloadData()
                 })
             } catch let err {
                 print(err.localizedDescription)
             }
         }
-        
-        
-        
         alert.addAction(action_Add)
         alert.addAction(action_Cancle)
         present(alert, animated: true, completion: nil)
