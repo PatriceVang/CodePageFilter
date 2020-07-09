@@ -9,24 +9,55 @@
 import UIKit
 
 class ExpandedCell: UITableViewCell {
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var heightTableView: NSLayoutConstraint!
+    weak var delegate: ExpandCellDelegate?
+
+    var isExpanded = false
+    var listUser = [User]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "SubCell", bundle: nil), forCellReuseIdentifier: "subcell")
+
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    @IBAction func onTapExpandBtn(_ sender: UIButton) {
+        isExpanded.toggle()
+        self.delegate?.expanded(cell: self, isExpanded: isExpanded)
+    }
 
-        // Configure the view for the selected state
+    func reload(isExpended: Bool) {
+        heightTableView.constant = CGFloat( 44 * (isExpended ? listUser.count : 0))
+        tableView.reloadData()
     }
-    
-    func setValue(item: Any) {
-        if let actor = item as? Actor {
-            self.textLabel?.text = actor.name
-        } else if let author = item as? Author {
-            self.textLabel?.text = author.name
-        }
-    }
-    
+ 
 }
+
+extension ExpandedCell: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return isExpanded ? listUser.count : 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subcell") as! SubCell
+        cell.setValue(item: listUser[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+
+}
+
+protocol ExpandCellDelegate: class {
+    func expanded(cell: ExpandedCell?, isExpanded: Bool)
+}
+
+

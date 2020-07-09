@@ -13,12 +13,12 @@ class DetailVC: UIViewController {
     
     var homeStateController: HomeStateController
 
-    var detaiStateControlller: DetailStateController
+//    var detaiStateControlller: DetailStateController
 
     lazy var detalState = Subcriber<DetailState>(block: nil)
     
     init() {
-        self.detaiStateControlller = DetailStateController()
+//        self.detaiStateControlller = DetailStateController()
         self.homeStateController = HomeStateController()
         super.init(nibName: "DetailVC", bundle: nil)
     }

@@ -87,6 +87,12 @@
 		185F0A5624B6B68E00881A59 /* ExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */; };
 		185F0A5724B6B69200881A59 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4924B6B2A800881A59 /* DetailVC.xib */; };
 		185F0A5824B6B69500881A59 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4924B6B2A800881A59 /* DetailVC.xib */; };
+		185F0A5C24B6D03200881A59 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A5A24B6D03200881A59 /* SubCell.swift */; };
+		185F0A5D24B6D03200881A59 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A5B24B6D03200881A59 /* SubCell.xib */; };
+		185F0A5E24B6D59900881A59 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A5A24B6D03200881A59 /* SubCell.swift */; };
+		185F0A5F24B6D59900881A59 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A5A24B6D03200881A59 /* SubCell.swift */; };
+		185F0A6024B6D5A000881A59 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A5B24B6D03200881A59 /* SubCell.xib */; };
+		185F0A6124B6D5A100881A59 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A5B24B6D03200881A59 /* SubCell.xib */; };
 		1868962224B2BE7800AEF8F4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868962124B2BE7800AEF8F4 /* Todo.swift */; };
 		18C6B82524B5B34C000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
 		18C6B82624B5B34D000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
@@ -126,6 +132,8 @@
 		185F0A4924B6B2A800881A59 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
 		185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCell.swift; sourceTree = "<group>"; };
 		185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCell.xib; sourceTree = "<group>"; };
+		185F0A5A24B6D03200881A59 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
+		185F0A5B24B6D03200881A59 /* SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCell.xib; sourceTree = "<group>"; };
 		1868962124B2BE7800AEF8F4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTableViewWithEnum.release.xcconfig"; path = "Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum.release.xcconfig"; sourceTree = "<group>"; };
 		6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTableViewWithEnum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,10 +363,20 @@
 		185F0A4C24B6B2AC00881A59 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				185F0A5924B6D01100881A59 /* SubCell */,
 				185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */,
 				185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		185F0A5924B6D01100881A59 /* SubCell */ = {
+			isa = PBXGroup;
+			children = (
+				185F0A5A24B6D03200881A59 /* SubCell.swift */,
+				185F0A5B24B6D03200881A59 /* SubCell.xib */,
+			);
+			path = SubCell;
 			sourceTree = "<group>";
 		};
 		7E411E00E93E214A1639DB15 /* Frameworks */ = {
@@ -484,6 +502,7 @@
 				180BB13224B562A200CA70DD /* MyCell.xib in Resources */,
 				180BB13324B562A200CA70DD /* HomeVC.xib in Resources */,
 				180BB13424B562A200CA70DD /* Assets.xcassets in Resources */,
+				185F0A6024B6D5A000881A59 /* SubCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +516,7 @@
 				180BB14F24B562A800CA70DD /* MyCell.xib in Resources */,
 				180BB15024B562A800CA70DD /* HomeVC.xib in Resources */,
 				180BB15124B562A800CA70DD /* Assets.xcassets in Resources */,
+				185F0A6124B6D5A100881A59 /* SubCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +530,7 @@
 				185E6E4424ACEDA400AC3AD2 /* HomeVC.xib in Resources */,
 				185E6E3624ACED7300AC3AD2 /* Assets.xcassets in Resources */,
 				185F0A4B24B6B2A800881A59 /* DetailVC.xib in Resources */,
+				185F0A5D24B6D03200881A59 /* SubCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +673,7 @@
 				180BB16724B56EB300CA70DD /* UserApi.swift in Sources */,
 				180BB16324B56EA000CA70DD /* URL.swift in Sources */,
 				180BB12624B562A200CA70DD /* User.swift in Sources */,
+				185F0A5E24B6D59900881A59 /* SubCell.swift in Sources */,
 				180BB12724B562A200CA70DD /* SuccessReponse.swift in Sources */,
 				180BB17124B56FDB00CA70DD /* AlamofireService.swift in Sources */,
 				180BB12824B562A200CA70DD /* SceneDelegate.swift in Sources */,
@@ -680,6 +702,7 @@
 				180BB16824B56EB300CA70DD /* UserApi.swift in Sources */,
 				180BB16424B56EA300CA70DD /* URL.swift in Sources */,
 				180BB14324B562A800CA70DD /* User.swift in Sources */,
+				185F0A5F24B6D59900881A59 /* SubCell.swift in Sources */,
 				180BB14424B562A800CA70DD /* SuccessReponse.swift in Sources */,
 				180BB17224B56FDB00CA70DD /* AlamofireService.swift in Sources */,
 				180BB14524B562A800CA70DD /* SceneDelegate.swift in Sources */,
@@ -708,6 +731,7 @@
 				180BB16024B567E700CA70DD /* UserApi.swift in Sources */,
 				18121C7D24B55E810026FFA4 /* PromiseNetwork.swift in Sources */,
 				18066ECD24ADB293003BEDCD /* User.swift in Sources */,
+				185F0A5C24B6D03200881A59 /* SubCell.swift in Sources */,
 				18066EDC24ADBFDB003BEDCD /* SuccessReponse.swift in Sources */,
 				180BB17024B56FDB00CA70DD /* AlamofireService.swift in Sources */,
 				185E6E2C24ACED7100AC3AD2 /* SceneDelegate.swift in Sources */,
