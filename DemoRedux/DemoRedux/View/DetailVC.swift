@@ -11,14 +11,15 @@ import UIKit
 class DetailVC: UIViewController {
     @IBOutlet weak var input_Tf: UITextField!
     
-    var homeStateController = HomeStateController()
+    var homeStateController: HomeStateController
 
     var detaiStateControlller: DetailStateController
 
     lazy var detalState = Subcriber<DetailState>(block: nil)
     
-    init(detailStateController: DetailStateController) {
-        self.detaiStateControlller = detailStateController
+    init() {
+        self.detaiStateControlller = DetailStateController()
+        self.homeStateController = HomeStateController()
         super.init(nibName: "DetailVC", bundle: nil)
     }
     
@@ -37,10 +38,8 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         input_Tf.text = String(homeStateController.counter)
-        
     }
     @IBAction func onTapConfirm_Btn(_ sender: Any) {
-
         homeStateController.displaytitle(title: input_Tf.text!)
     }
     

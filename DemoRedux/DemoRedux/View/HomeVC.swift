@@ -16,12 +16,10 @@ class HomeVC: UIViewController {
     
     var homeStateController: HomeStateController
     
-    lazy var detailStateController = DetailStateController()
-    
     lazy var homeState: Subcriber<HomeState> = Subcriber(block: nil)
     
-    init(homeSateController: HomeStateController) {
-        self.homeStateController = homeSateController
+    init() {
+        self.homeStateController = HomeStateController()
         super.init(nibName: "HomeVC", bundle: nil)
     }
     
@@ -36,9 +34,6 @@ class HomeVC: UIViewController {
             self.number_Lb.text = String(format: "%d", home.counter)
             self.displayName_Lb.text = home.displayTitle.name
         })
-        
-       
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +47,6 @@ class HomeVC: UIViewController {
 //            }
 //        }
         
-        //skip:
         
         store.subscribe(self.homeState) { (home) in
             home.select { (state)  in
@@ -60,20 +54,20 @@ class HomeVC: UIViewController {
             }
         }
     }
-    @IBAction func onTapMoveDetailVC_Btn(_ sender: Any) {
-        let detailVC = DetailVC(detailStateController: detailStateController)
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    @IBAction func onTapDisplayName(_ sender: Any) {
-        homeStateController.displaytitle(title: number_Lb.text!)
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         store.unsubscribe(homeState)
     }
     
+    @IBAction func onTapMoveDetailVC_Btn(_ sender: Any) {
+        let detailVC = DetailVC()
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    @IBAction func onTapDisplayName(_ sender: Any) {
+        homeStateController.displaytitle(title: number_Lb.text!)
+    }
+
     @IBAction func onTapGiamBtn(_ sender: Any) {
         homeStateController.numberDecrease()
         

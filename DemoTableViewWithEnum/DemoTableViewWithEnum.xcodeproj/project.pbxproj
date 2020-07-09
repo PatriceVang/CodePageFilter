@@ -3,10 +3,69 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18066ECD24ADB293003BEDCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ECC24ADB293003BEDCD /* User.swift */; };
+		18066ED324ADBD7D003BEDCD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED224ADBD7D003BEDCD /* Endpoint.swift */; };
+		18066ED624ADBDB4003BEDCD /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED524ADBDB4003BEDCD /* NetworkingProvider.swift */; };
+		18066EDC24ADBFDB003BEDCD /* SuccessReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDB24ADBFDB003BEDCD /* SuccessReponse.swift */; };
+		18066EDE24ADBFEA003BEDCD /* FailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDD24ADBFEA003BEDCD /* FailureResponse.swift */; };
+		180BB12124B562A200CA70DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED224ADBD7D003BEDCD /* Endpoint.swift */; };
+		180BB12224B562A200CA70DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2924ACED7100AC3AD2 /* AppDelegate.swift */; };
+		180BB12324B562A200CA70DD /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E4624ACEDBB00AC3AD2 /* MyCell.swift */; };
+		180BB12424B562A200CA70DD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E4124ACEDA400AC3AD2 /* HomeVC.swift */; };
+		180BB12524B562A200CA70DD /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED824ADBE4B003BEDCD /* PromiseNetwork.swift */; };
+		180BB12624B562A200CA70DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ECC24ADB293003BEDCD /* User.swift */; };
+		180BB12724B562A200CA70DD /* SuccessReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDB24ADBFDB003BEDCD /* SuccessReponse.swift */; };
+		180BB12824B562A200CA70DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2B24ACED7100AC3AD2 /* SceneDelegate.swift */; };
+		180BB12924B562A200CA70DD /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED524ADBDB4003BEDCD /* NetworkingProvider.swift */; };
+		180BB12B24B562A200CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E3224ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld */; };
+		180BB12C24B562A200CA70DD /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868962124B2BE7800AEF8F4 /* Todo.swift */; };
+		180BB12D24B562A200CA70DD /* FailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDD24ADBFEA003BEDCD /* FailureResponse.swift */; };
+		180BB12F24B562A200CA70DD /* Pods_DemoTableViewWithEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */; };
+		180BB13124B562A200CA70DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E3724ACED7300AC3AD2 /* LaunchScreen.storyboard */; };
+		180BB13224B562A200CA70DD /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4724ACEDBB00AC3AD2 /* MyCell.xib */; };
+		180BB13324B562A200CA70DD /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */; };
+		180BB13424B562A200CA70DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E3524ACED7300AC3AD2 /* Assets.xcassets */; };
+		180BB13E24B562A800CA70DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED224ADBD7D003BEDCD /* Endpoint.swift */; };
+		180BB13F24B562A800CA70DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2924ACED7100AC3AD2 /* AppDelegate.swift */; };
+		180BB14024B562A800CA70DD /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E4624ACEDBB00AC3AD2 /* MyCell.swift */; };
+		180BB14124B562A800CA70DD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E4124ACEDA400AC3AD2 /* HomeVC.swift */; };
+		180BB14224B562A800CA70DD /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED824ADBE4B003BEDCD /* PromiseNetwork.swift */; };
+		180BB14324B562A800CA70DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ECC24ADB293003BEDCD /* User.swift */; };
+		180BB14424B562A800CA70DD /* SuccessReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDB24ADBFDB003BEDCD /* SuccessReponse.swift */; };
+		180BB14524B562A800CA70DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2B24ACED7100AC3AD2 /* SceneDelegate.swift */; };
+		180BB14624B562A800CA70DD /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED524ADBDB4003BEDCD /* NetworkingProvider.swift */; };
+		180BB14824B562A800CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E3224ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld */; };
+		180BB14924B562A800CA70DD /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868962124B2BE7800AEF8F4 /* Todo.swift */; };
+		180BB14A24B562A800CA70DD /* FailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066EDD24ADBFEA003BEDCD /* FailureResponse.swift */; };
+		180BB14C24B562A800CA70DD /* Pods_DemoTableViewWithEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */; };
+		180BB14E24B562A800CA70DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E3724ACED7300AC3AD2 /* LaunchScreen.storyboard */; };
+		180BB14F24B562A800CA70DD /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4724ACEDBB00AC3AD2 /* MyCell.xib */; };
+		180BB15024B562A800CA70DD /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */; };
+		180BB15124B562A800CA70DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E3524ACED7300AC3AD2 /* Assets.xcassets */; };
+		180BB15A24B5642300CA70DD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15924B5642300CA70DD /* URL.swift */; };
+		180BB16024B567E700CA70DD /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15F24B567E700CA70DD /* UserApi.swift */; };
+		180BB16224B567FC00CA70DD /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16124B567FC00CA70DD /* UserEndpoint.swift */; };
+		180BB16324B56EA000CA70DD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15924B5642300CA70DD /* URL.swift */; };
+		180BB16424B56EA300CA70DD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15924B5642300CA70DD /* URL.swift */; };
+		180BB16524B56EB000CA70DD /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16124B567FC00CA70DD /* UserEndpoint.swift */; };
+		180BB16624B56EB000CA70DD /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16124B567FC00CA70DD /* UserEndpoint.swift */; };
+		180BB16724B56EB300CA70DD /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15F24B567E700CA70DD /* UserApi.swift */; };
+		180BB16824B56EB300CA70DD /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB15F24B567E700CA70DD /* UserApi.swift */; };
+		180BB16B24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16A24B56EF500CA70DD /* NetworkServiceProtocol.swift */; };
+		180BB16C24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16A24B56EF500CA70DD /* NetworkServiceProtocol.swift */; };
+		180BB16D24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16A24B56EF500CA70DD /* NetworkServiceProtocol.swift */; };
+		180BB17024B56FDB00CA70DD /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16F24B56FDB00CA70DD /* AlamofireService.swift */; };
+		180BB17124B56FDB00CA70DD /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16F24B56FDB00CA70DD /* AlamofireService.swift */; };
+		180BB17224B56FDB00CA70DD /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB16F24B56FDB00CA70DD /* AlamofireService.swift */; };
+		180BB17524B5A71E00CA70DD /* TodoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17424B5A71E00CA70DD /* TodoEndpoint.swift */; };
+		180BB17624B5A71E00CA70DD /* TodoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17424B5A71E00CA70DD /* TodoEndpoint.swift */; };
+		180BB17724B5A71E00CA70DD /* TodoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17424B5A71E00CA70DD /* TodoEndpoint.swift */; };
+		180BB17924B5A94800CA70DD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
+		18121C7D24B55E810026FFA4 /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18066ED824ADBE4B003BEDCD /* PromiseNetwork.swift */; };
 		185E6E2A24ACED7100AC3AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2924ACED7100AC3AD2 /* AppDelegate.swift */; };
 		185E6E2C24ACED7100AC3AD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E2B24ACED7100AC3AD2 /* SceneDelegate.swift */; };
 		185E6E3424ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E3224ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld */; };
@@ -16,9 +75,42 @@
 		185E6E4424ACEDA400AC3AD2 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */; };
 		185E6E4824ACEDBB00AC3AD2 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E6E4624ACEDBB00AC3AD2 /* MyCell.swift */; };
 		185E6E4924ACEDBB00AC3AD2 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E6E4724ACEDBB00AC3AD2 /* MyCell.xib */; };
+		185F0A4A24B6B2A800881A59 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4824B6B2A800881A59 /* DetailVC.swift */; };
+		185F0A4B24B6B2A800881A59 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4924B6B2A800881A59 /* DetailVC.xib */; };
+		185F0A4F24B6B2CA00881A59 /* ExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */; };
+		185F0A5024B6B2CA00881A59 /* ExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */; };
+		185F0A5124B6B67600881A59 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4824B6B2A800881A59 /* DetailVC.swift */; };
+		185F0A5224B6B67C00881A59 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4824B6B2A800881A59 /* DetailVC.swift */; };
+		185F0A5324B6B68700881A59 /* ExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */; };
+		185F0A5424B6B68800881A59 /* ExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */; };
+		185F0A5524B6B68D00881A59 /* ExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */; };
+		185F0A5624B6B68E00881A59 /* ExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */; };
+		185F0A5724B6B69200881A59 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4924B6B2A800881A59 /* DetailVC.xib */; };
+		185F0A5824B6B69500881A59 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A4924B6B2A800881A59 /* DetailVC.xib */; };
+		1868962224B2BE7800AEF8F4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868962124B2BE7800AEF8F4 /* Todo.swift */; };
+		18C6B82524B5B34C000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
+		18C6B82624B5B34D000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
+		D789E479F66BA9481265729F /* Pods_DemoTableViewWithEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18066ECC24ADB293003BEDCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18066ED224ADBD7D003BEDCD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		18066ED524ADBDB4003BEDCD /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		18066ED824ADBE4B003BEDCD /* PromiseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseNetwork.swift; sourceTree = "<group>"; };
+		18066EDB24ADBFDB003BEDCD /* SuccessReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessReponse.swift; sourceTree = "<group>"; };
+		18066EDD24ADBFEA003BEDCD /* FailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureResponse.swift; sourceTree = "<group>"; };
+		180BB13924B562A200CA70DD /* DemoTableViewWithEnum-DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoTableViewWithEnum-DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		180BB13A24B562A300CA70DD /* DemoTableViewWithEnum-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DemoTableViewWithEnum-DEV-Info.plist"; path = "/Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/DemoTableViewWithEnum/DemoTableViewWithEnum-DEV-Info.plist"; sourceTree = "<absolute>"; };
+		180BB15624B562A800CA70DD /* DemoTableViewWithEnum-STAG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoTableViewWithEnum-STAG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		180BB15724B562A900CA70DD /* DemoTableViewWithEnum-STAG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DemoTableViewWithEnum-STAG-Info.plist"; path = "/Users/apple/Desktop/ColectionViewWithXib/CodePageFilter/DemoTableViewWithEnum/DemoTableViewWithEnum-STAG-Info.plist"; sourceTree = "<absolute>"; };
+		180BB15924B5642300CA70DD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		180BB15F24B567E700CA70DD /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		180BB16124B567FC00CA70DD /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		180BB16A24B56EF500CA70DD /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		180BB16F24B56FDB00CA70DD /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		180BB17424B5A71E00CA70DD /* TodoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEndpoint.swift; sourceTree = "<group>"; };
+		180BB17824B5A94800CA70DD /* TodoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApi.swift; sourceTree = "<group>"; };
 		185E6E2624ACED7100AC3AD2 /* DemoTableViewWithEnum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTableViewWithEnum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185E6E2924ACED7100AC3AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185E6E2B24ACED7100AC3AD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,24 +122,167 @@
 		185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		185E6E4624ACEDBB00AC3AD2 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		185E6E4724ACEDBB00AC3AD2 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		185F0A4824B6B2A800881A59 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		185F0A4924B6B2A800881A59 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
+		185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCell.swift; sourceTree = "<group>"; };
+		185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCell.xib; sourceTree = "<group>"; };
+		1868962124B2BE7800AEF8F4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTableViewWithEnum.release.xcconfig"; path = "Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum.release.xcconfig"; sourceTree = "<group>"; };
+		6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTableViewWithEnum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTableViewWithEnum.debug.xcconfig"; path = "Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		180BB12E24B562A200CA70DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB12F24B562A200CA70DD /* Pods_DemoTableViewWithEnum.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180BB14B24B562A800CA70DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB14C24B562A800CA70DD /* Pods_DemoTableViewWithEnum.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		185E6E2324ACED7100AC3AD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D789E479F66BA9481265729F /* Pods_DemoTableViewWithEnum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18066EC524AD9F0A003BEDCD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18066ED524ADBDB4003BEDCD /* NetworkingProvider.swift */,
+				180BB15B24B5662900CA70DD /* API */,
+				18066EDA24ADBFB6003BEDCD /* Network */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		18066ECA24ADB281003BEDCD /* Entitys */ = {
+			isa = PBXGroup;
+			children = (
+				180BB16924B56EBE00CA70DD /* Todo */,
+				18066ECB24ADB288003BEDCD /* User */,
+			);
+			path = Entitys;
+			sourceTree = "<group>";
+		};
+		18066ECB24ADB288003BEDCD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				18066ECC24ADB293003BEDCD /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		18066ED124ADBD56003BEDCD /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				18066ED224ADBD7D003BEDCD /* Endpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		18066ED724ADBE25003BEDCD /* PromiseNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				18066ED824ADBE4B003BEDCD /* PromiseNetwork.swift */,
+			);
+			path = PromiseNetwork;
+			sourceTree = "<group>";
+		};
+		18066EDA24ADBFB6003BEDCD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				180BB15C24B5667100CA70DD /* NetworkService */,
+				18066ED724ADBE25003BEDCD /* PromiseNetwork */,
+				18066ED124ADBD56003BEDCD /* Endpoint */,
+				180BB15824B5640900CA70DD /* URL */,
+				18066EDB24ADBFDB003BEDCD /* SuccessReponse.swift */,
+				18066EDD24ADBFEA003BEDCD /* FailureResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		180BB15824B5640900CA70DD /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				180BB15924B5642300CA70DD /* URL.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		180BB15B24B5662900CA70DD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				180BB17324B5A70B00CA70DD /* Todo */,
+				180BB15E24B567CD00CA70DD /* User */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		180BB15C24B5667100CA70DD /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				180BB16A24B56EF500CA70DD /* NetworkServiceProtocol.swift */,
+				180BB16E24B56FBA00CA70DD /* AlamofireService */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		180BB15E24B567CD00CA70DD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				180BB15F24B567E700CA70DD /* UserApi.swift */,
+				180BB16124B567FC00CA70DD /* UserEndpoint.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		180BB16924B56EBE00CA70DD /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				1868962124B2BE7800AEF8F4 /* Todo.swift */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		180BB16E24B56FBA00CA70DD /* AlamofireService */ = {
+			isa = PBXGroup;
+			children = (
+				180BB16F24B56FDB00CA70DD /* AlamofireService.swift */,
+			);
+			path = AlamofireService;
+			sourceTree = "<group>";
+		};
+		180BB17324B5A70B00CA70DD /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				180BB17824B5A94800CA70DD /* TodoApi.swift */,
+				180BB17424B5A71E00CA70DD /* TodoEndpoint.swift */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
 		185E6E1D24ACED7100AC3AD2 = {
 			isa = PBXGroup;
 			children = (
 				185E6E2824ACED7100AC3AD2 /* DemoTableViewWithEnum */,
 				185E6E2724ACED7100AC3AD2 /* Products */,
+				AAE236B281A8FC38BE681937 /* Pods */,
+				7E411E00E93E214A1639DB15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				185E6E2624ACED7100AC3AD2 /* DemoTableViewWithEnum.app */,
+				180BB13924B562A200CA70DD /* DemoTableViewWithEnum-DEV.app */,
+				180BB15624B562A800CA70DD /* DemoTableViewWithEnum-STAG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,12 +299,16 @@
 		185E6E2824ACED7100AC3AD2 /* DemoTableViewWithEnum */ = {
 			isa = PBXGroup;
 			children = (
+				18066ECA24ADB281003BEDCD /* Entitys */,
+				18066EC524AD9F0A003BEDCD /* Networking */,
 				185E6E4024ACED8A00AC3AD2 /* View */,
 				185E6E2924ACED7100AC3AD2 /* AppDelegate.swift */,
 				185E6E2B24ACED7100AC3AD2 /* SceneDelegate.swift */,
 				185E6E3524ACED7300AC3AD2 /* Assets.xcassets */,
 				185E6E3724ACED7300AC3AD2 /* LaunchScreen.storyboard */,
 				185E6E3A24ACED7300AC3AD2 /* Info.plist */,
+				180BB13A24B562A300CA70DD /* DemoTableViewWithEnum-DEV-Info.plist */,
+				180BB15724B562A900CA70DD /* DemoTableViewWithEnum-STAG-Info.plist */,
 				185E6E3224ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld */,
 			);
 			path = DemoTableViewWithEnum;
@@ -76,9 +317,8 @@
 		185E6E4024ACED8A00AC3AD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				185E6E4524ACEDA700AC3AD2 /* Cell */,
-				185E6E4124ACEDA400AC3AD2 /* HomeVC.swift */,
-				185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */,
+				185F0A4724B6B28D00881A59 /* Detail */,
+				185F0A4624B6B28200881A59 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,16 +332,102 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		185F0A4624B6B28200881A59 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				185E6E4524ACEDA700AC3AD2 /* Cell */,
+				185E6E4124ACEDA400AC3AD2 /* HomeVC.swift */,
+				185E6E4224ACEDA400AC3AD2 /* HomeVC.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		185F0A4724B6B28D00881A59 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				185F0A4C24B6B2AC00881A59 /* Cell */,
+				185F0A4824B6B2A800881A59 /* DetailVC.swift */,
+				185F0A4924B6B2A800881A59 /* DetailVC.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		185F0A4C24B6B2AC00881A59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				185F0A4D24B6B2CA00881A59 /* ExpandedCell.swift */,
+				185F0A4E24B6B2CA00881A59 /* ExpandedCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7E411E00E93E214A1639DB15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAE236B281A8FC38BE681937 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */,
+				3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		180BB11E24B562A200CA70DD /* DemoTableViewWithEnum-DEV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180BB13624B562A200CA70DD /* Build configuration list for PBXNativeTarget "DemoTableViewWithEnum-DEV" */;
+			buildPhases = (
+				180BB11F24B562A200CA70DD /* [CP] Check Pods Manifest.lock */,
+				180BB12024B562A200CA70DD /* Sources */,
+				180BB12E24B562A200CA70DD /* Frameworks */,
+				180BB13024B562A200CA70DD /* Resources */,
+				180BB13524B562A200CA70DD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DemoTableViewWithEnum-DEV";
+			productName = DemoTableViewWithEnum;
+			productReference = 180BB13924B562A200CA70DD /* DemoTableViewWithEnum-DEV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		180BB13B24B562A800CA70DD /* DemoTableViewWithEnum-STAG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180BB15324B562A800CA70DD /* Build configuration list for PBXNativeTarget "DemoTableViewWithEnum-STAG" */;
+			buildPhases = (
+				180BB13C24B562A800CA70DD /* [CP] Check Pods Manifest.lock */,
+				180BB13D24B562A800CA70DD /* Sources */,
+				180BB14B24B562A800CA70DD /* Frameworks */,
+				180BB14D24B562A800CA70DD /* Resources */,
+				180BB15224B562A800CA70DD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DemoTableViewWithEnum-STAG";
+			productName = DemoTableViewWithEnum;
+			productReference = 180BB15624B562A800CA70DD /* DemoTableViewWithEnum-STAG.app */;
+			productType = "com.apple.product-type.application";
+		};
 		185E6E2524ACED7100AC3AD2 /* DemoTableViewWithEnum */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 185E6E3D24ACED7300AC3AD2 /* Build configuration list for PBXNativeTarget "DemoTableViewWithEnum" */;
 			buildPhases = (
+				5F5055E36F400A0BF2DEA918 /* [CP] Check Pods Manifest.lock */,
 				185E6E2224ACED7100AC3AD2 /* Sources */,
 				185E6E2324ACED7100AC3AD2 /* Frameworks */,
 				185E6E2424ACED7100AC3AD2 /* Resources */,
+				3889B64F49DEDFD6782AE1B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,34 +467,256 @@
 			projectRoot = "";
 			targets = (
 				185E6E2524ACED7100AC3AD2 /* DemoTableViewWithEnum */,
+				180BB11E24B562A200CA70DD /* DemoTableViewWithEnum-DEV */,
+				180BB13B24B562A800CA70DD /* DemoTableViewWithEnum-STAG */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		180BB13024B562A200CA70DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB13124B562A200CA70DD /* LaunchScreen.storyboard in Resources */,
+				185F0A5724B6B69200881A59 /* DetailVC.xib in Resources */,
+				185F0A5524B6B68D00881A59 /* ExpandedCell.xib in Resources */,
+				180BB13224B562A200CA70DD /* MyCell.xib in Resources */,
+				180BB13324B562A200CA70DD /* HomeVC.xib in Resources */,
+				180BB13424B562A200CA70DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180BB14D24B562A800CA70DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB14E24B562A800CA70DD /* LaunchScreen.storyboard in Resources */,
+				185F0A5824B6B69500881A59 /* DetailVC.xib in Resources */,
+				185F0A5624B6B68E00881A59 /* ExpandedCell.xib in Resources */,
+				180BB14F24B562A800CA70DD /* MyCell.xib in Resources */,
+				180BB15024B562A800CA70DD /* HomeVC.xib in Resources */,
+				180BB15124B562A800CA70DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		185E6E2424ACED7100AC3AD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185F0A5024B6B2CA00881A59 /* ExpandedCell.xib in Resources */,
 				185E6E3924ACED7300AC3AD2 /* LaunchScreen.storyboard in Resources */,
 				185E6E4924ACEDBB00AC3AD2 /* MyCell.xib in Resources */,
 				185E6E4424ACEDA400AC3AD2 /* HomeVC.xib in Resources */,
 				185E6E3624ACED7300AC3AD2 /* Assets.xcassets in Resources */,
+				185F0A4B24B6B2A800881A59 /* DetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		180BB11F24B562A200CA70DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTableViewWithEnum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		180BB13524B562A200CA70DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		180BB13C24B562A800CA70DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTableViewWithEnum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		180BB15224B562A800CA70DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3889B64F49DEDFD6782AE1B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5055E36F400A0BF2DEA918 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTableViewWithEnum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		180BB12024B562A200CA70DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB12124B562A200CA70DD /* Endpoint.swift in Sources */,
+				180BB16524B56EB000CA70DD /* UserEndpoint.swift in Sources */,
+				180BB12224B562A200CA70DD /* AppDelegate.swift in Sources */,
+				180BB12324B562A200CA70DD /* MyCell.swift in Sources */,
+				180BB16C24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
+				185F0A5124B6B67600881A59 /* DetailVC.swift in Sources */,
+				180BB12424B562A200CA70DD /* HomeVC.swift in Sources */,
+				185F0A5324B6B68700881A59 /* ExpandedCell.swift in Sources */,
+				180BB12524B562A200CA70DD /* PromiseNetwork.swift in Sources */,
+				180BB16724B56EB300CA70DD /* UserApi.swift in Sources */,
+				180BB16324B56EA000CA70DD /* URL.swift in Sources */,
+				180BB12624B562A200CA70DD /* User.swift in Sources */,
+				180BB12724B562A200CA70DD /* SuccessReponse.swift in Sources */,
+				180BB17124B56FDB00CA70DD /* AlamofireService.swift in Sources */,
+				180BB12824B562A200CA70DD /* SceneDelegate.swift in Sources */,
+				180BB12924B562A200CA70DD /* NetworkingProvider.swift in Sources */,
+				180BB12B24B562A200CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				18C6B82524B5B34C000AFBFD /* TodoApi.swift in Sources */,
+				180BB12C24B562A200CA70DD /* Todo.swift in Sources */,
+				180BB17624B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
+				180BB12D24B562A200CA70DD /* FailureResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180BB13D24B562A800CA70DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180BB13E24B562A800CA70DD /* Endpoint.swift in Sources */,
+				180BB16624B56EB000CA70DD /* UserEndpoint.swift in Sources */,
+				180BB13F24B562A800CA70DD /* AppDelegate.swift in Sources */,
+				180BB14024B562A800CA70DD /* MyCell.swift in Sources */,
+				180BB16D24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
+				185F0A5224B6B67C00881A59 /* DetailVC.swift in Sources */,
+				180BB14124B562A800CA70DD /* HomeVC.swift in Sources */,
+				185F0A5424B6B68800881A59 /* ExpandedCell.swift in Sources */,
+				180BB14224B562A800CA70DD /* PromiseNetwork.swift in Sources */,
+				180BB16824B56EB300CA70DD /* UserApi.swift in Sources */,
+				180BB16424B56EA300CA70DD /* URL.swift in Sources */,
+				180BB14324B562A800CA70DD /* User.swift in Sources */,
+				180BB14424B562A800CA70DD /* SuccessReponse.swift in Sources */,
+				180BB17224B56FDB00CA70DD /* AlamofireService.swift in Sources */,
+				180BB14524B562A800CA70DD /* SceneDelegate.swift in Sources */,
+				180BB14624B562A800CA70DD /* NetworkingProvider.swift in Sources */,
+				180BB14824B562A800CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				18C6B82624B5B34D000AFBFD /* TodoApi.swift in Sources */,
+				180BB14924B562A800CA70DD /* Todo.swift in Sources */,
+				180BB17724B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
+				180BB14A24B562A800CA70DD /* FailureResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		185E6E2224ACED7100AC3AD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180BB16224B567FC00CA70DD /* UserEndpoint.swift in Sources */,
+				18066ED324ADBD7D003BEDCD /* Endpoint.swift in Sources */,
 				185E6E2A24ACED7100AC3AD2 /* AppDelegate.swift in Sources */,
 				185E6E4824ACEDBB00AC3AD2 /* MyCell.swift in Sources */,
+				180BB16B24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
+				185F0A4A24B6B2A800881A59 /* DetailVC.swift in Sources */,
+				180BB15A24B5642300CA70DD /* URL.swift in Sources */,
+				185F0A4F24B6B2CA00881A59 /* ExpandedCell.swift in Sources */,
 				185E6E4324ACEDA400AC3AD2 /* HomeVC.swift in Sources */,
+				180BB16024B567E700CA70DD /* UserApi.swift in Sources */,
+				18121C7D24B55E810026FFA4 /* PromiseNetwork.swift in Sources */,
+				18066ECD24ADB293003BEDCD /* User.swift in Sources */,
+				18066EDC24ADBFDB003BEDCD /* SuccessReponse.swift in Sources */,
+				180BB17024B56FDB00CA70DD /* AlamofireService.swift in Sources */,
 				185E6E2C24ACED7100AC3AD2 /* SceneDelegate.swift in Sources */,
+				18066ED624ADBDB4003BEDCD /* NetworkingProvider.swift in Sources */,
 				185E6E3424ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				180BB17924B5A94800CA70DD /* TodoApi.swift in Sources */,
+				1868962224B2BE7800AEF8F4 /* Todo.swift in Sources */,
+				180BB17524B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
+				18066EDE24ADBFEA003BEDCD /* FailureResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +734,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		180BB13724B562A200CA70DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoTableViewWithEnum-DEV-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		180BB13824B562A200CA70DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoTableViewWithEnum-DEV-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		180BB15424B562A800CA70DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoTableViewWithEnum-STAG-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		180BB15524B562A800CA70DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoTableViewWithEnum-STAG-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		185E6E3B24ACED7300AC3AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,6 +926,7 @@
 		};
 		185E6E3E24ACED7300AC3AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +937,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,6 +945,7 @@
 		};
 		185E6E3F24ACED7300AC3AD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,6 +956,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTableViewWithEnum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,6 +965,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		180BB13624B562A200CA70DD /* Build configuration list for PBXNativeTarget "DemoTableViewWithEnum-DEV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180BB13724B562A200CA70DD /* Debug */,
+				180BB13824B562A200CA70DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180BB15324B562A800CA70DD /* Build configuration list for PBXNativeTarget "DemoTableViewWithEnum-STAG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180BB15424B562A800CA70DD /* Debug */,
+				180BB15524B562A800CA70DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		185E6E2124ACED7100AC3AD2 /* Build configuration list for PBXProject "DemoTableViewWithEnum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

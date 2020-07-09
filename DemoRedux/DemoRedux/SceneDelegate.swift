@@ -22,9 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scenes)
         window?.makeKeyAndVisible()
-        var homeStateController = HomeStateController()
+
         
-        window?.rootViewController = UINavigationController(rootViewController: HomeVC(homeSateController: homeStateController))
+        window?.rootViewController = UINavigationController(rootViewController: HomeVC())
         
     }
 

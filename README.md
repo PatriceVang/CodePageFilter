@@ -20,4 +20,5 @@ Các project con bao gồm
 - DemoRealm: add, update, delete basic
 - DemoCoreData: use CoreData basic
 - DemoReSwift: write pattern Redux in swwift
-- DemoTableViewWithEnum: use enum into UITableViewCell
+- DemoTableViewWithEnum: use Enum into UITableViewCell, PromiseKit, expand TableView when tap Session,  Networdking
+
