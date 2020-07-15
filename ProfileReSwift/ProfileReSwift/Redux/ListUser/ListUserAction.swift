@@ -7,3 +7,27 @@
 //
 
 import Foundation
+import ReSwift
+
+extension ListUserState {
+    struct Read: Action  {
+        var user: [User]
+    }
+
+    struct Update: Action {
+        var user: User
+    }
+
+    struct Delete: Action {
+        var index: Int
+    }
+    struct Add: Action {
+        var user: User
+    }
+    
+    
+}
+
+
+
+

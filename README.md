@@ -21,4 +21,5 @@ Các project con bao gồm
 - DemoCoreData: use CoreData basic
 - DemoReSwift: write pattern Redux in swwift
 - DemoTableViewWithEnum: use Enum into UITableViewCell, PromiseKit, expand TableView when tap Session,  Networdking
+- ProfileReSwift: Reswift, opt Dialog, NetworkingProvider, custom view
 

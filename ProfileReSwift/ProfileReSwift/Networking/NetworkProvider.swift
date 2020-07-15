@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+protocol NetworkProviderProtocol {
+    var userApi: UserApiProtocol {get}
+}
+
+
+class NetworkProvider: NetworkProviderProtocol {
+    static let shared = NetworkProvider()
+    
+    private var network: PromiseNetworkProtocol
+    private init() {
+        let almofireNetwork = AlmofireNetwork()
+        network = PromiseNetwork(network: almofireNetwork)
+    }
+    
+     var userApi: UserApiProtocol {
+        return UserApi(network: network)
+    }
+
+}

@@ -9,16 +9,27 @@
 import UIKit
 
 class ProfileCell: UITableViewCell {
+    
+    lazy var arrowRightButton = UIButton(frame: .zero)
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    private func setupUI() {
+        //-- ArrowRight Button
+        contentView.addSubview(arrowRightButton)
+        arrowRightButton.setImage(UIImage(named: "cheveron_right"), for: .normal)
+        arrowRightButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            arrowRightButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            arrowRightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            arrowRightButton.heightAnchor.constraint(equalToConstant: 20),
+            arrowRightButton.widthAnchor.constraint(equalToConstant: 20)
+        ])
+    }
 }

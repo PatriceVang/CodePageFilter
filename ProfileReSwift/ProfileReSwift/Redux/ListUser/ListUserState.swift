@@ -10,5 +10,5 @@ import Foundation
 import ReSwift
 
 struct ListUserState: StateType {
-    var listUser: [User]
+    var listUser: [User] = []
 }

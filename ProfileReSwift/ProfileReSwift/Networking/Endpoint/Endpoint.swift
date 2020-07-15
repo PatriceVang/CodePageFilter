@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import Alamofire
+
+
+protocol Endpoint: URLConvertible {
+    var method: HTTPMethod {get}
+    var parameter: [String: Any] {get}
+    var path: String {get}
+}
+
