@@ -66,6 +66,7 @@ class HomeVC: UIViewController {
     }
     @IBAction func onTapDisplayName(_ sender: Any) {
         homeStateController.displaytitle(title: number_Lb.text!)
+        homeStateController.allowedDisplayText(isAllowed: true)
     }
 
     @IBAction func onTapGiamBtn(_ sender: Any) {

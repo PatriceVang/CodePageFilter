@@ -18,6 +18,7 @@ struct HomeState: StateType {
 
 struct DisplayTitleState {
     var name = "0"
+    var isAllowed: Bool = false
 }
 
 

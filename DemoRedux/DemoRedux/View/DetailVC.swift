@@ -37,10 +37,15 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        input_Tf.text = String(homeStateController.counter)
+        if homeStateController.displayTitle.isAllowed {
+             input_Tf.text = String(homeStateController.counter)
+        }
+        
+       
     }
     @IBAction func onTapConfirm_Btn(_ sender: Any) {
-        homeStateController.displaytitle(title: input_Tf.text!)
+         homeStateController.displaytitle(title: input_Tf.text!)
+        homeStateController.allowedDisplayText(isAllowed: false)
     }
     
 }

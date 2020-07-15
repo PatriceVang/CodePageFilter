@@ -25,3 +25,7 @@ struct CounterActionDecreaseAction: Action {}
 struct DisplayTitleAction: Action {
     var text: String
 }
+
+struct AllowDisplayText: Action {
+    var isAllowed: Bool
+}

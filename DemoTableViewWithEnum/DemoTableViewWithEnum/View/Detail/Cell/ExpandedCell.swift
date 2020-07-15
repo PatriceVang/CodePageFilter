@@ -13,7 +13,7 @@ class ExpandedCell: UITableViewCell {
     
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
     weak var delegate: ExpandCellDelegate?
-
+    var currentPeople: People?
     var isExpanded = false
     var listUser = [User]()
 
@@ -28,11 +28,12 @@ class ExpandedCell: UITableViewCell {
 
     @IBAction func onTapExpandBtn(_ sender: UIButton) {
         isExpanded.toggle()
-        self.delegate?.expanded(cell: self, isExpanded: isExpanded)
+        self.delegate?.expanded(cell: self)
     }
 
-    func reload(isExpended: Bool) {
-        heightTableView.constant = CGFloat( 44 * (isExpended ? listUser.count : 0))
+    func reload(people: People) {
+        self.currentPeople = people
+        heightTableView.constant = CGFloat( 44 * (people.isCollapsed ? listUser.count : 0))
         tableView.reloadData()
     }
  
@@ -41,12 +42,15 @@ class ExpandedCell: UITableViewCell {
 extension ExpandedCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isExpanded ? listUser.count : 0
+//        return isExpanded ? listUser.count : 0
+        guard let people = currentPeople else {return 0}
+        return people.isCollapsed ? people.items.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subcell") as! SubCell
-        cell.setValue(item: listUser[indexPath.row])
+        guard let people = currentPeople else {return UITableViewCell()}
+        cell.setValue(item: (people.items[indexPath.row] as? User)!)
         return cell
     }
     
@@ -57,7 +61,7 @@ extension ExpandedCell: UITableViewDelegate, UITableViewDataSource {
 }
 
 protocol ExpandCellDelegate: class {
-    func expanded(cell: ExpandedCell?, isExpanded: Bool)
+    func expanded(cell: ExpandedCell?)
 }
 
 

@@ -94,6 +94,30 @@
 		185F0A6024B6D5A000881A59 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A5B24B6D03200881A59 /* SubCell.xib */; };
 		185F0A6124B6D5A100881A59 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185F0A5B24B6D03200881A59 /* SubCell.xib */; };
 		1868962224B2BE7800AEF8F4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868962124B2BE7800AEF8F4 /* Todo.swift */; };
+		187723CC24B7624400701981 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723CB24B7624400701981 /* People.swift */; };
+		187723CD24B7628600701981 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723CB24B7624400701981 /* People.swift */; };
+		187723CE24B7628600701981 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723CB24B7624400701981 /* People.swift */; };
+		187723D124B762E100701981 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D024B762E100701981 /* AppState.swift */; };
+		187723D324B762F700701981 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D224B762F700701981 /* AppReducer.swift */; };
+		187723D724B7633C00701981 /* PeopleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D624B7633C00701981 /* PeopleState.swift */; };
+		187723D824B7636400701981 /* PeopleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D624B7633C00701981 /* PeopleState.swift */; };
+		187723D924B7636400701981 /* PeopleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D624B7633C00701981 /* PeopleState.swift */; };
+		187723DB24B7637F00701981 /* PeopleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DA24B7637F00701981 /* PeopleReducer.swift */; };
+		187723DE24B7639600701981 /* PeopleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DD24B7639600701981 /* PeopleAction.swift */; };
+		187723DF24B7646B00701981 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D024B762E100701981 /* AppState.swift */; };
+		187723E024B7646C00701981 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D024B762E100701981 /* AppState.swift */; };
+		187723E124B7646F00701981 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D224B762F700701981 /* AppReducer.swift */; };
+		187723E224B7646F00701981 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723D224B762F700701981 /* AppReducer.swift */; };
+		187723E324B7678800701981 /* PeopleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DD24B7639600701981 /* PeopleAction.swift */; };
+		187723E424B7678900701981 /* PeopleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DD24B7639600701981 /* PeopleAction.swift */; };
+		187723E524B7695B00701981 /* PeopleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DA24B7637F00701981 /* PeopleReducer.swift */; };
+		187723E624B7695C00701981 /* PeopleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723DA24B7637F00701981 /* PeopleReducer.swift */; };
+		187723E824B76C5C00701981 /* StoreSubscriper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E724B76C5C00701981 /* StoreSubscriper.swift */; };
+		187723EA24B76DA500701981 /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E924B76DA500701981 /* DetailState.swift */; };
+		187723EB24B76EEF00701981 /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E924B76DA500701981 /* DetailState.swift */; };
+		187723EC24B76EF000701981 /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E924B76DA500701981 /* DetailState.swift */; };
+		187723ED24B76FA100701981 /* StoreSubscriper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E724B76C5C00701981 /* StoreSubscriper.swift */; };
+		187723EE24B76FA100701981 /* StoreSubscriper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187723E724B76C5C00701981 /* StoreSubscriper.swift */; };
 		18C6B82524B5B34C000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
 		18C6B82624B5B34D000AFBFD /* TodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BB17824B5A94800CA70DD /* TodoApi.swift */; };
 		D789E479F66BA9481265729F /* Pods_DemoTableViewWithEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */; };
@@ -135,6 +159,14 @@
 		185F0A5A24B6D03200881A59 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
 		185F0A5B24B6D03200881A59 /* SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCell.xib; sourceTree = "<group>"; };
 		1868962124B2BE7800AEF8F4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		187723CB24B7624400701981 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		187723D024B762E100701981 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		187723D224B762F700701981 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		187723D624B7633C00701981 /* PeopleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleState.swift; sourceTree = "<group>"; };
+		187723DA24B7637F00701981 /* PeopleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleReducer.swift; sourceTree = "<group>"; };
+		187723DD24B7639600701981 /* PeopleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAction.swift; sourceTree = "<group>"; };
+		187723E724B76C5C00701981 /* StoreSubscriper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubscriper.swift; sourceTree = "<group>"; };
+		187723E924B76DA500701981 /* DetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailState.swift; sourceTree = "<group>"; };
 		3FF1CB72EC965900B5C2B580 /* Pods-DemoTableViewWithEnum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTableViewWithEnum.release.xcconfig"; path = "Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum.release.xcconfig"; sourceTree = "<group>"; };
 		6D67FFB1861B4ACA61397C49 /* Pods_DemoTableViewWithEnum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTableViewWithEnum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2655CA1DC2D48187707497F /* Pods-DemoTableViewWithEnum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTableViewWithEnum.debug.xcconfig"; path = "Target Support Files/Pods-DemoTableViewWithEnum/Pods-DemoTableViewWithEnum.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +213,7 @@
 		18066ECA24ADB281003BEDCD /* Entitys */ = {
 			isa = PBXGroup;
 			children = (
+				187723CA24B7623700701981 /* People */,
 				180BB16924B56EBE00CA70DD /* Todo */,
 				18066ECB24ADB288003BEDCD /* User */,
 			);
@@ -307,6 +340,7 @@
 		185E6E2824ACED7100AC3AD2 /* DemoTableViewWithEnum */ = {
 			isa = PBXGroup;
 			children = (
+				187723C824B761E600701981 /* Redux */,
 				18066ECA24ADB281003BEDCD /* Entitys */,
 				18066EC524AD9F0A003BEDCD /* Networking */,
 				185E6E4024ACED8A00AC3AD2 /* View */,
@@ -356,6 +390,7 @@
 				185F0A4C24B6B2AC00881A59 /* Cell */,
 				185F0A4824B6B2A800881A59 /* DetailVC.swift */,
 				185F0A4924B6B2A800881A59 /* DetailVC.xib */,
+				187723E924B76DA500701981 /* DetailState.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -377,6 +412,35 @@
 				185F0A5B24B6D03200881A59 /* SubCell.xib */,
 			);
 			path = SubCell;
+			sourceTree = "<group>";
+		};
+		187723C824B761E600701981 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				187723C924B761F300701981 /* People */,
+				187723D024B762E100701981 /* AppState.swift */,
+				187723D224B762F700701981 /* AppReducer.swift */,
+				187723E724B76C5C00701981 /* StoreSubscriper.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		187723C924B761F300701981 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				187723D624B7633C00701981 /* PeopleState.swift */,
+				187723DA24B7637F00701981 /* PeopleReducer.swift */,
+				187723DD24B7639600701981 /* PeopleAction.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		187723CA24B7623700701981 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				187723CB24B7624400701981 /* People.swift */,
+			);
+			path = People;
 			sourceTree = "<group>";
 		};
 		7E411E00E93E214A1639DB15 /* Frameworks */ = {
@@ -662,12 +726,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				180BB12124B562A200CA70DD /* Endpoint.swift in Sources */,
+				187723EB24B76EEF00701981 /* DetailState.swift in Sources */,
 				180BB16524B56EB000CA70DD /* UserEndpoint.swift in Sources */,
+				187723D824B7636400701981 /* PeopleState.swift in Sources */,
 				180BB12224B562A200CA70DD /* AppDelegate.swift in Sources */,
+				187723ED24B76FA100701981 /* StoreSubscriper.swift in Sources */,
 				180BB12324B562A200CA70DD /* MyCell.swift in Sources */,
 				180BB16C24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
 				185F0A5124B6B67600881A59 /* DetailVC.swift in Sources */,
 				180BB12424B562A200CA70DD /* HomeVC.swift in Sources */,
+				187723E324B7678800701981 /* PeopleAction.swift in Sources */,
 				185F0A5324B6B68700881A59 /* ExpandedCell.swift in Sources */,
 				180BB12524B562A200CA70DD /* PromiseNetwork.swift in Sources */,
 				180BB16724B56EB300CA70DD /* UserApi.swift in Sources */,
@@ -676,11 +744,15 @@
 				185F0A5E24B6D59900881A59 /* SubCell.swift in Sources */,
 				180BB12724B562A200CA70DD /* SuccessReponse.swift in Sources */,
 				180BB17124B56FDB00CA70DD /* AlamofireService.swift in Sources */,
+				187723DF24B7646B00701981 /* AppState.swift in Sources */,
 				180BB12824B562A200CA70DD /* SceneDelegate.swift in Sources */,
 				180BB12924B562A200CA70DD /* NetworkingProvider.swift in Sources */,
 				180BB12B24B562A200CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				187723E524B7695B00701981 /* PeopleReducer.swift in Sources */,
+				187723E124B7646F00701981 /* AppReducer.swift in Sources */,
 				18C6B82524B5B34C000AFBFD /* TodoApi.swift in Sources */,
 				180BB12C24B562A200CA70DD /* Todo.swift in Sources */,
+				187723CD24B7628600701981 /* People.swift in Sources */,
 				180BB17624B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
 				180BB12D24B562A200CA70DD /* FailureResponse.swift in Sources */,
 			);
@@ -691,12 +763,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				180BB13E24B562A800CA70DD /* Endpoint.swift in Sources */,
+				187723EC24B76EF000701981 /* DetailState.swift in Sources */,
 				180BB16624B56EB000CA70DD /* UserEndpoint.swift in Sources */,
+				187723D924B7636400701981 /* PeopleState.swift in Sources */,
 				180BB13F24B562A800CA70DD /* AppDelegate.swift in Sources */,
+				187723EE24B76FA100701981 /* StoreSubscriper.swift in Sources */,
 				180BB14024B562A800CA70DD /* MyCell.swift in Sources */,
 				180BB16D24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
 				185F0A5224B6B67C00881A59 /* DetailVC.swift in Sources */,
 				180BB14124B562A800CA70DD /* HomeVC.swift in Sources */,
+				187723E424B7678900701981 /* PeopleAction.swift in Sources */,
 				185F0A5424B6B68800881A59 /* ExpandedCell.swift in Sources */,
 				180BB14224B562A800CA70DD /* PromiseNetwork.swift in Sources */,
 				180BB16824B56EB300CA70DD /* UserApi.swift in Sources */,
@@ -705,11 +781,15 @@
 				185F0A5F24B6D59900881A59 /* SubCell.swift in Sources */,
 				180BB14424B562A800CA70DD /* SuccessReponse.swift in Sources */,
 				180BB17224B56FDB00CA70DD /* AlamofireService.swift in Sources */,
+				187723E024B7646C00701981 /* AppState.swift in Sources */,
 				180BB14524B562A800CA70DD /* SceneDelegate.swift in Sources */,
 				180BB14624B562A800CA70DD /* NetworkingProvider.swift in Sources */,
 				180BB14824B562A800CA70DD /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				187723E624B7695C00701981 /* PeopleReducer.swift in Sources */,
+				187723E224B7646F00701981 /* AppReducer.swift in Sources */,
 				18C6B82624B5B34D000AFBFD /* TodoApi.swift in Sources */,
 				180BB14924B562A800CA70DD /* Todo.swift in Sources */,
+				187723CE24B7628600701981 /* People.swift in Sources */,
 				180BB17724B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
 				180BB14A24B562A800CA70DD /* FailureResponse.swift in Sources */,
 			);
@@ -719,26 +799,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187723EA24B76DA500701981 /* DetailState.swift in Sources */,
 				180BB16224B567FC00CA70DD /* UserEndpoint.swift in Sources */,
 				18066ED324ADBD7D003BEDCD /* Endpoint.swift in Sources */,
 				185E6E2A24ACED7100AC3AD2 /* AppDelegate.swift in Sources */,
+				187723D124B762E100701981 /* AppState.swift in Sources */,
 				185E6E4824ACEDBB00AC3AD2 /* MyCell.swift in Sources */,
 				180BB16B24B56EF500CA70DD /* NetworkServiceProtocol.swift in Sources */,
 				185F0A4A24B6B2A800881A59 /* DetailVC.swift in Sources */,
 				180BB15A24B5642300CA70DD /* URL.swift in Sources */,
+				187723E824B76C5C00701981 /* StoreSubscriper.swift in Sources */,
 				185F0A4F24B6B2CA00881A59 /* ExpandedCell.swift in Sources */,
+				187723DB24B7637F00701981 /* PeopleReducer.swift in Sources */,
 				185E6E4324ACEDA400AC3AD2 /* HomeVC.swift in Sources */,
 				180BB16024B567E700CA70DD /* UserApi.swift in Sources */,
 				18121C7D24B55E810026FFA4 /* PromiseNetwork.swift in Sources */,
 				18066ECD24ADB293003BEDCD /* User.swift in Sources */,
+				187723D724B7633C00701981 /* PeopleState.swift in Sources */,
 				185F0A5C24B6D03200881A59 /* SubCell.swift in Sources */,
 				18066EDC24ADBFDB003BEDCD /* SuccessReponse.swift in Sources */,
 				180BB17024B56FDB00CA70DD /* AlamofireService.swift in Sources */,
 				185E6E2C24ACED7100AC3AD2 /* SceneDelegate.swift in Sources */,
 				18066ED624ADBDB4003BEDCD /* NetworkingProvider.swift in Sources */,
 				185E6E3424ACED7100AC3AD2 /* DemoTableViewWithEnum.xcdatamodeld in Sources */,
+				187723D324B762F700701981 /* AppReducer.swift in Sources */,
 				180BB17924B5A94800CA70DD /* TodoApi.swift in Sources */,
 				1868962224B2BE7800AEF8F4 /* Todo.swift in Sources */,
+				187723DE24B7639600701981 /* PeopleAction.swift in Sources */,
+				187723CC24B7624400701981 /* People.swift in Sources */,
 				180BB17524B5A71E00CA70DD /* TodoEndpoint.swift in Sources */,
 				18066EDE24ADBFEA003BEDCD /* FailureResponse.swift in Sources */,
 			);

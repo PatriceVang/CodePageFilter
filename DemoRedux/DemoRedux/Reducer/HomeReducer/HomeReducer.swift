@@ -19,6 +19,9 @@ func homeReducer(action: Action, state: HomeState?) -> HomeState {
         state.counter -= 1
     case let action as DisplayTitleAction:
         state.displayTitle.name = action.text
+    case let action as AllowDisplayText:
+        state.displayTitle.isAllowed = action.isAllowed
+        
     default:
         break
     }

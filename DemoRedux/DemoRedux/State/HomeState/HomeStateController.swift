@@ -31,4 +31,8 @@ struct HomeStateController {
     func numberDecrease() {
         store.dispatch(CounterActionDecreaseAction())
     }
+    
+    func allowedDisplayText(isAllowed: Bool) {
+        store.dispatch(AllowDisplayText(isAllowed: isAllowed))
+    }
 }

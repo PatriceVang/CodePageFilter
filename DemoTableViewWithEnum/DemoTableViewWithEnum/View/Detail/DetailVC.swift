@@ -9,17 +9,18 @@
 import UIKit
 
 
-enum People {
+enum Career {
     case Actor
     case Author
 }
 
-struct SessionType {
-    var type: People
+
+struct Person {
+    var type: Career
     var items: [Any]
     var isCollapsed: Bool
-    
 }
+
 
 struct Actor {
     var name: String?
@@ -30,6 +31,7 @@ struct Author {
 }
 
 class DetailVC: UIViewController {
+    //old
     var listActor = [
         Actor(name: "David"),
         Actor(name: "David 1"),
@@ -38,29 +40,52 @@ class DetailVC: UIViewController {
         Actor(name: "David 4"),
         Actor(name: "David 5"),
     ]
-    
+
     var listAuthor = [
         Author(name: "Lionking"),
         Author(name: "Lionking 1"),
         Author(name: "Lionking 2"),
         Author(name: "Lionking 3")
     ]
-    
-    var mySession = [SessionType]()
-
+    var mySession = [Person]()
     var isExpandedSession: Bool = false
     
-
-
-
+    
+    
+    var detailStateVC: DetailStateVC
+    private lazy var peopleSubcipber: SubStateSubcripber<PeopleState> = SubStateSubcripber(handler: nil)
+    
+    init() {
+        detailStateVC = DetailStateVC()
+        super.init(nibName: "DetailVC", bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        store.unsubscribe(peopleSubcipber)
+    }
+ 
     @IBOutlet weak var myTableV: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableV.register(UINib(nibName: "ExpandedCell", bundle: nil), forCellReuseIdentifier: "cellId")
+        peopleSubcipber = SubStateSubcripber { [weak self] _ in
+            self?.myTableV.reloadData()
+        }
         
+        store.subscribe(self.peopleSubcipber) {
+            $0.select {
+                $0.peopleState
+            }
+        }
+
+        
+        //old
         mySession = [
-            SessionType(type: .Actor, items: [], isCollapsed: false),
-            SessionType(type: .Author, items: [], isCollapsed: false)
+            Person(type: .Author, items: [], isCollapsed: false),
+            Person(type: .Actor, items: [], isCollapsed: false)
         ]
         
 
@@ -81,7 +106,6 @@ class DetailVC: UIViewController {
             mySession[index].items = []
         }
         self.myTableV.reloadSections([index], with: .automatic)
-        
     }
 
 }
@@ -109,6 +133,8 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource {
             titleLb.text = "Actor"
         case .Author:
             titleLb.text = "Author"
+        default:
+            break
         }
         headerV.addSubview(titleLb)
         return headerV
@@ -124,37 +150,50 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 0
         }
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableV.dequeueReusableCell(withIdentifier: "cellId") as! ExpandedCell
+//        let people = detailStateVC.list[indexPath.row]
         cell.delegate = self
+//        cell.reload(people: people)
         return cell
     }
     
 }
 
 extension DetailVC: ExpandCellDelegate {
-    func expanded(cell: ExpandedCell?, isExpanded: Bool) {
-//        guard let tableView = cell, let indexPath = myTableV.indexPath(for: tableView) else {return}
+    func expanded(cell: ExpandedCell?) {
+        guard let tableView = cell, let indexPath = myTableV.indexPath(for: tableView) else {return}
         
-        switch isExpanded {
+
+        
+        let people = detailStateVC.list[indexPath.row]
+        
+        switch people.isCollapsed {
         case true:
             NetworkingProvider.shared.user.getUser()
             .done { (arrUser) in
-                cell?.listUser = arrUser
+//                cell?.listUser = arrUser
+                self.detailStateVC.showPeople(number: people.id, list: arrUser)
             }
             .catch { (err) in
                 print(err.localizedDescription)
             }
             .finally {
-                cell?.reload(isExpended: isExpanded)
-                self.myTableV.reloadData()
+//                cell?.reload(isExpended: isExpanded)
+                cell?.reload(people: people)
+//                self.myTableV.reloadData()
             }
         case false:
-            cell?.listUser = []
-            cell?.reload(isExpended: isExpanded)
-            myTableV.reloadData()
+//            cell?.listUser = []
+            self.detailStateVC.hidePeople(number: people.id)
+            cell?.reload(people: people)
+//            cell?.reload(isExpended: isExpanded)
+//            myTableV.reloadData()
         }
         
     }
