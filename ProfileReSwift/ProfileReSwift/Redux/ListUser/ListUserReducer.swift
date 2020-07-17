@@ -11,6 +11,7 @@ import ReSwift
 
 
 func listUserReducer(action: Action, state: ListUserState?) -> ListUserState {
+    
     var state = state ?? ListUserState()
     
     switch action {
@@ -26,10 +27,38 @@ func listUserReducer(action: Action, state: ListUserState?) -> ListUserState {
         }
     case let action as ListUserState.Add:
         state.listUser.append(action.user)
+    case let action as ListUserState.Filter:
+        state.listUser = action.newListUser
+    case _ as ListUserState.ShowSelecteItems:
+        state.isShowSelecteItems = !state.isShowSelecteItems
+        
+        for i in 0..<state.listUser.count {
+            state.listUser[i].isSelected = false
+        }
+    case let action as ListUserState.IsSelectedItems:
+
+        state.listUser[action.userIndex].isSelected = !state.listUser[action.userIndex].isSelected!
+        
+        if state.listUser[action.userIndex].isSelected! {
+            state.selectedUser.append(state.listUser[action.userIndex])
+        } else {
+            state.selectedUser = state.selectedUser.filter({ (user) -> Bool in
+                return user.id != state.listUser[action.userIndex].id
+            })
+        }
+        
+        print(state.selectedUser)
+    case _ as ListUserState.IsDeletedItems:
+        for item in state.selectedUser {
+            state.listUser.removeAll {
+                $0.id == item.id
+            }
+        }
+        state.selectedUser = []
 
     default:
         break
     }
     return state
 }
-
+    

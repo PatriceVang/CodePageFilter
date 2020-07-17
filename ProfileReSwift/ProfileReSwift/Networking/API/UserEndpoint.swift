@@ -12,6 +12,7 @@ import Alamofire
 
 enum UserEndpoint {
     case getUser
+    case createUser(params: [String: Any])
 }
 
 extension UserEndpoint: Endpoint {
@@ -19,13 +20,18 @@ extension UserEndpoint: Endpoint {
         switch self {
         case .getUser:
             return .get
+        case .createUser:
+            return .post
         }
+    
     }
     
     var parameter: [String : Any] {
         switch self {
         case .getUser:
             return [:]
+        case .createUser(let params):
+            return params
         }
     }
     
@@ -33,6 +39,8 @@ extension UserEndpoint: Endpoint {
         switch self {
         case .getUser:
             return "users"
+        case .createUser:
+            return "posts"
         }
     }
     

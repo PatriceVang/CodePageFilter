@@ -16,7 +16,7 @@ protocol AlmofireNetworkProtocol {
 
 class AlmofireNetwork: AlmofireNetworkProtocol {
     func request(endpoint: Endpoint, success: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
-        AF.request(endpoint, method: endpoint.method, parameters: nil).responseData { (response) in
+        AF.request(endpoint, method: endpoint.method, parameters: endpoint.parameter).responseData { (response) in
             switch response.result {
             case .success(let value):
                 success(value)

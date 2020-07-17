@@ -12,7 +12,7 @@ import WebKit
 class WebVC: UIViewController {
     
     let str: String
-    let webV = WKWebView()
+    lazy var webV = WKWebView()
     
     init(str: String) {
         self.str = str

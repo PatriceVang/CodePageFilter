@@ -11,7 +11,7 @@ import UIKit
 class UpdateUserVC: UIViewController {
     
     let updateTextField = MyTextField(style: .confirmPassword)
-    lazy var confirmButton = UIButton()
+    lazy var confirmButton = MyButton(selected: UIImage(named: "selected_img"), unSelected: UIImage(named: "unSelected_img"))
     let listUserStateVC: ListUserStateVC
     var user: User?
 
@@ -44,8 +44,6 @@ class UpdateUserVC: UIViewController {
         
         self.view.addSubview(confirmButton)
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        confirmButton.setTitle("Confirm", for: .normal)
-        confirmButton.setTitleColor(.black, for: .normal)
         confirmButton.addTarget(self, action: #selector(onTapConfirmButton(_:)), for: .touchUpInside)
         NSLayoutConstraint.activate([
             confirmButton.topAnchor.constraint(equalTo: self.updateTextField.bottomAnchor, constant: 30),

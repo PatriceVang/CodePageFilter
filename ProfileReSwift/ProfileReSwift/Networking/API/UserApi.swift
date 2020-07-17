@@ -13,6 +13,7 @@ import PromiseKit
 
 protocol UserApiProtocol {
     func getUser() -> Promise<[User]>
+    func createUser(params: [String: Any]?) -> Promise<Post>
 }
 
 
@@ -27,8 +28,11 @@ class UserApi: UserApiProtocol {
         let endpoint = UserEndpoint.getUser
         return network.requestArray(endpoint: endpoint)
     }
-    
-    
+    func createUser(params: [String : Any]?) -> Promise<Post> {
+        let endpoint = UserEndpoint.createUser(params: params!)
+        return network.requestObject(endpoint: endpoint)
+    }
+
 }
 
 

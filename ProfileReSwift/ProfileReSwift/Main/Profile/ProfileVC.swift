@@ -25,6 +25,7 @@ struct SessionProfile {
         case privacy = "Privacy Policy"
         case logout = "Log out"
     }
+    
 }
 
 
@@ -32,12 +33,20 @@ struct SessionProfile {
 class ProfileVC: UIViewController {
     
     lazy var profileTableV = UITableView(frame: .zero)
-    
     var sessionProfile = [SessionProfile]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if DEV
+        print("Server dev")
+        #elseif STAG
+        print("Server STAG")
+        #else
+        print("Server prod")
+        #endif
         setupUI()
+        
     }
     
     private func setupUI() {
@@ -65,20 +74,11 @@ class ProfileVC: UIViewController {
             SessionProfile(type: .logout, items: [.logout])
         ]
         
-        NetworkProvider.shared.userApi.getUser()
-            .done { (arrUser) in
-                print(arrUser.map {$0.name})
-        }
-        .catch { (err) in
-            print(err.localizedDescription)
-        }
-        
-
+  
     }
 
 }
 extension ProfileVC: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch sessionProfile[section].type {
         case .infomation:
@@ -88,9 +88,8 @@ extension ProfileVC: UITableViewDataSource {
         }
     }
 
-
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
+        
         switch sessionProfile[section].type {
         case .infomation:
             let infoHeader = InfomationHeader(frame: .init(x: 0, y: 0, width: profileTableV.frame.width, height: 100))
@@ -107,6 +106,7 @@ extension ProfileVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sessionProfile.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rowCount = sessionProfile[section].items.count
         switch sessionProfile[section].type {
@@ -132,6 +132,7 @@ extension ProfileVC: UITableViewDataSource {
         }
         return cell
     }
+    
 }
 
 extension ProfileVC: UITableViewDelegate {

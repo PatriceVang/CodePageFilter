@@ -19,7 +19,7 @@ class MyTextField: UITextField {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

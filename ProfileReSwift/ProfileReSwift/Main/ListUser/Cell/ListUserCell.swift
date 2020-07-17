@@ -25,5 +25,6 @@ class ListUserCell: UITableViewCell {
     
     func setValue(user: User) {
         self.textLabel?.text = user.name
+        
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181CDE8B24C035C900180F34 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDE8A24C035C900180F34 /* MoreCell.swift */; };
 		1847FC5D24BD621300A4E69E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5C24BD621300A4E69E /* AppDelegate.swift */; };
 		1847FC5F24BD621300A4E69E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5E24BD621300A4E69E /* SceneDelegate.swift */; };
 		1847FC6624BD621500A4E69E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6524BD621500A4E69E /* Assets.xcassets */; };
@@ -21,6 +22,81 @@
 		1847FC8B24BDBACF00A4E69E /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8A24BDBACF00A4E69E /* AppURL.swift */; };
 		1847FC8E24BDBE9A00A4E69E /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8D24BDBE9A00A4E69E /* PromiseNetwork.swift */; };
 		1847FC9124BDBF8300A4E69E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC9024BDBF8300A4E69E /* User.swift */; };
+		1857819F24C154BE00380EC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857819E24C154BE00380EC6 /* Post.swift */; };
+		185781A124C15BA200380EC6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185781A024C15BA200380EC6 /* Extension.swift */; };
+		185781D324C19C6100380EC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6A24BD621500A4E69E /* Info.plist */; };
+		1857820724C1A45E00380EC6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7224BD629A00A4E69E /* ProfileVC.swift */; };
+		1857820824C1A45E00380EC6 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2324BE9B1B00E5721A /* UserEndpoint.swift */; };
+		1857820924C1A45E00380EC6 /* ListUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3D24BEC0A200E5721A /* ListUserState.swift */; };
+		1857820A24C1A45E00380EC6 /* StoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3824BEBEA100E5721A /* StoreListener.swift */; };
+		1857820B24C1A45E00380EC6 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2B24BEA56300E5721A /* WebVC.swift */; };
+		1857820C24C1A45E00380EC6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8524BDA50D00A4E69E /* Endpoint.swift */; };
+		1857820D24C1A45E00380EC6 /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8D24BDBE9A00A4E69E /* PromiseNetwork.swift */; };
+		1857820E24C1A45E00380EC6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185781A024C15BA200380EC6 /* Extension.swift */; };
+		1857820F24C1A45E00380EC6 /* AlamofireNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B352DC24BDF1E20071C66D /* AlamofireNetwork.swift */; };
+		1857821024C1A45E00380EC6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7F24BD8FB500A4E69E /* MyTextField.swift */; };
+		1857821124C1A45E00380EC6 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2624BE9E0400E5721A /* UserApi.swift */; };
+		1857821224C1A45E00380EC6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3A24BEC05200E5721A /* AppState.swift */; };
+		1857821324C1A45E00380EC6 /* InfomationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7824BD6DFB00A4E69E /* InfomationHeader.swift */; };
+		1857821424C1A45E00380EC6 /* ListUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4224BEC1D600E5721A /* ListUserAction.swift */; };
+		1857821524C1A45E00380EC6 /* ListUserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4424BEC1EB00E5721A /* ListUserReducer.swift */; };
+		1857821624C1A45E00380EC6 /* ListUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2E24BEBC8B00E5721A /* ListUserVC.swift */; };
+		1857821724C1A45E00380EC6 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4D24BEE4EC00E5721A /* MyButton.swift */; };
+		1857821824C1A45E00380EC6 /* ListUserStateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4824BEC4DF00E5721A /* ListUserStateVC.swift */; };
+		1857821924C1A45E00380EC6 /* TitleAndInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8124BD93AA00A4E69E /* TitleAndInput.swift */; };
+		1857821A24C1A45E00380EC6 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4F24BF063400E5721A /* AlertDialog.swift */; };
+		1857821B24C1A45E00380EC6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7524BD62D100A4E69E /* ProfileCell.swift */; };
+		1857821C24C1A45E00380EC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857819E24C154BE00380EC6 /* Post.swift */; };
+		1857821D24C1A45E00380EC6 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDE8A24C035C900180F34 /* MoreCell.swift */; };
+		1857821E24C1A45E00380EC6 /* ChangPaswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7B24BD8F4500A4E69E /* ChangPaswordVC.swift */; };
+		1857821F24C1A45E00380EC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC9024BDBF8300A4E69E /* User.swift */; };
+		1857822024C1A45E00380EC6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4624BEC20300E5721A /* AppReducer.swift */; };
+		1857822124C1A45E00380EC6 /* ListUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3124BEBDE800E5721A /* ListUserCell.swift */; };
+		1857822224C1A45E00380EC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5C24BD621300A4E69E /* AppDelegate.swift */; };
+		1857822324C1A45E00380EC6 /* UpdateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4B24BEDBF600E5721A /* UpdateUserVC.swift */; };
+		1857822424C1A45E00380EC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5E24BD621300A4E69E /* SceneDelegate.swift */; };
+		1857822524C1A45E00380EC6 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8A24BDBACF00A4E69E /* AppURL.swift */; };
+		1857822624C1A45E00380EC6 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2824BE9F5400E5721A /* NetworkProvider.swift */; };
+		1857822824C1A45E00380EC6 /* Pods_ProfileReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F5D1CDEB6DA83A110610A /* Pods_ProfileReSwift.framework */; };
+		1857822A24C1A45E00380EC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6724BD621500A4E69E /* LaunchScreen.storyboard */; };
+		1857822B24C1A45E00380EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6524BD621500A4E69E /* Assets.xcassets */; };
+		1857822C24C1A45E00380EC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6A24BD621500A4E69E /* Info.plist */; };
+		1857823624C1A9E100380EC6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7224BD629A00A4E69E /* ProfileVC.swift */; };
+		1857823724C1A9E100380EC6 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2324BE9B1B00E5721A /* UserEndpoint.swift */; };
+		1857823824C1A9E100380EC6 /* ListUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3D24BEC0A200E5721A /* ListUserState.swift */; };
+		1857823924C1A9E100380EC6 /* StoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3824BEBEA100E5721A /* StoreListener.swift */; };
+		1857823A24C1A9E100380EC6 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2B24BEA56300E5721A /* WebVC.swift */; };
+		1857823B24C1A9E100380EC6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8524BDA50D00A4E69E /* Endpoint.swift */; };
+		1857823C24C1A9E100380EC6 /* PromiseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8D24BDBE9A00A4E69E /* PromiseNetwork.swift */; };
+		1857823D24C1A9E100380EC6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185781A024C15BA200380EC6 /* Extension.swift */; };
+		1857823E24C1A9E100380EC6 /* AlamofireNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B352DC24BDF1E20071C66D /* AlamofireNetwork.swift */; };
+		1857823F24C1A9E100380EC6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7F24BD8FB500A4E69E /* MyTextField.swift */; };
+		1857824024C1A9E100380EC6 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2624BE9E0400E5721A /* UserApi.swift */; };
+		1857824124C1A9E100380EC6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3A24BEC05200E5721A /* AppState.swift */; };
+		1857824224C1A9E100380EC6 /* InfomationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7824BD6DFB00A4E69E /* InfomationHeader.swift */; };
+		1857824324C1A9E100380EC6 /* ListUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4224BEC1D600E5721A /* ListUserAction.swift */; };
+		1857824424C1A9E100380EC6 /* ListUserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4424BEC1EB00E5721A /* ListUserReducer.swift */; };
+		1857824524C1A9E100380EC6 /* ListUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2E24BEBC8B00E5721A /* ListUserVC.swift */; };
+		1857824624C1A9E100380EC6 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4D24BEE4EC00E5721A /* MyButton.swift */; };
+		1857824724C1A9E100380EC6 /* ListUserStateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4824BEC4DF00E5721A /* ListUserStateVC.swift */; };
+		1857824824C1A9E100380EC6 /* TitleAndInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8124BD93AA00A4E69E /* TitleAndInput.swift */; };
+		1857824924C1A9E100380EC6 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4F24BF063400E5721A /* AlertDialog.swift */; };
+		1857824A24C1A9E100380EC6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7524BD62D100A4E69E /* ProfileCell.swift */; };
+		1857824B24C1A9E100380EC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857819E24C154BE00380EC6 /* Post.swift */; };
+		1857824C24C1A9E100380EC6 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDE8A24C035C900180F34 /* MoreCell.swift */; };
+		1857824D24C1A9E100380EC6 /* ChangPaswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC7B24BD8F4500A4E69E /* ChangPaswordVC.swift */; };
+		1857824E24C1A9E100380EC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC9024BDBF8300A4E69E /* User.swift */; };
+		1857824F24C1A9E100380EC6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4624BEC20300E5721A /* AppReducer.swift */; };
+		1857825024C1A9E100380EC6 /* ListUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE3124BEBDE800E5721A /* ListUserCell.swift */; };
+		1857825124C1A9E100380EC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5C24BD621300A4E69E /* AppDelegate.swift */; };
+		1857825224C1A9E100380EC6 /* UpdateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE4B24BEDBF600E5721A /* UpdateUserVC.swift */; };
+		1857825324C1A9E100380EC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC5E24BD621300A4E69E /* SceneDelegate.swift */; };
+		1857825424C1A9E100380EC6 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FC8A24BDBACF00A4E69E /* AppURL.swift */; };
+		1857825524C1A9E100380EC6 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2824BE9F5400E5721A /* NetworkProvider.swift */; };
+		1857825724C1A9E100380EC6 /* Pods_ProfileReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F5D1CDEB6DA83A110610A /* Pods_ProfileReSwift.framework */; };
+		1857825924C1A9E100380EC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6724BD621500A4E69E /* LaunchScreen.storyboard */; };
+		1857825A24C1A9E100380EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6524BD621500A4E69E /* Assets.xcassets */; };
+		1857825B24C1A9E100380EC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847FC6A24BD621500A4E69E /* Info.plist */; };
 		18B352DD24BDF1E20071C66D /* AlamofireNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B352DC24BDF1E20071C66D /* AlamofireNetwork.swift */; };
 		18CAAE2424BE9B1B00E5721A /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2324BE9B1B00E5721A /* UserEndpoint.swift */; };
 		18CAAE2724BE9E0400E5721A /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAE2624BE9E0400E5721A /* UserApi.swift */; };
@@ -42,6 +118,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181CDE8A24C035C900180F34 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		1847FC5924BD621300A4E69E /* ProfileReSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileReSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1847FC5C24BD621300A4E69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1847FC5E24BD621300A4E69E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +135,12 @@
 		1847FC8A24BDBACF00A4E69E /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		1847FC8D24BDBE9A00A4E69E /* PromiseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseNetwork.swift; sourceTree = "<group>"; };
 		1847FC9024BDBF8300A4E69E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1857819E24C154BE00380EC6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		185781A024C15BA200380EC6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1857823124C1A45E00380EC6 /* ProfileReSwift-DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProfileReSwift-DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1857823224C1A45F00380EC6 /* ProfileReSwift-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ProfileReSwift-DEV-Info.plist"; path = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-DEV-Info.plist"; sourceTree = "<absolute>"; };
+		1857826024C1A9E100380EC6 /* ProfileReSwift-STAG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProfileReSwift-STAG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1857826124C1A9E100380EC6 /* ProfileReSwift-STAG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ProfileReSwift-STAG-Info.plist"; path = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-STAG-Info.plist"; sourceTree = "<absolute>"; };
 		18B352DC24BDF1E20071C66D /* AlamofireNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetwork.swift; sourceTree = "<group>"; };
 		18CAAE2324BE9B1B00E5721A /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		18CAAE2624BE9E0400E5721A /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
@@ -89,6 +172,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1857822724C1A45E00380EC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857822824C1A45E00380EC6 /* Pods_ProfileReSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1857825624C1A9E100380EC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857825724C1A9E100380EC6 /* Pods_ProfileReSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +198,8 @@
 				1847FC5A24BD621300A4E69E /* Products */,
 				9F4E086F696FAECA42DEED97 /* Pods */,
 				DB2D48CC5E581014CC237D94 /* Frameworks */,
+				1857823224C1A45F00380EC6 /* ProfileReSwift-DEV-Info.plist */,
+				1857826124C1A9E100380EC6 /* ProfileReSwift-STAG-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				1847FC5924BD621300A4E69E /* ProfileReSwift.app */,
+				1857823124C1A45E00380EC6 /* ProfileReSwift-DEV.app */,
+				1857826024C1A9E100380EC6 /* ProfileReSwift-STAG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +283,7 @@
 				1847FC8124BD93AA00A4E69E /* TitleAndInput.swift */,
 				18CAAE4D24BEE4EC00E5721A /* MyButton.swift */,
 				18CAAE4F24BF063400E5721A /* AlertDialog.swift */,
+				185781A024C15BA200380EC6 /* Extension.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -225,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				1847FC9024BDBF8300A4E69E /* User.swift */,
+				1857819E24C154BE00380EC6 /* Post.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -268,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				18CAAE3124BEBDE800E5721A /* ListUserCell.swift */,
+				181CDE8A24C035C900180F34 /* MoreCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -340,6 +446,44 @@
 			productReference = 1847FC5924BD621300A4E69E /* ProfileReSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1857820424C1A45E00380EC6 /* ProfileReSwift-DEV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1857822E24C1A45E00380EC6 /* Build configuration list for PBXNativeTarget "ProfileReSwift-DEV" */;
+			buildPhases = (
+				1857820524C1A45E00380EC6 /* [CP] Check Pods Manifest.lock */,
+				1857820624C1A45E00380EC6 /* Sources */,
+				1857822724C1A45E00380EC6 /* Frameworks */,
+				1857822924C1A45E00380EC6 /* Resources */,
+				1857822D24C1A45E00380EC6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProfileReSwift-DEV";
+			productName = ProfileReSwift;
+			productReference = 1857823124C1A45E00380EC6 /* ProfileReSwift-DEV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1857823324C1A9E100380EC6 /* ProfileReSwift-STAG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1857825D24C1A9E100380EC6 /* Build configuration list for PBXNativeTarget "ProfileReSwift-STAG" */;
+			buildPhases = (
+				1857823424C1A9E100380EC6 /* [CP] Check Pods Manifest.lock */,
+				1857823524C1A9E100380EC6 /* Sources */,
+				1857825624C1A9E100380EC6 /* Frameworks */,
+				1857825824C1A9E100380EC6 /* Resources */,
+				1857825C24C1A9E100380EC6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProfileReSwift-STAG";
+			productName = ProfileReSwift;
+			productReference = 1857826024C1A9E100380EC6 /* ProfileReSwift-STAG.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -369,6 +513,8 @@
 			projectRoot = "";
 			targets = (
 				1847FC5824BD621300A4E69E /* ProfileReSwift */,
+				1857820424C1A45E00380EC6 /* ProfileReSwift-DEV */,
+				1857823324C1A9E100380EC6 /* ProfileReSwift-STAG */,
 			);
 		};
 /* End PBXProject section */
@@ -380,12 +526,111 @@
 			files = (
 				1847FC6924BD621500A4E69E /* LaunchScreen.storyboard in Resources */,
 				1847FC6624BD621500A4E69E /* Assets.xcassets in Resources */,
+				185781D324C19C6100380EC6 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1857822924C1A45E00380EC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857822A24C1A45E00380EC6 /* LaunchScreen.storyboard in Resources */,
+				1857822B24C1A45E00380EC6 /* Assets.xcassets in Resources */,
+				1857822C24C1A45E00380EC6 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1857825824C1A9E100380EC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857825924C1A9E100380EC6 /* LaunchScreen.storyboard in Resources */,
+				1857825A24C1A9E100380EC6 /* Assets.xcassets in Resources */,
+				1857825B24C1A9E100380EC6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1857820524C1A45E00380EC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProfileReSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1857822D24C1A45E00380EC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1857823424C1A9E100380EC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProfileReSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1857825C24C1A9E100380EC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProfileReSwift/Pods-ProfileReSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1A3BD8AD4932DE3CEBF2ACA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +684,7 @@
 				18CAAE2C24BEA56300E5721A /* WebVC.swift in Sources */,
 				1847FC8624BDA50D00A4E69E /* Endpoint.swift in Sources */,
 				1847FC8E24BDBE9A00A4E69E /* PromiseNetwork.swift in Sources */,
+				185781A124C15BA200380EC6 /* Extension.swift in Sources */,
 				18B352DD24BDF1E20071C66D /* AlamofireNetwork.swift in Sources */,
 				1847FC8024BD8FB500A4E69E /* MyTextField.swift in Sources */,
 				18CAAE2724BE9E0400E5721A /* UserApi.swift in Sources */,
@@ -452,6 +698,8 @@
 				1847FC8224BD93AA00A4E69E /* TitleAndInput.swift in Sources */,
 				18CAAE5024BF063400E5721A /* AlertDialog.swift in Sources */,
 				1847FC7624BD62D100A4E69E /* ProfileCell.swift in Sources */,
+				1857819F24C154BE00380EC6 /* Post.swift in Sources */,
+				181CDE8B24C035C900180F34 /* MoreCell.swift in Sources */,
 				1847FC7C24BD8F4500A4E69E /* ChangPaswordVC.swift in Sources */,
 				1847FC9124BDBF8300A4E69E /* User.swift in Sources */,
 				18CAAE4724BEC20300E5721A /* AppReducer.swift in Sources */,
@@ -461,6 +709,84 @@
 				1847FC5F24BD621300A4E69E /* SceneDelegate.swift in Sources */,
 				1847FC8B24BDBACF00A4E69E /* AppURL.swift in Sources */,
 				18CAAE2924BE9F5400E5721A /* NetworkProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1857820624C1A45E00380EC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857820724C1A45E00380EC6 /* ProfileVC.swift in Sources */,
+				1857820824C1A45E00380EC6 /* UserEndpoint.swift in Sources */,
+				1857820924C1A45E00380EC6 /* ListUserState.swift in Sources */,
+				1857820A24C1A45E00380EC6 /* StoreListener.swift in Sources */,
+				1857820B24C1A45E00380EC6 /* WebVC.swift in Sources */,
+				1857820C24C1A45E00380EC6 /* Endpoint.swift in Sources */,
+				1857820D24C1A45E00380EC6 /* PromiseNetwork.swift in Sources */,
+				1857820E24C1A45E00380EC6 /* Extension.swift in Sources */,
+				1857820F24C1A45E00380EC6 /* AlamofireNetwork.swift in Sources */,
+				1857821024C1A45E00380EC6 /* MyTextField.swift in Sources */,
+				1857821124C1A45E00380EC6 /* UserApi.swift in Sources */,
+				1857821224C1A45E00380EC6 /* AppState.swift in Sources */,
+				1857821324C1A45E00380EC6 /* InfomationHeader.swift in Sources */,
+				1857821424C1A45E00380EC6 /* ListUserAction.swift in Sources */,
+				1857821524C1A45E00380EC6 /* ListUserReducer.swift in Sources */,
+				1857821624C1A45E00380EC6 /* ListUserVC.swift in Sources */,
+				1857821724C1A45E00380EC6 /* MyButton.swift in Sources */,
+				1857821824C1A45E00380EC6 /* ListUserStateVC.swift in Sources */,
+				1857821924C1A45E00380EC6 /* TitleAndInput.swift in Sources */,
+				1857821A24C1A45E00380EC6 /* AlertDialog.swift in Sources */,
+				1857821B24C1A45E00380EC6 /* ProfileCell.swift in Sources */,
+				1857821C24C1A45E00380EC6 /* Post.swift in Sources */,
+				1857821D24C1A45E00380EC6 /* MoreCell.swift in Sources */,
+				1857821E24C1A45E00380EC6 /* ChangPaswordVC.swift in Sources */,
+				1857821F24C1A45E00380EC6 /* User.swift in Sources */,
+				1857822024C1A45E00380EC6 /* AppReducer.swift in Sources */,
+				1857822124C1A45E00380EC6 /* ListUserCell.swift in Sources */,
+				1857822224C1A45E00380EC6 /* AppDelegate.swift in Sources */,
+				1857822324C1A45E00380EC6 /* UpdateUserVC.swift in Sources */,
+				1857822424C1A45E00380EC6 /* SceneDelegate.swift in Sources */,
+				1857822524C1A45E00380EC6 /* AppURL.swift in Sources */,
+				1857822624C1A45E00380EC6 /* NetworkProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1857823524C1A9E100380EC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857823624C1A9E100380EC6 /* ProfileVC.swift in Sources */,
+				1857823724C1A9E100380EC6 /* UserEndpoint.swift in Sources */,
+				1857823824C1A9E100380EC6 /* ListUserState.swift in Sources */,
+				1857823924C1A9E100380EC6 /* StoreListener.swift in Sources */,
+				1857823A24C1A9E100380EC6 /* WebVC.swift in Sources */,
+				1857823B24C1A9E100380EC6 /* Endpoint.swift in Sources */,
+				1857823C24C1A9E100380EC6 /* PromiseNetwork.swift in Sources */,
+				1857823D24C1A9E100380EC6 /* Extension.swift in Sources */,
+				1857823E24C1A9E100380EC6 /* AlamofireNetwork.swift in Sources */,
+				1857823F24C1A9E100380EC6 /* MyTextField.swift in Sources */,
+				1857824024C1A9E100380EC6 /* UserApi.swift in Sources */,
+				1857824124C1A9E100380EC6 /* AppState.swift in Sources */,
+				1857824224C1A9E100380EC6 /* InfomationHeader.swift in Sources */,
+				1857824324C1A9E100380EC6 /* ListUserAction.swift in Sources */,
+				1857824424C1A9E100380EC6 /* ListUserReducer.swift in Sources */,
+				1857824524C1A9E100380EC6 /* ListUserVC.swift in Sources */,
+				1857824624C1A9E100380EC6 /* MyButton.swift in Sources */,
+				1857824724C1A9E100380EC6 /* ListUserStateVC.swift in Sources */,
+				1857824824C1A9E100380EC6 /* TitleAndInput.swift in Sources */,
+				1857824924C1A9E100380EC6 /* AlertDialog.swift in Sources */,
+				1857824A24C1A9E100380EC6 /* ProfileCell.swift in Sources */,
+				1857824B24C1A9E100380EC6 /* Post.swift in Sources */,
+				1857824C24C1A9E100380EC6 /* MoreCell.swift in Sources */,
+				1857824D24C1A9E100380EC6 /* ChangPaswordVC.swift in Sources */,
+				1857824E24C1A9E100380EC6 /* User.swift in Sources */,
+				1857824F24C1A9E100380EC6 /* AppReducer.swift in Sources */,
+				1857825024C1A9E100380EC6 /* ListUserCell.swift in Sources */,
+				1857825124C1A9E100380EC6 /* AppDelegate.swift in Sources */,
+				1857825224C1A9E100380EC6 /* UpdateUserVC.swift in Sources */,
+				1857825324C1A9E100380EC6 /* SceneDelegate.swift in Sources */,
+				1857825424C1A9E100380EC6 /* AppURL.swift in Sources */,
+				1857825524C1A9E100380EC6 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +932,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -625,6 +952,85 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1857822F24C1A45E00380EC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD42D12A4B825A9205F56A81 /* Pods-ProfileReSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-DEV-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1857823024C1A45E00380EC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67F73F185E516BB27B6E128A /* Pods-ProfileReSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-DEV-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1857825E24C1A9E100380EC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD42D12A4B825A9205F56A81 /* Pods-ProfileReSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-STAG-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1857825F24C1A9E100380EC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67F73F185E516BB27B6E128A /* Pods-ProfileReSwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = "/Users/apple/Library/Mobile Documents/com~apple~CloudDocs/.Trash/ColectionViewWithXib/CodePageFilter/ProfileReSwift/ProfileReSwift-STAG-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.ProfileReSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,6 +1053,24 @@
 			buildConfigurations = (
 				1847FC6E24BD621500A4E69E /* Debug */,
 				1847FC6F24BD621500A4E69E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1857822E24C1A45E00380EC6 /* Build configuration list for PBXNativeTarget "ProfileReSwift-DEV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1857822F24C1A45E00380EC6 /* Debug */,
+				1857823024C1A45E00380EC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1857825D24C1A9E100380EC6 /* Build configuration list for PBXNativeTarget "ProfileReSwift-STAG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1857825E24C1A9E100380EC6 /* Debug */,
+				1857825F24C1A9E100380EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

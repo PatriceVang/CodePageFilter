@@ -11,4 +11,9 @@ import ReSwift
 
 struct ListUserState: StateType {
     var listUser: [User] = []
+    var isShowSelecteItems: Bool = false
+    
+    var selectedUser: [User] = []
 }
+
+

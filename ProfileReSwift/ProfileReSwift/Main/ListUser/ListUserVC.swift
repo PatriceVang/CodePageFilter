@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ListUserVC: UIViewController {
     
     let listUserTableView: UITableView = {
@@ -17,9 +15,12 @@ class ListUserVC: UIViewController {
         tbV.translatesAutoresizingMaskIntoConstraints = false
         return tbV
     }()
+    lazy var searchTextField: MyTextField = MyTextField(style: .confirmPassword)
+    lazy var deleteView = UIView()
     
     var listUserStateVC: ListUserStateVC
     var listUserSubciber: StoreListener = StoreListener<ListUserState>(handler: nil)
+    
     
     init() {
         listUserStateVC = ListUserStateVC()
@@ -31,13 +32,24 @@ class ListUserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "List User"
         setupUI()
         
-        NetworkProvider.shared.userApi.getUser().done { [weak self] (arrUser) in
-            self?.listUserStateVC.read(user: arrUser)
+        
+        NetworkProvider.shared.userApi.createUser(params: ["title": "Patrice", "body": "HCM"]).done { (post) in
+            print(post)
         }.catch { (err) in
             print(err)
         }
+        
+        NetworkProvider.shared.userApi.getUser().done { [weak self] (arrUser) in
+            self?.listUserStateVC.read(user: arrUser)
+            
+        }.catch { (err) in
+            print(err)
+        }
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,9 +66,13 @@ class ListUserVC: UIViewController {
     }
 
     private func setupUI() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More", style: .done, target: self, action: #selector(onTapMoreBtn(_:)))
+        
         self.view.addSubview(listUserTableView)
         listUserTableView.tableFooterView = UITableView()
         listUserTableView.register(ListUserCell.self, forCellReuseIdentifier: "cell")
+        listUserTableView.register(MoreCell.self, forCellReuseIdentifier: "more")
         listUserTableView.delegate = self
         listUserTableView.dataSource = self
         NSLayoutConstraint.activate([
@@ -65,10 +81,75 @@ class ListUserVC: UIViewController {
             listUserTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             listUserTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-
-        listUserSubciber = StoreListener(handler: { (_) in
+        NSLayoutConstraint.activate([
+            searchTextField.heightAnchor.constraint(equalToConstant: 30),
+            searchTextField.widthAnchor.constraint(equalToConstant: self.view.frame.width - 200)
+        ])
+        navigationItem.titleView = searchTextField
+        searchTextField.addTarget(self, action: #selector(onchangeTextOfTextField(_:)), for: .editingChanged)
+        
+        
+        self.view.addSubview(deleteView)
+        deleteView.translatesAutoresizingMaskIntoConstraints = false
+        deleteView.backgroundColor = .systemRed
+        deleteView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapDeleteView(_:))))
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.text = "Delete Item"
+        title.textColor = .black
+        deleteView.addSubview(title)
+        NSLayoutConstraint.activate([
+            title.centerXAnchor.constraint(equalTo: deleteView.centerXAnchor),
+            title.centerYAnchor.constraint(equalTo: deleteView.centerYAnchor),
+            title.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        NSLayoutConstraint.activate([
+            deleteView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            deleteView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            deleteView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            deleteView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        listUserSubciber = StoreListener(handler: { [weak self](_) in
+            guard let self = self else {return}
             self.listUserTableView.reloadData()
+            
+            if self.listUserStateVC.listSelectedUser.isEmpty {
+                self.deleteView.isHidden = true
+            } else {
+                self.deleteView.isHidden = false
+            }
         })
+        reloadData()
+
+    }
+    
+    private func reloadData() {
+        NetworkProvider.shared.userApi.getUser().done { [weak self] (arrUser) in
+            self?.listUserStateVC.read(user: arrUser)
+        }.catch { (err) in
+            print(err)
+        }
+    }
+    
+    //MARK:-- Handle Event
+    
+    @objc func onTapDeleteView(_ sender: UITapGestureRecognizer) {
+        listUserStateVC.isDeletedItems()
+    }
+    
+    @objc func onTapMoreBtn(_ sender: UIBarButtonItem) {
+        listUserStateVC.isShowSelectItems()
+    }
+    
+    @objc func onchangeTextOfTextField(_ sender: UITextField) {
+        if sender.text == "" {
+          reloadData()
+        }
+        
+        if sender.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+            listUserStateVC.filter(name: (sender.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+        }
     }
 }
 
@@ -78,10 +159,18 @@ extension ListUserVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listUserTableView.dequeueReusableCell(withIdentifier: "cell") as! ListUserCell
         let rows = listUserStateVC.list[indexPath.row]
-        cell.setValue(user: rows)
-        return cell
+        switch listUserStateVC.isShowedSelectItems {
+        case false:
+            let cell = listUserTableView.dequeueReusableCell(withIdentifier: "cell") as! ListUserCell
+            cell.setValue(user: rows)
+            return cell
+        case true:
+            let cell = listUserTableView.dequeueReusableCell(withIdentifier: "more") as! MoreCell
+            self.listUserTableView.separatorStyle = .none
+            cell.setValue(user: rows)
+            return cell
+        }
     }
 
 }
@@ -93,9 +182,9 @@ extension ListUserVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let updateVC = UpdateUserVC()
-        updateVC.user = listUserStateVC.list[indexPath.row]
-        self.navigationController?.pushViewController(updateVC, animated: true)
+        if listUserStateVC.isShowedSelectItems {
+            listUserStateVC.isSeletedItems(userIndex: indexPath.row)
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -105,6 +194,7 @@ extension ListUserVC: UITableViewDelegate {
         
         let insertAction = UITableViewRowAction(style: .default, title: "Insert") { (action, indexPath) in
             action.backgroundColor = .systemBlue
+            action.title = "asdf"
 
             AlertDialog.showUpdateNameDialog(on: self, title: "Add new User", msg: nil, textfield: { (tf) in
                 tf.placeholder = "input Text"
@@ -113,11 +203,9 @@ extension ListUserVC: UITableViewDelegate {
                 let user = User(id: id! + 1, name: str)
                 self?.listUserStateVC.add(user: user)
             }
+            
         }
-        
         return [deleteAction, insertAction]
     }
-    
-    
-    
 }
+

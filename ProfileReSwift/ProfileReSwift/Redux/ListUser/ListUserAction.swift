@@ -25,7 +25,20 @@ extension ListUserState {
         var user: User
     }
     
+    struct Filter: Action {
+        var newListUser: [User]
+    }
     
+    struct ShowSelecteItems: Action {
+    
+    }
+    
+    struct IsSelectedItems: Action {
+        var userIndex: Int
+    }
+    
+    struct IsDeletedItems: Action {
+    }
 }
 
 
