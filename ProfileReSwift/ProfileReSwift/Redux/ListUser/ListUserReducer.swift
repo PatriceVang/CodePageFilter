@@ -10,6 +10,7 @@ import Foundation
 import ReSwift
 
 
+
 func listUserReducer(action: Action, state: ListUserState?) -> ListUserState {
     
     var state = state ?? ListUserState()

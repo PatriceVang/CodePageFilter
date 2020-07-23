@@ -1,8 +1,6 @@
- Mùa thực tập của tui
 
-Các project con bao gồm
-- TableView đơn giản nhiều section, nhấn tích
-- TableView với nhiều Cell
+Các project con bao gồm:
+
 - TableViewDynamic cell height : Dynamic cell height
 - CollectionViewXib, add Tapbar, NavigationBar(item buttonbar img radius) 
 - DemoUITableView: create rating, editActionCell, alert dialog trong cell
@@ -22,4 +20,6 @@ Các project con bao gồm
 - DemoReSwift: write pattern Redux in swwift
 - DemoTableViewWithEnum: use Enum into UITableViewCell, PromiseKit, expand TableView when tap Session,  Networdking
 - ProfileReSwift: Reswift, opt Dialog, NetworkingProvider, custom view
-
+- DemoReactiveCocoA: networking with Moya,SwiftyJson, handle change Img Button, ReativeCocoA, ReativeSwift
+- MVVMOne: use RxSwift, DataBinding KVO
+- DemoRedux: use Redux pattern 

@@ -9,12 +9,13 @@
 import UIKit
 import SocketIO
 
+
 class HomeVC: UIViewController {
     @IBOutlet weak var contentTf: UITextField!
     
     @IBOutlet weak var redView: UIView!
     
-    let manager = SocketManager(socketURL: URL(string: "http://192.168.1.74:2020")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "192.168.1.171:2020")!, config: [.log(true), .compress])
     lazy var socket = manager.defaultSocket
 
     override func viewDidLoad() {

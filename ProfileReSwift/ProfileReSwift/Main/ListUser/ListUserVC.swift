@@ -64,10 +64,14 @@ class ListUserVC: UIViewController {
         super.viewWillDisappear(animated)
         store.unsubscribe(self.listUserSubciber)
     }
+    
+    
 
     private func setupUI() {
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More", style: .done, target: self, action: #selector(onTapMoreBtn(_:)))
+
+        
+       
         
         self.view.addSubview(listUserTableView)
         listUserTableView.tableFooterView = UITableView()
@@ -114,14 +118,26 @@ class ListUserVC: UIViewController {
             guard let self = self else {return}
             self.listUserTableView.reloadData()
             
-            if self.listUserStateVC.listSelectedUser.isEmpty {
-                self.deleteView.isHidden = true
-            } else {
-                self.deleteView.isHidden = false
-            }
+            self.reloadView()
+            
+           
         })
         reloadData()
 
+    }
+    
+    func reloadView() {
+        if self.listUserStateVC.listSelectedUser.isEmpty {
+            self.deleteView.isHidden = true
+        } else {
+            self.deleteView.isHidden = false
+        }
+        
+        if listUserStateVC.isShowedSelectItems {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancle", style: .done, target: self, action: #selector(onTapMoreBtn(_:)))
+        } else {
+             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More", style: .done, target: self, action: #selector(onTapMoreBtn(_:)))
+        }
     }
     
     private func reloadData() {
@@ -140,6 +156,7 @@ class ListUserVC: UIViewController {
     
     @objc func onTapMoreBtn(_ sender: UIBarButtonItem) {
         listUserStateVC.isShowSelectItems()
+
     }
     
     @objc func onchangeTextOfTextField(_ sender: UITextField) {

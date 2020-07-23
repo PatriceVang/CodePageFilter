@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (5.1.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/ReactiveSwift (14.0.0):
+    - Moya/Core
+    - ReactiveSwift (~> 6.0)
+  - PKHUD (5.3.0)
+  - ReactiveCocoa (11.0.0):
+    - ReactiveSwift (~> 6.2)
+  - ReactiveSwift (6.3.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Moya/ReactiveSwift
+  - PKHUD
+  - ReactiveCocoa
+  - ReactiveSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - PKHUD
+    - ReactiveCocoa
+    - ReactiveSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  ReactiveCocoa: 189fcea9c5af7e394dd8a4cfc1c6f77af9ff3598
+  ReactiveSwift: 7937f26ec18d555e2a99352bd0a8b2817d1f042d
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: ce7ec2cce747c9efab1d3b37e4aa4da51ac4eb49
+
+COCOAPODS: 1.9.1

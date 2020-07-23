@@ -271,9 +271,21 @@ import UIKit
 //
 //print(allPalindSomeCounts(sentense: sentence))
 
+///123
 
-var a = [1,2,3,4,5,6]
 
-for i in 0..<a.count {
+func reserver(number: Int) -> Int {
+    var reuslt = 0
+    var temNumber = number
+    while temNumber > 0 {
+        let donvi = temNumber % 10
+        reuslt *= 10
+        reuslt += donvi
+        temNumber = temNumber / 10
+        print(temNumber)
+    }
+    return reuslt
     
 }
+
+reserver(number: 123)
