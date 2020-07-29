@@ -42,13 +42,10 @@ class MyButton: UIButton {
     @objc func onChangeImgWhenSelected(_ sender: MyButton) {
         isSelected = !sender.isSelected
     }
-    
-    
 }
 
 
 extension UIView {
-    
     public func layout(with view: UIView, top: CGFloat?, leading: CGFloat?, trailing: CGFloat?, bottom: CGFloat?) {
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: view.topAnchor, constant: top!),

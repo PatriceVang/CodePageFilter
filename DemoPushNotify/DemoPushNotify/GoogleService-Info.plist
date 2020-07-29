@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>201654965040-cg1hcdpg48b6a5ht09p5glg1rd0g8lk2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.201654965040-cg1hcdpg48b6a5ht09p5glg1rd0g8lk2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCkvA8TPux4X9A9rWMvjG1Ms0fwkPgzKJM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>201654965040</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sg.vinova.demo</string>
+	<key>PROJECT_ID</key>
+	<string>fir-push-notify-e2d11</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-push-notify-e2d11.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:201654965040:ios:41a12aede26d11fadd2ef5</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-push-notify-e2d11.firebaseio.com</string>
+</dict>
+</plist>

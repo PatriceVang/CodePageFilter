@@ -12,15 +12,14 @@ import ReactiveSwift
 
 class UserVC: UIViewController {
     @IBOutlet weak var userTableView: UITableView!
-    
     let viewModel: UserViewModelProtocol
-    let listUser = [User]()
     
     let getUserAction: CocoaAction<Any>
-
+    let updateUserAction: CocoaAction<Any>
     init() {
         viewModel = UserViewModel()
         getUserAction = CocoaAction(viewModel.getUSerAction, {_ in return ()})
+        updateUserAction = CocoaAction(viewModel.updateUserAction, {_ in return ()})
         super.init(nibName: "UserVC", bundle: nil)
     }
     
@@ -34,11 +33,20 @@ class UserVC: UIViewController {
         userTableView.tableFooterView = .none
 
         getUserAction.execute(self)
-        observerGetUserAction()
+        observerAction()
+
     }
-    
-    private func observerGetUserAction() {
+
+    private func observerAction() {
         getUserAction.isExecuting.signal.observeValues { [weak self] (done) in
+            if done {
+                return
+            } else {
+                self?.userTableView.reloadData()
+            }
+        }
+        
+        updateUserAction.isExecuting.signal.observeValues { [weak self] done in
             if done {
                 return
             } else {
@@ -60,5 +68,20 @@ extension UserVC: UITableViewDataSource {
     }
 }
 extension UserVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Dialog.shared.showDialogOneTextField(target: self, titleDialog: "Update name of User", msg: nil, titleAction: "OK", handleAction: { (action, str) in
+            
+            self.viewModel.indexUser.value = indexPath.row
+            self.viewModel.newName.value = str.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if self.viewModel.newName.value.isEmpty {
+                print(self.viewModel.msgErr.value)
+            } else {
+                self.updateUserAction.execute(self)
+            }
+        }) { (tf) in
+            tf.placeholder = "david"
+        }
+        
+    }
 }

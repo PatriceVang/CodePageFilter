@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="displayName_Lb" destination="Yt8-63-ZOd" id="5UL-hp-xdY"/>
                 <outlet property="inputName_Tf" destination="CR5-Gr-I4V" id="bdr-Ni-aGk"/>
-                <outlet property="moveToUser_Btn" destination="sjL-st-dD4" id="eNr-df-Rh4"/>
+                <outlet property="moveToUser_Btn" destination="sjL-st-dD4" id="YjO-Zb-lE1"/>
                 <outlet property="signIn_Btn" destination="B0r-4L-sW3" id="zMD-0q-nuX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,19 +48,19 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjL-st-dD4">
-                    <rect key="frame" x="160" y="433" width="94" height="30"/>
-                    <state key="normal" title="Move To User"/>
+                    <rect key="frame" x="149" y="782" width="116" height="30"/>
+                    <state key="normal" title="Move To Student"/>
                     <connections>
-                        <action selector="onTapMoveToUser:" destination="-1" eventType="touchUpInside" id="Hxz-TL-Mpr"/>
+                        <action selector="onTapMoveToClient:" destination="-1" eventType="touchUpInside" id="tZD-7k-xWh"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="sjL-st-dD4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9wL-N5-4tH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sjL-st-dD4" secondAttribute="bottom" constant="50" id="PuT-7h-qvt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I5D-zf-OK0" secondAttribute="trailing" constant="20" id="U9S-x4-RBD"/>
                 <constraint firstItem="I5D-zf-OK0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WPn-8G-Hvp"/>
-                <constraint firstItem="sjL-st-dD4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ffS-ga-43G"/>
-                <constraint firstItem="sjL-st-dD4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jnA-7B-Fgd"/>
                 <constraint firstItem="I5D-zf-OK0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="sso-up-fhA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A176F624C34D7D004B84F6 /* Socket.IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A176F524C34D7D004B84F6 /* Socket.IO.swift */; };
+		18BDF89724CE8042009DC967 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDF89624CE8042009DC967 /* AlertDialog.swift */; };
 		18EAC02B24C294A1002C8B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC02A24C294A1002C8B9E /* AppDelegate.swift */; };
 		18EAC02D24C294A1002C8B9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC02C24C294A1002C8B9E /* SceneDelegate.swift */; };
 		18EAC03424C294A2002C8B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EAC03324C294A2002C8B9E /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		18A176F524C34D7D004B84F6 /* Socket.IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.IO.swift; sourceTree = "<group>"; };
+		18BDF89624CE8042009DC967 /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
 		18EAC02724C294A1002C8B9E /* DemoChatAppSocketIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChatAppSocketIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EAC02A24C294A1002C8B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EAC02C24C294A1002C8B9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,12 +50,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18A176F424C34D60004B84F6 /* Socket.IO */ = {
+		18BDF89424CE800A009DC967 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				18A176F524C34D7D004B84F6 /* Socket.IO.swift */,
+				18BDF89624CE8042009DC967 /* AlertDialog.swift */,
 			);
-			path = Socket.IO;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		18EAC01E24C294A1002C8B9E = {
@@ -77,7 +80,7 @@
 		18EAC02924C294A1002C8B9E /* DemoChatAppSocketIO */ = {
 			isa = PBXGroup;
 			children = (
-				18A176F424C34D60004B84F6 /* Socket.IO */,
+				18BDF89424CE800A009DC967 /* Component */,
 				18EAC03E24C294B0002C8B9E /* Main */,
 				18EAC02A24C294A1002C8B9E /* AppDelegate.swift */,
 				18EAC02C24C294A1002C8B9E /* SceneDelegate.swift */,
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BDF89724CE8042009DC967 /* AlertDialog.swift in Sources */,
 				18EAC04324C29514002C8B9E /* HomeVC.swift in Sources */,
 				18EAC04824C2952B002C8B9E /* RoomVC.swift in Sources */,
 				18A176F624C34D7D004B84F6 /* Socket.IO.swift in Sources */,

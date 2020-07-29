@@ -23,3 +23,5 @@ Các project con bao gồm:
 - DemoReactiveCocoA: networking with Moya,SwiftyJson, handle change Img Button, ReativeCocoA, ReativeSwift
 - MVVMOne: use RxSwift, DataBinding KVO
 - DemoRedux: use Redux pattern 
+- DemoVIPER: VIPER modlue
+- DemoPushNotify: add push Notification( tao id,(vao keychain -> tao cert) tao cer, tao profile, download, vao signing -> add math Development, build settings signing -> chon Appledevelopment, (neu bao loi chua login -> chon cert nhan login), add app len firebase, vao keychain ->chon file IOS push -> upload len cloued messaging, viet code thoe huong dan cua firebase 

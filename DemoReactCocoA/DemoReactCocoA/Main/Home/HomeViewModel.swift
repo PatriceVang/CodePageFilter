@@ -38,18 +38,25 @@ class HomeViewModel: HomeViewModelProtocol {
     
     required init() {
         
-        self.msgError <~ inputName.producer.map({ (str) in
+//        self.msgError <~ inputName.producer.map({ (str) in
+//            if str.isEmpty {
+//                return "Please fill in Name"
+//            }
+//            return ""
+//        })
+        
+        inputName.producer.startWithValues { (str) in
             if str.isEmpty {
-                return "Please fill in Name"
+                self.msgError.value = "Please fill in Name"
+            } else {
+                self.msgError.value = ""
             }
-            return ""
-        })
+        }
         
         self.inputIsValid <~ msgError.producer.map({ str in
             return str.isEmpty
         })
 
-        
         self.createUserAction.events.observeValues { (events: Signal<Response, MoyaError>.Event) in
             switch events {
             case .value(let response):
@@ -67,6 +74,5 @@ class HomeViewModel: HomeViewModelProtocol {
     func executeCreateUser() -> SignalProducer<Response, MoyaError> {
         return UserProvider.reactive.request(APIUser.postUser(params: self.inputName.value))
     }
-    
-    
+
 }

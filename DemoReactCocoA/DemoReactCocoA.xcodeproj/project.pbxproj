@@ -22,6 +22,7 @@
 		1862404424C6944200AC6D1D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862404224C6944200AC6D1D /* HomeVC.swift */; };
 		1862404524C6944200AC6D1D /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1862404324C6944200AC6D1D /* HomeVC.xib */; };
 		1862404724C6957900AC6D1D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862404624C6957900AC6D1D /* HomeViewModel.swift */; };
+		18B6F3A124C96AEF002D6DDF /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6F3A024C96AEF002D6DDF /* Dialog.swift */; };
 		AD0CFD94E9FA7FA879215E93 /* Pods_DemoReactCocoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB2C9BAF1ABC7546AE3A3AF /* Pods_DemoReactCocoA.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		1862404224C6944200AC6D1D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1862404324C6944200AC6D1D /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		1862404624C6957900AC6D1D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		18B6F3A024C96AEF002D6DDF /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		597165E6A919582FB0D336BF /* Pods-DemoReactCocoA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoReactCocoA.release.xcconfig"; path = "Target Support Files/Pods-DemoReactCocoA/Pods-DemoReactCocoA.release.xcconfig"; sourceTree = "<group>"; };
 		BDB2C9BAF1ABC7546AE3A3AF /* Pods_DemoReactCocoA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoReactCocoA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				185928ED24C9303600CB6378 /* MyButton.swift */,
+				18B6F3A024C96AEF002D6DDF /* Dialog.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B6F3A124C96AEF002D6DDF /* Dialog.swift in Sources */,
 				18608CA224C7D34200452FD2 /* APIUser.swift in Sources */,
 				18608CAE24C7DAAC00452FD2 /* UserViewModel.swift in Sources */,
 				18608CA624C7D88000452FD2 /* UserVC.swift in Sources */,

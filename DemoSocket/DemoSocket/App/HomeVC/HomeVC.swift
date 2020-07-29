@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var redView: UIView!
     
-    let manager = SocketManager(socketURL: URL(string: "192.168.1.171:2020")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "192.168.1.74:2020")!, config: [.log(true), .compress])
     lazy var socket = manager.defaultSocket
 
     override func viewDidLoad() {
@@ -39,7 +39,6 @@ class HomeVC: UIViewController {
         super.viewDidLayoutSubviews()
         
     }
-    
     
     
     @objc func onPanRedView(_ pan: UIPanGestureRecognizer) {
