@@ -19,9 +19,20 @@ class UserVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableV.register(UINib(nibName: "UserInfoCell", bundle: nil), forCellReuseIdentifier: "cell")
+        setupUI()
         presenter?.getUser()
 
     }
+    
+    private func setupUI() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(onTapAddBtn))
+        
+    }
+    
+    @objc func onTapAddBtn() {
+        print(123)
+    }
+    
     @IBAction func onTapMoveToDetailBtn(_ sender: UIButton) {
         presenter?.moveToDetail()
     }
