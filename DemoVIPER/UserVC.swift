@@ -15,10 +15,15 @@ class UserVC: UIViewController {
     
     var listUser = [User]()
     
+    
+    var isAllowedMultiple: Bool = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableV.register(UINib(nibName: "UserInfoCell", bundle: nil), forCellReuseIdentifier: "cell")
+        myTableV.register(UINib(nibName: "MultipleCell", bundle: nil), forCellReuseIdentifier: "cell1")
+        
         setupUI()
         presenter?.getUser()
 
@@ -30,7 +35,8 @@ class UserVC: UIViewController {
     }
     
     @objc func onTapAddBtn() {
-        print(123)
+        print(12)
+        presenter?.allowMultiple()
     }
     
     @IBAction func onTapMoveToDetailBtn(_ sender: UIButton) {
@@ -44,9 +50,17 @@ extension UserVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTableV.dequeueReusableCell(withIdentifier: "cell") as! UserInfoCell
-        cell.setupValue(user: listUser[indexPath.row])
-        return cell
+
+        if isAllowedMultiple {
+            let cell = myTableV.dequeueReusableCell(withIdentifier: "cell1") as! MultipleCell
+            cell.setValue(user: listUser[indexPath.row])
+            cell.delelgate = self
+            return cell
+        } else {
+            let cell = myTableV.dequeueReusableCell(withIdentifier: "cell") as! UserInfoCell
+            cell.setupValue(user: listUser[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -75,9 +89,23 @@ extension UserVC: UITableViewDelegate {
 }
 
 extension UserVC: UserViewProtocol {
+    func showMultiple(isAllowed: Bool) {
+        isAllowedMultiple = isAllowed
+        myTableV.reloadData()
+    }
+    
     func showUser(user: [User]) {
         listUser = user
+        print(listUser)
         self.myTableV.reloadData()
+    }
+    
+}
+
+extension UserVC: MultipleCelldelegate {
+    func onSelectPerson(didSelected: Bool, at cell: UITableViewCell) {
+        guard let indexPath = myTableV.indexPath(for: cell) else {return}
+        presenter?.handleSelectedUser(index: indexPath.row, isSelected: didSelected)
     }
 }
 

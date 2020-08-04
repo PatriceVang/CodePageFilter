@@ -20,6 +20,9 @@
 		1818359024CFFAF00029AF16 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818358A24CFFAF00029AF16 /* HomeProtocols.swift */; };
 		1818359124CFFAF00029AF16 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818358B24CFFAF00029AF16 /* HomeInteractor.swift */; };
 		1818359224CFFAF00029AF16 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1818358C24CFFAF00029AF16 /* HomeViewController.xib */; };
+		189A42FB24D907DA00B389F3 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A42FA24D907DA00B389F3 /* MyButton.swift */; };
+		189A42FE24D9123800B389F3 /* MultipleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A42FC24D9123800B389F3 /* MultipleCell.swift */; };
+		189A42FF24D9123800B389F3 /* MultipleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A42FD24D9123800B389F3 /* MultipleCell.xib */; };
 		18BDF8A524CEADC7009DC967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDF8A424CEADC7009DC967 /* AppDelegate.swift */; };
 		18BDF8A724CEADC7009DC967 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDF8A624CEADC7009DC967 /* SceneDelegate.swift */; };
 		18BDF8AE24CEADCB009DC967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BDF8AD24CEADCB009DC967 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		1818358A24CFFAF00029AF16 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		1818358B24CFFAF00029AF16 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		1818358C24CFFAF00029AF16 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		189A42FA24D907DA00B389F3 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		189A42FC24D9123800B389F3 /* MultipleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCell.swift; sourceTree = "<group>"; };
+		189A42FD24D9123800B389F3 /* MultipleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleCell.xib; sourceTree = "<group>"; };
 		18BDF8A124CEADC7009DC967 /* DemoVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BDF8A424CEADC7009DC967 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BDF8A624CEADC7009DC967 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		189A42F924D907BF00B389F3 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				189A42FA24D907DA00B389F3 /* MyButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		18BDF89824CEADC7009DC967 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +166,7 @@
 		18BDF8B824CEADE7009DC967 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				189A42F924D907BF00B389F3 /* Component */,
 				18E2312E24D16C3F006773AC /* Networking */,
 				1818358624CFFAE10029AF16 /* Home */,
 				18BDF8BE24CEAE71009DC967 /* Entity */,
@@ -188,6 +203,8 @@
 			children = (
 				18BDF8CC24CEB877009DC967 /* UserInfoCell.swift */,
 				18BDF8CD24CEB877009DC967 /* UserInfoCell.xib */,
+				189A42FC24D9123800B389F3 /* MultipleCell.swift */,
+				189A42FD24D9123800B389F3 /* MultipleCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -310,6 +327,7 @@
 				18BDF8B124CEADCB009DC967 /* LaunchScreen.storyboard in Resources */,
 				18BDF8AE24CEADCB009DC967 /* Assets.xcassets in Resources */,
 				18BDF8C224CEAEB5009DC967 /* UserVC.xib in Resources */,
+				189A42FF24D9123800B389F3 /* MultipleCell.xib in Resources */,
 				1818356A24CFC9570029AF16 /* DetailVC.xib in Resources */,
 				1818359224CFFAF00029AF16 /* HomeViewController.xib in Resources */,
 			);
@@ -386,7 +404,9 @@
 				18BDF8A524CEADC7009DC967 /* AppDelegate.swift in Sources */,
 				1818357224CFCD040029AF16 /* DetailModule.swift in Sources */,
 				18BDF8C424CEAFE5009DC967 /* UserRouter.swift in Sources */,
+				189A42FE24D9123800B389F3 /* MultipleCell.swift in Sources */,
 				18BDF8A724CEADC7009DC967 /* SceneDelegate.swift in Sources */,
+				189A42FB24D907DA00B389F3 /* MyButton.swift in Sources */,
 				18BDF8CE24CEB877009DC967 /* UserInfoCell.swift in Sources */,
 				18E2313624D16F4C006773AC /* UserApi.swift in Sources */,
 			);

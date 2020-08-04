@@ -14,6 +14,10 @@ import UIKit
 protocol UserPresenterProtocol: class {
     // action from view
     func getUser()
+    
+    func allowMultiple()
+    
+    func handleSelectedUser(index: Int, isSelected: Bool)
 
     func moveToDetail()
 }
@@ -37,6 +41,8 @@ protocol UserRouterProtocol: class {
 // View
 protocol UserViewProtocol: class {
     func showUser(user: [User])
+    
+    func showMultiple(isAllowed: Bool)
 }
 
 
