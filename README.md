@@ -25,3 +25,4 @@ Các project con bao gồm:
 - DemoRedux: use Redux pattern 
 - DemoVIPER: VIPER module, networking, change image button
 - DemoPushNotify: add push Notification( tao id,(vao keychain -> tao cert) tao cer, tao profile, download, vao signing -> add math Development, build settings signing -> chon Appledevelopment, (neu bao loi chua login -> chon cert nhan login), add app len firebase, vao keychain ->chon file IOS push -> upload len cloued messaging, viet code thoe huong dan cua firebase 
+- testDelegate: use Notifycation center
