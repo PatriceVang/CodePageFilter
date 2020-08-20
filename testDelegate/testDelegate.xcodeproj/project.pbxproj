@@ -19,6 +19,7 @@
 		182D5E00247CCFDE00448241 /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D5DFE247CCFDE00448241 /* ThirdVC.xib */; };
 		182D5E03247CF2D700448241 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D5E01247CF2D600448241 /* HomeVC.swift */; };
 		182D5E04247CF2D700448241 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D5E02247CF2D600448241 /* HomeVC.xib */; };
+		18A4E02424EE697500F4780E /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4E02324EE697400F4780E /* VerifyOTP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		182D5DFE247CCFDE00448241 /* ThirdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdVC.xib; sourceTree = "<group>"; };
 		182D5E01247CF2D600448241 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		182D5E02247CF2D600448241 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		18A4E02324EE697400F4780E /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				182D5E05247CF2FC00448241 /* VC */,
 				182D5E01247CF2D600448241 /* HomeVC.swift */,
 				182D5E02247CF2D600448241 /* HomeVC.xib */,
+				18A4E02324EE697400F4780E /* VerifyOTP.swift */,
 			);
 			path = testDelegate;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				182D5DE1247CCEE400448241 /* AppDelegate.swift in Sources */,
 				182D5DF7247CCF2400448241 /* FirstVC.swift in Sources */,
+				18A4E02424EE697500F4780E /* VerifyOTP.swift in Sources */,
 				182D5DFB247CCF3300448241 /* SecondVC.swift in Sources */,
 				182D5E03247CF2D700448241 /* HomeVC.swift in Sources */,
 				182D5DE3247CCEE400448241 /* SceneDelegate.swift in Sources */,

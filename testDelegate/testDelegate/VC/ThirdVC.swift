@@ -14,9 +14,11 @@ class ThirdVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func onTapPopRootViewButton(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     @IBAction func onTextChangeTf(_ sender: UITextField) {
         let dataToPost: [AnyHashable: Any] = ["data": sender.text ?? ""]
         NotificationCenter.default.post(name: .thirdVCEmitText, object: nil, userInfo: dataToPost)
