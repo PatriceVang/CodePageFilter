@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OptionCell" customModule="DemoDragItemsTableView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="111" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="111" height="114"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcd-zh-mZU">
+                        <rect key="frame" x="0.0" y="0.0" width="111" height="114"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gAu-hJ-347">
+                                <rect key="frame" x="0.0" y="0.0" width="111" height="114"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gAu-hJ-347" firstAttribute="top" secondItem="dcd-zh-mZU" secondAttribute="top" id="Bds-eP-fJu"/>
+                            <constraint firstAttribute="bottom" secondItem="gAu-hJ-347" secondAttribute="bottom" id="JFF-bu-bbe"/>
+                            <constraint firstAttribute="trailing" secondItem="gAu-hJ-347" secondAttribute="trailing" id="K8M-zT-5Mg"/>
+                            <constraint firstItem="gAu-hJ-347" firstAttribute="leading" secondItem="dcd-zh-mZU" secondAttribute="leading" id="O9g-ne-i5L"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="dcd-zh-mZU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2Re-st-dE9"/>
+                <constraint firstItem="dcd-zh-mZU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ERN-d5-Uqo"/>
+                <constraint firstAttribute="bottom" secondItem="dcd-zh-mZU" secondAttribute="bottom" id="V1J-S9-ixV"/>
+                <constraint firstAttribute="trailing" secondItem="dcd-zh-mZU" secondAttribute="trailing" id="tRe-X5-cBN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="111" height="114"/>
+            <connections>
+                <outlet property="itemsTableView" destination="gAu-hJ-347" id="PSf-yQ-cyH"/>
+            </connections>
+            <point key="canvasLocation" x="70" y="83"/>
+        </collectionViewCell>
+    </objects>
+</document>

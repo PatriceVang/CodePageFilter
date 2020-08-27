@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MyPackage
+
 
 class Sample {
     var title = "" {
@@ -20,6 +22,8 @@ class Sample {
 }
 
 class FirstVC: BaseVC {
+    
+
     
     
     @IBOutlet weak var resultLb: UILabel!
@@ -44,6 +48,11 @@ class FirstVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = MyText.myTitle
+        
+        MyText.showTile()
+
+        
         
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(onObserveThirdVCEmitText), name: .thirdVCEmitText, object: nil)

@@ -26,3 +26,6 @@ Các project con bao gồm:
 - DemoVIPER: VIPER module, networking, change image button
 - DemoPushNotify: add push Notification( tao id,(vao keychain -> tao cert) tao cer, tao profile, download, vao signing -> add math Development, build settings signing -> chon Appledevelopment, (neu bao loi chua login -> chon cert nhan login), add app len firebase, vao keychain ->chon file IOS push -> upload len cloued messaging, viet code thoe huong dan cua firebase 
 - testDelegate: use Notifycation center, add Verify OTP
+- DemoDragItemsTableView: Drag drog item tableView simple
+- DragDrogTableView: Drag drop Add Delete item TablView
+- DemoSwiftpackage: how to use swiftpackage, add account github -> create tag (each tag is version) -> push up github -> add dependency

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		182D5E00247CCFDE00448241 /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D5DFE247CCFDE00448241 /* ThirdVC.xib */; };
 		182D5E03247CF2D700448241 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D5E01247CF2D600448241 /* HomeVC.swift */; };
 		182D5E04247CF2D700448241 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D5E02247CF2D600448241 /* HomeVC.xib */; };
+		1874B26824EF83B4009A2F88 /* MyPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 1874B26724EF83B4009A2F88 /* MyPackage */; };
+		1874B26B24EF85A6009A2F88 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1874B26A24EF85A6009A2F88 /* Alamofire */; };
 		18A4E02424EE697500F4780E /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4E02324EE697400F4780E /* VerifyOTP.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1874B26824EF83B4009A2F88 /* MyPackage in Frameworks */,
+				1874B26B24EF85A6009A2F88 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 			children = (
 				182D5DDF247CCEE400448241 /* testDelegate */,
 				182D5DDE247CCEE400448241 /* Products */,
+				18C7B39824EED04B00949442 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +101,13 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		18C7B39824EED04B00949442 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +124,10 @@
 			dependencies = (
 			);
 			name = testDelegate;
+			packageProductDependencies = (
+				1874B26724EF83B4009A2F88 /* MyPackage */,
+				1874B26A24EF85A6009A2F88 /* Alamofire */,
+			);
 			productName = testDelegate;
 			productReference = 182D5DDD247CCEE400448241 /* testDelegate.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +156,10 @@
 				Base,
 			);
 			mainGroup = 182D5DD4247CCEE300448241;
+			packageReferences = (
+				1874B26624EF83B4009A2F88 /* XCRemoteSwiftPackageReference "MyPackage" */,
+				1874B26924EF85A6009A2F88 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 182D5DDE247CCEE400448241 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,6 +384,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1874B26624EF83B4009A2F88 /* XCRemoteSwiftPackageReference "MyPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PatriceVang/MyPackage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+		1874B26924EF85A6009A2F88 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1874B26724EF83B4009A2F88 /* MyPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1874B26624EF83B4009A2F88 /* XCRemoteSwiftPackageReference "MyPackage" */;
+			productName = MyPackage;
+		};
+		1874B26A24EF85A6009A2F88 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1874B26924EF85A6009A2F88 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 182D5DD5247CCEE300448241 /* Project object */;
 }

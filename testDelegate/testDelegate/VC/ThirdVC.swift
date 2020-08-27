@@ -8,11 +8,15 @@
 
 import UIKit
 import NotificationCenter
+import Alamofire
 
 class ThirdVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    
 
     }
 

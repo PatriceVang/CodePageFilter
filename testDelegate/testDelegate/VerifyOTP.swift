@@ -25,7 +25,7 @@ class VerifyPhoneViewController: UIViewController {
     @IBOutlet var arrView: [UIView]!
     @IBOutlet weak var timerInputTextLabel: UILabel!
     
-    lazy var titleLable = NYPLabel(textColor: .white, font: .addSkillButton(), text: "Verify Phone")
+//    lazy var titleLable = NYPLabel(textColor: .white, font: .addSkillButton(), text: "Verify Phone")
     var countdown = 60
     var timer: Timer?
     
@@ -44,7 +44,7 @@ class VerifyPhoneViewController: UIViewController {
     private func setupUI() {
         // Setup Navigation bar
         
-        self.navigationItem.titleView = titleLable
+//        self.navigationItem.titleView = titleLable
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrow_back"), style: .done, target: self, action: #selector(onPressArrowBack))
         
