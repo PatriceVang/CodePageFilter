@@ -289,3 +289,24 @@ func reserver(number: Int) -> Int {
 }
 
 reserver(number: 123)
+
+
+
+
+var arr = [ 1, 2, 44, 5, 2, 4, 9, 5]
+var temp = 0
+
+for i in 0..<arr.count {
+    for j in 0..<arr.count - 1 {
+        if arr[j] < arr[j + 1] {
+            temp = arr[j + 1]
+            arr[j + 1] = arr[j]
+            arr[j] = temp
+        }
+        
+    }
+}
+
+
+
+print(arr)

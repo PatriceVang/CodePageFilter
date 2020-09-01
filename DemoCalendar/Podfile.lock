@@ -1,0 +1,16 @@
+PODS:
+  - JTCalendar (2.2.5)
+
+DEPENDENCIES:
+  - JTCalendar
+
+SPEC REPOS:
+  trunk:
+    - JTCalendar
+
+SPEC CHECKSUMS:
+  JTCalendar: 4056fd48735e1148b487acad35d72faea2387b25
+
+PODFILE CHECKSUM: ab661d6e2b9aa69e1ef6ab365b0ef5d45b2afb27
+
+COCOAPODS: 1.9.3
