@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="DemoCalendar" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstrain" destination="4Um-q8-21G" id="CH6-hi-hPI"/>
+                <outlet property="bottomView" destination="WcK-8f-3l9" id="Qg3-c0-rUn"/>
+                <outlet property="calendarView" destination="lE7-rO-eWx" id="KWX-8Z-BkB"/>
+                <outlet property="hourView" destination="FlS-59-AXt" id="GlX-cg-Ru6"/>
+                <outlet property="menuView" destination="dWp-Jl-bSP" id="tjz-se-BWm"/>
+                <outlet property="topConstraint" destination="uiy-q2-1od" id="VYR-z5-0yk"/>
+                <outlet property="topView" destination="Pg1-g6-Bhy" id="uu6-0s-Ymf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE7-rO-eWx" customClass="JTHorizontalCalendarView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="oHm-Gf-2fL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlS-59-AXt">
+                    <rect key="frame" x="0.0" y="154" width="90" height="698"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="Pdg-9h-cae"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-g6-Bhy">
+                    <rect key="frame" x="172" y="154" width="70" height="20"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ZcG-n3-Sfp"/>
+                        <constraint firstAttribute="width" constant="70" id="l20-Tl-0LR"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWp-Jl-bSP" customClass="JTCalendarMenuView">
+                    <rect key="frame" x="90" y="174" width="324" height="658"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcK-8f-3l9">
+                    <rect key="frame" x="172" y="832" width="70" height="20"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="IB0-Wc-1Bh"/>
+                        <constraint firstAttribute="height" constant="20" id="dPg-21-NG6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FlS-59-AXt" secondAttribute="bottom" constant="10" id="3cX-Ii-11M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WcK-8f-3l9" secondAttribute="bottom" constant="10" id="4Um-q8-21G"/>
+                <constraint firstItem="lE7-rO-eWx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Ao-b4-7AX"/>
+                <constraint firstItem="lE7-rO-eWx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PQX-vf-msT"/>
+                <constraint firstItem="dWp-Jl-bSP" firstAttribute="leading" secondItem="FlS-59-AXt" secondAttribute="trailing" id="UAB-4h-dz4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lE7-rO-eWx" secondAttribute="trailing" id="VfA-G9-kbX"/>
+                <constraint firstItem="WcK-8f-3l9" firstAttribute="top" secondItem="dWp-Jl-bSP" secondAttribute="bottom" id="Xl1-AX-qGc"/>
+                <constraint firstItem="WcK-8f-3l9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cga-5T-3Xi"/>
+                <constraint firstItem="FlS-59-AXt" firstAttribute="top" secondItem="lE7-rO-eWx" secondAttribute="bottom" constant="10" id="gpH-Sx-bDV"/>
+                <constraint firstItem="Pg1-g6-Bhy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kGd-0k-ZhK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dWp-Jl-bSP" secondAttribute="trailing" id="kxZ-LS-5Cc"/>
+                <constraint firstItem="FlS-59-AXt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oGJ-bq-J4i"/>
+                <constraint firstItem="dWp-Jl-bSP" firstAttribute="top" secondItem="Pg1-g6-Bhy" secondAttribute="bottom" id="pwt-2b-ozP"/>
+                <constraint firstItem="Pg1-g6-Bhy" firstAttribute="top" secondItem="lE7-rO-eWx" secondAttribute="bottom" constant="10" id="uiy-q2-1od"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </view>
+    </objects>
+</document>
