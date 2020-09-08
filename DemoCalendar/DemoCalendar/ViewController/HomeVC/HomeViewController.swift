@@ -18,29 +18,27 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topRectangleView: UIView!
     
+    @IBOutlet weak var constantHourTableView: NSLayoutConstraint!
     @IBOutlet weak var hourDisplaylabel: UILabel!
     @IBOutlet weak var calenderView: JTHorizontalCalendarView!
     @IBOutlet weak var bottomRectangleView: UIView!
-    
+
     @IBOutlet weak var hourTableView: UITableView!
     var calendarManager: JTCalendarManager!
     
-    var verticalDiff: CGFloat = 45
-    var verticalInset: CGFloat = 10
+    
     var todayDate = NSDate()
     var minDate = NSDate()
     var maxDate = NSDate()
     var dateSelected = NSDate()
     
-    var bottomFrameLimit: CGFloat = 0.0
-    var topFrameLimit: CGFloat = 0.0
     
-    var heightDefault:CGFloat = 0.0
     
+    var topLimit: CGFloat = 0.0
     
     var data: [String] {
         var str: [String] = []
-        for i in 0..<13 {
+        for i in 0..<10 {
             str.append(String(i))
         }
         return str
@@ -51,14 +49,17 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
             observarbleHour()
         }
     }
-    var endTime = "1"
-    
-    
+    var endTime = "1" {
+        didSet {
+            observarbleHour()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         hourTableView.register(UINib(nibName: "HourCell", bundle: nil), forCellReuseIdentifier: "cell")
+        hourTableView.tableFooterView = UIView()
         
         setupCalendar()
         
@@ -68,12 +69,11 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
         bottomRectangleView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanBottomCircleView(_:))))
         bottomRectangleView.isUserInteractionEnabled = true
         
-        topFrameLimit = containerView.frame.minY - calenderView.frame.maxY
-        bottomFrameLimit = containerView.frame.maxY - calenderView.frame.maxY
+        topLimit = containerView.frame.minY - calenderView.frame.maxY
         
-        
-        bottomContraint.constant = containerView.frame.height - 140
-        
+        // xac dinh lai so 140
+        let heightDefault: CGFloat = containerView.frame.height - 140
+        bottomContraint.constant = heightDefault
         
         hourDisplaylabel.text = "\(startTime) - \(endTime)"
         
@@ -83,27 +83,30 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
         hourDisplaylabel.text = "\(startTime) - \(endTime)"
     }
     
-    func rangeTime(arr: [String], condition: Int) {
-
-        let newHeight = 50
+    
+    func rangeTime(arr: [String], currentHeight: Int) -> String {
+        var result = ""
         
+        let standarHeight = 50
         var preHeight = 0
         
-        var conditionTemp = 0
+        var aNumber = 0
+        var bNumber = 0
         
         for i in 0..<arr.count {
-            
             if i == 0 {
-                conditionTemp = 1
+                bNumber = 1
+                aNumber = 0
             } else {
-                conditionTemp = 0
+                bNumber = i + 1
+                aNumber = 1
             }
-            
-            if condition >= preHeight + 1 && condition < (newHeight + conditionTemp ) * i {
-                startTime = arr[i]
+            if currentHeight >= preHeight + aNumber && currentHeight <= standarHeight * bNumber {
+                result = arr[i]
             }
-            preHeight = newHeight
+            preHeight = standarHeight * bNumber
         }
+        return result
     }
     
     @objc func onPanTopCircleView(_ pan: UIPanGestureRecognizer) {
@@ -111,58 +114,36 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
         
         switch pan.state {
         case .began, .changed:
+            pan.setTranslation(.zero, in: pan.view)
             
-            if bookingView.frame.height >= 80 {
+            if bookingView.frame.height >= 70 {
                 
-                if topRectangleView.frame.minY >= topFrameLimit {
+                if topRectangleView.frame.minY >= topLimit {
                     
                     topContrant.constant += translation.y
                     
                 } else {
-                    topContrant.constant = 0
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                        self.topContrant.constant = 0
+                        
+                    }, completion: { _ in self.view.layoutIfNeeded()})
                 }
                 
             } else {
-                topContrant.constant -= 1
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                    self.topContrant.constant -= 2
+                }, completion:{ _ in self.view.layoutIfNeeded()})
+                
             }
-            
-//
-//            let totalHeihgt = data.count * 50
-//
-//
-//            for i in 0..<data.count {
-//                switch topRectangleView.frame.maxY {
-//                case 0..<50:
-//                    startTime = data[0]
-//                case 51..<100:
-//                    startTime = data[1]
-//                case 101..<150:
-//                    startTime = data[2]
-//                case 151..<200:
-//                    startTime = data[3]
-//                case 201..<250:
-//                    startTime = data[4]
-//                default:
-//                    break
-//                }
-//            }
-            
-            rangeTime(arr: data, condition: Int(topRectangleView.frame.maxY))
-            
-            
-            
-            
-            
-            
-            
+            hourDisplaylabel.text = ""
         case .ended:
             
-            break
+            startTime = rangeTime(arr: data, currentHeight: Int(topRectangleView.frame.maxY))
             
         default: break
         }
         
-        pan.setTranslation(.zero, in: pan.view)
+        
     }
     
     @objc func onPanBottomCircleView(_ pan: UIPanGestureRecognizer) {
@@ -170,29 +151,46 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
         
         switch pan.state {
         case .began, .changed:
+            pan.setTranslation(.zero, in: pan.view)
             
-            if bookingView.frame.height >= 80 {
-                
-                if bottomRectangleView.frame.maxY <= bottomFrameLimit {
-                    
-                    
-                    bottomContraint.constant -= translation.y
+            // can xac dinh thay doi so 70 nay
+            if bookingView.frame.height >= 70 {
+                // dat dieu kien theo contentSize cua tableview
+                if hourTableView.contentSize.height <= containerView.frame.height {
+                    if bottomRectangleView.frame.maxY <= hourTableView.contentSize.height {
+                        bottomContraint.constant -= translation.y
+                    } else {
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                            self.bottomContraint.constant = self.containerView.frame.height - self.hourTableView.contentSize.height
+                        }, completion: { _ in self.view.layoutIfNeeded()})
+                    }
                     
                 } else {
-                    bottomContraint.constant = 0
+                    if bottomContraint.constant >= 0 {
+                        bottomContraint.constant -= translation.y
+                    } else {
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                            self.bottomContraint.constant = 0
+                        }, completion: { _ in self.view.layoutIfNeeded() })
+                    }
                 }
-                
+ 
             } else {
-                bottomContraint.constant -= 1
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                    self.bottomContraint.constant -= 2
+                }, completion: nil)
+                
             }
             
+             hourDisplaylabel.text = ""
+            
         case .ended:
-            break
+            
+            endTime = rangeTime(arr: data, currentHeight: Int(bottomRectangleView.frame.minY))
+            
         default: break
         }
-        
-        pan.setTranslation(.zero, in: pan.view)
-        
+       
     }
     
     
@@ -278,14 +276,13 @@ extension HomeViewController: UITableViewDataSource {
         cell.textLabel?.text = data[indexPath.row]
         return cell
     }
-    
-    
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
 }
 
 

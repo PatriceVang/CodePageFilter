@@ -13,6 +13,7 @@
                 <outlet property="bottomContraint" destination="tXg-kr-Gjv" id="fx8-0G-e2O"/>
                 <outlet property="bottomRectangleView" destination="43V-Zm-N6I" id="W22-qY-7Ek"/>
                 <outlet property="calenderView" destination="ZOD-yF-PWY" id="49l-s9-XyE"/>
+                <outlet property="constantHourTableView" destination="U34-hx-7Jh" id="bUb-Tp-I1E"/>
                 <outlet property="containerView" destination="cJW-VR-iiG" id="Nac-2s-e9O"/>
                 <outlet property="hourDisplaylabel" destination="hwS-7y-LbI" id="st9-hG-xK3"/>
                 <outlet property="hourTableView" destination="Bya-c0-el1" id="or1-eq-Ldj"/>
@@ -39,6 +40,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="NLk-hO-iaf"/>
                     </constraints>
+                    <color key="sectionIndexBackgroundColor" red="0.46666666670000001" green="0.79607843140000001" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cEC-3t-Ftg"/>
                         <outlet property="delegate" destination="-1" id="5zz-b6-s2Y"/>
