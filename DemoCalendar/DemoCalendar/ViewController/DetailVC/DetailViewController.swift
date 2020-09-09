@@ -16,6 +16,15 @@ extension UIView {
     }
 }
 
+extension Date {
+    func  dateToString() -> String {
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = "MMM dd"
+        
+        return dateFormate.string(from: self )
+    }
+}
+
 class DetailViewController: UIViewController, JTCalendarDelegate {
     
     @IBOutlet weak var calendarView: JTHorizontalCalendarView!
@@ -25,10 +34,20 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     var calendarManager: JTCalendarManager!
     
-    var todayDate = NSDate()
-    var minDate = NSDate()
-    var maxDate = NSDate()
-    var dateSelected = NSDate()
+    
+    var isSelectedAnotherDay: Bool = false
+    var isSelectedOwnDay: Bool = false
+    
+    
+    
+    var todayDate = Date()
+    var minDate = Date()
+    var maxDate = Date()
+    var dateSelected = Date()
+    
+    
+    
+    
     
     let topView: UIView = {
         let v = UIView()
@@ -78,6 +97,9 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     }
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timeTableView.register(UINib(nibName: "HourCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -112,6 +134,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
             displayTimeLable.centerXAnchor.constraint(equalTo: bookingView.centerXAnchor),
             displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
         ])
+    
 
     }
     
@@ -160,9 +183,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         return result
     }
     
-    
-    
-    
+
     @objc func onPanTopView(_ pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view)
         
@@ -207,6 +228,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
             }
             
             startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.minY - calendarView.frame.maxY))
+            
         case .ended:
             break
             
@@ -284,31 +306,20 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     func calendar(_ calendar: JTCalendarManager?, prepareDayView dayView: (UIView & JTCalendarDay)?) {
         //         Today
         let mydayview = dayView as! JTCalendarDayView
-        if(calendarManager.dateHelper!.date(NSDate() as Date?, isTheSameDayThan: mydayview.date)) {
-            mydayview.circleView.isHidden = false;
-           
-            mydayview.circleView.backgroundColor = #colorLiteral(red: 0.9945682883, green: 0.3499218225, blue: 0, alpha: 1)
-            mydayview.textLabel.textColor = UIColor.white
-            mydayview.circleRatio = 1.5
-            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
-            mydayview.dotView.isHidden = true
+        if(calendarManager.dateHelper!.date(todayDate as Date?, isTheSameDayThan: mydayview.date)) {
+            mydayview.circleView.isHidden = false
+            mydayview.circleView.backgroundColor = isSelectedAnotherDay ? .clear : .red
+            mydayview.textLabel.textColor = isSelectedAnotherDay ? .lightGray : .white
         }
             // Selected date
         else if(String(describing: dateSelected) != "" && calendarManager.dateHelper!.date(dateSelected as Date?, isTheSameDayThan: mydayview.date)) {
+
             mydayview.circleView.isHidden = false;
-            mydayview.circleView.backgroundColor = #colorLiteral(red: 0.9945682883, green: 0.3499218225, blue: 0, alpha: 1)
-            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
+            mydayview.circleView.backgroundColor = UIColor.red
             mydayview.dotView.backgroundColor = UIColor.white
             mydayview.textLabel.textColor = UIColor.white
             
         }
-            // Other month
-        else if(calendarManager.dateHelper!.date(calendarView.date, isTheSameMonthThan: mydayview.date)) {
-            mydayview.circleView.isHidden = true;
-            mydayview.dotView.backgroundColor = UIColor.red
-            mydayview.textLabel.textColor = UIColor.black
-        }
-            // Another day of the current month
         else {
             mydayview.circleView.isHidden = true;
             mydayview.dotView.backgroundColor = UIColor.red
@@ -318,8 +329,14 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     func calendar(_ calendar: JTCalendarManager?, didTouchDayView dayView: (UIView & JTCalendarDay)?) {
         let mydayview = dayView as! JTCalendarDayView
-        dateSelected = mydayview.date as NSDate
-        
+        dateSelected = mydayview.date
+
+        if dateSelected.dateToString() != todayDate.dateToString() {
+            isSelectedAnotherDay = true
+        } else {
+            isSelectedAnotherDay = false
+        }
+
         UIView.transition(with: mydayview, duration: 0.3, options: UIView.AnimationOptions(rawValue: 0), animations: {
             mydayview.circleView.transform = CGAffineTransform.identity
             self.calendarManager.reload()
