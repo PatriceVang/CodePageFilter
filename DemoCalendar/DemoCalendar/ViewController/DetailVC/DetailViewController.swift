@@ -42,12 +42,32 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     }()
     
     
+    let displayTimeLable: UILabel = {
+       let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.textColor = .black
+        lb.font = .boldSystemFont(ofSize: 20)
+        return lb
+    }()
+    
+    
     var data: [String] {
         var str: [String] = []
-        for i in 0..<10 {
+        for i in 0..<20 {
             str.append(String(i))
         }
         return str
+    }
+    
+    var startTime = "" {
+        didSet {
+            observableHour()
+        }
+    }
+    var endTime = "" {
+        didSet {
+            observableHour()
+        }
     }
     
     
@@ -68,9 +88,11 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         let myDate = Date()
         calendarManager.setDate(myDate)
         
+        
         self.view.addSubview(topView)
         self.view.addSubview(bookingView)
         self.view.addSubview(bottomView)
+//        self.view.addSubview(displayTimeLable)
         
         
         topView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanTopView(_:))))
@@ -79,73 +101,176 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         bottomView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanBottomView(_:))))
         bottomView.isUserInteractionEnabled = true
         
+        
+//        NSLayoutConstraint.activate([
+//            displayTimeLable.centerXAnchor.constraint(equalTo: bookingView.centerXAnchor),
+//            displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
+//        ])
+//
+//
+
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         topView.frame = .init(x: calendarView.frame.width / 2, y: calendarView.frame.maxY, width: 70, height: 10)
-    
+        
         bookingView.frame = .init(x: timeTableView.frame.maxX, y: topView.frame.maxY, width: self.view.frame.width - timeTableView.frame.width, height: 80)
         
         bottomView.frame = .init(x: calendarView.frame.width / 2, y: bookingView.frame.maxY, width: 70, height: 10)
         
-       
+        
+        startTime = data[0]
+        endTime = data[1]
+        displayTimeLable.text = "\(startTime) - \(endTime)"
         
     }
+    
+    private func observableHour() {
+         displayTimeLable.text = "\(startTime) - \(endTime)"
+    }
+    
+    func rangeTime(arr: [String], currentHeight: Int) -> String {
+        var result = ""
+        
+        let standarHeight = 50
+        var preHeight = 0
+        
+        var aNumber = 0
+        var bNumber = 0
+        
+        for i in 0..<arr.count {
+            if i == 0 {
+                bNumber = 1
+                aNumber = 0
+            } else {
+                bNumber = i + 1
+                aNumber = 1
+            }
+            if currentHeight >= preHeight + aNumber && currentHeight <= standarHeight * bNumber {
+                result = arr[i]
+            }
+            preHeight = standarHeight * bNumber
+        }
+        return result
+    }
+    
+    
     
     
     @objc func onPanTopView(_ pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view)
+        
         switch pan.state {
         case .began, .changed:
             let difference = translation.y
+            topView.center.y += difference
+            var frameBookingView = bookingView.frame
             
-            
-//            if bookingView.frame.height >= 80 {
-//                if topView.frame.minY >= calendarView.frame.maxY {
-                    var newFrameTopView = topView.frame
-                    newFrameTopView.origin.y = newFrameTopView.origin.y + difference
-                    topView.frame = newFrameTopView
+            if (bottomView.frame.minY - topView.frame.maxY) >= 80 {
+                
+                if topView.frame.minY >= timeTableView.frame.minY {
                     
-                    var newFrameBookingView = bookingView.frame
-                    newFrameBookingView.origin.y = newFrameBookingView.origin.y + difference
-                    newFrameBookingView.size.height = newFrameBookingView.height - difference
+                    frameBookingView.origin.y += difference
+                    frameBookingView.size.height -= difference
+                    bookingView.frame = frameBookingView
                     
-                    bookingView.frame = newFrameBookingView
-            // keo dc
-                    // k keo dc
+                } else {
                     
- 
-//                } else {
-//                    topView.frame = .init(x: calendarView.frame.width / 2, y: calendarView.frame.maxY, width: 70, height: 10)
-//                }
-//            } else {
-//
-//            }
-//
+                    var frameTopView = topView.frame
+                    frameTopView.origin.y = timeTableView.frame.minY
+                    topView.frame = frameTopView
+
+                    frameBookingView.size.height = bottomView.frame.minY - frameTopView.maxY
+                    frameBookingView.origin.y = frameTopView.maxY
+                    bookingView.frame = frameBookingView
+                }
+                
+            } else {
+    
+                var frameTopView = topView.frame
+                frameTopView.origin.y -= difference
+                topView.frame = frameTopView
+                
+                frameBookingView.origin.y = topView.frame.maxY
+                bookingView.frame = frameBookingView
+                
+                var frameBottomView = bottomView.frame
+                frameBottomView.origin.y = bookingView.frame.maxY
+                bottomView.frame = frameBottomView
+                
+            }
+//            startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.midX))
+        case .ended:
+            break
             
         default:
             break
         }
-        
         pan.setTranslation(.zero, in: pan.view)
-        
     }
     
     @objc func onPanBottomView(_ pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view)
         switch pan.state {
         case .began, .changed:
-            bottomView.center.y += translation.y
+             let difference = translation.y
+             var frameBookingView = bookingView.frame
+            
+            if bottomView.frame.minY - topView.frame.maxY >= 80 {
+                
+                if timeTableView.contentSize.height <= timeTableView.frame.height {
+                    
+                    if bottomView.frame.maxY - timeTableView.frame.minY <= timeTableView.contentSize.height  {
+                        
+                        bottomView.center.y += difference
+                        frameBookingView.size.height += difference
+                        bookingView.frame = frameBookingView
+                        
+                    } else {
+                        bottomView.frame = .init(x: bottomView.frame.minX, y: timeTableView.contentSize.height + calendarView.frame.maxY - 10, width: bottomView.frame.width, height: 10)
+                        
+                        frameBookingView.size.height = bottomView.frame.minY - topView.frame.maxY
+                        bookingView.frame = frameBookingView
+                    }
+                } else {
+                    
+                    bottomView.center.y += difference
+                    frameBookingView.size.height += difference
+                    bookingView.frame = frameBookingView
+                    
+                    if bottomView.frame.maxY > timeTableView.frame.maxY {
+                        bottomView.frame = .init(x: bottomView.frame.minX, y: timeTableView.frame.maxY - 10, width: bottomView.frame.width, height: 10)
+                        
+                        frameBookingView.size.height = bottomView.frame.minY - topView.frame.maxY
+                        bookingView.frame = frameBookingView
+                    }
+
+                }
+                
+            } else {
+                
+                var frameBottomView = bottomView.frame
+                frameBottomView.origin.y = 81 + topView.frame.maxY - difference
+                
+                bottomView.frame = frameBottomView
+ 
+                frameBookingView.size.height = frameBottomView.minY - topView.frame.maxY
+            
+                bookingView.frame = frameBookingView
+                
+            }
+             
+//             endTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.maxY))
+            
+        case .ended:
+            break
         default:
             break
         }
-        
         pan.setTranslation(.zero, in: pan.view)
     }
-    
-
     
     func calendar(_ calendar: JTCalendarManager?, canDisplayPageWith date: Date?) -> Bool {
         return calendarManager.dateHelper!.date(date, isEqualOrAfter: minDate as Date?, andEqualOrBefore: maxDate as Date?)

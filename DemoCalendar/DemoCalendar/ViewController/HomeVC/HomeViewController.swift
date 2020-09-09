@@ -83,7 +83,6 @@ class HomeViewController: UIViewController, JTCalendarDelegate {
         hourDisplaylabel.text = "\(startTime) - \(endTime)"
     }
     
-    
     func rangeTime(arr: [String], currentHeight: Int) -> String {
         var result = ""
         
