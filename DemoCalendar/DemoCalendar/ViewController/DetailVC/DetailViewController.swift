@@ -9,6 +9,13 @@
 import UIKit
 import JTCalendar
 
+extension UIView {
+    func setupRadius(of view: UIView, with radius: CGFloat) {
+        view.layer.cornerRadius = radius
+        view.layer.masksToBounds = true
+    }
+}
+
 class DetailViewController: UIViewController, JTCalendarDelegate {
     
     @IBOutlet weak var calendarView: JTHorizontalCalendarView!
@@ -53,7 +60,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     var data: [String] {
         var str: [String] = []
-        for i in 0..<20 {
+        for i in 0..<10 {
             str.append(String(i))
         }
         return str
@@ -88,11 +95,10 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         let myDate = Date()
         calendarManager.setDate(myDate)
         
-        
         self.view.addSubview(topView)
         self.view.addSubview(bookingView)
         self.view.addSubview(bottomView)
-//        self.view.addSubview(displayTimeLable)
+        self.view.addSubview(displayTimeLable)
         
         
         topView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanTopView(_:))))
@@ -102,12 +108,10 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         bottomView.isUserInteractionEnabled = true
         
         
-//        NSLayoutConstraint.activate([
-//            displayTimeLable.centerXAnchor.constraint(equalTo: bookingView.centerXAnchor),
-//            displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
-//        ])
-//
-//
+        NSLayoutConstraint.activate([
+            displayTimeLable.centerXAnchor.constraint(equalTo: bookingView.centerXAnchor),
+            displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
+        ])
 
     }
     
@@ -201,7 +205,8 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
                 bottomView.frame = frameBottomView
                 
             }
-//            startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.midX))
+            
+            startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.minY - calendarView.frame.maxY))
         case .ended:
             break
             
@@ -262,7 +267,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
                 
             }
              
-//             endTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.maxY))
+             endTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.maxY -  calendarView.frame.maxY))
             
         case .ended:
             break
@@ -278,18 +283,24 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     func calendar(_ calendar: JTCalendarManager?, prepareDayView dayView: (UIView & JTCalendarDay)?) {
         //         Today
-        let mydayview=dayView as! JTCalendarDayView
+        let mydayview = dayView as! JTCalendarDayView
         if(calendarManager.dateHelper!.date(NSDate() as Date?, isTheSameDayThan: mydayview.date)) {
             mydayview.circleView.isHidden = false;
-            mydayview.dotView.backgroundColor = UIColor.blue
+           
+            mydayview.circleView.backgroundColor = #colorLiteral(red: 0.9945682883, green: 0.3499218225, blue: 0, alpha: 1)
             mydayview.textLabel.textColor = UIColor.white
+            mydayview.circleRatio = 1.5
+            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
+            mydayview.dotView.isHidden = true
         }
             // Selected date
         else if(String(describing: dateSelected) != "" && calendarManager.dateHelper!.date(dateSelected as Date?, isTheSameDayThan: mydayview.date)) {
             mydayview.circleView.isHidden = false;
-            mydayview.circleView.backgroundColor = UIColor.red
+            mydayview.circleView.backgroundColor = #colorLiteral(red: 0.9945682883, green: 0.3499218225, blue: 0, alpha: 1)
+            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
             mydayview.dotView.backgroundColor = UIColor.white
             mydayview.textLabel.textColor = UIColor.white
+            
         }
             // Other month
         else if(calendarManager.dateHelper!.date(calendarView.date, isTheSameMonthThan: mydayview.date)) {
