@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="DemoCalendar" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarView" destination="Izv-hF-waN" id="S4T-4i-Z3l"/>
+                <outlet property="pagerView" destination="gYx-qa-syE" id="5hh-hF-nml"/>
+                <outlet property="scrollView" destination="gkO-1E-3pT" id="xMp-Dt-qGt"/>
+                <outlet property="tbvTime" destination="BUz-fL-6oT" id="YOh-yc-8MK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izv-hF-waN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="8xn-lx-ZHk"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-1E-3pT">
+                    <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-fA-MuG">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1150"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-fL-6oT">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="1150"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Tiy-cz-Lmd"/>
+                                        <constraint firstAttribute="height" constant="1150" id="dha-MM-4Do"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="7Cu-fE-xh1"/>
+                                        <outlet property="delegate" destination="-1" id="yUp-A5-1Re"/>
+                                    </connections>
+                                </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-qa-syE">
+                                    <rect key="frame" x="100" y="0.0" width="314" height="1150"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="gYx-qa-syE" secondAttribute="trailing" id="GO5-GQ-6Ol"/>
+                                <constraint firstAttribute="bottom" secondItem="BUz-fL-6oT" secondAttribute="bottom" id="Kha-B1-73A"/>
+                                <constraint firstAttribute="bottom" secondItem="gYx-qa-syE" secondAttribute="bottom" id="N3k-Jl-Xvs"/>
+                                <constraint firstItem="BUz-fL-6oT" firstAttribute="leading" secondItem="zBp-fA-MuG" secondAttribute="leading" id="bmK-jK-3BJ"/>
+                                <constraint firstItem="gYx-qa-syE" firstAttribute="top" secondItem="zBp-fA-MuG" secondAttribute="top" id="dCf-j3-FYa"/>
+                                <constraint firstItem="gYx-qa-syE" firstAttribute="leading" secondItem="BUz-fL-6oT" secondAttribute="trailing" id="jVX-xP-N3j"/>
+                                <constraint firstItem="BUz-fL-6oT" firstAttribute="top" secondItem="zBp-fA-MuG" secondAttribute="top" id="xDP-jl-7dh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zBp-fA-MuG" firstAttribute="width" secondItem="gkO-1E-3pT" secondAttribute="width" id="4Qo-tM-YXw"/>
+                        <constraint firstItem="zBp-fA-MuG" firstAttribute="bottom" secondItem="gkO-1E-3pT" secondAttribute="bottom" id="E2N-mA-Z5E"/>
+                        <constraint firstItem="zBp-fA-MuG" firstAttribute="top" secondItem="gkO-1E-3pT" secondAttribute="top" id="MO8-ck-bha"/>
+                        <constraint firstItem="zBp-fA-MuG" firstAttribute="leading" secondItem="gkO-1E-3pT" secondAttribute="leading" id="Scc-5W-d6t"/>
+                        <constraint firstItem="zBp-fA-MuG" firstAttribute="trailing" secondItem="gkO-1E-3pT" secondAttribute="trailing" id="zFV-6J-Uke"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="gkO-1E-3pT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PwD-UM-0eH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gkO-1E-3pT" secondAttribute="trailing" id="cX0-wi-yvc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gkO-1E-3pT" secondAttribute="bottom" id="rfR-dM-2o2"/>
+                <constraint firstItem="Izv-hF-waN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vXW-GH-6BM"/>
+                <constraint firstItem="Izv-hF-waN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wbm-qN-aiX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Izv-hF-waN" secondAttribute="trailing" id="zl6-g7-c86"/>
+                <constraint firstItem="gkO-1E-3pT" firstAttribute="top" secondItem="Izv-hF-waN" secondAttribute="bottom" id="zzk-Hb-RXw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+</document>

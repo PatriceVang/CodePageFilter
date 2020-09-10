@@ -10,6 +10,8 @@
 		1806404725078E9400A9D2CF /* DragerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806404625078E9400A9D2CF /* DragerView.swift */; };
 		1857D3E224FFDA1E001F3480 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857D3E124FFDA1E001F3480 /* NetworkManager.swift */; };
 		1857D3E424FFDA56001F3480 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857D3E324FFDA56001F3480 /* RequestManager.swift */; };
+		18613E72250A04C700280AED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18613E70250A04C700280AED /* CalendarViewController.swift */; };
+		18613E73250A04C700280AED /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18613E71250A04C700280AED /* CalendarViewController.xib */; };
 		18E204D524FE203C008BDAE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E204D424FE203C008BDAE6 /* AppDelegate.swift */; };
 		18E204D724FE203C008BDAE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E204D624FE203C008BDAE6 /* SceneDelegate.swift */; };
 		18E204DE24FE2040008BDAE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E204DD24FE2040008BDAE6 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		1806404625078E9400A9D2CF /* DragerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragerView.swift; sourceTree = "<group>"; };
 		1857D3E124FFDA1E001F3480 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1857D3E324FFDA56001F3480 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		18613E70250A04C700280AED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		18613E71250A04C700280AED /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		18E204D124FE203C008BDAE6 /* DemoCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E204D424FE203C008BDAE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E204D624FE203C008BDAE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,23 @@
 			path = UserApi;
 			sourceTree = "<group>";
 		};
+		18613E6F250A04A100280AED /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				18613E74250A120300280AED /* PagerView */,
+				18613E70250A04C700280AED /* CalendarViewController.swift */,
+				18613E71250A04C700280AED /* CalendarViewController.xib */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		18613E74250A120300280AED /* PagerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PagerView;
+			sourceTree = "<group>";
+		};
 		18E204C824FE203C008BDAE6 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +149,7 @@
 		18E204E824FE206F008BDAE6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				18613E6F250A04A100280AED /* Calendar */,
 				18F2E31F250215DB005F27A3 /* HomeVC */,
 				18F2E31E250215D3005F27A3 /* DetailVC */,
 			);
@@ -249,6 +271,7 @@
 			files = (
 				18E4E7302505F0C500C92F7E /* HourCell.xib in Resources */,
 				18E204E124FE2040008BDAE6 /* LaunchScreen.storyboard in Resources */,
+				18613E73250A04C700280AED /* CalendarViewController.xib in Resources */,
 				18E204DE24FE2040008BDAE6 /* Assets.xcassets in Resources */,
 				18E204EC24FE208A008BDAE6 /* HomeViewController.xib in Resources */,
 				18F2E32325021615005F27A3 /* DetailViewController.xib in Resources */,
@@ -304,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18613E72250A04C700280AED /* CalendarViewController.swift in Sources */,
 				18F2E32625022CCD005F27A3 /* Extension + Date.swift in Sources */,
 				1857D3E424FFDA56001F3480 /* RequestManager.swift in Sources */,
 				1857D3E224FFDA1E001F3480 /* NetworkManager.swift in Sources */,

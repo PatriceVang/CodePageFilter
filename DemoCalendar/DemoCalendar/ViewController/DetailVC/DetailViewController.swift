@@ -89,7 +89,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     var data: [String] {
         var str: [String] = []
-        for i in 8..<15 {
+        for i in 1..<24 {
             var hour = ""
             var conditionTime = ""
             
