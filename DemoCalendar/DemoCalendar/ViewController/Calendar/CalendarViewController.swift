@@ -110,7 +110,7 @@ class CalendarViewController: UIViewController {
         
         startTime = data[1]
         endTime = data[2]
-        displayTimeLable.text = "\(startTime) - \(endTime)"
+        displayTimeLable.text = "\(startTime): 00 - \(endTime): 00"
              
         
         
@@ -123,7 +123,7 @@ class CalendarViewController: UIViewController {
         
         topView.frame = .init(x: 150, y: 40, width: 70, height: 10)
         
-        bookingView.frame = .init(x: 0, y: topView.frame.maxY, width: pagerView.frame.width, height: 80)
+        bookingView.frame = .init(x: 0, y: topView.frame.maxY, width: pagerView.frame.width, height: 65)
         
         bottomView.frame = .init(x: 150, y: bookingView.frame.maxY, width: 70, height: 10)
         
@@ -146,6 +146,8 @@ class CalendarViewController: UIViewController {
         var aNumber = 0
         var bNumber = 0
         
+        var haftResult = "00"
+        
         for i in 0..<arr.count {
             if i == 0 {
                 bNumber = 1
@@ -155,7 +157,14 @@ class CalendarViewController: UIViewController {
                 aNumber = 1
             }
             if currentHeight >= preHeight + aNumber && currentHeight <= standarHeight * bNumber {
-                result = arr[i]
+                
+                if currentHeight >= standarHeight * bNumber - 25 {
+                    haftResult = "30"
+                } else {
+                    haftResult = "00"
+                }
+                
+                result = "\(arr[i]) : \(haftResult) "
             }
             preHeight = standarHeight * bNumber
         }
@@ -170,7 +179,7 @@ class CalendarViewController: UIViewController {
             var frameBookingView = bookingView.frame
             topView.center.y += difference
             
-            if bottomView.frame.minY - topView.frame.maxY >= 80 {
+            if bottomView.frame.minY - topView.frame.maxY >= 65 {
                 
                 frameBookingView.origin.y = topView.frame.maxY
                 frameBookingView.size.height -= difference
@@ -216,7 +225,7 @@ class CalendarViewController: UIViewController {
             var frameBookingView = bookingView.frame
             bottomView.center.y += difference
             
-            if bottomView.frame.minY - topView.frame.maxY >= 80 {
+            if bottomView.frame.minY - topView.frame.maxY >= 65 {
                 frameBookingView.size.height += difference
                 bookingView.frame = frameBookingView
                 
@@ -229,7 +238,7 @@ class CalendarViewController: UIViewController {
             } else {
                 
                 var frameBottomView = bottomView.frame
-                frameBottomView.origin.y = 80 + topView.frame.maxY - difference
+                frameBottomView.origin.y = 65 + topView.frame.maxY - difference
                 bottomView.frame = frameBottomView
 
                 frameBookingView.size.height = frameBottomView.minY - topView.frame.maxY
