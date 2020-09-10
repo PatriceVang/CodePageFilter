@@ -191,12 +191,9 @@ class CalendarViewController: UIViewController {
                 topView.frame = frameTopView
                 
                 frameBookingView.origin.y = topView.frame.maxY
+                frameBookingView.size.height = bottomView.frame.minY - topView.frame.maxY
                 bookingView.frame = frameBookingView
-                
-                var frameBottomView = bottomView.frame
-                frameBottomView.origin.y = bookingView.frame.maxY
-                bottomView.frame = frameBottomView
-                
+
             }
             
             startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.minY))
