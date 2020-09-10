@@ -25,6 +25,10 @@ extension Date {
     }
 }
 
+extension JTCalendarSettings {
+    
+}
+
 class DetailViewController: UIViewController, JTCalendarDelegate {
     
     @IBOutlet weak var calendarView: JTHorizontalCalendarView!
@@ -38,16 +42,10 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     var isSelectedAnotherDay: Bool = false
     var isSelectedOwnDay: Bool = false
     
-    
-    
     var todayDate = Date()
     var minDate = Date()
     var maxDate = Date()
     var dateSelected = Date()
-    
-    
-    
-    
     
     let topView: UIView = {
         let v = UIView()
@@ -69,7 +67,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     
     let displayTimeLable: UILabel = {
-       let lb = UILabel()
+        let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textColor = .black
         lb.font = .boldSystemFont(ofSize: 20)
@@ -77,10 +75,34 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     }()
     
     
+    let nonOperationHourTop: UIView = {
+        let v = UIView()
+        v.backgroundColor = .cyan
+        return v
+    }()
+    
+    let nonOperationHourBottom: UIView = {
+        let v = UIView()
+        v.backgroundColor = .cyan
+        return v
+    }()
+    
     var data: [String] {
         var str: [String] = []
-        for i in 0..<10 {
-            str.append(String(i))
+        for i in 8..<15 {
+            var hour = ""
+            var conditionTime = ""
+            
+            if i < 12 {
+                conditionTime = "AM"
+                hour = "\(i)" + " " + "\(conditionTime)"
+            } else if i == 12 {
+                hour = "Noon"
+            } else {
+                conditionTime = "PM"
+                hour = "\(i - 12)" + " " + "\(conditionTime)"
+            }
+            str.append(hour)
         }
         return str
     }
@@ -100,6 +122,8 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timeTableView.register(UINib(nibName: "HourCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -111,16 +135,19 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         calendarManager.contentView = calendarView
         
         calendarManager.settings?.weekModeEnabled = true
+        calendarManager.settings?.zeroPaddedDayFormat = false
         
         calendarView.isScrollEnabled = false
         
-        let myDate = Date()
-        calendarManager.setDate(myDate)
+        calendarManager.setDate(todayDate)
         
+        self.view.addSubview(nonOperationHourTop)
+        self.view.addSubview(nonOperationHourBottom)
         self.view.addSubview(topView)
         self.view.addSubview(bookingView)
         self.view.addSubview(bottomView)
         self.view.addSubview(displayTimeLable)
+        
         
         
         topView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanTopView(_:))))
@@ -134,28 +161,34 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
             displayTimeLable.centerXAnchor.constraint(equalTo: bookingView.centerXAnchor),
             displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
         ])
-    
-
+        
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        topView.frame = .init(x: calendarView.frame.width / 2, y: calendarView.frame.maxY, width: 70, height: 10)
+        topView.frame = .init(x: calendarView.frame.width / 2, y: calendarView.frame.maxY + 40, width: 70, height: 10)
         
         bookingView.frame = .init(x: timeTableView.frame.maxX, y: topView.frame.maxY, width: self.view.frame.width - timeTableView.frame.width, height: 80)
         
         bottomView.frame = .init(x: calendarView.frame.width / 2, y: bookingView.frame.maxY, width: 70, height: 10)
         
         
-        startTime = data[0]
-        endTime = data[1]
+        nonOperationHourTop.frame = .init(x: timeTableView.frame.maxX, y: calendarView.frame.maxY, width: UIScreen.main.bounds.width - timeTableView.frame.width, height: 50)
+        
+
+        
+        startTime = data[1]
+        endTime = data[2]
         displayTimeLable.text = "\(startTime) - \(endTime)"
         
     }
     
     private func observableHour() {
-         displayTimeLable.text = "\(startTime) - \(endTime)"
+        displayTimeLable.text = "\(startTime) - \(endTime)"
     }
     
     func rangeTime(arr: [String], currentHeight: Int) -> String {
@@ -183,7 +216,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         return result
     }
     
-
+    
     @objc func onPanTopView(_ pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view)
         
@@ -195,7 +228,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
             
             if (bottomView.frame.minY - topView.frame.maxY) >= 80 {
                 
-                if topView.frame.minY >= timeTableView.frame.minY {
+                if topView.frame.maxY >= timeTableView.frame.minY + 50 {
                     
                     frameBookingView.origin.y += difference
                     frameBookingView.size.height -= difference
@@ -204,16 +237,16 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
                 } else {
                     
                     var frameTopView = topView.frame
-                    frameTopView.origin.y = timeTableView.frame.minY
+                    frameTopView.origin.y = timeTableView.frame.minY + 40
                     topView.frame = frameTopView
-
+                    
                     frameBookingView.size.height = bottomView.frame.minY - frameTopView.maxY
                     frameBookingView.origin.y = frameTopView.maxY
                     bookingView.frame = frameBookingView
                 }
                 
             } else {
-    
+                
                 var frameTopView = topView.frame
                 frameTopView.origin.y -= difference
                 topView.frame = frameTopView
@@ -230,7 +263,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
             startTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.minY - calendarView.frame.maxY))
             
         case .ended:
-            break
+            self.view.layoutSubviews()
             
         default:
             break
@@ -242,8 +275,8 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         let translation = pan.translation(in: pan.view)
         switch pan.state {
         case .began, .changed:
-             let difference = translation.y
-             var frameBookingView = bookingView.frame
+            let difference = translation.y
+            var frameBookingView = bookingView.frame
             
             if bottomView.frame.minY - topView.frame.maxY >= 80 {
                 
@@ -273,7 +306,7 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
                         frameBookingView.size.height = bottomView.frame.minY - topView.frame.maxY
                         bookingView.frame = frameBookingView
                     }
-
+                    
                 }
                 
             } else {
@@ -282,17 +315,17 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
                 frameBottomView.origin.y = 81 + topView.frame.maxY - difference
                 
                 bottomView.frame = frameBottomView
- 
+                
                 frameBookingView.size.height = frameBottomView.minY - topView.frame.maxY
-            
+                
                 bookingView.frame = frameBookingView
                 
             }
-             
-             endTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.maxY -  calendarView.frame.maxY))
+            
+            endTime = rangeTime(arr: data, currentHeight: Int(bookingView.frame.maxY -  calendarView.frame.maxY))
             
         case .ended:
-            break
+            self.view.layoutSubviews()
         default:
             break
         }
@@ -303,20 +336,24 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
         return calendarManager.dateHelper!.date(date, isEqualOrAfter: minDate as Date?, andEqualOrBefore: maxDate as Date?)
     }
     
+    
     func calendar(_ calendar: JTCalendarManager?, prepareDayView dayView: (UIView & JTCalendarDay)?) {
         //         Today
         let mydayview = dayView as! JTCalendarDayView
         if(calendarManager.dateHelper!.date(todayDate as Date?, isTheSameDayThan: mydayview.date)) {
             mydayview.circleView.isHidden = false
+            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
             mydayview.circleView.backgroundColor = isSelectedAnotherDay ? .clear : .red
             mydayview.textLabel.textColor = isSelectedAnotherDay ? .lightGray : .white
+            
+            
         }
             // Selected date
         else if(String(describing: dateSelected) != "" && calendarManager.dateHelper!.date(dateSelected as Date?, isTheSameDayThan: mydayview.date)) {
-
+            
             mydayview.circleView.isHidden = false;
             mydayview.circleView.backgroundColor = UIColor.red
-            mydayview.dotView.backgroundColor = UIColor.white
+            mydayview.circleView.setupRadius(of: mydayview.circleView, with: 5)
             mydayview.textLabel.textColor = UIColor.white
             
         }
@@ -330,13 +367,13 @@ class DetailViewController: UIViewController, JTCalendarDelegate {
     func calendar(_ calendar: JTCalendarManager?, didTouchDayView dayView: (UIView & JTCalendarDay)?) {
         let mydayview = dayView as! JTCalendarDayView
         dateSelected = mydayview.date
-
+        
         if dateSelected.dateToString() != todayDate.dateToString() {
             isSelectedAnotherDay = true
         } else {
             isSelectedAnotherDay = false
         }
-
+        
         UIView.transition(with: mydayview, duration: 0.3, options: UIView.AnimationOptions(rawValue: 0), animations: {
             mydayview.circleView.transform = CGAffineTransform.identity
             self.calendarManager.reload()
@@ -364,7 +401,6 @@ extension DetailViewController: UITableViewDataSource {
         cell.textLabel?.text = data[indexPath.row]
         return cell
     }
-    
 }
 
 extension DetailViewController: UITableViewDelegate {
