@@ -11,7 +11,6 @@
             <connections>
                 <outlet property="calendarView" destination="Izv-hF-waN" id="S4T-4i-Z3l"/>
                 <outlet property="pagerView" destination="gYx-qa-syE" id="5hh-hF-nml"/>
-                <outlet property="scrollView" destination="gkO-1E-3pT" id="xMp-Dt-qGt"/>
                 <outlet property="tbvTime" destination="BUz-fL-6oT" id="YOh-yc-8MK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

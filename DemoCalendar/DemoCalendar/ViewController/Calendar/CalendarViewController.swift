@@ -11,9 +11,6 @@ import UIKit
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var tbvTime: UITableView!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var pagerView: UIView!
     
     let displayTimeLable: UILabel = {
@@ -36,8 +33,7 @@ class CalendarViewController: UIViewController {
         return arrow
     }()
     
-    
-    
+
     let topView: UIView = {
         let v = UIView()
         v.backgroundColor = .clear
@@ -90,10 +86,9 @@ class CalendarViewController: UIViewController {
     
     var data: [String] {
         var str: [String] = []
-        for i in 1...25 {
+        for i in 1...24 {
             var hour = ""
             var conditionTime = ""
-            
             if i < 12 {
                 conditionTime = "AM"
                 hour = "\(i)" + " " + "\(conditionTime)"
@@ -108,7 +103,7 @@ class CalendarViewController: UIViewController {
         return str
     }
     
-    var hourApi: [Int] = [10, 16]
+    var hourApi: [Int] = [9, 20]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,8 +137,6 @@ class CalendarViewController: UIViewController {
         endTime = data[hourApi[0]]
         displayTimeLable.text = "\(startTime) - \(endTime)"
              
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -151,21 +144,17 @@ class CalendarViewController: UIViewController {
         
         nonOperationTopVIew.frame = .init(x: 0, y: 0, width: pagerView.frame.width, height: CGFloat(hourApi[0] * 50) - 50)
         
-        topView.frame = .init(x: 150, y: nonOperationTopVIew.frame.maxY - 10, width: 70, height: 10)
+        topView.frame = .init(x: 150, y: nonOperationTopVIew.frame.maxY - 10, width: 20, height: 10)
         
         bookingView.frame = .init(x: 0, y: topView.frame.maxY, width: pagerView.frame.width, height: 65)
         
-        bottomView.frame = .init(x: 150, y: bookingView.frame.maxY, width: 70, height: 10)
-        
+        bottomView.frame = .init(x: 150, y: bookingView.frame.maxY, width: 20, height: 10)
         
         nonOperationBottomVIew.frame = .init(x: 0, y:  CGFloat(hourApi[1] * 50), width: pagerView.frame.width, height: pagerView.frame.height - CGFloat(hourApi[1] * 50))
         
         arrowTop.frame = .init(x: 0, y: 0, width: 20, height: bottomView.frame.height)
         arrowBottom.frame = .init(x: 0, y: 0, width: 20, height: topView.frame.height)
         
-    
-        
-
     }
     
     private func observableHour() {
