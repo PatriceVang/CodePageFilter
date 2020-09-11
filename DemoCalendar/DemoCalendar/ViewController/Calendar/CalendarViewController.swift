@@ -24,32 +24,56 @@ class CalendarViewController: UIViewController {
         return lb
     }()
     
+    let arrowTop: UIImageView = {
+       let arrow = UIImageView()
+        arrow.image = UIImage(named: "Polygon")
+        return arrow
+    }()
+    
+    let arrowBottom: UIImageView = {
+       let arrow = UIImageView()
+        arrow.image = UIImage(named: "PolygonBottom")
+        return arrow
+    }()
+    
+    
+    
     let topView: UIView = {
         let v = UIView()
-        v.backgroundColor = .systemBlue
+        v.backgroundColor = .clear
         return v
     }()
     
     let bottomView: UIView = {
         let v = UIView()
-        v.backgroundColor = .systemBlue
+        v.backgroundColor = .clear
         return v
     }()
     
     let bookingView: UIView = {
         let v = UIView()
-        v.backgroundColor = .green
+        v.backgroundColor = #colorLiteral(red: 0.342161715, green: 0.7497660518, blue: 0.7723494172, alpha: 1)
         return v
     }()
     
     let nonOperationTopVIew: UIView = {
         let v = UIView()
-        v.backgroundColor = .cyan
+        v.backgroundColor = #colorLiteral(red: 0.7097254395, green: 0.7098491788, blue: 0.7097176313, alpha: 1)
+        let content = UILabel()
+        content.text = "Non-Operating hours"
+        content.textColor = .black
+        content.frame = .init(x: 10, y: 10, width: 200, height: 20)
+        v.addSubview(content)
         return v
     }()
     let nonOperationBottomVIew: UIView = {
         let v = UIView()
-        v.backgroundColor = .cyan
+        v.backgroundColor = #colorLiteral(red: 0.7097254395, green: 0.7098491788, blue: 0.7097176313, alpha: 1)
+        let content = UILabel()
+        content.text = "Non-Operating hours"
+        content.textColor = .black
+        content.frame = .init(x: 10, y: 10, width: 200, height: 20)
+        v.addSubview(content)
         return v
     }()
     
@@ -66,7 +90,7 @@ class CalendarViewController: UIViewController {
     
     var data: [String] {
         var str: [String] = []
-        for i in 1..<24 {
+        for i in 1...25 {
             var hour = ""
             var conditionTime = ""
             
@@ -83,6 +107,9 @@ class CalendarViewController: UIViewController {
         }
         return str
     }
+    
+    var hourApi: [Int] = [10, 16]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvTime.register(UINib(nibName: "HourCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -93,9 +120,12 @@ class CalendarViewController: UIViewController {
         pagerView.addSubview(bookingView)
         pagerView.addSubview(bottomView)
         bookingView.addSubview(displayTimeLable)
+        topView.addSubview(arrowTop)
+        bottomView.addSubview(arrowBottom)
+    
+        arrowTop.center = topView.center
+        arrowBottom.center = bottomView.center
         
-       
-
         topView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanTopView(_:))))
         topView.isUserInteractionEnabled = true
         
@@ -108,9 +138,9 @@ class CalendarViewController: UIViewController {
             displayTimeLable.centerYAnchor.constraint(equalTo: bookingView.centerYAnchor),
         ])
         
-        startTime = data[1]
-        endTime = data[2]
-        displayTimeLable.text = "\(startTime): 00 - \(endTime): 00"
+        startTime = data[hourApi[0] - 1]
+        endTime = data[hourApi[0]]
+        displayTimeLable.text = "\(startTime) - \(endTime)"
              
         
         
@@ -119,16 +149,21 @@ class CalendarViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        nonOperationTopVIew.frame = .init(x: 0, y: 0, width: pagerView.frame.width, height: 50)
+        nonOperationTopVIew.frame = .init(x: 0, y: 0, width: pagerView.frame.width, height: CGFloat(hourApi[0] * 50) - 50)
         
-        topView.frame = .init(x: 150, y: 40, width: 70, height: 10)
+        topView.frame = .init(x: 150, y: nonOperationTopVIew.frame.maxY - 10, width: 70, height: 10)
         
         bookingView.frame = .init(x: 0, y: topView.frame.maxY, width: pagerView.frame.width, height: 65)
         
         bottomView.frame = .init(x: 150, y: bookingView.frame.maxY, width: 70, height: 10)
         
         
-        nonOperationBottomVIew.frame = .init(x: 0, y: pagerView.frame.height - 100, width: pagerView.frame.width, height: 100)
+        nonOperationBottomVIew.frame = .init(x: 0, y:  CGFloat(hourApi[1] * 50), width: pagerView.frame.width, height: pagerView.frame.height - CGFloat(hourApi[1] * 50))
+        
+        arrowTop.frame = .init(x: 0, y: 0, width: 20, height: bottomView.frame.height)
+        arrowBottom.frame = .init(x: 0, y: 0, width: 20, height: topView.frame.height)
+        
+    
         
 
     }
@@ -145,9 +180,7 @@ class CalendarViewController: UIViewController {
         
         var aNumber = 0
         var bNumber = 0
-        
-        var haftResult = "00"
-        
+
         for i in 0..<arr.count {
             if i == 0 {
                 bNumber = 1
@@ -157,14 +190,7 @@ class CalendarViewController: UIViewController {
                 aNumber = 1
             }
             if currentHeight >= preHeight + aNumber && currentHeight <= standarHeight * bNumber {
-                
-                if currentHeight >= standarHeight * bNumber - 25 {
-                    haftResult = "30"
-                } else {
-                    haftResult = "00"
-                }
-                
-                result = "\(arr[i]) : \(haftResult) "
+                result = arr[i]
             }
             preHeight = standarHeight * bNumber
         }
@@ -186,7 +212,7 @@ class CalendarViewController: UIViewController {
                 bookingView.frame = frameBookingView
                 
                 if topView.frame.maxY <= nonOperationTopVIew.frame.maxY {
-                    topView.frame = .init(x: 150, y: 40, width: 70, height: 10)
+                    topView.frame = .init(x: 150, y: nonOperationTopVIew.frame.maxY - 10, width: 70, height: 10)
                     frameBookingView.size.height = bottomView.frame.minY - topView.frame.maxY
                     frameBookingView.origin.y = topView.frame.maxY
                     bookingView.frame = frameBookingView

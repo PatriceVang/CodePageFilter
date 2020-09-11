@@ -1,16 +1,24 @@
 PODS:
+  - CalendarKit (0.13.13):
+    - DateToolsSwift
+  - DateToolsSwift (5.0.0)
   - JTCalendar (2.2.5)
 
 DEPENDENCIES:
+  - CalendarKit
   - JTCalendar
 
 SPEC REPOS:
   trunk:
+    - CalendarKit
+    - DateToolsSwift
     - JTCalendar
 
 SPEC CHECKSUMS:
+  CalendarKit: 54944443a5cbd633a533b971408b00e879f54a7d
+  DateToolsSwift: 4207ada6ad615d8dc076323d27037c94916dbfa6
   JTCalendar: 4056fd48735e1148b487acad35d72faea2387b25
 
-PODFILE CHECKSUM: ee3a58295e7b8fc343ba5e47cdf72061fe9b05d1
+PODFILE CHECKSUM: 529866a183c4bf6899b1e681347ca829d1655bde
 
 COCOAPODS: 1.9.3
