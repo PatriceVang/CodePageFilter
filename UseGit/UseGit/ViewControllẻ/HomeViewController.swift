@@ -14,21 +14,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< Updated upstream:UseGit/UseGit/ViewController.swift
+
         // Do any additional setup after loading the view.
         setupUI()
-        
-        
-        
-        
+
     }
     private func setupUI() {
-        
+
     }
 
-=======
-        title = "Home"
-        view.backgroundColor = .white
-    }
->>>>>>> Stashed changes:UseGit/UseGit/ViewControllẻ/HomeViewController.swift
 }
