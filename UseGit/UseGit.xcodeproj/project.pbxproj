@@ -12,6 +12,7 @@
 		187BC20F250F452A008FE02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187BC20E250F452A008FE02E /* Assets.xcassets */; };
 		187BC212250F452A008FE02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187BC210250F452A008FE02E /* LaunchScreen.storyboard */; };
 		187BC21B250F4611008FE02E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC21A250F4611008FE02E /* HomeViewController.swift */; };
+		187BC21D250F4977008FE02E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC21C250F4977008FE02E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		187BC211250F452A008FE02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187BC213250F452A008FE02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187BC21A250F4611008FE02E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		187BC21C250F4977008FE02E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				187BC21A250F4611008FE02E /* HomeViewController.swift */,
+				187BC21C250F4977008FE02E /* DetailViewController.swift */,
 			);
 			name = ViewController;
 			path = "ViewControllẻ";
@@ -146,6 +149,7 @@
 				187BC206250F4528008FE02E /* AppDelegate.swift in Sources */,
 				187BC208250F4528008FE02E /* SceneDelegate.swift in Sources */,
 				187BC21B250F4611008FE02E /* HomeViewController.swift in Sources */,
+				187BC21D250F4977008FE02E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
