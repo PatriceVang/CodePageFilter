@@ -13,6 +13,7 @@
 		187BC212250F452A008FE02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187BC210250F452A008FE02E /* LaunchScreen.storyboard */; };
 		187BC21B250F4611008FE02E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC21A250F4611008FE02E /* HomeViewController.swift */; };
 		187BC21D250F4977008FE02E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC21C250F4977008FE02E /* DetailViewController.swift */; };
+		187BC21F250F4FE5008FE02E /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC21E250F4FE5008FE02E /* OptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		187BC213250F452A008FE02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187BC21A250F4611008FE02E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		187BC21C250F4977008FE02E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		187BC21E250F4FE5008FE02E /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				187BC21A250F4611008FE02E /* HomeViewController.swift */,
 				187BC21C250F4977008FE02E /* DetailViewController.swift */,
+				187BC21E250F4FE5008FE02E /* OptionViewController.swift */,
 			);
 			name = ViewController;
 			path = "ViewControllẻ";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187BC206250F4528008FE02E /* AppDelegate.swift in Sources */,
+				187BC21F250F4FE5008FE02E /* OptionViewController.swift in Sources */,
 				187BC208250F4528008FE02E /* SceneDelegate.swift in Sources */,
 				187BC21B250F4611008FE02E /* HomeViewController.swift in Sources */,
 				187BC21D250F4977008FE02E /* DetailViewController.swift in Sources */,
