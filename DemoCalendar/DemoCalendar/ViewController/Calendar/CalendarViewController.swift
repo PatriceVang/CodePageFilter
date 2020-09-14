@@ -103,7 +103,7 @@ class CalendarViewController: UIViewController {
         return str
     }
     
-    var hourApi: [Int] = [9, 20]
+    var hourApi: [Int] = [9, 19]
     
     override func viewDidLoad() {
         super.viewDidLoad()
