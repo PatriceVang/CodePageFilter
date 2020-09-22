@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 
 
@@ -239,24 +240,23 @@ import UIKit
 
 
 //let sentence = "Madam Ronaldo David Vila Sarapova Ronaldo"
-
-
+//
+//
 //func allPalindSomeCounts(sentense: String) -> [String: Int]{
 //    let words = sentence.components(separatedBy: " ")
 //    var counts = [String: Int]()
 //    words.forEach { (word) in
 //        if isPalindrome(word: word) {
 //            let count = counts[word] ?? 0
-//
 //            counts[word] = count + 1
 //        } else {
 //
 //        }
 //    }
-//
+
 //    return counts
 //}
-//
+////
 //func isPalindrome(word: String) -> Bool {
 //    var currentIndex = 0
 //    let charater = Array(word.lowercased())
@@ -274,39 +274,89 @@ import UIKit
 ///123
 
 
-func reserver(number: Int) -> Int {
-    var reuslt = 0
-    var temNumber = number
-    while temNumber > 0 {
-        let donvi = temNumber % 10
-        reuslt *= 10
-        reuslt += donvi
-        temNumber = temNumber / 10
-        print(temNumber)
-    }
-    return reuslt
+//func reserver(number: Int) -> Int {
+//    var reuslt = 0
+//    var temNumber = number
+//    while temNumber > 0 {
+//        let donvi = temNumber % 10
+//        reuslt *= 10
+//        reuslt += donvi
+//        temNumber = temNumber / 10
+//        print(temNumber)
+//    }
+//    return reuslt
     
+//}
+//
+//reserver(number: 123)
+//
+//
+//
+//
+//var arr = [ 1, 2, 44, 5, 2, 4, 9, 5]
+//var temp = 0
+//
+//for i in 0..<arr.count {
+//    for j in 0..<arr.count - 1 {
+//        if arr[j] < arr[j + 1] {
+//            temp = arr[j + 1]
+//            arr[j + 1] = arr[j]
+//            arr[j] = temp
+//        }
+//
+//    }
+//}
+
+
+
+//print(arr)
+
+let dispatch = DispatchGroup()
+let gcd = DispatchQueue(label: "name")
+let sep = DispatchSemaphore(value: 0)
+
+var arr = [Int]()
+
+
+//dispatch.enter()
+DispatchQueue.global().async {
+    arr.append(1)
+    print("1")
+    sep.signal()
 }
+sep.wait()
+//dispatch.leave()
 
-reserver(number: 123)
-
-
-
-
-var arr = [ 1, 2, 44, 5, 2, 4, 9, 5]
-var temp = 0
-
-for i in 0..<arr.count {
-    for j in 0..<arr.count - 1 {
-        if arr[j] < arr[j + 1] {
-            temp = arr[j + 1]
-            arr[j + 1] = arr[j]
-            arr[j] = temp
-        }
-        
-    }
+//dispatch.enter()
+DispatchQueue.global().async {
+    arr.removeAll()
+    print("2")
+    sep.signal()
 }
+sep.wait()
+
+//dispatch.leave()
 
 
+//dispatch.enter()
 
-print(arr)
+DispatchQueue.global().async {
+    arr += [1,2,4,5,5,6,7,7,7,4,2,2,3,4,5,6,6]
+    print("3")
+    print(arr)
+    sep.signal()
+}
+sep.wait()
+
+//dispatch.leave()
+
+//dispatch.enter()
+//arr += [1,1,1,1,1,1,1]
+//print("4")
+//print(arr)
+//dispatch.leave()
+
+//dispatch.notify(queue: .main) {
+//    print("xong")
+//}
+

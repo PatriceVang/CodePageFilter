@@ -10,11 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    var a: Int?
+    
+    var number: Int? {
+        get {
+            return number
+        }
+        
+        set {
+            self.a = newValue
+        }
+    }
+    
  
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(2.square())
+//        print(2.square())
+        number = 6
+        
+        print(number)
+        
+        
 
     }
     

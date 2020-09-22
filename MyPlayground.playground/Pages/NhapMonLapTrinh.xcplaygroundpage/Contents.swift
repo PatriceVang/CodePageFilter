@@ -1452,31 +1452,31 @@ import Foundation
 
 //Bài 173 (*): Cho mảng 1 chiều các số nguyên. Hãy viết hàm tìm chữ số xuất hiện ít nhất trong mảng
 
-let arr = [1,4,1,2,6,64,3,4]
-var arrNew = [Int]()
+//let arr = [1,4,1,2,6,64,3,4]
+//var arrNew = [Int]()
 
 
-func tachChuSoInArr() {
-    for item in arr {
-        var itemNew = item
-        while item > 0 {
-            var chuSo = itemNew % 10
-            arrNew[chuSo] += 1
-            itemNew = itemNew / 10
-        }
-    }
-}
-
-func findNumberAppearLeast() -> Int {
-    var chuSoMin = arr[0] % 10
-    var index = 10
-    for  i in 0..<index {
-        if arrNew[i] != 0 {
-            chuSoMin = (arrNew[chuSoMin] < arrNew[i]) ? chuSoMin : i
-        }
-    }
-    return chuSoMin
-}
+//func tachChuSoInArr() {
+//    for item in arr {
+//        var itemNew = item
+//        while item > 0 {
+//            var chuSo = itemNew % 10
+//            arrNew[chuSo] += 1
+//            itemNew = itemNew / 10
+//        }
+//    }
+//}
+//
+//func findNumberAppearLeast() -> Int {
+//    var chuSoMin = arr[0] % 10
+//    var index = 10
+//    for  i in 0..<index {
+//        if arrNew[i] != 0 {
+//            chuSoMin = (arrNew[chuSoMin] < arrNew[i]) ? chuSoMin : i
+//        }
+//    }
+//    return chuSoMin
+//}
 
 
 

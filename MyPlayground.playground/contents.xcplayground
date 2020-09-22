@@ -4,5 +4,9 @@
         <page name='OOP'/>
         <page name='NhapMonLapTrinh'/>
         <page name='DataStructure'/>
+        <page name='Date'/>
+        <page name='Dependency inversion'/>
+        <page name='Observable'/>
+        <page name='Multithearding'/>
     </pages>
 </playground>

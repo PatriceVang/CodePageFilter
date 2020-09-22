@@ -104,4 +104,4 @@ import Foundation
 //    print(formatter.string(from: date))
 //}
 
-let today = Calendar.current.startOfDay(for: Date())
+//let today = Calendar.current.startOfDay(for: Date())
