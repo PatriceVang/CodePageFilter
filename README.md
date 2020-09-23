@@ -30,3 +30,4 @@ Các project con bao gồm:
 - DragDrogTableView: Drag drop Add Delete item TablView
 - DemoSwiftpackage: how to use swiftpackage, add account github -> create tag (each tag is version) -> push up github -> add dependency
 - DemoXCTest: use XCTest
+- Funny: customView handle menubar, multitarget
