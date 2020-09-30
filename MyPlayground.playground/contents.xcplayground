@@ -8,5 +8,7 @@
         <page name='Dependency inversion'/>
         <page name='Observable'/>
         <page name='Multithearding'/>
+        <page name='Decorator'/>
+        <page name='Closure'/>
     </pages>
 </playground>

@@ -143,21 +143,24 @@ import Foundation
 
 
 
-class A {
-    var defaul: Int {
-        get {
-            return 0
-        }
-        set {
-            defaul = newValue
-        }
-    }
-}
+//class A {
+//    var defaul: Int {
+//        get {
+//            return 0
+//        }
+//        set {
+//            defaul = newValue
+//        }
+//    }
+//}
+//
+//var a = A()
+//a.defaul = 7
+//
+//print("123")
 
-var a = A()
-a.defaul = 7
 
-print("123")
+
 
 
 

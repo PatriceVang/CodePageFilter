@@ -1269,21 +1269,24 @@ import Foundation
 
 
 
-class User {
-    var age = 1
-    init(age: Int) {
-        self.age = age
-    }
-}
-var user1: User //tao ra o nho nhung chua co data
-user1 = User(age: 20) //truyen data cho o nho
-user1.age = 22 //user1 = 22
-var user2 = User(age: 25) //tao ra o nho voi data: user2 = 25
-print(user1)
+//class User {
+//    var age = 1
+//    init(age: Int) {
+//        self.age = age
+//    }
+//}
+//var user1: User //tao ra o nho nhung chua co data
+//user1 = User(age: 20) //truyen data cho o nho
+//user1.age = 22 //user1 = 22
+//var user2 = User(age: 25) //tao ra o nho voi data: user2 = 25
+//print(user1)
 //user2 = user1
 //user1.age = 30
 //
 //print(user1)
+
+
+
 
 
 
