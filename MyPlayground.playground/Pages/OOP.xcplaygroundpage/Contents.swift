@@ -1285,6 +1285,132 @@ import Foundation
 //
 //print(user1)
 
+//public var store = 0
+//
+//class Water {
+    
+//
+//
+//    var name: String?
+//
+//    static var amount: Int = 0
+//    init(name: String) {
+//        self.name = name
+//        store += 1
+//    }
+//}
+//
+//var a = Water(name: "Organe")
+//var b = Water(name: "Apple")
+//store
+
+
+//protocol A {
+//    func insora()
+//}
+//
+//extension A {
+//    func insora() {
+//        print("123456")
+//    }
+//}
+//
+//class AB: A {
+//    func insora() {
+//        print("8888")
+//    }
+//}
+//
+//var a = AB()
+//a.insora()
+
+
+//protocol Boxing where Self: Sport {
+//    func kickBoxing() -> Int
+//}
+
+//protocol Sport {
+//    var total: Int {get}
+//}
+//
+//extension Boxing {
+//    func kickBoxing() -> Int {
+//        return total
+//    }
+//}
+//
+//class A {
+//
+//    static let shared = A()
+//
+//    private init() {
+//        print("234")
+//    }
+//
+//    func number() {
+//        print("number")
+//    }
+//}
+//A.shared.number()
+//var a = A(name: "123")
+//a.kickBoxing()
+
+protocol Information:  Hashable {
+    var name: String {get set}
+}
+
+struct Dog: Information {
+     
+    var hashValue: Int {
+        return 0
+    }
+
+    
+    var name: String {
+        get {
+            return "Cho"
+        }
+        set {
+            self.name = newValue
+        }
+    }
+    
+    
+}
+
+struct Cat: Information {
+    
+    var hashValue: Int {
+        return 0
+    }
+
+    var name: String {
+        get {
+            return "Meo"
+        }
+        set {
+            self.name = newValue
+        }
+    }
+
+}
+
+var dog = Dog()
+var cat = Cat()
+
+dog.name
+cat.name
+if dog.hashValue == cat.hashValue {
+    print()
+}
+
+
+
+
+
+
+
+
 
 
 

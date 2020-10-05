@@ -10,5 +10,7 @@
         <page name='Multithearding'/>
         <page name='Decorator'/>
         <page name='Closure'/>
+        <page name='ARC'/>
+        <page name='Enum'/>
     </pages>
 </playground>

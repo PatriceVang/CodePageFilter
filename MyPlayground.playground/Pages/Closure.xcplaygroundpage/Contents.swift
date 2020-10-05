@@ -145,7 +145,7 @@ import Foundation
 //lion.canfly()
 
 
-
+/*
 class Computer {
     var name: String?
     required init(name: String?) {
@@ -194,6 +194,17 @@ var mob = Mobile(name: nil)
 //com.name
 mob.name
 mob.sensor
+*/
+var a = 10
 
+var computed: Int {
+    get {
+        return a
+    }
+    
+    set {
+        a = newValue
+    }
+}
 
 

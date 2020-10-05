@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		189CAD44252AC6E600CB1B31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CAD43252AC6E600CB1B31 /* AppDelegate.swift */; };
+		189CAD46252AC6E600CB1B31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CAD45252AC6E600CB1B31 /* SceneDelegate.swift */; };
+		189CAD4D252AC6E900CB1B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189CAD4C252AC6E900CB1B31 /* Assets.xcassets */; };
+		189CAD50252AC6E900CB1B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189CAD4E252AC6E900CB1B31 /* LaunchScreen.storyboard */; };
+		189CAD5A252AC74300CB1B31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CAD59252AC74300CB1B31 /* HomeViewController.swift */; };
+		18D0B8E5252ACAC400A49A94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D0B8E4252ACAC400A49A94 /* GoogleService-Info.plist */; };
+		18D0B900252ACD4400A49A94 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B8FF252ACD4400A49A94 /* TodoCell.swift */; };
+		18D0B905252ACE3F00A49A94 /* ToDoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B904252ACE3F00A49A94 /* ToDoDB.swift */; };
+		18D0B90A252AD6D000A49A94 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B909252AD6D000A49A94 /* Todo.swift */; };
+		18D0B910252AFDCE00A49A94 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B90F252AFDCE00A49A94 /* UserViewController.swift */; };
+		18D0B913252AFFB400A49A94 /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B912252AFFB400A49A94 /* UserDB.swift */; };
+		18D0B916252B24B100A49A94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B915252B24B100A49A94 /* User.swift */; };
+		18D0B919252B26FB00A49A94 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B918252B26FB00A49A94 /* DetailViewController.swift */; };
+		AD3DF83502BAFDBA6A1E43FD /* Pods_DemoTodoWithCloudFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBF894DBC303D083A93AFE5 /* Pods_DemoTodoWithCloudFirestore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A0B2AAEC164D34930B000F6 /* Pods-DemoTodoWithCloudFirestore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTodoWithCloudFirestore.release.xcconfig"; path = "Target Support Files/Pods-DemoTodoWithCloudFirestore/Pods-DemoTodoWithCloudFirestore.release.xcconfig"; sourceTree = "<group>"; };
+		189CAD40252AC6E600CB1B31 /* DemoTodoWithCloudFirestore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTodoWithCloudFirestore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		189CAD43252AC6E600CB1B31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		189CAD45252AC6E600CB1B31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		189CAD4C252AC6E900CB1B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		189CAD4F252AC6E900CB1B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		189CAD51252AC6E900CB1B31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189CAD59252AC74300CB1B31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18D0B8E4252ACAC400A49A94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18D0B8FF252ACD4400A49A94 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		18D0B904252ACE3F00A49A94 /* ToDoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDB.swift; sourceTree = "<group>"; };
+		18D0B909252AD6D000A49A94 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		18D0B90F252AFDCE00A49A94 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		18D0B912252AFFB400A49A94 /* UserDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
+		18D0B915252B24B100A49A94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18D0B918252B26FB00A49A94 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4BBF894DBC303D083A93AFE5 /* Pods_DemoTodoWithCloudFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTodoWithCloudFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33C08F6ACF96922A4218261 /* Pods-DemoTodoWithCloudFirestore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTodoWithCloudFirestore.debug.xcconfig"; path = "Target Support Files/Pods-DemoTodoWithCloudFirestore/Pods-DemoTodoWithCloudFirestore.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		189CAD3D252AC6E600CB1B31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3DF83502BAFDBA6A1E43FD /* Pods_DemoTodoWithCloudFirestore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		189CAD37252AC6E600CB1B31 = {
+			isa = PBXGroup;
+			children = (
+				189CAD42252AC6E600CB1B31 /* DemoTodoWithCloudFirestore */,
+				189CAD41252AC6E600CB1B31 /* Products */,
+				63966EFCEA88949C49083345 /* Pods */,
+				F23DB52838F6A3D81B222D70 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		189CAD41252AC6E600CB1B31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				189CAD40252AC6E600CB1B31 /* DemoTodoWithCloudFirestore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		189CAD42252AC6E600CB1B31 /* DemoTodoWithCloudFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				18D0B908252AD6C400A49A94 /* Model */,
+				18D0B903252ACE2900A49A94 /* DB */,
+				18D0B8DE252AC9FD00A49A94 /* Support */,
+				189CAD58252AC72200CB1B31 /* ViewController */,
+				189CAD51252AC6E900CB1B31 /* Info.plist */,
+				18D0B8E4252ACAC400A49A94 /* GoogleService-Info.plist */,
+			);
+			path = DemoTodoWithCloudFirestore;
+			sourceTree = "<group>";
+		};
+		189CAD58252AC72200CB1B31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18D0B8FE252ACD2A00A49A94 /* Cell */,
+				189CAD59252AC74300CB1B31 /* HomeViewController.swift */,
+				18D0B90F252AFDCE00A49A94 /* UserViewController.swift */,
+				18D0B918252B26FB00A49A94 /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18D0B8DE252AC9FD00A49A94 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				189CAD43252AC6E600CB1B31 /* AppDelegate.swift */,
+				189CAD45252AC6E600CB1B31 /* SceneDelegate.swift */,
+				189CAD4C252AC6E900CB1B31 /* Assets.xcassets */,
+				189CAD4E252AC6E900CB1B31 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		18D0B8FE252ACD2A00A49A94 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18D0B8FF252ACD4400A49A94 /* TodoCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18D0B903252ACE2900A49A94 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				18D0B904252ACE3F00A49A94 /* ToDoDB.swift */,
+				18D0B912252AFFB400A49A94 /* UserDB.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		18D0B908252AD6C400A49A94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18D0B909252AD6D000A49A94 /* Todo.swift */,
+				18D0B915252B24B100A49A94 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63966EFCEA88949C49083345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D33C08F6ACF96922A4218261 /* Pods-DemoTodoWithCloudFirestore.debug.xcconfig */,
+				0A0B2AAEC164D34930B000F6 /* Pods-DemoTodoWithCloudFirestore.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F23DB52838F6A3D81B222D70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BBF894DBC303D083A93AFE5 /* Pods_DemoTodoWithCloudFirestore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		189CAD3F252AC6E600CB1B31 /* DemoTodoWithCloudFirestore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189CAD54252AC6E900CB1B31 /* Build configuration list for PBXNativeTarget "DemoTodoWithCloudFirestore" */;
+			buildPhases = (
+				DAC41C4AC19B0732D252EF2F /* [CP] Check Pods Manifest.lock */,
+				189CAD3C252AC6E600CB1B31 /* Sources */,
+				189CAD3D252AC6E600CB1B31 /* Frameworks */,
+				189CAD3E252AC6E600CB1B31 /* Resources */,
+				0BA4E42944C8B285CEB2F2D3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoTodoWithCloudFirestore;
+			productName = DemoTodoWithCloudFirestore;
+			productReference = 189CAD40252AC6E600CB1B31 /* DemoTodoWithCloudFirestore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		189CAD38252AC6E600CB1B31 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					189CAD3F252AC6E600CB1B31 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 189CAD3B252AC6E600CB1B31 /* Build configuration list for PBXProject "DemoTodoWithCloudFirestore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 189CAD37252AC6E600CB1B31;
+			productRefGroup = 189CAD41252AC6E600CB1B31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				189CAD3F252AC6E600CB1B31 /* DemoTodoWithCloudFirestore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		189CAD3E252AC6E600CB1B31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189CAD50252AC6E900CB1B31 /* LaunchScreen.storyboard in Resources */,
+				189CAD4D252AC6E900CB1B31 /* Assets.xcassets in Resources */,
+				18D0B8E5252ACAC400A49A94 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BA4E42944C8B285CEB2F2D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTodoWithCloudFirestore/Pods-DemoTodoWithCloudFirestore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTodoWithCloudFirestore/Pods-DemoTodoWithCloudFirestore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTodoWithCloudFirestore/Pods-DemoTodoWithCloudFirestore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC41C4AC19B0732D252EF2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTodoWithCloudFirestore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		189CAD3C252AC6E600CB1B31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D0B910252AFDCE00A49A94 /* UserViewController.swift in Sources */,
+				189CAD44252AC6E600CB1B31 /* AppDelegate.swift in Sources */,
+				18D0B90A252AD6D000A49A94 /* Todo.swift in Sources */,
+				189CAD46252AC6E600CB1B31 /* SceneDelegate.swift in Sources */,
+				18D0B913252AFFB400A49A94 /* UserDB.swift in Sources */,
+				18D0B916252B24B100A49A94 /* User.swift in Sources */,
+				189CAD5A252AC74300CB1B31 /* HomeViewController.swift in Sources */,
+				18D0B919252B26FB00A49A94 /* DetailViewController.swift in Sources */,
+				18D0B905252ACE3F00A49A94 /* ToDoDB.swift in Sources */,
+				18D0B900252ACD4400A49A94 /* TodoCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		189CAD4E252AC6E900CB1B31 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189CAD4F252AC6E900CB1B31 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		189CAD52252AC6E900CB1B31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		189CAD53252AC6E900CB1B31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		189CAD55252AC6E900CB1B31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33C08F6ACF96922A4218261 /* Pods-DemoTodoWithCloudFirestore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = DemoTodoWithCloudFirestore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTodoWithCloudFirestore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		189CAD56252AC6E900CB1B31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0B2AAEC164D34930B000F6 /* Pods-DemoTodoWithCloudFirestore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5493SYWL5;
+				INFOPLIST_FILE = DemoTodoWithCloudFirestore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = patrice.DemoTodoWithCloudFirestore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		189CAD3B252AC6E600CB1B31 /* Build configuration list for PBXProject "DemoTodoWithCloudFirestore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189CAD52252AC6E900CB1B31 /* Debug */,
+				189CAD53252AC6E900CB1B31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		189CAD54252AC6E900CB1B31 /* Build configuration list for PBXNativeTarget "DemoTodoWithCloudFirestore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189CAD55252AC6E900CB1B31 /* Debug */,
+				189CAD56252AC6E900CB1B31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 189CAD38252AC6E600CB1B31 /* Project object */;
+}
