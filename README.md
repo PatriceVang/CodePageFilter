@@ -32,3 +32,4 @@ Các project con bao gồm:
 - DemoXCTest: use XCTest
 - Funny: customView handle menubar, multitarget,
 - DemoToDoCloudFireStore: cloud firetore CRUD
+- DemoCloudStorage: download, upload, delete image
