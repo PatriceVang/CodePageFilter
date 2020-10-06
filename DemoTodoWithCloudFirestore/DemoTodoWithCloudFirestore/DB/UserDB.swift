@@ -15,6 +15,7 @@ protocol FeatureDB {
     func add(entity: T)
     func getAll(completion: @escaping([T]) -> Void)
     func delete(entity: T)
+    func update(entity: T)
 }
 
 
@@ -22,14 +23,11 @@ protocol FeatureDB {
 
 class UserDB: FeatureDB {
     
-    
     typealias T = User
-    
     static let shared = UserDB()
     
     var ref: DocumentReference? = nil
     let db = Firestore.firestore()
-    
     
     func add(entity: User) {
         ref = db.collection("users").addDocument(data: [
@@ -55,7 +53,6 @@ class UserDB: FeatureDB {
                     print(err.localizedDescription)
                 } else {
                     for docs in query!.documents {
-                        
                         if let doc = docs.data() as? [String: String] {
                             let user = User(id: doc["id"], name: doc["name"], age: doc["age"], major: doc["major"], idDoc: docs.documentID)
                             users.append(user)
@@ -70,6 +67,12 @@ class UserDB: FeatureDB {
     
     func delete(entity: User) {
         db.collection("users").document(entity.idDoc).delete()
+    }
+    
+    func update(entity: User) {
+        db.collection("users").document(entity.idDoc).updateData([
+            "name": entity.name ?? ""
+        ])
     }
     
     

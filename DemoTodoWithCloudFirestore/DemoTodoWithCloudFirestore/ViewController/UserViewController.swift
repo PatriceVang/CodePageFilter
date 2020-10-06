@@ -16,7 +16,10 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         UserDB.shared.getAll { [weak self] (user) in
             DispatchQueue.main.async {
                 let userId = user.map {$0.id}
@@ -111,6 +114,7 @@ extension UserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailVC = DetailViewController()
+        detailVC.user = users[indexPath.row]
         navigationController?.pushViewController(detailVC, animated: true)
         
     }

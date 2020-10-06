@@ -11,7 +11,7 @@ import SnapKit
 
 class DetailViewController: UIViewController {
     
-    
+    var user: User?
     
     let stackView: UIStackView = {
        let stV = UIStackView()
@@ -63,9 +63,8 @@ class DetailViewController: UIViewController {
         if textfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             print("Let's fill in new name")
         }
-        
-        
-        
+        user?.name = textfield.text
+        UserDB.shared.update(entity: user!)
     }
     
 }
