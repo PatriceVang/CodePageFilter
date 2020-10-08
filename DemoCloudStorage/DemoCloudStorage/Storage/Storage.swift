@@ -45,10 +45,7 @@ class StorageService: Feature {
     }
     
     func download(completion: @escaping (Data) -> Void) {
-        
         //return data
-        
-        
 // "gs://fir-cloudstorage-5c8a8.appspot.com/images/0FA649D1-94B0-4C86-A9F6-CF43B9D85C37"
         let fileRef = ref.child("images").child("0FA649D1-94B0-4C86-A9F6-CF43B9D85C37")
         fileRef.getData(maxSize: 1 * 1024 * 1024) { (data, err) in

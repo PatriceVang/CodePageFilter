@@ -22,7 +22,6 @@ class HomeViewController: UIViewController {
        let btn = UIButton()
         btn.setTitle("Upload", for: .normal)
         btn.setTitleColor(.blue, for: .normal)
-        
         return btn
     }()
     
@@ -32,12 +31,12 @@ class HomeViewController: UIViewController {
         return img
     }()
     
+    var index = 0
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+
     }
     
     private func setupUI() {
@@ -55,7 +54,6 @@ class HomeViewController: UIViewController {
             make.centerY.equalTo(self.view)
         }
         
-        
         self.view.addSubview(uploadButton)
         uploadButton.addTarget(self, action: #selector(onTapUploadButton(_sender:)), for: .touchUpInside)
         uploadButton.snp.makeConstraints { (make) in
@@ -64,6 +62,24 @@ class HomeViewController: UIViewController {
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Down load", style: .plain, target: self, action: #selector(onTapDownloadButton(_:)))
+        
+        let img1 = UIImage(named: "imgCancle")
+        let img2 = UIImage(named: "imgTv")
+        let img3 = UIImage(named: "images-4")
+        
+
+        
+        let arrImage: [UIImage] = [img1!, img2!, img3!]
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [self] (timer) in
+            if index > 2 {
+                index = 0
+            }
+            presentImage.image = arrImage[index]
+            index += 1
+        }
+        
     }
     
     @objc func onTapUploadButton(_sender: UIButton) {
@@ -85,6 +101,7 @@ class HomeViewController: UIViewController {
                 print(err.localizedDescription)
             }
         }
+        
     }
     
 
