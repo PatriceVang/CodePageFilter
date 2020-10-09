@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18AF4C28251B34F200F34517"
-               BuildableName = "Funny DEV.app"
-               BlueprintName = "Funny DEV"
+               BuildableName = "Funny Dev.app"
+               BlueprintName = "Funny Dev"
                ReferencedContainer = "container:Funny.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18AF4C28251B34F200F34517"
-            BuildableName = "Funny DEV.app"
-            BlueprintName = "Funny DEV"
+            BuildableName = "Funny Dev.app"
+            BlueprintName = "Funny Dev"
             ReferencedContainer = "container:Funny.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18AF4C28251B34F200F34517"
-            BuildableName = "Funny DEV.app"
-            BlueprintName = "Funny DEV"
+            BuildableName = "Funny Dev.app"
+            BlueprintName = "Funny Dev"
             ReferencedContainer = "container:Funny.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

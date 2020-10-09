@@ -33,3 +33,5 @@ Các project con bao gồm:
 - Funny: customView handle menubar, multitarget,
 - DemoToDoCloudFireStore: cloud firetore CRUD
 - DemoCloudStorage: download, upload, delete image, timer change image
+- DemoSlideMenu: use library
+- SideMenuMakeSelf: side menu make self
