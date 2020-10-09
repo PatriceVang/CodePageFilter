@@ -28,6 +28,12 @@
 		18AF4C40251B357900F34517 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18548F912515B25E007F60FA /* HomeViewController.swift */; };
 		18AF4C43251B357900F34517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18548F6225159D6A007F60FA /* LaunchScreen.storyboard */; };
 		18AF4C44251B357900F34517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18548F6025159D6A007F60FA /* Assets.xcassets */; };
+		18E3D1E9252ECCE000B25905 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3D1E7252ECCE000B25905 /* DetailViewController.swift */; };
+		18E3D1EA252ECCE000B25905 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3D1E7252ECCE000B25905 /* DetailViewController.swift */; };
+		18E3D1EB252ECCE000B25905 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3D1E7252ECCE000B25905 /* DetailViewController.swift */; };
+		18E3D1EC252ECCE000B25905 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3D1E8252ECCE000B25905 /* DetailViewController.xib */; };
+		18E3D1ED252ECCE000B25905 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3D1E8252ECCE000B25905 /* DetailViewController.xib */; };
+		18E3D1EE252ECCE000B25905 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3D1E8252ECCE000B25905 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,8 @@
 		18AF4C37251B34F200F34517 /* Funny Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Funny Dev.plist"; path = "/Users/apple/Project/Funny/Funny Dev.plist"; sourceTree = "<absolute>"; };
 		18AF4C48251B357900F34517 /* Funny Stag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Funny Stag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AF4C49251B357900F34517 /* Funny Stag.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Funny Stag.plist"; path = "/Users/apple/Project/Funny/Funny Stag.plist"; sourceTree = "<absolute>"; };
+		18E3D1E7252ECCE000B25905 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18E3D1E8252ECCE000B25905 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				18548F912515B25E007F60FA /* HomeViewController.swift */,
+				18E3D1E7252ECCE000B25905 /* DetailViewController.swift */,
+				18E3D1E8252ECCE000B25905 /* DetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18548F6425159D6A007F60FA /* LaunchScreen.storyboard in Resources */,
+				18E3D1EC252ECCE000B25905 /* DetailViewController.xib in Resources */,
 				18548F6125159D6A007F60FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18AF4C31251B34F200F34517 /* LaunchScreen.storyboard in Resources */,
+				18E3D1ED252ECCE000B25905 /* DetailViewController.xib in Resources */,
 				18AF4C32251B34F200F34517 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18AF4C43251B357900F34517 /* LaunchScreen.storyboard in Resources */,
+				18E3D1EE252ECCE000B25905 /* DetailViewController.xib in Resources */,
 				18AF4C44251B357900F34517 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +285,7 @@
 				18548FA02515B378007F60FA /* ButtonBar.swift in Sources */,
 				18548F5825159D69007F60FA /* AppDelegate.swift in Sources */,
 				18548F5A25159D69007F60FA /* SceneDelegate.swift in Sources */,
+				18E3D1E9252ECCE000B25905 /* DetailViewController.swift in Sources */,
 				18548F982515B319007F60FA /* MenuBar.swift in Sources */,
 				18548F922515B25E007F60FA /* HomeViewController.swift in Sources */,
 			);
@@ -284,6 +298,7 @@
 				18AF4C2A251B34F200F34517 /* ButtonBar.swift in Sources */,
 				18AF4C2B251B34F200F34517 /* AppDelegate.swift in Sources */,
 				18AF4C2C251B34F200F34517 /* SceneDelegate.swift in Sources */,
+				18E3D1EA252ECCE000B25905 /* DetailViewController.swift in Sources */,
 				18AF4C2D251B34F200F34517 /* MenuBar.swift in Sources */,
 				18AF4C2E251B34F200F34517 /* HomeViewController.swift in Sources */,
 			);
@@ -296,6 +311,7 @@
 				18AF4C3C251B357900F34517 /* ButtonBar.swift in Sources */,
 				18AF4C3D251B357900F34517 /* AppDelegate.swift in Sources */,
 				18AF4C3E251B357900F34517 /* SceneDelegate.swift in Sources */,
+				18E3D1EB252ECCE000B25905 /* DetailViewController.swift in Sources */,
 				18AF4C3F251B357900F34517 /* MenuBar.swift in Sources */,
 				18AF4C40251B357900F34517 /* HomeViewController.swift in Sources */,
 			);

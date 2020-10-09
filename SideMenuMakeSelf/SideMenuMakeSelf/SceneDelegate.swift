@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Funny
+//  SideMenuMakeSelf
 //
-//  Created by Apple on 9/19/20.
+//  Created by Apple on 10/8/20.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scenes = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scenes)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: DetailViewController())
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
