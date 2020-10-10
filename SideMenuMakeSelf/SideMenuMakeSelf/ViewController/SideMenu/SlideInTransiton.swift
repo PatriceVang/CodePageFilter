@@ -100,6 +100,8 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         print(456)
     }
     
+    
+    // Not finish
     @objc func onPanViewTemp(_ pan: UIPanGestureRecognizer) {
         let translaction = pan.translation(in: pan.view)
 

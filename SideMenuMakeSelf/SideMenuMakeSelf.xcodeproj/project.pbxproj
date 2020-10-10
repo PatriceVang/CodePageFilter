@@ -23,11 +23,6 @@
 		1892217D25301D420011DF93 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892217B25301D420011DF93 /* ProfileViewController.swift */; };
 		1892217E25301D420011DF93 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892217C25301D420011DF93 /* ProfileViewController.xib */; };
 		1892218925303CF60011DF93 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892218825303CF60011DF93 /* MainView.swift */; };
-		189221BC253058290011DF93 /* NewSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189221BA253058290011DF93 /* NewSideMenuViewController.swift */; };
-		189221BD253058290011DF93 /* NewSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189221BB253058290011DF93 /* NewSideMenuViewController.xib */; };
-		189221C1253058540011DF93 /* SideMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189221C0253058540011DF93 /* SideMenuButton.swift */; };
-		189221C525305BA20011DF93 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189221C425305BA20011DF93 /* HamburgerView.swift */; };
-		189221C925305BBE0011DF93 /* BaseVIewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189221C825305BBE0011DF93 /* BaseVIewXib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +44,6 @@
 		1892217B25301D420011DF93 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1892217C25301D420011DF93 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		1892218825303CF60011DF93 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		189221BA253058290011DF93 /* NewSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSideMenuViewController.swift; sourceTree = "<group>"; };
-		189221BB253058290011DF93 /* NewSideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSideMenuViewController.xib; sourceTree = "<group>"; };
-		189221C0253058540011DF93 /* SideMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuButton.swift; sourceTree = "<group>"; };
-		189221C425305BA20011DF93 /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
-		189221C825305BBE0011DF93 /* BaseVIewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVIewXib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +89,6 @@
 		1854FBB8252F230E002B389B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				189221B9253058120011DF93 /* NewSideMenu */,
 				1854FBB9252F2316002B389B /* Home */,
 				1892217425301D1A0011DF93 /* Profile */,
 				1892217325301D130011DF93 /* Event */,
@@ -120,7 +109,7 @@
 		1854FBBA252F231B002B389B /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				1892218725303CE60011DF93 /* NavibarView */,
+				1892218725303CE60011DF93 /* MainView */,
 				1854FBCA252F2458002B389B /* Cell */,
 				1854FBC5252F23D1002B389B /* LeftMenuViewController.swift */,
 				1854FBC6252F23D1002B389B /* LeftMenuViewController.xib */,
@@ -156,32 +145,12 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		1892218725303CE60011DF93 /* NavibarView */ = {
+		1892218725303CE60011DF93 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				1892218825303CF60011DF93 /* MainView.swift */,
 			);
-			path = NavibarView;
-			sourceTree = "<group>";
-		};
-		189221B9253058120011DF93 /* NewSideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				189221C325305B6D0011DF93 /* HamburgerView */,
-				189221BA253058290011DF93 /* NewSideMenuViewController.swift */,
-				189221BB253058290011DF93 /* NewSideMenuViewController.xib */,
-				189221C0253058540011DF93 /* SideMenuButton.swift */,
-			);
-			path = NewSideMenu;
-			sourceTree = "<group>";
-		};
-		189221C325305B6D0011DF93 /* HamburgerView */ = {
-			isa = PBXGroup;
-			children = (
-				189221C425305BA20011DF93 /* HamburgerView.swift */,
-				189221C825305BBE0011DF93 /* BaseVIewXib.swift */,
-			);
-			path = HamburgerView;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1854FBAF252F22F6002B389B /* LaunchScreen.storyboard in Resources */,
-				189221BD253058290011DF93 /* NewSideMenuViewController.xib in Resources */,
 				1854FBAC252F22F6002B389B /* Assets.xcassets in Resources */,
 				1892217E25301D420011DF93 /* ProfileViewController.xib in Resources */,
 				1854FBC8252F23D1002B389B /* LeftMenuViewController.xib in Resources */,
@@ -261,15 +229,11 @@
 			files = (
 				1854FBCD252F2473002B389B /* LeftCell.swift in Sources */,
 				1854FBA3252F22F3002B389B /* AppDelegate.swift in Sources */,
-				189221C525305BA20011DF93 /* HamburgerView.swift in Sources */,
 				1854FBA5252F22F3002B389B /* SceneDelegate.swift in Sources */,
 				1892218925303CF60011DF93 /* MainView.swift in Sources */,
 				1854FBBD252F232A002B389B /* HomeViewController.swift in Sources */,
-				189221BC253058290011DF93 /* NewSideMenuViewController.swift in Sources */,
-				189221C1253058540011DF93 /* SideMenuButton.swift in Sources */,
 				1892217725301D300011DF93 /* EventViewController.swift in Sources */,
 				1892217D25301D420011DF93 /* ProfileViewController.swift in Sources */,
-				189221C925305BBE0011DF93 /* BaseVIewXib.swift in Sources */,
 				18922171253012C90011DF93 /* SlideInTransiton.swift in Sources */,
 				1854FBC7252F23D1002B389B /* LeftMenuViewController.swift in Sources */,
 			);
