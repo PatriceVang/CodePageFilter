@@ -7,6 +7,7 @@
 
 import UIKit
 import LGSideMenuController
+import WKAwesomeMenu
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,10 +20,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scenes = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scenes)
+       
+        
+        let options = WKAwesomeMenuOptions.defaultOptions()
+        let awesomeVC = AwesomeViewController()
+        let leftVC = SideMenuTableViewController()
+//        leftVC.delegate = awesomeVC
+        
+        let navigation = UINavigationController(rootViewController: awesomeVC)
+        let awesomeMenu = WKAwesomeMenu(rootViewController: navigation, menuViewController: leftVC, options: options)
+        awesomeMenu.view.backgroundColor = .white
+        
         window?.makeKeyAndVisible()
-        
-        
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        window?.rootViewController = awesomeMenu
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

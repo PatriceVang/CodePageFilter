@@ -9,15 +9,8 @@ import UIKit
 
 class LeftViewController: UIViewController {
     
-    private let titlesArray = ["Open Right View",
-                                "",
-                                "Change Root VC",
-                                "",
-                                "Profile",
-                                "News",
-                                "Articles",
-                                "Video",
-                                "Music"]
+    private let titlesArray = ["Home", "Event", "Profile"]
+    weak var delegate: LeftViewControllerDelegate?
 
     @IBOutlet weak var leftTableView: UITableView!
     
@@ -25,6 +18,7 @@ class LeftViewController: UIViewController {
         super.viewDidLoad()
 
         leftTableView.register(UINib(nibName: "LeftViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    
     }
     
 
@@ -39,16 +33,16 @@ extension LeftViewController: UITableViewDataSource {
         let cell = leftTableView.dequeueReusableCell(withIdentifier: "cell") as! LeftViewCell
         cell.textLabel?.text = titlesArray[indexPath.row]
         return cell
-//        cell.separatorView.isHidden = (indexPath.row <= 3 || indexPath.row == self.titlesArray.count-1)
-//               cell.isUserInteractionEnabled = (indexPath.row != 1 && indexPath.row != 3)
+ 
     }
 }
 
 extension LeftViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let detailVC = DetailViewController()
-        navigationController?.pushViewController(detailVC, animated: true)
-        
+        print(indexPath.row)
     }
+}
+
+protocol LeftViewControllerDelegate: class {
+    func moveToScreen(at index: Int)
 }

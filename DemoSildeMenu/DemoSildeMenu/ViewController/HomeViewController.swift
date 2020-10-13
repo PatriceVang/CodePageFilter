@@ -12,9 +12,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         setupUI()
     }
     
@@ -26,19 +23,21 @@ class HomeViewController: UIViewController {
         print("tap")
         
         let navigation = UINavigationController(rootViewController: self)
-        self.view.layer.cornerRadius = 10
-        self.view.layer.masksToBounds = true
         
         let mainVC = MainController()
         mainVC.rootViewController = navigation
-        
+
         let window = UIApplication.shared.keyWindow!
         window.rootViewController = mainVC
         
         UIView.transition(with: window, duration: 0.3, options: [.transitionCrossDissolve], animations: nil, completion: nil)
-
-        sideMenuController?.showLeftViewAnimated()
+        
+        sideMenuController?.showLeftView()
+        
+       
         
     }
 
 }
+
+
