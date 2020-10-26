@@ -20,7 +20,7 @@ class Animals {
 
 class Lion: Animals {
     
-    weak var animal: Lion?
+    var animal: Lion?
 
 }
 
@@ -30,9 +30,11 @@ var a = Animals(name: "Lion")
 var c = Lion(name: "Cop trai")
 var d = Lion(name: "Cop cai")
 d?.animal = c
-c?.animal = d
-c = nil
-d = nil
+//c?.animal = d
+//c = nil
+//d = nil
+
+
 
 
 //var arr = [a, b, c]

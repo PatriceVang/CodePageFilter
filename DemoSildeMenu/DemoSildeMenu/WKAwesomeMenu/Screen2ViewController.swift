@@ -14,6 +14,7 @@ class Screen2ViewController: BaseViewController {
 
         self.title = "Sreen 2"
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(onTapMenuBarButton))
+        self.view.backgroundColor = .yellow
         
     
 //

@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         
         self.view.layer.cornerRadius = 20
-        self.view.clipsToBounds = true
+        self.view.layer.masksToBounds = true
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(onTapMenuBarButton))
         

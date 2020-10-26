@@ -17,19 +17,15 @@ class MainController: LGSideMenuController {
         self.view.backgroundColor = .white
         
 //        sideMenuController?.delegate = self
+//        self.rootViewLayerCornerRadius = 30
         leftViewController = LeftViewController()
         leftViewWidth = 250
         leftViewBackgroundColor = .white
         leftViewPresentationStyle = .scaleFromBig
         
-        rightViewController?.view.layer.cornerRadius = 20
-        rightViewController?.view.layer.masksToBounds = true
+//        rightViewController?.view.layer.cornerRadius = 20
+//        rightViewController?.view.layer.masksToBounds = true
     }
     
 }
 
-//extension MainController: LGSideMenuDelegate {
-//    func willShowLeftView(_ leftView: UIView, sideMenuController: LGSideMenuController) {
-//
-//    }
-//}

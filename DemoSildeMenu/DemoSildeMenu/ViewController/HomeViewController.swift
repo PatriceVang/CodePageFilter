@@ -17,18 +17,23 @@ class HomeViewController: UIViewController {
     
     private func setupUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(onTapMenu))
+        
+        self.view.layer.cornerRadius = 30
+        self.view.layer.masksToBounds = true
     }
+    
     
     @objc func onTapMenu() {
         print("tap")
         
         let navigation = UINavigationController(rootViewController: self)
-        
         let mainVC = MainController()
         mainVC.rootViewController = navigation
-
         let window = UIApplication.shared.keyWindow!
         window.rootViewController = mainVC
+        
+        mainVC.rootViewLayerCornerRadius = 30
+        mainVC.view.backgroundColor = .clear
         
         UIView.transition(with: window, duration: 0.3, options: [.transitionCrossDissolve], animations: nil, completion: nil)
         

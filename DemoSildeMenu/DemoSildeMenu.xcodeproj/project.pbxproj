@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182ED1292536D99100CDCCE1 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182ED1272536D99100CDCCE1 /* FirstVC.swift */; };
+		182ED12A2536D99100CDCCE1 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182ED1282536D99100CDCCE1 /* FirstVC.xib */; };
+		182ED12E2536DB6D00CDCCE1 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182ED12C2536DB6D00CDCCE1 /* SecondVC.swift */; };
+		182ED12F2536DB6D00CDCCE1 /* SecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182ED12D2536DB6D00CDCCE1 /* SecondVC.xib */; };
 		183FD6BD25344B3F00D9488D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FD6BC25344B3F00D9488D /* BaseViewController.swift */; };
 		183FD6C125344B7B00D9488D /* Screen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FD6BF25344B7B00D9488D /* Screen2ViewController.swift */; };
 		183FD6C225344B7B00D9488D /* Screen2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183FD6C025344B7B00D9488D /* Screen2ViewController.xib */; };
@@ -33,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182ED1272536D99100CDCCE1 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		182ED1282536D99100CDCCE1 /* FirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
+		182ED12C2536DB6D00CDCCE1 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		182ED12D2536DB6D00CDCCE1 /* SecondVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondVC.xib; sourceTree = "<group>"; };
 		183FD6BC25344B3F00D9488D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		183FD6BF25344B7B00D9488D /* Screen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen2ViewController.swift; sourceTree = "<group>"; };
 		183FD6C025344B7B00D9488D /* Screen2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen2ViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182ED11F2536D7B900CDCCE1 /* AKSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				182ED1272536D99100CDCCE1 /* FirstVC.swift */,
+				182ED1282536D99100CDCCE1 /* FirstVC.xib */,
+				182ED12C2536DB6D00CDCCE1 /* SecondVC.swift */,
+				182ED12D2536DB6D00CDCCE1 /* SecondVC.xib */,
+			);
+			path = AKSideMenu;
+			sourceTree = "<group>";
+		};
 		18B2678225340D0300326093 /* WKAwesomeMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +130,7 @@
 		18E3D227252EE83300B25905 /* DemoSildeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				182ED11F2536D7B900CDCCE1 /* AKSideMenu */,
 				18B2678225340D0300326093 /* WKAwesomeMenu */,
 				18E3D24D252EF91C00B25905 /* SliderMenu */,
 				18E3D23E252EE84500B25905 /* ViewController */,
@@ -232,6 +252,7 @@
 			files = (
 				18E3D235252EE83600B25905 /* LaunchScreen.storyboard in Resources */,
 				189221852530377D0011DF93 /* DetailViewController.xib in Resources */,
+				182ED12A2536D99100CDCCE1 /* FirstVC.xib in Resources */,
 				18E3B6EC2535418F0001A252 /* Screen3ViewController.xib in Resources */,
 				18E3D252252EFACE00B25905 /* LeftViewController.xib in Resources */,
 				183FD6C225344B7B00D9488D /* Screen2ViewController.xib in Resources */,
@@ -239,6 +260,7 @@
 				18E3D232252EE83600B25905 /* Assets.xcassets in Resources */,
 				18B2678725340D3E00326093 /* AwesomeViewController.xib in Resources */,
 				18E3D243252EE86600B25905 /* HomeViewController.xib in Resources */,
+				182ED12F2536DB6D00CDCCE1 /* SecondVC.xib in Resources */,
 				18E3D258252EFB4700B25905 /* LeftViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +316,7 @@
 			files = (
 				18E3B6EB2535418F0001A252 /* Screen3ViewController.swift in Sources */,
 				18E3D229252EE83300B25905 /* AppDelegate.swift in Sources */,
+				182ED12E2536DB6D00CDCCE1 /* SecondVC.swift in Sources */,
 				18E3D251252EFACE00B25905 /* LeftViewController.swift in Sources */,
 				18E3D22B252EE83300B25905 /* SceneDelegate.swift in Sources */,
 				183FD6C125344B7B00D9488D /* Screen2ViewController.swift in Sources */,
@@ -302,6 +325,7 @@
 				183FD6BD25344B3F00D9488D /* BaseViewController.swift in Sources */,
 				18E3D257252EFB4700B25905 /* LeftViewCell.swift in Sources */,
 				18B2678625340D3E00326093 /* AwesomeViewController.swift in Sources */,
+				182ED1292536D99100CDCCE1 /* FirstVC.swift in Sources */,
 				189221842530377D0011DF93 /* DetailViewController.swift in Sources */,
 				183FD6CA2534509400D9488D /* SideMenuTableViewController.swift in Sources */,
 			);

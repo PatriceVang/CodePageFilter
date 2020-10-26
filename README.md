@@ -35,3 +35,5 @@ Các project con bao gồm:
 - DemoCloudStorage: download, upload, delete image, timer change image
 - DemoSlideMenu: use library
 - SideMenuMakeSelf: side menu make self
+- CollectionViewMultipleSize: pinterest layout raywen
+- DemoSwiftUI: use VStack, HStack, ZStack- 

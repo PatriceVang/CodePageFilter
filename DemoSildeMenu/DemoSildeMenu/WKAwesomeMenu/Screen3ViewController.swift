@@ -13,6 +13,7 @@ class Screen3ViewController: BaseViewController {
         super.viewDidLoad()
 
         title = "Screen 3"
+        self.view.backgroundColor = .blue
     }
 
 

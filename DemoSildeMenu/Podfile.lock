@@ -1,20 +1,24 @@
 PODS:
+  - AKSideMenu (1.4.5)
   - LGSideMenuController (2.1.1)
   - WKAwesomeMenu (2.0.0)
 
 DEPENDENCIES:
+  - AKSideMenu
   - LGSideMenuController
   - WKAwesomeMenu
 
 SPEC REPOS:
   trunk:
+    - AKSideMenu
     - LGSideMenuController
     - WKAwesomeMenu
 
 SPEC CHECKSUMS:
+  AKSideMenu: 2880c44ee04a68f40be783c5cb997b2e0ee22401
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   WKAwesomeMenu: 39d888f93705f63baadd4d7bda8513250c43b7ed
 
-PODFILE CHECKSUM: 2e7a90832a8b7a9bd9049ecdba5b344d59f27651
+PODFILE CHECKSUM: 4fa422b44db9373e405452fcaf127a2cf1aec189
 
 COCOAPODS: 1.9.3
