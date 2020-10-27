@@ -18,7 +18,11 @@ struct ContentView: View {
     @State var gGuess: Double
     @State var bGuess: Double
     
-    @State var showAlert = false
+    
+    @State var name = "123"
+    @State private var showAlert = false
+    
+    @ObservedObject var timer = TimerCounter()
     
     var body: some View {
         NavigationView {
@@ -27,9 +31,7 @@ struct ContentView: View {
                     VStack {
                         ZStack(alignment: .center) {
                             Color(red: rTarget, green: gTarget, blue: bTarget)
-                            Text("60").padding(.all, 5)
-                                .background(Color.white)
-                                .mask(Circle())
+                            Text(String(timer.counter)).modifier(CustomModifer(backgroudcolor: .white))
                         }
                         self.showAlert ? Text("Show alert = true") : Text("Match this color").fontWeight(.semibold)
                     }
@@ -40,6 +42,7 @@ struct ContentView: View {
                 }
                 Button(action: {
                     self.showAlert = true
+                    self.timer.killTimer()
                 }) {
                     Text("Hit me")
                 }.alert(isPresented: $showAlert) { () -> Alert in
@@ -57,6 +60,10 @@ struct ContentView: View {
         }
             // Present split view in lanscape
             .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func onChangedName() {
+        name = ""
     }
     
     func computeScore() -> Int {
@@ -90,6 +97,21 @@ struct ColorSlider: View {
             Text("255").foregroundColor(textColor)
         }
     }
+}
+
+struct CustomModifer: ViewModifier {
+    
+    @State var backgroudcolor = Color.blue
+    
+    func body(content: Content) -> some View {
+        return content.padding(.all, 5)
+        .background(backgroudcolor)
+        .mask(Circle())
+        .foregroundColor(.black)
+    }
+   
+    
+
 }
 
 

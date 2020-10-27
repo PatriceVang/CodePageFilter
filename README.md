@@ -29,6 +29,7 @@ Các project con bao gồm:
 - DemoDragItemsTableView: Drag drog item tableView simple
 - DragDrogTableView: Drag drop Add Delete item TablView
 - DemoSwiftpackage: how to use swiftpackage, add account github -> create tag (each tag is version) -> push up github -> add dependency
+- DemoCalendar: CalendarKit, JTcalendar, make self (drag choose hour)
 - DemoXCTest: use XCTest
 - Funny: customView handle menubar, multitarget,
 - DemoToDoCloudFireStore: cloud firetore CRUD
@@ -36,4 +37,4 @@ Các project con bao gồm:
 - DemoSlideMenu: use library
 - SideMenuMakeSelf: side menu make self
 - CollectionViewMultipleSize: pinterest layout raywen
-- DemoSwiftUI: use VStack, HStack, ZStack- 
+- DemoSwiftUI: use VStack, HStack, ZStack, custom view by ViewModifier
