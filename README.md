@@ -37,4 +37,4 @@ Các project con bao gồm:
 - DemoSlideMenu: use library
 - SideMenuMakeSelf: side menu make self
 - CollectionViewMultipleSize: pinterest layout raywen
-- DemoSwiftUI: use VStack, HStack, ZStack, custom view by ViewModifier
+- DemoSwiftUI: use VStack, HStack, ZStack, custom view by ViewModifier, basic controll
