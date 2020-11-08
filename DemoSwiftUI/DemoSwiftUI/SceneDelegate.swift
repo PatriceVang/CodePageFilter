@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
 //            let user = UserManager()
-            window.rootViewController = UIHostingController(rootView: ChallengeView())
+            window.rootViewController = UIHostingController(rootView: CalculatorView())
             self.window = window
             window.makeKeyAndVisible()
         }

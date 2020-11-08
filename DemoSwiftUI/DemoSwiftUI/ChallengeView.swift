@@ -28,7 +28,6 @@ struct ChallengeView: View {
                 Text("Users").font(.largeTitle)
                 ForEach(self.users) { user in
                     UserItem(user: user)
-                    
                 }
                 
             }

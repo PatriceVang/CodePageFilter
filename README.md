@@ -37,4 +37,4 @@ Các project con bao gồm:
 - DemoSlideMenu: use library
 - SideMenuMakeSelf: side menu make self
 - CollectionViewMultipleSize: pinterest layout raywen
-- DemoSwiftUI: Dynamic list
+- DemoSwiftUI: Dynamic list, Calculator (use enum, stackview)

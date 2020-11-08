@@ -11,6 +11,7 @@ import Combine
 
 class TimerCounter: ObservableObject {
     var timer: Timer?
+    
     @Published var counter = 0
     
     init() {
