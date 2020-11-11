@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
 //            let user = UserManager()
-            window.rootViewController = UIHostingController(rootView: CalculatorView())
+            window.rootViewController = UIHostingController(rootView: DemoCRUDListUser())
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -64,3 +64,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+struct SceneDelegate_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

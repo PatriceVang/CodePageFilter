@@ -188,3 +188,49 @@ example(of: "Custom Subscriber") {
 //    }.store(in: )
 //
 //}
+
+example(of: "PassthroughSubject") {
+    
+    enum MyError: Error {
+        case test
+    }
+    
+    // 2
+    final class StringSubscriber: Subscriber {
+        typealias Input = String
+        typealias Failure = MyError
+        
+        func receive(subscription: Subscription) {
+            subscription.request(.max(2))
+        }
+        //(*)
+        func receive(_ input: String) -> Subscribers.Demand {
+            print("Received value", input)
+            // 3
+            return input == "World" ? .max(1) : .none
+        }
+        
+        func receive(completion: Subscribers.Completion<MyError>) {
+            print("Received completion", completion)
+        }
+    }
+    
+    let subscriber = StringSubscriber()
+    
+    let subject = PassthroughSubject<String, MyError>()
+    // khen subject send value thì subcripber nhan va thuc hien ham (*)
+    subject.subscribe(subscriber)
+    
+    let subcription = subject.sink(receiveCompletion: { (completion) in
+        print("Received completion (sink)", completion)
+    }) { (value) in
+        print("Received value (sink)", value)
+    }
+    
+    subject.send("hello")
+    subject.send("word")
+    
+    subcription.cancel()
+    subject.send("nonono")
+    
+}
