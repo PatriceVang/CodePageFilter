@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 let url = "https://jsonplaceholder.typicode.com/users"
+
 class User: Decodable, Identifiable {
     var name: String
     var username: String
@@ -18,6 +19,7 @@ class User: Decodable, Identifiable {
         self.username = username
     }
 }
+
 
 class UserViewModel: ObservableObject {
     
@@ -44,8 +46,8 @@ class UserViewModel: ObservableObject {
         }.resume()
     }
     
-    func reloadView() {
-        users.shuffle()
+    func deleteUser(atIndex: Int) {
+        users.remove(at: atIndex)
     }
 }
 
@@ -60,14 +62,15 @@ struct DemoCRUDListUser: View {
             List (self.viewModel.users.indices, id: \.self) { index in
                 
                 HStack {
-                    Text(viewModel.users[index].name)
+                    Text(self.viewModel.users[index].name)
                   
                     NavigationLink(destination: UpdateName(completion: { newName, index  in
                         print(newName, index)
-                        
                         self.viewModel.users[index].name = newName
-                        viewModel.objectWillChange.send()
+                        self.viewModel.objectWillChange.send()
                         
+                    }, deleteUser: { index in
+                        self.viewModel.deleteUser(atIndex: index)
                     }, index: index)) {
                         Text("")
                     }

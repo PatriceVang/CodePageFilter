@@ -7,24 +7,40 @@
 //
 
 import SwiftUI
+import Combine
 
 struct UpdateName: View {
     
     var completion: (String, Int) -> Void
+    var deleteUser: (Int) -> Void
     @State private var newName: String = ""
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var index = 0
     
     var body: some View {
-        VStack {
-            TextField("Melody", text: $newName)
-            
-            Button(action: {
-                self.completion(self.newName, index)
-            }) {
-                Text("Confirm")
-            }
-        }.padding()
         
+        NavigationView {
+            
+            VStack {
+                
+                TextField("Melody", text: $newName)
+                
+                Button(action: {
+                    if self.newName == "" {
+                        return
+                    }
+                    self.completion(self.newName, self.index)
+                    self.mode.wrappedValue.dismiss()
+                }) {
+                    Text("Confirm")
+                }
+            }.padding()
+        }.navigationBarItems(trailing: Button(action: {
+            self.deleteUser(self.index)
+            self.mode.wrappedValue.dismiss()
+        }, label: {
+            Text("Delete User")
+        }))
     }
 }
 
