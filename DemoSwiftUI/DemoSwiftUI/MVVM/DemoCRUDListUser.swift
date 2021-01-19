@@ -25,26 +25,38 @@ class UserViewModel: ObservableObject {
     
     @Published var users: [User] = []
     
+    var supcription: AnyCancellable?
+    
+    func getUser() {
+        supcription = ApiService.share.getUser().sink(receiveCompletion: { _ in
+            
+        }, receiveValue: { (svUsers) in
+            self.users = svUsers
+        })
+        
+        
+    }
     init() {
-        getListUser()
+//        getListUser()
+        getUser()
     }
     
-    func getListUser() {
-        guard let url = URL(string: url) else {
-            return
-        }
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            guard let data = data else {return}
-            do {
-                let svUsers = try JSONDecoder().decode([User].self, from: data)
-                DispatchQueue.main.async {
-                    self.users = svUsers
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
+//    func getListUser() {
+//        guard let url = URL(string: url) else {
+//            return
+//        }
+//        URLSession.shared.dataTask(with: url) { (data, _, error) in
+//            guard let data = data else {return}
+//            do {
+//                let svUsers = try JSONDecoder().decode([User].self, from: data)
+//                DispatchQueue.main.async {
+//                    self.users = svUsers
+//                }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }.resume()
+//    }
     
     func deleteUser(atIndex: Int) {
         users.remove(at: atIndex)

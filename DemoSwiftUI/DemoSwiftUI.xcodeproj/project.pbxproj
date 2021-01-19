@@ -10,6 +10,7 @@
 		1803198C2557DA1B00DB73F3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1803198B2557DA1B00DB73F3 /* CalculatorView.swift */; };
 		1824B7E6255C39B1000499E3 /* DemoCRUDListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824B7E5255C39B1000499E3 /* DemoCRUDListUser.swift */; };
 		186E5DF52552F10E0052E30E /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E5DF42552F10E0052E30E /* ChallengeView.swift */; };
+		18AC6C7C2562C11500E5327C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC6C7B2562C11500E5327C /* ApiService.swift */; };
 		18B0FDB6255C45330022D7B9 /* UpdateName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0FDB5255C45330022D7B9 /* UpdateName.swift */; };
 		18CBD71F254867CF00FF78FE /* TimerCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBD71E254867CF00FF78FE /* TimerCounter.swift */; };
 		18CE64352545644E001084D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE64342545644E001084D0 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 		1803198B2557DA1B00DB73F3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		1824B7E5255C39B1000499E3 /* DemoCRUDListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCRUDListUser.swift; sourceTree = "<group>"; };
 		186E5DF42552F10E0052E30E /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		18AC6C7B2562C11500E5327C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		18B0FDB5255C45330022D7B9 /* UpdateName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateName.swift; sourceTree = "<group>"; };
 		18CBD71E254867CF00FF78FE /* TimerCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCounter.swift; sourceTree = "<group>"; };
 		18CE64312545644E001084D0 /* DemoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				18CE64422545644F001084D0 /* Info.plist */,
 				18CE643C2545644F001084D0 /* Preview Content */,
 				186E5DF42552F10E0052E30E /* ChallengeView.swift */,
+				18AC6C7B2562C11500E5327C /* ApiService.swift */,
 			);
 			path = DemoSwiftUI;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				186E5DF52552F10E0052E30E /* ChallengeView.swift in Sources */,
 				18CBD71F254867CF00FF78FE /* TimerCounter.swift in Sources */,
 				18CE64392545644E001084D0 /* ContentView.swift in Sources */,
+				18AC6C7C2562C11500E5327C /* ApiService.swift in Sources */,
 				18B0FDB6255C45330022D7B9 /* UpdateName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

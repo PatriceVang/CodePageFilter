@@ -22,8 +22,6 @@ class Suv: Vinfast {
     override func giaTien() -> Int {
         return vin.giaTien() + 10
     }
-    
-    
 }
 
 
@@ -33,6 +31,7 @@ class Suv: Vinfast {
 //print(suv.giaTien())
 
 
+// depenceny invention 
 enum TypeAnimals {
     case Anthit
     case Anco
