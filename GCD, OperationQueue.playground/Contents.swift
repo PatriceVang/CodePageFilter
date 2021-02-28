@@ -5,22 +5,20 @@ let blockOperation = BlockOperation()
 //blockOperation.qualityOfService = .utility
 
 blockOperation.addExecutionBlock {
-    print("Hello")
+    print("Hello block Operation")
 }
 
 
-blockOperation.addExecutionBlock {
+let delayBlock = BlockOperation()
+
+
+delayBlock.addExecutionBlock {
     for i in 0...50 {
         print("BLock")
     }
 }
 
 
-
-
-blockOperation.addExecutionBlock {
-    print("Finish")
-}
 
 //blockOperation.start()
 
@@ -43,16 +41,20 @@ operationQueue.qualityOfService = .default
 
 
 // Thực hiện xong block này thì block kế tiếp mới được chạy
-operationQueue.addBarrierBlock {
-    for i in 0...1000 {
-        print(i)
-    }
-}
+//operationQueue.addBarrierBlock {
+//    for i in 0...1000 {
+//        print(i)
+//    }
+//}
+
+// Tạo phụ thuộc cho block
+anotherBlock.addDependency(delayBlock)
 
 
 operationQueue.addOperation(blockOperation)
-
 operationQueue.addOperation(anotherBlock)
+operationQueue.addOperation(delayBlock)
+
 
 
 
