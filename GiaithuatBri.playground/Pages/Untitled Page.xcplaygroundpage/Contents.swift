@@ -311,42 +311,42 @@ import Foundation
 
 //print(arr)
 
-let dispatch = DispatchGroup()
-let gcd = DispatchQueue(label: "name")
-let sep = DispatchSemaphore(value: 0)
-
-var arr = [Int]()
-
+//let dispatch = DispatchGroup()
+//let gcd = DispatchQueue(label: "name")
+//let sep = DispatchSemaphore(value: 0)
+//
+//var arr = [Int]()
+//
 
 //dispatch.enter()
-DispatchQueue.global().async {
-    arr.append(1)
-    print("1")
-    sep.signal()
-}
-sep.wait()
+//DispatchQueue.global().async {
+//    arr.append(1)
+//    print("1")
+//    sep.signal()
+//}
+//sep.wait()
 //dispatch.leave()
 
 //dispatch.enter()
-DispatchQueue.global().async {
-    arr.removeAll()
-    print("2")
-    sep.signal()
-}
-sep.wait()
+//DispatchQueue.global().async {
+//    arr.removeAll()
+//    print("2")
+//    sep.signal()
+//}
+//sep.wait()
 
 //dispatch.leave()
 
 
 //dispatch.enter()
 
-DispatchQueue.global().async {
-    arr += [1,2,4,5,5,6,7,7,7,4,2,2,3,4,5,6,6]
-    print("3")
-    print(arr)
-    sep.signal()
-}
-sep.wait()
+//DispatchQueue.global().async {
+//    arr += [1,2,4,5,5,6,7,7,7,4,2,2,3,4,5,6,6]
+//    print("3")
+//    print(arr)
+//    sep.signal()
+//}
+//sep.wait()
 
 //dispatch.leave()
 
@@ -359,3 +359,4 @@ sep.wait()
 //dispatch.notify(queue: .main) {
 //    print("xong")
 //} 
+

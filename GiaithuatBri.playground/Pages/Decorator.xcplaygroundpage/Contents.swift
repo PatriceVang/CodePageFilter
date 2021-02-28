@@ -26,71 +26,71 @@ class Suv: Vinfast {
 
 
 
-//let vinfast = Vinfast()
-//let suv = Suv(vin: vinfast)
-//print(suv.giaTien())
+let vinfast = Vinfast()
+let suv = Suv(vin: vinfast)
+print(suv.giaTien())
 
 
-// depenceny invention 
-enum TypeAnimals {
-    case Anthit
-    case Anco
-}
-
-protocol Animals {
-    var typeAnimal: TypeAnimals {get set}
-    func eat()
-    func move()
-}
-
-class Mouse: Animals {
-    var typeAnimal: TypeAnimals = .Anco
-    
-    func eat() {
-        print(typeAnimal)
-    }
-    
-    func move() {
-        print("chay")
-    }
-}
-class Cat: Animals {
-    var typeAnimal: TypeAnimals = .Anthit
-    
-    func eat() {
-        print(typeAnimal)
-    }
-    
-    func move() {
-        print("Di")
-    }
-}
-
-
-class FeatureAnimals: Animals {
-    var typeAnimal: TypeAnimals = .Anco
-    
-    func eat() {
-        animal.eat()
-    }
-    
-    func move() {
-        animal.move()
-    }
-    
-    var animal: Animals
-    init(animal: Animals) {
-        self.animal = animal
-    }
-
-}
-
-var mouse = Mouse()
-var cat = Cat()
-var fea = FeatureAnimals(animal: mouse)
-fea.eat()
-fea.move()
-
+//// depenceny invention
+//enum TypeAnimals {
+//    case Anthit
+//    case Anco
+//}
+//
+//protocol Animals {
+//    var typeAnimal: TypeAnimals {get set}
+//    func eat()
+//    func move()
+//}
+//
+//class Mouse: Animals {
+//    var typeAnimal: TypeAnimals = .Anco
+//
+//    func eat() {
+//        print(typeAnimal)
+//    }
+//
+//    func move() {
+//        print("chay")
+//    }
+//}
+//class Cat: Animals {
+//    var typeAnimal: TypeAnimals = .Anthit
+//
+//    func eat() {
+//        print(typeAnimal)
+//    }
+//
+//    func move() {
+//        print("Di")
+//    }
+//}
+//
+//
+//class FeatureAnimals: Animals {
+//    var typeAnimal: TypeAnimals = .Anco
+//
+//    func eat() {
+//        animal.eat()
+//    }
+//
+//    func move() {
+//        animal.move()
+//    }
+//
+//    var animal: Animals
+//    init(animal: Animals) {
+//        self.animal = animal
+//    }
+//
+//}
+//
+//var mouse = Mouse()
+//var cat = Cat()
+//var fea = FeatureAnimals(animal: mouse)
+//fea.eat()
+//fea.move()
+//
 
 
 

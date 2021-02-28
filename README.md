@@ -38,3 +38,4 @@ Các project con bao gồm:
 - SideMenuMakeSelf: side menu make self
 - CollectionViewMultipleSize: pinterest layout raywen
 - DemoSwiftUI: Dynamic list, Calculator (use enum, stackview), MVVM use @Observable (CRUD) networking AnyPublisher and Cancellable
+- GCD, OperationQueu playgroud: blockOperation, operation queue
