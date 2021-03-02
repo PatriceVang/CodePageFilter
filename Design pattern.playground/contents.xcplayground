@@ -8,9 +8,10 @@
         <page name='Dependency inversion'/>
         <page name='Observable'/>
         <page name='Multithearding'/>
-        <page name='Decorator'/>
         <page name='Closure'/>
         <page name='ARC'/>
         <page name='Enum'/>
+        <page name='State pattern'/>
+        <page name='Adapter'/>
     </pages>
 </playground>
