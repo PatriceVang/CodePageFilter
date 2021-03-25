@@ -39,3 +39,4 @@ Các project con bao gồm:
 - CollectionViewMultipleSize: pinterest layout raywen
 - DemoSwiftUI: Dynamic list, Calculator (use enum, stackview), MVVM use @Observable (CRUD) networking AnyPublisher and Cancellable
 - GCD, OperationQueu playgroud: blockOperation, operation queue, dependent, barrier, semophore, proberties warpper
+- PropertyWrapper: test propertywrapper
