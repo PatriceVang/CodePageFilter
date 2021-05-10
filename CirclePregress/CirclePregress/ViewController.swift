@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var vCircle: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        vCircle.progressAnimation(duration: 0, value: 0.5)
+        vCircle.progressAnimation(duration: 5, value: 1)
     }
 }
 
@@ -60,7 +60,13 @@ extension UIView{
         circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
         
-        grayProgress.add(circularProgressAnimation, forKey: "progressAnim")
+        let circularProgressAnimation1 = CABasicAnimation(keyPath: "strokeEnd")
+              circularProgressAnimation1.duration = 0
+              circularProgressAnimation1.toValue = 1
+              circularProgressAnimation1.fillMode = .forwards
+              circularProgressAnimation1.isRemovedOnCompletion = false
+        
+        grayProgress.add(circularProgressAnimation1, forKey: "progressAnim")
         hightlightProgress.add(circularProgressAnimation, forKey: "progressAnim")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
