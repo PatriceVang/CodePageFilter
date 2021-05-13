@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     var users: [User] {
         return User.shared.getUser()
     }
+    
+    var dogs: [Dog] {
+        return Dog.shared.getDog()
+    }
 
     @IBOutlet weak var tbvUser: UITableView!
     
@@ -28,12 +32,11 @@ class ViewController: UIViewController {
         
 
         
+//        for i in 1...2 {
+//            Dog.shared.saveDog(name: "Dog\(i)", id: i)
+//        }
         
-//        User.shared.saveUser(name: "Rio", id: 1)
-        
-        
-        
-        
+//        User.shared.saveUser(name: "Rio2", id: 2)
         
     }
     
@@ -46,7 +49,11 @@ class ViewController: UIViewController {
     @objc func performAddUser() {
 
         users.forEach {
-            print($0.dog)
+            print($0.name)
+            let dogs = $0.dog?.allObjects as? [Dog]
+            dogs?.forEach {
+                print("name: \($0.name) - id: \($0.id)")
+            }
         }
     }
     
@@ -55,11 +62,17 @@ class ViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext =
             appDelegate.persistentContainer.viewContext
-        let dog = Dog(context: managedContext)
-        dog.id = 2
-        dog.name = "Dog2"
-        let user = users.first
-        user?.addToDog(dog)
+        
+//        let dog1 = dogs.last!
+//        let dog2 = dogs.first!
+//        users.first?.addToDog(dog2)
+//        users.first?.addToDog(dog1)
+        
+//        managedContext.delete(users.first!)
+        
+        let dog1 = dogs.first!
+        users.last?.addToDog(dog1)
+        
         do {
             try! managedContext.save()
         } catch {

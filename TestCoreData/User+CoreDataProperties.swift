@@ -49,10 +49,6 @@ extension User {
   
         user.id = id
         user.name = name
-        let dog = Dog(context: managedContext)
-        dog.id = 1
-        dog.name = "Dog1"
-        user.addToDog(dog)
 
         do {
             try managedContext.save()

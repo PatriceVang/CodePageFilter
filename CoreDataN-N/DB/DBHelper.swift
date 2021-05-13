@@ -64,25 +64,16 @@ class DBHelper {
         } catch let err as NSError {
             print("Count not delete obect \(err.localizedDescription)")
         }
-        
-        
-        
-        
-//        if let result = try? context.fetch(fetchRequest) {
-//            for object in result {
-//                context.delete(object)
-//            }
-//        }
-        
-        do {
-            try context().save()
-        } catch {
-            print ("There was an error")
-        }
     }
     
-    
-    
+    func update(_ completion: () -> Void) {
+        completion()
+        do {
+            try! context().save()
+        } catch let err as NSError {
+            print("Count not update obect \(err.localizedDescription)")
+        }
+    }
     
 }
 

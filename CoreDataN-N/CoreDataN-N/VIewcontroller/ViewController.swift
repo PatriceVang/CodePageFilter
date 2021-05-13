@@ -9,15 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var tbvLib: UITableView!
     
     var libs: [Library] {
         return DBHelper.shared.fetch(.Library)
     }
-//
+
     var pics: [Picture] {
         return DBHelper.shared.fetch(.Picture)
     }
     
+    var isExpand = false
+    var headerSection = 0
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,16 +34,8 @@ class ViewController: UIViewController {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(urls[urls.count-1] as URL)
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-
-        
-//        let lib = Library(context: DBHelper.shared.context())
-//        lib.name = "Lib4"
-//        lib.id = 4
-//        
-//        DBHelper.shared.save(lib)
+        tbvLib.register(UINib(nibName: "LibCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tbvLib.tableFooterView = UIView()
         
     }
     
@@ -52,8 +50,13 @@ class ViewController: UIViewController {
             }
 
         }
+        print("-----------")
         pics.forEach {
             print($0.name)
+            let lib = $0.lib?.allObjects as? [Library]
+            lib?.forEach {
+                print("Lib: \($0.name) - \($0.id)")
+            }
         }
         
         
@@ -76,10 +79,63 @@ class ViewController: UIViewController {
 //        } catch {
 //            print("Count not save")
 //        }
+        DBHelper.shared.update {
+            libs.first?.name = "Lib"
+        }
         
         
-        DBHelper.shared.delete(4, object: .Library)
+//        DBHelper.shared.delete(1, object: .Library)
     }
     
+    @objc func expandCollapCell(_ sender: UITapGestureRecognizer) {
+        
+    }
+    
+//    : Optional("Lib2")
+//    Pic: Optional("Pic1") - 1
+//    Lib: Optional("Lib3")
+//    -----------
+//    Optional("Pic1")
+//    Lib: Optional("Lib2") - 2
+    
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return libs.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderLib(frame: .init(x: 0, y: 0, width: tbvLib.frame.width, height: 50))
+        header.setTitle(libs[section].name ?? "")
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+//        if isExpand && indexPath.section == headerSection   {
+//            return 40
+//        } else {
+//            return 0
+//        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return libs[section].pic!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tbvLib.dequeueReusableCell(withIdentifier: "cell") as? LibCell else {fatalError()}
+        let pics = libs[indexPath.section].pic?.allObjects as? [Picture]
+        cell.textLabel?.text = "\(pics?[indexPath.row].name ?? "") - id: \(pics?[indexPath.row].id ?? 0)"
+       
+        return cell
+    }
     
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1810B9E7264CCD2100729CBE /* LibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810B9E5264CCD2100729CBE /* LibCell.swift */; };
+		1810B9E8264CCD2100729CBE /* LibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1810B9E6264CCD2100729CBE /* LibCell.xib */; };
+		1810B9EB264CD37900729CBE /* HeaderLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810B9EA264CD37900729CBE /* HeaderLib.swift */; };
 		1813A7AC264BCE8D00735DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813A7AB264BCE8D00735DB0 /* AppDelegate.swift */; };
 		1813A7AE264BCE8D00735DB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813A7AD264BCE8D00735DB0 /* SceneDelegate.swift */; };
 		1813A7B6264BCE8D00735DB0 /* CoreDataN_N.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1813A7B4264BCE8D00735DB0 /* CoreDataN_N.xcdatamodeld */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1810B9E5264CCD2100729CBE /* LibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibCell.swift; sourceTree = "<group>"; };
+		1810B9E6264CCD2100729CBE /* LibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibCell.xib; sourceTree = "<group>"; };
+		1810B9EA264CD37900729CBE /* HeaderLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLib.swift; sourceTree = "<group>"; };
 		1813A7A8264BCE8D00735DB0 /* CoreDataN-N.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreDataN-N.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1813A7AB264BCE8D00735DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1813A7AD264BCE8D00735DB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1810B9E4264CCCBA00729CBE /* Cel */ = {
+			isa = PBXGroup;
+			children = (
+				1810B9E5264CCD2100729CBE /* LibCell.swift */,
+				1810B9E6264CCD2100729CBE /* LibCell.xib */,
+			);
+			path = Cel;
+			sourceTree = "<group>";
+		};
+		1810B9E9264CD36C00729CBE /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				1810B9EA264CD37900729CBE /* HeaderLib.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		1813A79F264BCE8C00735DB0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +110,8 @@
 		1813A7C2264BCEA500735DB0 /* VIewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				1810B9E9264CD36C00729CBE /* Header */,
+				1810B9E4264CCCBA00729CBE /* Cel */,
 				1813A7C3264BCEC500735DB0 /* ViewController.swift */,
 				1813A7C4264BCEC500735DB0 /* ViewController.xib */,
 			);
@@ -162,6 +187,7 @@
 				1813A7BB264BCE8E00735DB0 /* LaunchScreen.storyboard in Resources */,
 				1813A7C6264BCEC500735DB0 /* ViewController.xib in Resources */,
 				1813A7B8264BCE8E00735DB0 /* Assets.xcassets in Resources */,
+				1810B9E8264CCD2100729CBE /* LibCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +201,8 @@
 				1813A7CB264BD01100735DB0 /* Library+CoreDataClass.swift in Sources */,
 				1813A7AC264BCE8D00735DB0 /* AppDelegate.swift in Sources */,
 				1813A7CD264BD01100735DB0 /* Picture+CoreDataClass.swift in Sources */,
+				1810B9EB264CD37900729CBE /* HeaderLib.swift in Sources */,
+				1810B9E7264CCD2100729CBE /* LibCell.swift in Sources */,
 				1813A7B6264BCE8D00735DB0 /* CoreDataN_N.xcdatamodeld in Sources */,
 				1861F10F264C1B9100FAF5F8 /* DBHelper.swift in Sources */,
 				1813A7CE264BD01100735DB0 /* Picture+CoreDataProperties.swift in Sources */,

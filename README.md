@@ -41,4 +41,4 @@ Các project con bao gồm:
 - GCD, OperationQueu playgroud: blockOperation, operation queue, dependent, barrier, semophore, proberties warpper
 - PropertyWrapper: test propertywrapper
 - TestCoreData: 1-n
-- CoreDataN-N: n-n, custom class DBHeplper
+- CoreDataN-N: n-n, custom class DBHeplper, CRUD
