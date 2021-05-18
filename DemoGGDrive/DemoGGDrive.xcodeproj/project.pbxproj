@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1826EEBE2653836500CD9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826EEBD2653836500CD9ABC /* AppDelegate.swift */; };
+		1826EEC02653836500CD9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826EEBF2653836500CD9ABC /* SceneDelegate.swift */; };
+		1826EEC22653836500CD9ABC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826EEC12653836500CD9ABC /* ViewController.swift */; };
+		1826EEC52653836500CD9ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1826EEC32653836500CD9ABC /* Main.storyboard */; };
+		1826EEC72653836800CD9ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1826EEC62653836800CD9ABC /* Assets.xcassets */; };
+		1826EECA2653836800CD9ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1826EEC82653836800CD9ABC /* LaunchScreen.storyboard */; };
+		18706A79265385BB004A8554 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18706A78265385BB004A8554 /* GoogleService-Info.plist */; };
+		A826217E663330C435BD58C8 /* Pods_DemoGGDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31936C8FEDD91EF47221A8B4 /* Pods_DemoGGDrive.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1826EEBA2653836500CD9ABC /* DemoGGDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoGGDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1826EEBD2653836500CD9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1826EEBF2653836500CD9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1826EEC12653836500CD9ABC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1826EEC42653836500CD9ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1826EEC62653836800CD9ABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1826EEC92653836800CD9ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1826EECB2653836800CD9ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18706A78265385BB004A8554 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31936C8FEDD91EF47221A8B4 /* Pods_DemoGGDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoGGDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840BF796EF110F3F6B982DAC /* Pods-DemoGGDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoGGDrive.release.xcconfig"; path = "Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive.release.xcconfig"; sourceTree = "<group>"; };
+		E9FEBD8F3F864F57F2E75F07 /* Pods-DemoGGDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoGGDrive.debug.xcconfig"; path = "Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1826EEB72653836400CD9ABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A826217E663330C435BD58C8 /* Pods_DemoGGDrive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1826EEB12653836400CD9ABC = {
+			isa = PBXGroup;
+			children = (
+				1826EEBC2653836500CD9ABC /* DemoGGDrive */,
+				1826EEBB2653836500CD9ABC /* Products */,
+				47D2C59B8E6466D5BBAEA5FD /* Pods */,
+				DBC54D088F633AF656072FED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1826EEBB2653836500CD9ABC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1826EEBA2653836500CD9ABC /* DemoGGDrive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1826EEBC2653836500CD9ABC /* DemoGGDrive */ = {
+			isa = PBXGroup;
+			children = (
+				1826EEBD2653836500CD9ABC /* AppDelegate.swift */,
+				1826EEBF2653836500CD9ABC /* SceneDelegate.swift */,
+				1826EEC12653836500CD9ABC /* ViewController.swift */,
+				1826EEC32653836500CD9ABC /* Main.storyboard */,
+				1826EEC62653836800CD9ABC /* Assets.xcassets */,
+				1826EEC82653836800CD9ABC /* LaunchScreen.storyboard */,
+				1826EECB2653836800CD9ABC /* Info.plist */,
+				18706A78265385BB004A8554 /* GoogleService-Info.plist */,
+			);
+			path = DemoGGDrive;
+			sourceTree = "<group>";
+		};
+		47D2C59B8E6466D5BBAEA5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9FEBD8F3F864F57F2E75F07 /* Pods-DemoGGDrive.debug.xcconfig */,
+				840BF796EF110F3F6B982DAC /* Pods-DemoGGDrive.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DBC54D088F633AF656072FED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31936C8FEDD91EF47221A8B4 /* Pods_DemoGGDrive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1826EEB92653836400CD9ABC /* DemoGGDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1826EECE2653836800CD9ABC /* Build configuration list for PBXNativeTarget "DemoGGDrive" */;
+			buildPhases = (
+				28AAE62E47559C3034BE3AC8 /* [CP] Check Pods Manifest.lock */,
+				1826EEB62653836400CD9ABC /* Sources */,
+				1826EEB72653836400CD9ABC /* Frameworks */,
+				1826EEB82653836400CD9ABC /* Resources */,
+				F610289C19A471922862D2A6 /* [CP] Embed Pods Frameworks */,
+				7E2E041F0CCA96DC85C73C5A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoGGDrive;
+			productName = DemoGGDrive;
+			productReference = 1826EEBA2653836500CD9ABC /* DemoGGDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1826EEB22653836400CD9ABC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					1826EEB92653836400CD9ABC = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = 1826EEB52653836400CD9ABC /* Build configuration list for PBXProject "DemoGGDrive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1826EEB12653836400CD9ABC;
+			productRefGroup = 1826EEBB2653836500CD9ABC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1826EEB92653836400CD9ABC /* DemoGGDrive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1826EEB82653836400CD9ABC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1826EECA2653836800CD9ABC /* LaunchScreen.storyboard in Resources */,
+				18706A79265385BB004A8554 /* GoogleService-Info.plist in Resources */,
+				1826EEC72653836800CD9ABC /* Assets.xcassets in Resources */,
+				1826EEC52653836500CD9ABC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28AAE62E47559C3034BE3AC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoGGDrive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2E041F0CCA96DC85C73C5A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F610289C19A471922862D2A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1826EEB62653836400CD9ABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1826EEC22653836500CD9ABC /* ViewController.swift in Sources */,
+				1826EEBE2653836500CD9ABC /* AppDelegate.swift in Sources */,
+				1826EEC02653836500CD9ABC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1826EEC32653836500CD9ABC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1826EEC42653836500CD9ABC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1826EEC82653836800CD9ABC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1826EEC92653836800CD9ABC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1826EECC2653836800CD9ABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1826EECD2653836800CD9ABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1826EECF2653836800CD9ABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9FEBD8F3F864F57F2E75F07 /* Pods-DemoGGDrive.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DemoGGDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrice.DemoGGDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1826EED02653836800CD9ABC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 840BF796EF110F3F6B982DAC /* Pods-DemoGGDrive.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DemoGGDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrice.DemoGGDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1826EEB52653836400CD9ABC /* Build configuration list for PBXProject "DemoGGDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1826EECC2653836800CD9ABC /* Debug */,
+				1826EECD2653836800CD9ABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1826EECE2653836800CD9ABC /* Build configuration list for PBXNativeTarget "DemoGGDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1826EECF2653836800CD9ABC /* Debug */,
+				1826EED02653836800CD9ABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1826EEB22653836400CD9ABC /* Project object */;
+}
