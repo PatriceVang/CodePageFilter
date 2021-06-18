@@ -11,13 +11,28 @@ import GoogleSignIn
 import HSGoogleDrivePicker
 
 class ViewController: UIViewController {
+    
+    private let btnMy: MyButton = {
+       let btn = MyButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
+        view.addSubview(btnMy)
+        btnMy.addTarget(self, action: #selector(tapMyButton(_:)), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            btnMy.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            btnMy.topAnchor.constraint(equalTo: view.topAnchor, constant: 200)
+        ])
         
+    }
+    
+    @objc func tapMyButton(_ sender: UIButton) {
     }
     
     @IBAction func tap(_ sender: Any) {

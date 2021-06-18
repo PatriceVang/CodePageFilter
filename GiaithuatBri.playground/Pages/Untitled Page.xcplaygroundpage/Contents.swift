@@ -360,3 +360,35 @@ import Foundation
 //    print("xong")
 //} 
 
+
+
+let test = "acbaaac"
+
+//let count = test.reduce(into: [:]) { (count, charater) in
+//    count[charater, default: 0] += 1
+//}
+//
+//print(count)
+
+func counting() -> [String: Int] {
+    var result = [String: Int]()
+    for charater in test {
+        let cha = String(charater)
+        if result.isEmpty {
+            result[cha] = 1
+        } else {
+            for (key, value) in result {
+                if cha == key {
+                    result[cha]! += 1
+                } else {
+                    if result[cha] == nil {
+                        result[cha] = 1
+                    }
+                }
+            }
+        }
+    }
+    return result
+}
+
+print(counting())

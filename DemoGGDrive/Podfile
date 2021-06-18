@@ -6,8 +6,8 @@ target 'DemoGGDrive' do
   use_frameworks!
 
   # Pods for DemoGGDrive
-pod 'Firebase/Analytics'
-pod 'Firebase/Auth'
+
+  
 pod 'GoogleSignIn'
 pod 'HSGoogleDrivePicker', '~> 3.0’
 

@@ -14,6 +14,7 @@
 		1826EEC72653836800CD9ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1826EEC62653836800CD9ABC /* Assets.xcassets */; };
 		1826EECA2653836800CD9ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1826EEC82653836800CD9ABC /* LaunchScreen.storyboard */; };
 		18706A79265385BB004A8554 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18706A78265385BB004A8554 /* GoogleService-Info.plist */; };
+		18ED44062660860F0090F415 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED44052660860F0090F415 /* MyButton.swift */; };
 		A826217E663330C435BD58C8 /* Pods_DemoGGDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31936C8FEDD91EF47221A8B4 /* Pods_DemoGGDrive.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		1826EEC92653836800CD9ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1826EECB2653836800CD9ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18706A78265385BB004A8554 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18ED44052660860F0090F415 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		31936C8FEDD91EF47221A8B4 /* Pods_DemoGGDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoGGDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840BF796EF110F3F6B982DAC /* Pods-DemoGGDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoGGDrive.release.xcconfig"; path = "Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive.release.xcconfig"; sourceTree = "<group>"; };
 		E9FEBD8F3F864F57F2E75F07 /* Pods-DemoGGDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoGGDrive.debug.xcconfig"; path = "Target Support Files/Pods-DemoGGDrive/Pods-DemoGGDrive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				1826EEC82653836800CD9ABC /* LaunchScreen.storyboard */,
 				1826EECB2653836800CD9ABC /* Info.plist */,
 				18706A78265385BB004A8554 /* GoogleService-Info.plist */,
+				18ED44052660860F0090F415 /* MyButton.swift */,
 			);
 			path = DemoGGDrive;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				1826EEC22653836500CD9ABC /* ViewController.swift in Sources */,
 				1826EEBE2653836500CD9ABC /* AppDelegate.swift in Sources */,
 				1826EEC02653836500CD9ABC /* SceneDelegate.swift in Sources */,
+				18ED44062660860F0090F415 /* MyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
