@@ -362,7 +362,7 @@ import Foundation
 
 
 
-let test = "acbaaac"
+//let test = "acbaaac"
 
 //let count = test.reduce(into: [:]) { (count, charater) in
 //    count[charater, default: 0] += 1
@@ -370,25 +370,241 @@ let test = "acbaaac"
 //
 //print(count)
 
-func counting() -> [String: Int] {
-    var result = [String: Int]()
-    for charater in test {
-        let cha = String(charater)
-        if result.isEmpty {
-            result[cha] = 1
-        } else {
-            for (key, value) in result {
-                if cha == key {
-                    result[cha]! += 1
-                } else {
-                    if result[cha] == nil {
-                        result[cha] = 1
-                    }
-                }
-            }
+//func counting() -> [String: Int] {
+//    var result = [String: Int]()
+//    for charater in test {
+//        let cha = String(charater)
+//        if result.isEmpty {
+//            result[cha] = 1
+//        } else {
+//            for (key, value) in result {
+//                if cha == key {
+//                    result[cha]! += 1
+//                } else {
+//                    if result[cha] == nil {
+//                        result[cha] = 1
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return result
+//}
+//
+//print(counting())
+
+
+//enum Level {
+//    case easy
+//    case hard
+//}
+//struct Exam {
+//    var level: Level
+//    lazy private(set) var questions: String = {
+//        switch level {
+//        case .easy:
+//            return "easy"
+//        default:
+//            return "hard"
+//        }
+//    }()
+//}
+//
+//var a = Exam(level: .easy)
+//print(a.questions)
+//var b = a
+//b.level = .hard
+//print(b.questions)
+//b.level = .hard
+//
+//a.level = .hard
+//print(b.questions)
+
+
+//var b = 0
+//var a = 1 {
+//    willSet {
+//        print("Will set dc goi")
+//        print("a = \(a)")
+//        print(newValue)
+//    }
+//
+//    didSet {
+//        print("DidSet ddc goi")
+//        print("a = \(a)")
+//        print(oldValue)
+//    }
+//}
+//a = 2
+//print(b)
+//
+//
+//
+//a
+//
+//func total(_ a: String, b: String) {
+//
+//    func convertToInt(str: String) -> Int {
+//        return Int(str) ?? 0
+//    }
+//    print(convertToInt(str: a) + convertToInt(str: b))
+//
+//}
+//
+//total("3", b: "3")
+
+
+
+//func subtract(_ closure: @autoclosure() -> Int) -> Int {
+//    return closure()
+//}
+//
+//
+//subtract(1 + 1)
+//
+//func tttt(_ closure: () -> Int) -> Int {
+//    return closure()
+//}
+//
+//tttt {
+//    1 + 1
+//}
+
+
+
+
+
+//var c = [1,2,4]
+//
+//var d: (_ numberOne: Int, _ numberTwo: Int) -> Void = { m, n in
+//    print(m + n)
+//}
+//
+//d(1, 2)
+//
+//
+//var i = 10
+//
+//func tinh(number: Int) -> Int {
+//
+//    var number1 = 0
+//
+//    func to() -> Int {
+//        number1 += number
+//        return number1
+//    }
+//    return to()
+//}
+
+
+//
+//func increment(number: Int) -> () -> Int {
+//    var total = 0
+//
+//    let closure: () -> Int = {
+//        total += number
+//        return total
+//    }
+//
+//    return closure
+//}
+//
+//var m = increment(number: 10)
+//m()
+//m()
+//
+//
+
+//class A: Equatable {
+//    static func == (lhs: A, rhs: A) -> Bool {
+//        return lhs == rhs
+//    }
+//
+//
+//}
+//
+//
+//
+//var a1 = A()
+//var a2 = A()
+//var b = A()
+//a1 == a2
+//a1 == b
+//b == a2
+//print(1)
+
+//protocol CongViecCuaDev {
+//    func fixbug()
+//    func code()
+//}
+//
+//extension CongViecCuaDev {
+//    func fixbug() {
+//        print("Fix bug")
+//    }
+//}
+//
+//class Dev: CongViecCuaDev {
+//    func fixbug() {
+//        print("Dev fix bug")
+//    }
+//    func code() {
+//        print("Dev code")
+//    }
+//}
+//
+//class Manager: CongViecCuaDev {
+//    func code() {
+//        print("Manager code")
+//    }
+//
+//    func fixbug() {
+//        print("Manager fixbug")
+//    }
+//
+//}
+//struct E: CongViecCuaDev {
+//    func code() {
+//
+//    }
+//}
+//
+//var a = Dev()
+//a.code()
+//a.fixbug()
+//var b = Manager()
+//b.code()
+//b.fixbug()
+
+class Bank {
+
+    var balan: Double
+    init(balan: Double) {
+        self.balan = balan
+    }
+    
+    func withDraw(_ amount: Double) {
+        if balan >= amount {
+            print("Money from account")
+            let pro = UInt32.random(in: 0...3)
+            print("Process for \(pro)")
+            sleep(pro)
+            balan -= amount
+            print("balanis : \(balan)")
         }
     }
-    return result
 }
 
-print(counting())
+let bank = Bank(balan: 500)
+let queue = DispatchQueue(label: "123", attributes: .concurrent)
+
+queue.async {
+    bank.withDraw(500)
+}
+
+queue.async {
+    bank.withDraw(300)
+}
+
+
+
