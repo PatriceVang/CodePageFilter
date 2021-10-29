@@ -49,6 +49,10 @@ class Service {
         }
     }
     
+    private func refreshToken<T: Decodable>(token: String, endPoint: EndointType) -> Future<T, Error> {
+        return request(endpoint: endPoint, type: T.self)
+    }
+    
     private func convertToData(body: [String: Any]) -> Data? {
         if body.isEmpty { return nil}
         let data = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
