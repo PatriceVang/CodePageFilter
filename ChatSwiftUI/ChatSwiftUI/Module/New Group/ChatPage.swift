@@ -26,38 +26,71 @@ struct ChatPage: View {
         }
         .navigationTitle(viewModel.chatUser.email)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: Button(action: {
+            viewModel.count += 1
+        }, label: {
+            Text("Scroll to bottom")
+        }))
         
     }
     
     
     private func messageView() -> some View {
         ScrollView {
-            ForEach(0..<4) { num in
-                HStack {
-                    Spacer()
-                    if !viewModel.messageError.isEmpty {
-                        Image(systemName: "gear")
+            ScrollViewReader { value in
+                VStack {
+                    ForEach(viewModel.chatMessages) { message in
+                        VStack {
+                            if message.fromId == FirebaseManager.shared.uid {
+                                HStack {
+                                    Spacer()
+                                    if !viewModel.messageError.isEmpty {
+                                        Image(systemName: "gear")
+                                    }
+                                    HStack {
+                                        Text(message.text)
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(8)
+                                }
+                                
+                            } else {
+                                HStack {
+                                    if !viewModel.messageError.isEmpty {
+                                        Image(systemName: "gear")
+                                    }
+                                    HStack {
+                                        Text(message.text)
+                                            .foregroundColor(.black)
+                                    }
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    Spacer()
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                     }
-                    HStack {
-                        Text("New message fake message")
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                    Spacer(minLength: 1t00)
                 }
-                .padding(.horizontal)
-                .padding(.top, 8)
+                
+                .id("Empty")
+                .onReceive(viewModel.$count, perform: { _ in
+                    withAnimation(.easeOut(duration: 0.5)) {
+                        value.scrollTo("Empty", anchor: .bottom)
+                    }
+                })
             }
-            
-            HStack {
-                Spacer()
-            }
-            
         }
         .background(Color.gray.opacity(0.2))
-
+        
     }
+    
+    
     
     private func inputTextView() -> some View {
         HStack(alignment: .center, spacing: 8, content: {
@@ -70,7 +103,7 @@ struct ChatPage: View {
                     .foregroundColor(viewModel.chatText.isEmpty ? .gray : .clear)
                     .padding(.leading, 2)
             }
-           
+            
             Button(action: {
                 viewModel.sendMessage()
             }, label: {

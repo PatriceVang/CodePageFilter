@@ -115,17 +115,17 @@ class FirebaseManager {
         firestore.collection("users")
             .whereField("uid", isNotEqualTo: uid as Any)
             .getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                snapshot?.documents.forEach {
+                    let data = $0.data()
+                    let user = ChatUser(json: data)
+                    users.append(user)
+                }
+                completion(.success(users))
             }
-            snapshot?.documents.forEach {
-                let data = $0.data()
-                let user = ChatUser(json: data)
-                users.append(user)
-            }
-            completion(.success(users))
-        }
     }
     
     func saveMessageToFirestore(fromId: String, toId: String, text: String, completion: @escaping(String?) -> Void) {
@@ -141,22 +141,36 @@ class FirebaseManager {
                 completion(error.localizedDescription)
                 return
             }
-            completion(nil)
+            self.firestore.collection("messages").document(toId).collection(fromId).document().setData(data) { (error) in
+                if let error = error {
+                    completion(error.localizedDescription)
+                    return
+                }
+                completion(nil)
+            }
         }
+        
+        
     }
     
     
     func fetchMessages(fromId: String, toId: String, completion: @escaping(Result<[ChatMessage], Error>) -> Void) {
         var chatMessages = [ChatMessage]()
-        firestore.collection("messages").document(fromId).collection(toId).addSnapshotListener { (snapshot, error) in
+        firestore.collection("messages").document(fromId).collection(toId)
+            .order(by: "timestamp")
+            .addSnapshotListener { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            snapshot?.documents.forEach({ (docSnapshot) in
-                let data = docSnapshot.data()
-                let chatMessage = ChatMessage(json: data)
-                chatMessages.append(chatMessage)
+ 
+            snapshot?.documentChanges.forEach({ (change) in
+                if change.type == .added {
+                    let data = change.document.data()
+                    let documentId = change.document.documentID
+                    let chatMessage = ChatMessage(json: data, documentId: documentId)
+                    chatMessages.append(chatMessage)
+                }
             })
             completion(.success(chatMessages))
         }
