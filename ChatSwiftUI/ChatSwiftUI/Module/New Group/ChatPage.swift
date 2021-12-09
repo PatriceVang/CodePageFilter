@@ -75,7 +75,7 @@ struct ChatPage: View {
                         .padding(.horizontal)
                         .padding(.top, 8)
                     }
-                    Spacer(minLength: 1t00)
+                    Spacer(minLength: 100)
                 }
                 
                 .id("Empty")
