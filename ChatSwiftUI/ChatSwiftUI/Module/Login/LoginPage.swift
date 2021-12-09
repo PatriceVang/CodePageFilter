@@ -37,18 +37,21 @@ struct LoginPage: View {
                             .font(.system(size: 14))
                     }
                     
-                    NavigationLink(destination: MessagePage(), isActive: $viewModel.isPush) {
-                        createButton(title: viewModel.isLoginMode ? "Login" : "Create account") {
-                            if viewModel.isLoginMode {
-                                viewModel.login()
-                            } else {
-                                viewModel.createAccount()
-                            }
+                    createButton(title: viewModel.isLoginMode ? "Login" : "Create account") {
+                        if viewModel.isLoginMode {
+                            viewModel.login()
+                        } else {
+                            viewModel.createAccount()
                         }
                     }
+                    
+                    NavigationLink(destination: MessagePage(viewModel: MessageViewModel()), isActive: $viewModel.isPush) {
+                        Text("")
+                    }.hidden()
+                    
                 }
             }
-            .navigationTitle( !viewModel.isLoginMode ? "Login" : "Create account")
+            .navigationTitle( !viewModel.isLoginMode ? "Create account" : "Login")
             .sheet(isPresented: $viewModel.showImagePicker, content: {
                 ImagePicker(image: $viewModel.imgAvatar)
             })

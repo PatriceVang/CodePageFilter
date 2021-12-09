@@ -16,8 +16,17 @@ struct ChatSwiftUIApp: App {
     }
     
     var body: some Scene {
+        rootView()
+    }
+    
+    func rootView() -> some Scene {
         WindowGroup {
-            LoginPage()
+            if let isLogedIn = UserDefaultHelper.shared.isLogedIn, isLogedIn {
+                MessagePage(viewModel: MessageViewModel())
+            } else {
+                LoginPage()
+            }
         }
     }
+    
 }

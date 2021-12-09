@@ -28,8 +28,13 @@ class LoginViewModel: ObservableObject {
                 self.errorMessage = ""
                 print("Create a new account successfully!", data?.user.email as Any)
                 self.saveImage(image: self.imgAvatar ?? UIImage(systemName: "person")!)
+                self.isPush = true
+                UserDefaultHelper.shared.isLogedIn = true
+                UserDefaultHelper.shared.uid = data?.user.uid
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
+                self.isPush = false
+                UserDefaultHelper.shared.isLogedIn = false
             }
         }
     }
@@ -37,13 +42,16 @@ class LoginViewModel: ObservableObject {
     func login() {
         FirebaseManager.shared.login(email: email, password: password) { (result) in
             switch result {
-            case .success:
+            case .success(let data):
                 self.errorMessage = ""
                 print("Login is successfullly!")
                 self.isPush = true
+                UserDefaultHelper.shared.isLogedIn = true
+                UserDefaultHelper.shared.uid = data?.user.uid
             case .failure(let error):
                 self.isPush = false
                 self.errorMessage = error.localizedDescription
+                UserDefaultHelper.shared.isLogedIn = false
             }
         }
     }
@@ -55,7 +63,7 @@ class LoginViewModel: ObservableObject {
                 self.errorMessage = error.localizedDescription
             case .success(let url):
                 self.errorMessage = ""
-                FirebaseManager.shared.saveToFirestore(email: self.email, imageUrl: url) { str in
+                FirebaseManager.shared.saveUserToFirestore(email: self.email, imageUrl: url) { str in
                     if let errorStr = str {
                         print(errorStr)
                     }
