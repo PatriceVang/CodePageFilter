@@ -15,6 +15,8 @@ class ChatPageViewModel: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     @Published var count: Int = 0
     
+    var keyScroll = "Empty"
+    
     init(user: ChatUser) {
         self.chatUser = user
         fetchMessages()
@@ -29,6 +31,8 @@ class ChatPageViewModel: ObservableObject {
                 print("Saving message current user failed! \(error)")
                 self.messageError = error
             }
+            FirebaseManager.shared.persistRecentMessage(fromId: fromId, toId: toId, text: self.chatText, imgUrl: self.chatUser.avatar, email: self.chatUser.email)
+             
             self.chatText = ""
             self.count += 1
         })
@@ -42,14 +46,6 @@ class ChatPageViewModel: ObservableObject {
             case .failure(let error):
                 print("Fetch message error: \(error.localizedDescription)")
             case .success(let messages):
-//                var tempChatMessage = messages
-//                for i in 0..<tempChatMessage.count {
-//                    if tempChatMessage[i].fromId == FirebaseManager.shared.uid {
-//                        tempChatMessage[i].isMessageFromCurrentUser = true
-//                    } else {
-//                        tempChatMessage[i].isMessageFromCurrentUser = false
-//                    }
-//                }
                 self.chatMessages = messages
             }
         }

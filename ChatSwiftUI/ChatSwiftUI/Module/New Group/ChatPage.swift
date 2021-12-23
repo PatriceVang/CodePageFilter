@@ -78,10 +78,10 @@ struct ChatPage: View {
                     Spacer(minLength: 100)
                 }
                 
-                .id("Empty")
+                .id(viewModel.chatText)
                 .onReceive(viewModel.$count, perform: { _ in
                     withAnimation(.easeOut(duration: 0.5)) {
-                        value.scrollTo("Empty", anchor: .bottom)
+                        value.scrollTo(viewModel.chatText, anchor: .bottom)
                     }
                 })
             }

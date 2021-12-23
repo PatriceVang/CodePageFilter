@@ -25,7 +25,7 @@ struct MessagePage: View {
                 }
                 listUser()
                 
-                NavigationLink(destination: ChatPage(viewModel: ChatPageViewModel(user: viewModel.difUser ?? ChatUser())), isActive: $viewModel.isPushToChatScreen) {
+                NavigationLink(destination: ChatPage(viewModel: ChatPageViewModel(user: viewModel.difUser ?? ChatUser(json: [:]))), isActive: $viewModel.isPushToChatScreen) {
                     Text("")
                 }.hidden()
                 
@@ -79,34 +79,40 @@ struct MessagePage: View {
                 .cancel()
             ])
         })
-        
-        
     }
     
     private func listUser() -> some View {
-        return List {
-            VStack {
-                ForEach(0...9, id: \.self) { ele in
-                    
+        return VStack {
+            ForEach(viewModel.chatRecents) { chatRecent in
+                Button(action: {
+//                    didSelectUser(user: ChatUser(uid: chatRecent.toId, email: chatRecent.email, avatar: chatRecent.avatar))
+                }, label: {
                     HStack(spacing: 12) {
-                        Image(systemName: "person.fill")
-                            .borderAndRadius(size: 32, color: Color(.label), radius: 44, lineWidth: 1)
+                        WebImage(url: URL(string: chatRecent.avatar))
+                            .frame(width: 30, height: 30, alignment: .center)
+                            .clipped()
+                            .scaledToFill()
+                            .cornerRadius(15)
                         VStack(alignment: .leading) {
-                            Text("Name")
+                            Text(chatRecent.email)
                                 .setFont(size: 16, weight: .bold)
-                            Text("Old")
+                            Text(chatRecent.text)
                                 .setFont(size: 14)
+                                .multilineTextAlignment(.leading)
                         }
                         Spacer()
                         Text("33d")
                             .setFont(size: 14, weight: .semibold)
                     }
                     .padding(.vertical, 8)
-                }
-                Spacer(minLength: 100)
+                })
             }
+            Spacer(minLength: 100)
+            
+            
         }
-        .listStyle(PlainListStyle())
+        .padding()
+        
     }
     
     private func newMessageButton(title: String, completion: @escaping() -> Void) -> some View {

@@ -16,9 +16,11 @@ class MessageViewModel: ObservableObject {
     @Published var chatUser: ChatUser?
     @Published var showMessageScreen: Bool = false
     @Published var isPushToChatScreen: Bool = false
+    @Published var chatRecents: [ChatRecent] = []
     
     init() {
         fetchUser()
+        fetchRecentMesage()
     }
     
     func fetchUser() {
@@ -31,6 +33,17 @@ class MessageViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.chatUser = user
                 }
+            }
+        }
+    }
+    
+    func fetchRecentMesage() {
+        FirebaseManager.shared.fetchRecentMessages { (result) in
+            switch result {
+            case .failure(let error):
+                print("Fetch recent message failed! \(error.localizedDescription)")
+            case .success(let chatRecents):
+                self.chatRecents = chatRecents
             }
         }
     }

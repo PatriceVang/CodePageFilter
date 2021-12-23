@@ -22,10 +22,10 @@ struct ChatUser: Identifiable {
         self.avatar = json["avatar"] as? String ?? ""
     }
     
-    init() {
-        self.uid = ""
-        self.email = ""
-        self.avatar = ""
+    init(uid: String, email: String, avatar: String) {
+        self.uid = uid
+        self.email = email
+        self.avatar = avatar
     }
 
 }

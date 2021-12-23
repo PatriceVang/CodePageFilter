@@ -149,8 +149,6 @@ class FirebaseManager {
                 completion(nil)
             }
         }
-        
-        
     }
     
     
@@ -159,20 +157,69 @@ class FirebaseManager {
         firestore.collection("messages").document(fromId).collection(toId)
             .order(by: "timestamp")
             .addSnapshotListener { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                snapshot?.documentChanges.forEach({ (change) in
+                    if change.type == .added {
+                        let data = change.document.data()
+                        let documentId = change.document.documentID
+                        let chatMessage = ChatMessage(json: data, documentId: documentId)
+                        chatMessages.append(chatMessage)
+                    }
+                })
+                completion(.success(chatMessages))
             }
- 
-            snapshot?.documentChanges.forEach({ (change) in
-                if change.type == .added {
+    }
+    
+    func persistRecentMessage(fromId: String, toId: String, text: String, imgUrl: String, email: String) {
+        let data: [String: Any] = [
+            "timestamp": Timestamp(),
+            "text": text,
+            "fromId": fromId,
+            "toId": toId,
+            "avatar": imgUrl,
+            "email": email
+        ]
+        firestore.collection("recent_messages")
+            .document(fromId)
+            .collection("messages")
+            .document(toId)
+            .setData(data) { (error) in
+                if error != nil {
+                    print("Persitst recent message failed!")
+                    return
+                }
+            }
+    }
+    
+    func fetchRecentMessages(completion: @escaping(Result<[ChatRecent],Error>) -> Void) {
+        guard let uid = uid else {return}
+        var chatRecents = [ChatRecent]()
+        firestore.collection("recent_messages")
+            .document(uid)
+            .collection("messages")
+            .order(by: "timestamp", descending: true)
+            .addSnapshotListener { (snapshots, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                snapshots?.documentChanges.forEach({ (change) in
                     let data = change.document.data()
                     let documentId = change.document.documentID
-                    let chatMessage = ChatMessage(json: data, documentId: documentId)
-                    chatMessages.append(chatMessage)
-                }
-            })
-            completion(.success(chatMessages))
-        }
+                    let chatRecent = ChatRecent(dictionary: data, documentId: documentId)
+                    if let index = chatRecents.firstIndex {$0.documentId == chatRecent.documentId} {
+                        chatRecents.remove(at: index )
+                        chatRecents.insert(chatRecent, at: 0)
+                    } else {
+                        chatRecents.append(chatRecent)
+                    }
+                })
+                completion(.success(chatRecents))
+            }
     }
 }
