@@ -12,9 +12,17 @@ import Combine
 
 
 class ReviewService {
-    let service = Service()
+    private let service: ApiService
     
-    func createRating(userId: String, productId: String) -> Future<ApiResponse<Bool>, ApiError> {
+    init(service: ApiService) {
+        self.service = service
+    }
+    
+    func getRatingDetai(productId: String) -> Future<RatingDetail, ApiError> {
+        return service.request(apiRequest: ReviewRequest.ratingDetail(productId: productId))
+    }
+    
+    func createRating(userId: String, productId: String) -> Future<Bool, ApiError> {
         return service.request(apiRequest: ReviewRequest.createRating(userId: userId, productId: productId))
     }
 }

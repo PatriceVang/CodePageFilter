@@ -9,10 +9,15 @@ import Foundation
 import Combine
 
 class HomeService {
-    private let service = Service()
+    private let service: ApiService
     
-//    func getHomeLayout() -> Future<ObjectResponse<HomeLayout>, Error> {
-//        return service.request(apiRequest: HomeRequest.homeLayout())
-//    }
+    init(service: ApiService) {
+        self.service = service
+    }
+    
+    
+    func getLayoutHome() -> Future<HomeLayout, ApiError> {
+        return service.request(apiRequest: HomeRequest.homeLayout())
+    }
     
 }
