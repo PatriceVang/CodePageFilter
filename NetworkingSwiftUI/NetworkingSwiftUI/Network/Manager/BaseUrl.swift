@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-extension EndointType {
-    var baseUrl: String {
-        return "https://jsonplaceholder.typicode.com"
-    }
+class BaseUrl {
+    static let host = "https://api-smthgood.vinova.sg/api/services/app"
 }
